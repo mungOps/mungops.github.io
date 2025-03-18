@@ -2,146 +2,129 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mungops.github.io/en/tags/example/</loc>
+    <loc>https://mungops.github.io/docs/advanced/multi-language/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/organize-files/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/configuration/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/markdown/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/syntax-highlighting/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/latex/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/diagrams/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/tags/example/</loc>
+    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/tags/guide/</loc>
+    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/tags/markdown/</loc>
+    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/blog/markdown/</loc>
+    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/tags/</loc>
     <lastmod>2025-03-18T15:14:55+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://mungops.github.io/tags/example/"
+                href="https://mungops.github.io/ko/tags/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/tags/example/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/en/tags/guide/</loc>
-    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/tags/guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/tags/guide/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/en/tags/markdown/</loc>
-    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/tags/markdown/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/en/blog/markdown/</loc>
-    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/blog/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/blog/markdown/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/en/tags/</loc>
-    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
                 href="https://mungops.github.io/tags/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/tags/"
-                />
   </url><url>
-    <loc>https://mungops.github.io/en/docs/advanced/</loc>
+    <loc>https://mungops.github.io/docs/advanced/</loc>
     <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/blog/</loc>
+    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/callout/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/cards/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://mungops.github.io/docs/advanced/"
+                href="https://mungops.github.io/ko/categories/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/docs/advanced/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/en/blog/</loc>
-    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/blog/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
                 href="https://mungops.github.io/categories/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/categories/"
-                />
   </url><url>
-    <loc>https://mungops.github.io/en/docs/advanced/comments/</loc>
+    <loc>https://mungops.github.io/docs/advanced/comments/</loc>
     <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/advanced/customization/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/deploy-site/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/details/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/</loc>
+    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/filetree/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/icon/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/jupyter/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/</loc>
+    <lastmod>2025-03-18T15:31:38+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://mungops.github.io/docs/advanced/comments/"
+                href="https://mungops.github.io/ko/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/docs/advanced/comments/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/en/docs/</loc>
-    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/docs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/docs/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/en/</loc>
-    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
                 href="https://mungops.github.io/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://mungops.github.io/en/"
-                />
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/others/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/portfolio/</loc>
+    <lastmod>2025-03-18T15:14:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/steps/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/docs/guide/shortcodes/tabs/</loc>
+    <lastmod>2025-03-17T16:33:32+09:00</lastmod>
   </url>
 </urlset>

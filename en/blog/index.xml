@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mungOps English – Blog</title>
-    <link>https://mungops.github.io/en/blog/</link>
+    <link>http://localhost:1313/en/blog/</link>
     <description>Recent content in Blog on mungOps English</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="https://mungops.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/en/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>https://mungops.github.io/en/blog/markdown/</link>
+      <link>http://localhost:1313/en/blog/markdown/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://mungops.github.io/en/blog/markdown/</guid>
+      <guid>http://localhost:1313/en/blog/markdown/</guid>
       <description>
         
         

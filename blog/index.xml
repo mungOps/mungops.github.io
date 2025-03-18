@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mungOps Korea – Blog</title>
+    <title>mungOps – Blog</title>
     <link>https://mungops.github.io/blog/</link>
-    <description>Recent content in Blog on mungOps Korea</description>
+    <description>Recent content in Blog on mungOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     
