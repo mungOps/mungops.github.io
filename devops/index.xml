@@ -1,0 +1,2529 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mungOps – Devops</title>
+    <link>https://mungops.github.io/devops/</link>
+    <description>Recent content in Devops on mungOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    
+	  <atom:link href="https://mungops.github.io/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/1.-runtime/containerd/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/1.-runtime/containerd/file0/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;&lt;strong&gt;ContainerD&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;containerd&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#containerd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div style=&#34;text-align: center;&#34;&gt;
+    &lt;img src=&#34;https://containerd.io/img/logos/navbar-dark-logo.png&#34; alt=&#34;image.png&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Containerd는 Docker 사에서 moby project 와 함께  발표하여  CNCF 에 기증한  오픈소스입니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ContainerD 2022년 4월 Docker engine이 쿠버네티스에서 사용중단을 발표한 후, 높은 점유율을 이루고 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;간단하게 기존에 사용하던 &lt;strong&gt;Docker engine을 사용하지 않고 ContainerD를 사용 하게된 이유&lt;/strong&gt;를 정리하자면
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;쿠버네티스는 여러 컨테이너 런타임과 통신할 수 있도록 하는 CRI라는 표준 인터페이스를 설계함.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Docker engine은 CRI 인터페이스가 생기기전 존재한 기술로 CRI 인터페이스와 맞지 않았음.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이를 해결하기 위해 dockershim이라는 어댑터 컴포넌트를 개발하였음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이 쉼의 존재는 kubelet 자체에 많은 불필요한 복잡성을 도입했고, 일부 통합은 이 쉼 때문에 Docker에 대해 일관성 없게 구현되었으며, 이로 인해 유지 관리 부담이 증가하게 됨.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+    &lt;img src=&#34;https://storage.googleapis.com/static.fastcampus.co.kr/prod/uploads/202206/092600-704/%EC%98%A4%EA%B0%80%EB%8B%89%EC%B5%9C%EC%A2%85.png&#34; alt=&#34;image.png&#34; style=&#34;width: 1200px; height: auto;&#34;&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;이처럼 벤더 특정 코드(특정 제품인 Docker에 종속적인 코드)를 유지 관리하는 것은 쿠버네티스의 오픈 소스 철학에 부합하지 않았고, 2022년 4월 v1.24에서 완전한 제거를 발표하였음.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+    &lt;img src=&#34;https://velog.velcdn.com/images/rockwellvinca/post/bd8e84a8-79a9-42df-9cbc-acb87c11f322/image.png&#34; alt=&#34;image.png&#34; style=&#34;width: 1200px; height: auto;&#34;&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;그렇다고, ContainerD가 Docker와 완전히 다른 것이 아닌 게, &lt;strong&gt;containerD는 도커를 컨테이너 런타임으로 사용할 때 내부적으로 사용되는 컨테이너 런타임 기술로, 이젠 이러한 기술을 도커에서 빼서 containerd만 따로 사용하는 것&lt;/strong&gt;입니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;즉, 현재는 &lt;strong&gt;Docker에서 컨테이너 런타임을 분리하여 ContainerD를 사용&lt;/strong&gt;하고, 여전히 관련 &lt;strong&gt;이미지 개발 등은 Docker을 사용하는 것&lt;/strong&gt;입니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Docker Engine, ContainerD에 간단 비교는 아래를 참고해주세요.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3&gt;&lt;strong&gt;Docker Engine vs ContainerD&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-engine-vs-containerd&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-engine-vs-containerd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;특성&lt;/th&gt;
+          &lt;th&gt;Docker Engine&lt;/th&gt;
+          &lt;th&gt;ContainerD&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Docker의 전체 컨테이너 관리 플랫폼&lt;/td&gt;
+          &lt;td&gt;경량화된 컨테이너 런타임&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;주요 기능&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;이미지 빌드, 배포, 컨테이너 실행&lt;/td&gt;
+          &lt;td&gt;컨테이너 실행, 이미지 관리&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;API&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Docker API 제공&lt;/td&gt;
+          &lt;td&gt;CRI (Container Runtime Interface) 지원&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;설치 및 설정&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;복잡한 설치 및 설정&lt;/td&gt;
+          &lt;td&gt;비교적 간단한 설치 및 설정&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;부하&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;상대적으로 높은 리소스 소모&lt;/td&gt;
+          &lt;td&gt;더 경량화되어 리소스 효율성 높음&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;의존성&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;여러 추가 도구 (예: Docker Compose) 필요&lt;/td&gt;
+          &lt;td&gt;Kubernetes에서 직접 사용 가능&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;주요 사용 사례&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;개발 및 테스트 환경&lt;/td&gt;
+          &lt;td&gt;프로덕션 환경, 특히 Kubernetes에서 사용&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h3&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;references&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#references&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://velog.io/@rockwellvinca/kubernetes-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%EC%9D%98-%EB%8F%84%EC%BB%A4-%EC%A7%80%EC%9B%90-%EB%8C%80%ED%95%9C-%EB%AA%A8%EB%93%A0-%EA%B2%83&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;[kubernetes] ☸️쿠버네티스의 도커 지원 중단에 대한 모든 것
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>0. Docker&amp; Container</title>
+      <link>https://mungops.github.io/devops/docker/docker00/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/docker/docker00/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;&lt;strong&gt;Docker 와 Container&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-와-container&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-%ec%99%80-container&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;h3&gt;&lt;strong&gt;Docker의 등장배경&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker의-등장배경&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker%ec%9d%98-%eb%93%b1%ec%9e%a5%eb%b0%b0%ea%b2%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Docker는 2013년에 dotCloud의 의해 2013년 PyCon에서 (The future of Linux Containers) 처음 데모 되었다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이는 오클랜드 항구에 들어오는 모든 컨테이너 선박을 보며, 한 서버에서다른 서버로 앱을 옮기는 것 보다, 지구 반대편으로 컨테이너를 옮기는 것이 더 쉽다라는 취지에서 개발됨.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;위 문제는 &lt;span style=&#39;background-color: #dcffe4&#39;&gt;&lt;strong&gt;기존 가상화기술을 사용하면 가능했으나, 리소스의 수가 커지고 대규모의 관리가 증대됨에 따라 필요성이 대두&lt;/strong&gt;&lt;/span&gt;되어짐.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;dotCloud 팀은 가상화 자체가 문제가 아니라 가상화 사용 방식이 문제라는 것을 인식했으며, &lt;span style=&#39;background-color: #dcffe4&#39;&gt;&lt;strong&gt;전체 운영 체제를 가상화하는 대신 애플리케이션과 해당 종속성만 가상화하는 것이 더 효율적이라 생각해었고, 이 것이 Container 의 개념으로 개발&lt;/strong&gt;&lt;/span&gt;됨.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Container란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;container란&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#container%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://wac-cdn.atlassian.com/dam/jcr:92adde69-f728-4cfc-8bab-ba391c25ae58/SWTM-2060_Diagram_Containers_VirtualMachines_v03.png?cdnVersion=1402&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;기본 운영 체제(OS) 커널을 동일한 시스템의 다른 컨테이너와 공유하는 &lt;span style=&#39;background-color: #dcffe4&#39;&gt;&lt;strong&gt;격리된 환경에서 애플리케이션을 실행하는 방법&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Container의 격리된 환경의 특징&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VM이 완전한 운영체제와 에뮬리이션을 갖는 반면, 컨테이너는 호스트 시스템과 커널을 공유&lt;/li&gt;
+&lt;li&gt;위와 같은 특성으로 VM의 비해 사용되는 리소스가 적어, 가볍고 빠르게 실행이 가능&lt;/li&gt;
+&lt;li&gt;컨테이너는 완전 격리된 상태이기에, 실행 환경이 동일하면 어떠한 방식으로도 실행이 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;즉, 컨테이너 기반 가상화는 기존 가상화와 달리 하이퍼바이저 위에서 여러 개의 Guest OS를 실행하는 대신 호스트 OS 커널을 사용하여 격리된 여러 개의 컨테이너를 실행&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h2&gt;&lt;strong&gt;Container 기반 기술&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;container-기반-기술&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#container-%ea%b8%b0%eb%b0%98-%ea%b8%b0%ec%88%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Chroot and Chroot Jail&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;chroot-and-chroot-jail&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#chroot-and-chroot-jail&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://media.geeksforgeeks.org/wp-content/uploads/chroot-command.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Chroot(Change Root)는 프로세스의 Root 디렉토리를 변경하여 파일 시스템에서 특정 파일 및 디렉터리 인덱스를 좁힐 수 있는 기능&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Jail은 chroot에서 더 진보된 단계로, 기존 Chroot 설정이여도 프로세스가 네트워크 통신 등의 역할을 수행할 수 있었지만, Jail은 이를 제한 할 수 있었음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이어 서로 다른 프로세스 그룹 간의 경계 관리 솔루션인 Solaris Zones이 출시되며, Container 라는 용어가 활용되기 시작하였음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;LXC (LinuX Container)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;lxc-linux-container&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#lxc-linux-container&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/linux/docker-containers-evolution&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LXC란 리눅스 컨테이너로 해당 커널의 &lt;span style=&#39;background-color: #dcffe4&#39;&gt;&lt;strong&gt;주 구성요소는 namespace, cgroups, chroot&lt;/strong&gt;&lt;/span&gt; 이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;cgroup (control group)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;cgroup-control-group&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cgroup-control-group&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Linux-Cgroups.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cgroup을 사용하여 각 컨테이너에 대한 시스템 리소스(CPU, 메모리, 디스크 I/O)를 제한하고 우선순위를 지정하며, 각 컨테이너에 리소스를 제어되고 효율적인 방식으로 할당하여 컨테이너의 성능에 영향을 미치는 것을 방지하는 역할을 수행한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;namespace&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;namespace&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#namespace&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Linux-Process-Namespace-768x485.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LXC는 Linux 커널 namespace를 사용하여 각 컨테이너에 대해 별도의 네임스페이스를 생성&lt;/li&gt;
+&lt;li&gt;namespace는 프로세스 ID, 네트워크 인터페이스, 파일 시스템 등 각 컨테이너에 대한 다양한 시스템 리소스를 격리하여, 다른 컨테이너 리소스의 간섭을 막는 역할을 수행한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;chroot&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;chroot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#chroot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;ul&gt;
+&lt;li&gt;위에서 나타냈듯이, 각 컨테이너는 고유한 파일 시스템 계층 구조를 가질 수 있으며, 한 컨테이너 내의 프로세스가 다른 컨테이너의 파일에 액세스 하거나 수정 불가능하게 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Linux-Container-Architecture-1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;위 LXC 커널들을 사용하여 컨테이너 서비스가 개발되었기 때문에, 다른 운영체제서는 사용이 불가능
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Namespaces&lt;/strong&gt;: 네임스페이스는 리눅스에서 프로세스를 격리하고 독립적인 환경을 제공하는 기술로, 여러 가지 네임스페이스를 활용하여 프로세스, 마운트 포인트, 네트워크, 호스트 이름 등을 격리&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cgroups (컨트롤 그룹)&lt;/strong&gt;: 리눅스에서 프로세스 그룹을 생성하고 리소스를 할당하거나 제한하는 기술 Cgroups를 사용하여 CPU, 메모리, 디스크 I/O 등의 자원을 제어하고 할당&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;AppArmor 및 SELinux Profiles&lt;/strong&gt;: AppArmor와 SELinux는 각각 리눅스 시스템에서 프로세스의 접근 권한을 제한하는 보안 모듈로 프로파일을 사용하여 각 컨테이너의 권한을 제어하고 보안을 강화&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Network Devices (네트워크 디바이스)&lt;/strong&gt;: 네트워크를 격리하고 각 컨테이너에 독립적인 네트워크 환경을 제공 및 네트워크 디바이스를 사용하여 컨테이너 간 통신이나 호스트와의 통신을 관리&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Chroot (체인지 루트)&lt;/strong&gt;: 파일 시스템에서 특정 디렉토리를 컨테이너의 루트로 변경, 이를 통해 컨테이너는 호스트 시스템과 독립된 파일 시스템 환경을 구축이 가능&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Seccomp Policies&lt;/strong&gt;: Seccomp은 리눅스에서 프로세스가 사용할 수 있는 시스템 콜을 제한하는 커널 보안 모듈로 Seccomp를 사용하여 컨테이너에서 특정 시스템 콜을 차단하여 보안을 강화&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h2&gt;&lt;strong&gt;Docker의 등장&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker의-등장&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker%ec%9d%98-%eb%93%b1%ec%9e%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Docker-Execution-Environment.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;LXC는 사용자 공간 수준에서 깔끔하고 강력한 인터페이스를 제공하지만 여전히 사용하기 쉽지 않고 대중적 매력을 불러일으키지도 못했고, &lt;span style=&#39;background-color: #dcffe4&#39;&gt;&lt;strong&gt;Docker 커널 기능을 다루는 복잡성의 대부분을 추상화하면서 애플리케이션과 그 종속성을 컨테이너에 묶는 간단한 형식을 제공하여 이를 해결&lt;/strong&gt;&lt;/span&gt;하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;단, &lt;span style=&#39;background-color: #dcffe4&#39;&gt;&lt;strong&gt;Docker는 초기 LXC에서 실행환경을 구성하였으나, 이후 Go Lang을 활용한 libcontainer로 내부 환경을 변경하여 LXC와 같은 외부 패키지에 의존적이지 않도록 개발을 진행&lt;/strong&gt;&lt;/span&gt;하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Docker의 이해&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker의-이해&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker%ec%9d%98-%ec%9d%b4%ed%95%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Docker-Components.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;도커는 위 그림과 같이 모듈식 아키텍처를 가지고 있으며, 서비스를 제공하기 위해 몇 가지 주요 구성 요소를 사용
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Dockerd&lt;/strong&gt;: docker engine으로 불리며 API 요청을 수신하고 개체를 관리하는 데몬 프로세스&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Containerd&lt;/strong&gt;: Docker 객체를 관리하기 위해 이미지 다운로드 및 컨테이너 실행과 같은 작업을 수행&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;runc&lt;/strong&gt;: 커널 기능과 상호작용하며 네임스페이스 및 제어 그룹을 생성하는 표준 메커니즘을 제공&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Docker-Workflow.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Docker Image의 이해&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-image의-이해&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-image%ec%9d%98-%ec%9d%b4%ed%95%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Docker-Containers.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;
+&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Docker-Images-768x335.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;도커의 이미지는 &lt;span style=&#39;background-color: #dcffe4&#39;&gt;&lt;strong&gt;컨테이너를 인스턴스화 하는 데 사용하는 읽기 전용 레이어 파일&lt;/strong&gt;&lt;/span&gt;이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이미지는 &lt;code&gt;Dockerfile&lt;/code&gt;를 통해 생성하며, Dockerfile의 각 명령은 상위 이미지 위에 레이어를 생성하여 적용시키는 개념이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Docker Storage&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-storage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-storage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Docker-Storage.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Docker Image로 생성된 컨테이너는 위와 같이 Layer 형식으로 구성 되며, 이는 위 그림과 같이 스토리지 드라이버에 저장된다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;스토리지 드라이버는 이미지 레이어와 컨테이너 레이어의 콘텐츠를 관리하며, aufs, overlay, &lt;code&gt;overlay2&lt;/code&gt;, btrfs, ztf 등의 여러 스토리지 드라이버를 사용 할 수 있다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;각 스토리지 드라이버는 구현 방식이 다르지만 모두 &lt;span style=&#39;background-color: #dcffe4&#39;&gt;&lt;strong&gt;스택 가능한 이미지 레이어와 CoW(Copy On Write 기록 중 복사) 전략을 사용 (CoW는 기본적으로 효율성을 극대화하기 위해 파일을 공유하고 복사하는 전략)&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;종류&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Volume&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;볼륨은 호스트 파일 시스템의 특별한 디렉토리나 Docker가 관리하는 볼륨 드라이버에 의해 생성되며, 컨테이너에 마운트되며, 볼륨은 컨테이너의 생명주기 동안 데이터를 유지하고, 여러 컨테이너 간에 데이터를 쉽게 공유하는 역할을 수행&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Bind Mount&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;바인드 마운트는 호스트 머신의 파일 시스템 경로를 직접 컨테이너 경로에 마운트하는 방식&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Tmpfs&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;컨테이너 내의 임시 파일 시스템으로, RAM을 기반으로 컨테이너의 실행 중에만 유지되며, 컨테이너가 종료되면 데이터가 손실&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Docker Networking&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-networking&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-networking&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br/&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker 컨테이너는 다른 워크로드 유형에 대한 명시적인 지식 없이도 서로 연결될 수 있으며, Docker가 아닌 워크로드와도 연결이 가능한데, 이는 완전히 연결 가능한 Docker의 네트워킹 하위 시스템 덕분에 가능&lt;/li&gt;
+&lt;li&gt;이는 아래의 네트워크 드라이버를 통해 지원&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;종류&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bridge&lt;/td&gt;
+          &lt;td&gt;브리지 드라이버를 사용하여 독립형 컨테이너에서 실행되는 애플리케이션 간에 통신 (기본 드라이버)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;host&lt;/td&gt;
+          &lt;td&gt;호스트 드라이버는 컨테이너와 호스트 사이의 네트워크 격리를 제거하고 호스트 네트워크를 직접 사용&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;overlay&lt;/td&gt;
+          &lt;td&gt;오버레이 드라이버를 사용하여 여러 Docker 데몬을 함께 연결 (Docker Swarm)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;macvlan&lt;/td&gt;
+          &lt;td&gt;macvlan 드라이버를 사용하면 Docker 데몬이 MAC 주소를 통해 컨테이너로 트래픽을 라우팅할 수 있도록 MAC 주소를 컨테이너에 할당이 가능&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;none&lt;/td&gt;
+          &lt;td&gt;네트워크 비활성화&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h4&gt;&lt;strong&gt;Docker bridge network&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-bridge-network&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-bridge-network&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/2/2020/11/Docker-Bridge-Network.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Docker는 기본적으로 브리지 네트워크 &amp;ldquo;docker0&amp;quot;을 생성하고 &amp;ldquo;vethxx&amp;quot;를 통해 모든 컨테이너 네트워크를 여기에 연결&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;기본 브리지 네트워크에 연결된 컨테이너는 IP 주소를 통해 서로 통신할 수 있습니다 . 또한 브리지 네트워크 “docker0”은 호스트 네트워크 “eth0”에 연결되어 외부 네트워크에 대한 연결을 제공&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;a href=&#34;https://www.baeldung.com/linux/docker-containers-evolution&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;참조&lt;/a&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;참조&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%b0%b8%ec%a1%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;br/&gt;
+&lt;br/&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Kubeadm Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/2.-provisioning/kubeadm/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/2.-provisioning/kubeadm/file0/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;&lt;strong&gt;Kubeadm&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubeadm&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubeadm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+    &lt;img src=&#34;https://kubernetes.io/images/kubeadm-stacked-color.png&#34; alt=&#34;image.png&#34; style=&#34;width: 200px; height: auto;&#34;&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Kubeadm은 쿠버네티스 클러스터 생성을 위한 &amp;ldquo;빠른 경로&amp;quot;의 모범 사례로 &lt;strong&gt;kubeadm init 및 kubeadm join 을 제공하도록 만들어진 도구&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;쿠버네티스는 분산 시스템 관리 도구로, 컨테이너화된 애플리케이션을 효율적으로 배포, 관리, 확장할 수 있게 해주지만, 초기 설정 및 유지 관리 작업은 복잡할 수 있으며, 이를 간편하게 해주기 위한 프로비저닝 툴 중 하나가 kubeadm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;kubeadm은 실행 가능한 최소 클러스터를 시작하고 실행하는 데 필요한 작업을 수행&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;설계 상, 시스템 프로비저닝이 아닌 부트스트랩(bootstrapping)만 다룬다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;즉, 대시보드, 모니터링 솔루션 및 클라우드별 애드온과 같은 다양한 있으면 좋은(nice-to-have) 애드온을 설치하는 것은 범위에 포함되지 않는다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3&gt;&lt;strong&gt;Kubeadm 명령어&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubeadm-명령어&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubeadm-%eb%aa%85%eb%a0%b9%ec%96%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;
+&lt;br&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;명령어&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;예시&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm init&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;쿠버네티스 컨트롤 플레인 노드를 부트스트랩합니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm init --pod-network-cidr=10.244.0.0/16&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm join&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;워커 노드를 부트스트랩하고 클러스터에 조인시킵니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm join &amp;lt;master-ip&amp;gt;:&amp;lt;port&amp;gt; --token &amp;lt;token&amp;gt; --discovery-token-ca-cert-hash &amp;lt;hash&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm upgrade&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;현재 클러스터를 새로운 버전으로 업그레이드합니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm upgrade apply v1.20.0&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm config&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;클러스터 초기화 및 업그레이드 시 설정 구성을 관리합니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm config print init-defaults&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm token&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm join&lt;/code&gt; 명령어에 필요한 토큰을 생성하거나 관리합니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm token create --print-join-command&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm reset&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm init&lt;/code&gt; 또는 &lt;code&gt;kubeadm join&lt;/code&gt;으로 인한 변경 사항을 모두 되돌립니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm reset&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm certs&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;쿠버네티스 인증서를 관리합니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm certs renew all&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm kubeconfig&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;쿠버네티스 클러스터의 kubeconfig 파일을 관리합니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm kubeconfig user&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm version&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;kubeadm의 현재 버전을 출력합니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm version&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm alpha&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;미리 보기 기능으로 커뮤니티 피드백을 위해 제공되는 실험적 기능을 실행합니다.&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm alpha certs renew&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h3&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;references&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#references&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/ko/docs/reference/setup-tools/kubeadm/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kubeadm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Manger Node</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/0.-resource/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/0.-resource/file0/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;&lt;strong&gt;Kubernets Manager Node&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubernets-manager-node&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubernets-manager-node&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br&gt;
+&lt;h3&gt;&lt;strong&gt;Kubernets Manager Node&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubernets-manager-node-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubernets-manager-node-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Manager Node는 노드는 클러스터에 대한 요청을 수신하고 분배하는 역할을 하는 로드 밸런서 역할을 하는 서버를 의미합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;일반적으로 NGINX, HAProxy와 같은 프록시 서버를 사용하며, 여기서는 Nginx로 구성합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;해당 노드의 주 역할은 아래와 같습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;역할&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;예시&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;요청 라우팅&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;클라이언트의 API 요청을 적절한 서비스나 백엔드 노드로 전달합니다.&lt;/td&gt;
+          &lt;td&gt;NGINX가 클라이언트 요청을 받아 특정 서비스로 라우팅합니다. 예를 들어, &lt;code&gt;/api/users&lt;/code&gt; 요청은 사용자 서비스로 전달됩니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;로드 밸런싱&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;요청을 여러 백엔드 노드에 균등하게 분배하여 성능을 최적화합니다.&lt;/td&gt;
+          &lt;td&gt;HAProxy가 두 개의 인스턴스(예: &lt;code&gt;app-1&lt;/code&gt;, &lt;code&gt;app-2&lt;/code&gt;)로 요청을 분배합니다. 각 인스턴스가 50%의 트래픽을 처리합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;SSL 종료&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;HTTPS 요청을 처리하고 SSL 인증서를 관리하여 보안을 강화합니다.&lt;/td&gt;
+          &lt;td&gt;NGINX가 SSL 인증서를 사용하여 클라이언트와의 연결을 암호화합니다. 내부 통신은 HTTP로 유지합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;캐싱&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;정적 콘텐츠를 캐싱하여 반복적인 요청에 대한 응답 속도를 향상시킵니다.&lt;/td&gt;
+          &lt;td&gt;NGINX가 자주 요청되는 이미지 파일을 캐싱하여, 사용자가 이미지를 요청할 때마다 백엔드 서버에 요청하지 않습니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;트래픽 관리&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;요청의 수를 제한하거나 특정 요청을 차단하여 트래픽을 관리합니다.&lt;/td&gt;
+          &lt;td&gt;HAProxy가 특정 IP에서의 요청 수를 제한하여 DDoS 공격을 방어합니다. 예를 들어, 100초당 10회 요청으로 제한할 수 있습니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;상태 검사&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;백엔드 서비스의 상태를 주기적으로 확인하여, 실패한 서비스에 요청을 보내지 않도록 합니다.&lt;/td&gt;
+          &lt;td&gt;HAProxy가 &lt;code&gt;app-1&lt;/code&gt; 인스턴스의 상태를 확인하고, 문제가 발생한 경우 해당 인스턴스에 요청을 보내지 않도록 합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;간단하게 기존에 사용하던 &lt;strong&gt;Docker engine을 사용하지 않고 ContainerD를 사용 하게된 이유&lt;/strong&gt;를 정리하자면
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;쿠버네티스는 여러 컨테이너 런타임과 통신할 수 있도록 하는 CRI라는 표준 인터페이스를 설계함.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Docker engine은 CRI 인터페이스가 생기기전 존재한 기술로 CRI 인터페이스와 맞지 않았음.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이를 해결하기 위해 dockershim이라는 어댑터 컴포넌트를 개발하였음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이 쉼의 존재는 kubelet 자체에 많은 불필요한 복잡성을 도입했고, 일부 통합은 이 쉼 때문에 Docker에 대해 일관성 없게 구현되었으며, 이로 인해 유지 관리 부담이 증가하게 됨.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+    &lt;img src=&#34;https://storage.googleapis.com/static.fastcampus.co.kr/prod/uploads/202206/092600-704/%EC%98%A4%EA%B0%80%EB%8B%89%EC%B5%9C%EC%A2%85.png&#34; alt=&#34;image.png&#34; style=&#34;width: 1200px; height: auto;&#34;&gt;
+&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;이처럼 벤더 특정 코드(특정 제품인 Docker에 종속적인 코드)를 유지 관리하는 것은 쿠버네티스의 오픈 소스 철학에 부합하지 않았고, 2022년 4월 v1.24에서 완전한 제거를 발표하였음.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h3&gt;&lt;strong&gt;Kubernets Manager Node Install&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubernets-manager-node-install&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubernets-manager-node-install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;
+&lt;br&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# nginx를 설치합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt -y install nginx libnginx-mod-stream
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# nginx에 프록시를 세팅합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ vi /etc/nginx/nginx.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;stream &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    upstream k8s-api &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        server 7.7.7.100:6443&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# contolplan IP&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    server &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        listen 6443&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        proxy_pass k8s-api&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Nginx의 default 웹을 비활성화합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ unlink /etc/nginx/sites-enabled/default
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ systemctl restart nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# kubectl 레포지터리를 등록하고 설치합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tee /etc/apt/sources.list.d/kubernetes.list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt -y install kubectl
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# (option) kubectl alias k&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt -y install bash-completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /usr/share/bash-completion/bash_completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ kubectl completion bash &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tee /etc/bash_completion.d/kubectl &amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;alias k=kubectl&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;complete -o default -F __start_kubectl k&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; bash&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/1.-runtime/containerd/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/1.-runtime/containerd/file1/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;&lt;strong&gt;ContainerD Install&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;containerd-install&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#containerd-install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;h3&gt;&lt;strong&gt;ContainerD 환경구성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;containerd-환경구성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#containerd-%ed%99%98%ea%b2%bd%ea%b5%ac%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# CRI를 사용하기 위한 네트워크 설정&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# net.bridge.bridge-nf-call-iptables: 브리징된 네트워크 인터페이스에서 트래픽을 iptables를 통해 필터링 할 수 있도록 허용&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# net.bridge.bridge-nf-call-ip6tables: IPv6 네트워크에서도 브리지된 트래픽을 ip6tables를 통해 필터링할 수 있도록 허용&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# net.ipv4.ip_forward: IP 포워딩을 활성화&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ cat &amp;gt; /etc/sysctl.d/99-k8s-cri.conf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-iptables=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-ip6tables=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;net.ipv4.ip_forward=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 변경사항 적용&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ sysctl --system
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# OverlayFS: 파일 시스템을 로드하여 컨테이너의 파일 시스템을 효율적으로 관리&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# br_netfilter: 브리지 네트워크 트래픽을 iptables로 전달할 수 있도록 하는 모듈&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ modprobe overlay&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; modprobe br_netfilter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; -e overlay&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;nbr_netfilter &amp;gt; /etc/modules-load.d/k8s.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# iptables 백엔드를 iptables-legacy로 전환&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 쿠버네티스는 일부 환경에서 iptables-legacy 백엔드와 더 잘 호환되기 때문에 이를 설정&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# iptables-legacy: 전통적인 iptables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# iptables-nft: nftables 기반의 iptables 구현&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ update-alternatives --config iptables
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;There are &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; choices &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; the alternative iptables &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;providing /usr/sbin/iptables&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Selection    Path                       Priority   Status
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;------------------------------------------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;            /usr/sbin/iptables-nft      &lt;span class=&#34;m&#34;&gt;20&lt;/span&gt;        auto mode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;            /usr/sbin/iptables-legacy   &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;        manual mode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;            /usr/sbin/iptables-nft      &lt;span class=&#34;m&#34;&gt;20&lt;/span&gt;        manual mode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Press &amp;lt;enter&amp;gt; to keep the current choice&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;*&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, or &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; selection number: &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;iptables&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; in manual mode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# swap off&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ swapoff -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;/\/swap.img/s/^/#/&amp;#39;&lt;/span&gt; /etc/fstab
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# apparmor 프로파일 비활성화&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apparmor_parser -R /etc/apparmor.d/runc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apparmor_parser -R /etc/apparmor.d/crun
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ln -s /etc/apparmor.d/runc /etc/apparmor.d/disable/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ln -s /etc/apparmor.d/crun /etc/apparmor.d/disable/&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3&gt;&lt;strong&gt;ContainerD 설치&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;containerd-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#containerd-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;
+&lt;br&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ContainerD를 설치합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt -y install containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ContainerD의 디렉터리를 생성합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ mkdir /etc/containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ContinerD의 기본 설정파일을 생성합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ containerd config default &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tee /etc/containerd/config.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# sandbox_image 버전을 설정합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;s|^\( *sandbox_image *= *\).*|\1\&amp;#34;registry.k8s.io/pause:3.9\&amp;#34;|&amp;#34;&lt;/span&gt; /etc/containerd/config.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Cgroup의 사용여부를 수정합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;s|^\( *SystemdCgroup *= *\).*|\1true|&amp;#34;&lt;/span&gt; /etc/containerd/config.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 설정적용&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ systemctl restart containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 설치확인&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ containerd -version
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;containerd github.com/containerd/containerd 1.7.12
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ systemctl status containerd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;● containerd.service - containerd container runtime
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Loaded: loaded &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/usr/lib/systemd/system/containerd.service&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; enabled&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; preset:&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Active: active &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;running&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; since Mon 2024-09-23 09:31:59 UTC&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; 8min ago
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       Docs: https://containerd.io
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Process: &lt;span class=&#34;m&#34;&gt;1416&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ExecStartPre&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/sbin/modprobe overlay &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;exited, &lt;span class=&#34;nv&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0/SUCC&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Main PID: &lt;span class=&#34;m&#34;&gt;1418&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;containerd&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      Tasks: &lt;span class=&#34;m&#34;&gt;7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Memory: 13.3M &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;peak: 14.9M&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        CPU: 1.004s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     CGroup: /system.slice/containerd.service&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3&gt;&lt;strong&gt;container.d config 정리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;containerd-config-정리&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#containerd-config-%ec%a0%95%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;섹션&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;disabled_plugins&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;비활성화된 플러그인 목록을 정의합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;imports&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;가져올 플러그인 목록을 정의합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;oom_score&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;OOM(Out-Of-Memory) 점수를 설정하여 우선 순위를 결정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;root&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Containerd의 루트 디렉토리를 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;state&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;상태 정보를 저장할 디렉토리 위치를 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;cgroup&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;cgroup 설정 경로를 지정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;debug&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;디버깅 설정 (주소, 포맷, 레벨 등)과 관련된 옵션입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;grpc&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;GRPC 서버 설정 (소켓 주소, 메시지 크기 제한 등)을 지정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;metrics&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;메트릭 수집을 위한 설정입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;plugins&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;다양한 Containerd 플러그인의 설정을 정의합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;plugins.&amp;quot;io.containerd.gc.v1.scheduler&amp;quot;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;가비지 컬렉션 스케줄러의 설정입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;plugins.&amp;quot;io.containerd.grpc.v1.cri&amp;quot;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;CRI(Container Runtime Interface) 관련 설정입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;plugins.&amp;quot;io.containerd.grpc.v1.cri&amp;quot;.cni&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;CNI(Container Network Interface) 설정입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;plugins.&amp;quot;io.containerd.grpc.v1.cri&amp;quot;.containerd&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Containerd 자체 설정을 정의합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;plugins.&amp;quot;io.containerd.grpc.v1.cri&amp;quot;.registry&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;이미지 레지스트리와 관련된 설정입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;plugins.&amp;quot;io.containerd.runtime.v1.linux&amp;quot;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Linux 런타임 설정입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;plugins.&amp;quot;io.containerd.snapshotter.v1.overlayfs&amp;quot;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;OverlayFS 스냅샷터 설정입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;stream_processors&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;스트림 프로세서 관련 설정을 정의합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;timeouts&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Containerd 내부에서 다양한 작업의 타임아웃을 정의합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;ttrpc&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;TTRPC 관련 설정입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/10.-cims/harbor/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/10.-cims/harbor/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/elasticsearch/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/elasticsearch/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/fluentd/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/fluentd/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/kibana/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/kibana/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/12.ci/cd/argocd/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/12.ci/cd/argocd/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/13.-mcm/karmada/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/13.-mcm/karmada/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/calico/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/calico/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/metallb/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/metallb/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/nginx/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/nginx/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/4.-tools/helm/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/4.-tools/helm/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/4.-tools/openlens/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/4.-tools/openlens/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/5.-cns/rook/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/5.-cns/rook/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/6.-br/velero/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/6.-br/velero/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/7.-mesh/istio/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/7.-mesh/istio/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/8.-ams/keycloak/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/8.-ams/keycloak/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/9.-kms/vault/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/9.-kms/vault/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/99.-etc/0/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/99.-etc/0/file1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>1. Docker 기본 명령어</title>
+      <link>https://mungops.github.io/devops/docker/docker01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/docker/docker01/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Docker&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h2&gt;Docker 기본 명령어&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-기본-명령어&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-%ea%b8%b0%eb%b3%b8-%eb%aa%85%eb%a0%b9%ec%96%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;컨테이너 생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;컨테이너-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker run &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTION&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; NAME&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;:TAG&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;@DIGEST&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-d, &amp;ndash;detach&lt;/td&gt;
+          &lt;td&gt;백그라운드에서 실행합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-i, &amp;ndash;interactive&lt;/td&gt;
+          &lt;td&gt;상호적으로 실행하며, 표준 입력을 유지합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-t, &amp;ndash;tty&lt;/td&gt;
+          &lt;td&gt;할당된 tty를 사용하여 실행합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;name&lt;/td&gt;
+          &lt;td&gt;컨테이너에 이름을 할당합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-e, &amp;ndash;env&lt;/td&gt;
+          &lt;td&gt;컨테이너 내에서 사용할 환경 변수를 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;rm&lt;/td&gt;
+          &lt;td&gt;컨테이너가 종료되면 자동으로 삭제합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;network&lt;/td&gt;
+          &lt;td&gt;컨테이너가 사용할 네트워크를 지정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;publish, -p&lt;/td&gt;
+          &lt;td&gt;호스트와 컨테이너 간의 포트 매핑을 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;volume, -v&lt;/td&gt;
+          &lt;td&gt;호스트와 컨테이너 간의 볼륨 매핑을 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Network 생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;network-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#network-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker network create &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; NETWORK&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;옵션&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-d&lt;/td&gt;
+          &lt;td&gt;네트워크 드라이버 지정 (기본값: bridge)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;subnet&lt;/td&gt;
+          &lt;td&gt;네트워크의 서브넷 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;gateway&lt;/td&gt;
+          &lt;td&gt;네트워크의 게이트웨이 IP 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;ip-range&lt;/td&gt;
+          &lt;td&gt;네트워크의 IP 범위 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;attachable&lt;/td&gt;
+          &lt;td&gt;기존 네트워크에 컨테이너 연결 허용&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;internal&lt;/td&gt;
+          &lt;td&gt;외부에서의 네트워크 접근 제한&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;label&lt;/td&gt;
+          &lt;td&gt;네트워크에 메타데이터 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;opt&lt;/td&gt;
+          &lt;td&gt;드라이버별 옵션 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;ipv6&lt;/td&gt;
+          &lt;td&gt;IPv6 지원 활성화&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;ipam-driver&lt;/td&gt;
+          &lt;td&gt;IP 주소 관리 드라이버 지정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;ipam-opt&lt;/td&gt;
+          &lt;td&gt;IP 주소 관리 옵션 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;attachable&lt;/td&gt;
+          &lt;td&gt;기존 네트워크에 컨테이너 연결 허용&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;internal&lt;/td&gt;
+          &lt;td&gt;외부에서의 네트워크 접근 제한&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;ingress&lt;/td&gt;
+          &lt;td&gt;인그레스 네트워크 생성&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;ingress-opt&lt;/td&gt;
+          &lt;td&gt;인그레스 옵션 설정&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;volume 생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;volume-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#volume-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker volume create &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; STORAGE&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;옵션&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;storage-driver&lt;/td&gt;
+          &lt;td&gt;사용할 스토리지 드라이버 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;volume-driver&lt;/td&gt;
+          &lt;td&gt;사용할 볼륨 드라이버 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;add-registry&lt;/td&gt;
+          &lt;td&gt;이미지를 가져올 도커 레지스트리 추가&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;disable-content-trust&lt;/td&gt;
+          &lt;td&gt;이미지에 대한 콘텐츠 신뢰 기능 비활성화&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;icc&lt;/td&gt;
+          &lt;td&gt;컨테이너 간 통신 허용 여부 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;live-restore&lt;/td&gt;
+          &lt;td&gt;도커 데몬 재시작 시 컨테이너 자동 복구 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;log-driver&lt;/td&gt;
+          &lt;td&gt;로깅 드라이버 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;log-level&lt;/td&gt;
+          &lt;td&gt;로깅 레벨 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;storage-opt&lt;/td&gt;
+          &lt;td&gt;스토리지 드라이버 옵션 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;selinux-enabled&lt;/td&gt;
+          &lt;td&gt;SELinux 지원 여부 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;storage-opt&lt;/td&gt;
+          &lt;td&gt;스토리지 드라이버 옵션 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;tls&lt;/td&gt;
+          &lt;td&gt;TLS 보안 연결 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;tlscacert&lt;/td&gt;
+          &lt;td&gt;TLS CA 인증서 파일 경로 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;tlscert&lt;/td&gt;
+          &lt;td&gt;TLS 인증서 파일 경로 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;tlskey&lt;/td&gt;
+          &lt;td&gt;TLS 키 파일 경로 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;tlsverify&lt;/td&gt;
+          &lt;td&gt;TLS 연결 검증 설정&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;컨테니어 시작&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;컨테니어-시작&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%bb%a8%ed%85%8c%eb%8b%88%ec%96%b4-%ec%8b%9c%ec%9e%91&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker start &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTION&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-d, &amp;ndash;detach&lt;/td&gt;
+          &lt;td&gt;백그라운드에서 실행합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-i, &amp;ndash;interactive&lt;/td&gt;
+          &lt;td&gt;상호적으로 실행하며, 표준 입력을 유지합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-t, &amp;ndash;tty&lt;/td&gt;
+          &lt;td&gt;할당된 tty를 사용하여 실행합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;name&lt;/td&gt;
+          &lt;td&gt;컨테이너에 이름을 할당합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-e, &amp;ndash;env&lt;/td&gt;
+          &lt;td&gt;컨테이너 내에서 사용할 환경 변수를 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;rm&lt;/td&gt;
+          &lt;td&gt;컨테이너가 종료되면 자동으로 삭제합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;network&lt;/td&gt;
+          &lt;td&gt;컨테이너가 사용할 네트워크를 지정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;publish, -p&lt;/td&gt;
+          &lt;td&gt;호스트와 컨테이너 간의 포트 매핑을 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;volume, -v&lt;/td&gt;
+          &lt;td&gt;호스트와 컨테이너 간의 볼륨 매핑을 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;컨테이너 목록 확인&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;컨테이너-목록-확인&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%eb%aa%a9%eb%a1%9d-%ed%99%95%ec%9d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker ps &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTION&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-a, &amp;ndash;all&lt;/td&gt;
+          &lt;td&gt;모든 컨테이너를 출력합니다. (종료된 컨테이너 포함)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-q, &amp;ndash;quiet&lt;/td&gt;
+          &lt;td&gt;컨테이너 ID만 출력합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;no-trunc&lt;/td&gt;
+          &lt;td&gt;출력을 자르지 않고 전체 정보를 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-n, &amp;ndash;last n&lt;/td&gt;
+          &lt;td&gt;최근 n개의 컨테이너만 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-s, &amp;ndash;size&lt;/td&gt;
+          &lt;td&gt;각 컨테이너의 크기 정보를 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;format&lt;/td&gt;
+          &lt;td&gt;사용자 지정 포맷으로 출력합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;filter&lt;/td&gt;
+          &lt;td&gt;필터를 적용하여 특정 조건을 만족하는 컨테이너만 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;컨테이너 중지&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;컨테이너-중지&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%a4%91%ec%a7%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker stop &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; CONTAINER &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;CONTAINER...&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-t, &amp;ndash;time&lt;/td&gt;
+          &lt;td&gt;정지 프로세스에 대한 타임아웃(초)을 설정합니다. 기본값은 10초입니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;컨테이너 제거&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;컨테이너-제거&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%a0%9c%ea%b1%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker rm &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; CONTAINER &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;CONTAINER...&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-f, &amp;ndash;force&lt;/td&gt;
+          &lt;td&gt;실행 중인 컨테이너를 강제로 중지하고 제거합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-v, &amp;ndash;volumes&lt;/td&gt;
+          &lt;td&gt;컨테이너와 관련된 볼륨을 함께 제거합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;link&lt;/td&gt;
+          &lt;td&gt;컨테이너를 다른 컨테이너에 연결한 경우 해당 연결을 제거합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;이미지 확인&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;이미지-확인&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%9d%b4%eb%af%b8%ec%a7%80-%ed%99%95%ec%9d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker images &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;REPOSITORY&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;:TAG&lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-a, &amp;ndash;all&lt;/td&gt;
+          &lt;td&gt;모든 이미지를 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;digests&lt;/td&gt;
+          &lt;td&gt;각 이미지의 다이제스트 정보를 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;format&lt;/td&gt;
+          &lt;td&gt;사용자 지정 포맷으로 출력합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;no-trunc&lt;/td&gt;
+          &lt;td&gt;출력을 자르지 않고 전체 정보를 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-q, &amp;ndash;quiet&lt;/td&gt;
+          &lt;td&gt;이미지 ID만 출력합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;이미지 다운로드&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;이미지-다운로드&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%9d%b4%eb%af%b8%ec%a7%80-%eb%8b%a4%ec%9a%b4%eb%a1%9c%eb%93%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker pull &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; NAME&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;:TAG&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;@DIGEST&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-a, &amp;ndash;all-tags&lt;/td&gt;
+          &lt;td&gt;이미지의 모든 태그를 가져옵니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;disable-content-trust&lt;/td&gt;
+          &lt;td&gt;이미지의 내용 신뢰 기능을 비활성화합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;이미지 삭제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;이미지-삭제&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%9d%b4%eb%af%b8%ec%a7%80-%ec%82%ad%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker rmi &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; IMAGE &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;IMAGE...&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;컨테이너 접속&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;컨테이너-접속&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%a0%91%ec%86%8d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; CONTAINER COMMAND &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;ARG...&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-d, &amp;ndash;detach&lt;/td&gt;
+          &lt;td&gt;백그라운드에서 실행합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-i, &amp;ndash;interactive&lt;/td&gt;
+          &lt;td&gt;상호적으로 실행하며, 표준 입력을 유지합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;env&lt;/td&gt;
+          &lt;td&gt;컨테이너 내에서 사용할 환경 변수를 설정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;user&lt;/td&gt;
+          &lt;td&gt;명령을 실행할 사용자 또는 UID를 지정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;workdir&lt;/td&gt;
+          &lt;td&gt;명령을 실행할 작업 디렉토리를 지정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;tty&lt;/td&gt;
+          &lt;td&gt;할당된 tty를 사용하여 실행합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;컨테이너 로그 확인&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;컨테이너-로그-확인&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%eb%a1%9c%ea%b7%b8-%ed%99%95%ec%9d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker logs &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; CONTAINER&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;details&lt;/td&gt;
+          &lt;td&gt;로그 항목의 추가 세부 정보를 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-f, &amp;ndash;follow&lt;/td&gt;
+          &lt;td&gt;실시간으로 로그를 출력하며, 계속해서 갱신됩니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;since&lt;/td&gt;
+          &lt;td&gt;특정 시간 이후의 로그만 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;tail&lt;/td&gt;
+          &lt;td&gt;지정된 개수의 최근 로그 항목만 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-t, &amp;ndash;timestamps&lt;/td&gt;
+          &lt;td&gt;로그 항목에 타임스탬프를 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;until&lt;/td&gt;
+          &lt;td&gt;특정 시간 이전의 로그만 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말을 표시합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;이미지 생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;이미지-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%9d%b4%eb%af%b8%ec%a7%80-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker commit &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;OPTION&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;CONTAINER&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;NAME&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;OPTION&lt;/th&gt;
+          &lt;th&gt;특징&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-a, &amp;ndash;author&lt;/td&gt;
+          &lt;td&gt;커미트한 사용자를 지정합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-c, &amp;ndash;change&lt;/td&gt;
+          &lt;td&gt;이미지 생성 시 Dockerfile 형식으로 변경을 추가합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-m, &amp;ndash;message&lt;/td&gt;
+          &lt;td&gt;커밋에 대한 설명 또는 메시지를 추가합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-p, &amp;ndash;pause&lt;/td&gt;
+          &lt;td&gt;커밋 시 컨테이너를 일시 중지합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Kubeadm install</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/2.-provisioning/kubeadm/file1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/2.-provisioning/kubeadm/file1/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;&lt;strong&gt;Kubeadm Install&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubeadm-install&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubeadm-install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;kubeadm을 설치하기 위한 환경은 &lt;a href=&#34;http://mungdocs.kro.kr/devops/docs/Kubernetes/Kubernetes/1.-Runtime/ContainerD/file1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;전 인덱스&lt;/a&gt;를 참고 부탁드립니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 쿠버네티스 패키지 저장소에서 GPG 키를 다운로드&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 쿠버네티스 저장소를 추가&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tee /etc/apt/sources.list.d/kubernetes.list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 패키지 목록 업데이트&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# kubeadm kubelet kubectl Install&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt -y install kubeadm kubelet kubectl&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;명령어&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+          &lt;th&gt;주요 기능 및 역할&lt;/th&gt;
+          &lt;th&gt;예시&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;kubeadm&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;쿠버네티스 클러스터를 초기화하고 관리하는 도구입니다.&lt;/td&gt;
+          &lt;td&gt;클러스터 초기화, 클러스터 업그레이드, 인증서 관리, 토큰 관리&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubeadm initkubeadm join&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;kubelet&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;각 노드에서 실행되는 주요 에이전트로, 컨테이너의 상태를 관리하는 역할을 수행합니다.&lt;/td&gt;
+          &lt;td&gt;컨테이너 생성 및 관리, Pod 상태 확인 및 보고- 노드 상태 확인&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/etc/systemd/system/kubelet.service&lt;/code&gt;로 실행&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;kubectl&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;쿠버네티스 클러스터를 관리하고 조작하기 위한 CLI(Command Line Interface) 도구입니다.&lt;/td&gt;
+          &lt;td&gt;리소스 조회 및 관리, 애플리케이션 배포 및 업데이트, 로그 확인&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;kubectl get podskubectl apply -f deployment.yaml&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Kubeadm update</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/2.-provisioning/kubeadm/file2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/2.-provisioning/kubeadm/file2/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;&lt;strong&gt;Kubeadm update&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubeadm-update&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubeadm-update&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;h3&gt;&lt;strong&gt;차후 작성예정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;차후-작성예정&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%ec%b0%a8%ed%9b%84-%ec%9e%91%ec%84%b1%ec%98%88%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>2. Docker Registry</title>
+      <link>https://mungops.github.io/devops/docker/docker02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/docker/docker02/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Docker&lt;/h1&gt;&lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;Docker Registry&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-registry&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-registry&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;img src=&#34;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbKbngS%2FbtrI2ZqGO68%2FlRguTdxlQ8EbO9OLozD0Nk%2Fimg.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Registry&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;registry&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#registry&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Docker의 Registry는 이미지를 저장하는 장소이며 크게 Docker Hub, Private Registry로 나뉘어진다.&lt;/li&gt;
+&lt;li&gt;Private Registry는 내부망, 로컬으로 나뉘어진다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Docker Hub 사용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-hub-사용&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-hub-%ec%82%ac%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker login
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker tag Push_image &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;ID&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;/&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Image_name&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ docker pull &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;ID&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;/&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;REPO&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>3. Dockerfile&amp; Compose</title>
+      <link>https://mungops.github.io/devops/docker/docker03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/docker/docker03/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Docker&lt;/h1&gt;&lt;hr&gt;
+&lt;h2&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;dockerfile&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dockerfile&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;dockerfile-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dockerfile-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Instruction&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ADD&lt;/td&gt;
+          &lt;td&gt;로컬 또는 원격 파일 및 디렉토리 추가&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ARG&lt;/td&gt;
+          &lt;td&gt;빌드 시간 변수 사용&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;CMD&lt;/td&gt;
+          &lt;td&gt;기본 명령어 지정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;COPY&lt;/td&gt;
+          &lt;td&gt;파일 및 디렉토리 복사&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ENTRYPOINT&lt;/td&gt;
+          &lt;td&gt;기본 실행 파일 지정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ENV&lt;/td&gt;
+          &lt;td&gt;환경 변수 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;EXPOSE&lt;/td&gt;
+          &lt;td&gt;응용 프로그램이 수신 대기 중인 포트 설명&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;FROM&lt;/td&gt;
+          &lt;td&gt;기본 이미지에서 새 빌드 단계 생성&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;HEALTHCHECK&lt;/td&gt;
+          &lt;td&gt;컨테이너의 시작 시간에 대한 건강 상태 확인&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;LABEL&lt;/td&gt;
+          &lt;td&gt;이미지에 메타데이터 추가&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;MAINTAINER&lt;/td&gt;
+          &lt;td&gt;이미지 작성자 지정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ONBUILD&lt;/td&gt;
+          &lt;td&gt;이미지가 빌드에 사용될 때 지시&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;RUN&lt;/td&gt;
+          &lt;td&gt;빌드 명령어 실행&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SHELL&lt;/td&gt;
+          &lt;td&gt;이미지의 기본 셸 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;STOPSIGNAL&lt;/td&gt;
+          &lt;td&gt;컨테이너 종료에 대한 시스템 콜 신호 지정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;USER&lt;/td&gt;
+          &lt;td&gt;사용자 및 그룹 ID 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;VOLUME&lt;/td&gt;
+          &lt;td&gt;볼륨 마운트 생성&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WORKDIR&lt;/td&gt;
+          &lt;td&gt;작업 디렉토리 변경&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Dockerfile 예시&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;dockerfile-예시&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dockerfile-%ec%98%88%ec%8b%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 기본 이미지로부터 빌드 스테이지 생성&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; ubuntu:latest&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 로컬 또는 원격 파일 및 디렉토리 추가&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; ./app /app&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 빌드 시간 변수 사용&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ARG&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;.0&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 기본 명령어 지정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CMD&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;./app/start.sh&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 파일 및 디렉토리 복사&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; ./config /config&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 기본 실행 파일 지정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ENTRYPOINT&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/app/entrypoint.sh&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 환경 변수 설정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ENV&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;APP_HOME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/app&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 응용 프로그램이 수신 대기 중인 포트 설명&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;EXPOSE&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 8080&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 건강 상태 확인&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;HEALTHCHECK&lt;/span&gt; CMD curl --fail http://localhost:8080/ &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 이미지에 메타데이터 추가&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;LABEL&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$version&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;LABEL&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;maintainer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Your Name &amp;lt;your.email@example.com&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 이미지 작성자 지정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;MAINTAINER&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; Your Name &amp;lt;your.email@example.com&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 이미지가 빌드에 사용될 때 지시&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ONBUILD&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; . /app/src&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ONBUILD&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; /app/build.sh&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 빌드 명령어 실행&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get install -y &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    package1 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    package2 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -rf /var/lib/apt/lists/*&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 이미지의 기본 셸 설정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;SHELL&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;-c&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 컨테이너 종료에 대한 시스템 콜 신호 지정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;STOPSIGNAL&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; SIGTERM&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 사용자 및 그룹 ID 설정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;USER&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 1000:1000&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 볼륨 마운트 생성&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;VOLUME&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /app/data&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 작업 디렉토리 변경&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WORKDIR&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /app&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;h3&gt;&lt;strong&gt;Docker compose&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;docker-compose&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#docker-compose&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;version: &lt;span class=&#34;s1&#34;&gt;&amp;#39;3&amp;#39;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 도커 컴포즈 버전 지정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;services:  &lt;span class=&#34;c1&#34;&gt;# 서비스 정의 시작&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  web:  &lt;span class=&#34;c1&#34;&gt;# 서비스 이름&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    image: nginx:latest  &lt;span class=&#34;c1&#34;&gt;# 도커 이미지 지정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    ports:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;      - &lt;span class=&#34;s2&#34;&gt;&amp;#34;8080:80&amp;#34;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 호스트와 컨테이너 포트 매핑&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    volumes:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;      - ./web-content:/usr/share/nginx/html  &lt;span class=&#34;c1&#34;&gt;# 볼륨 매핑&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    networks:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;      - frontend  &lt;span class=&#34;c1&#34;&gt;# 네트워크 지정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  db:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    image: mysql:latest&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    environment:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;      MYSQL_ROOT_PASSWORD: example  &lt;span class=&#34;c1&#34;&gt;# 환경 변수 설정&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    volumes:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;      - db-data:/var/lib/mysql&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    networks:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;      - backend&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;networks:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  frontend:  &lt;span class=&#34;c1&#34;&gt;# 사용자 정의 네트워크 정의&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  backend:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;volumes:&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  db-data:  &lt;span class=&#34;c1&#34;&gt;# 사용자 정의 볼륨 정의&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;옵션&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-f, &amp;ndash;file&lt;/td&gt;
+          &lt;td&gt;컴포즈 설정 파일 지정 (기본값: docker-compose.yml)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-p, &amp;ndash;project-name&lt;/td&gt;
+          &lt;td&gt;프로젝트 이름 설정 (기본값: 디렉터리 이름)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-v, &amp;ndash;verbose&lt;/td&gt;
+          &lt;td&gt;자세한 출력 활성화&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-q, &amp;ndash;quiet&lt;/td&gt;
+          &lt;td&gt;출력을 최소화&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;log-level&lt;/td&gt;
+          &lt;td&gt;로그 레벨 설정 (기본값: INFO)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;no-ansi&lt;/td&gt;
+          &lt;td&gt;ANSI 제어 코드를 사용하지 않음&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;version&lt;/td&gt;
+          &lt;td&gt;버전 정보 출력&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;help&lt;/td&gt;
+          &lt;td&gt;도움말 출력&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-H, &amp;ndash;host&lt;/td&gt;
+          &lt;td&gt;컴포즈 엔진에 연결할 Docker 호스트 설정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;compatibility&lt;/td&gt;
+          &lt;td&gt;호환성 모드 활성화 (v3 이하의 구성 파일 사용)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;env-file&lt;/td&gt;
+          &lt;td&gt;환경 파일에서 변수 지정&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;project-directory&lt;/td&gt;
+          &lt;td&gt;프로젝트 디렉터리 설정 (기본값: 현재 디렉터리)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;compatibility&lt;/td&gt;
+          &lt;td&gt;호환성 모드 활성화 (v3 이하의 구성 파일 사용)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;project-directory&lt;/td&gt;
+          &lt;td&gt;프로젝트 디렉터리 설정 (기본값: 현재 디렉터리)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;compatibility&lt;/td&gt;
+          &lt;td&gt;호환성 모드 활성화 (v3 이하의 구성 파일 사용)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;project-directory&lt;/td&gt;
+          &lt;td&gt;프로젝트 디렉터리 설정 (기본값: 현재 디렉터리)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;compatibility&lt;/td&gt;
+          &lt;td&gt;호환성 모드 활성화 (v3 이하의 구성 파일 사용)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;project-directory&lt;/td&gt;
+          &lt;td&gt;프로젝트 디렉터리 설정 (기본값: 현재 디렉터리)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;compatibility&lt;/td&gt;
+          &lt;td&gt;호환성 모드 활성화 (v3 이하의 구성 파일 사용)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;ndash;project-directory&lt;/td&gt;
+          &lt;td&gt;프로젝트 디렉터리 설정 (기본값: 현재 디렉터리)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>4. Docker 실습</title>
+      <link>https://mungops.github.io/devops/docker/docker04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/docker/docker04/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Docker&lt;/h1&gt;&lt;hr&gt;
+&lt;h1&gt;&lt;/h1&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/10.-cims/harbor/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/10.-cims/harbor/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/elasticsearch/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/elasticsearch/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/fluentd/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/fluentd/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/kibana/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/kibana/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/12.ci/cd/argocd/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/12.ci/cd/argocd/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/13.-mcm/karmada/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/13.-mcm/karmada/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/calico/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/calico/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/metallb/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/metallb/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/nginx/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/3.-cni/nginx/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/4.-tools/helm/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/4.-tools/helm/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/4.-tools/openlens/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/4.-tools/openlens/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/5.-cns/rook/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/5.-cns/rook/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/6.-br/velero/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/6.-br/velero/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/7.-mesh/istio/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/7.-mesh/istio/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/8.-ams/keycloak/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/8.-ams/keycloak/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/9.-kms/vault/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/9.-kms/vault/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title> Concept</title>
+      <link>https://mungops.github.io/devops/kubernetes/kubernetes/99.-etc/0/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/99.-etc/0/file0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;aaa&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mungOps – System</title>
+    <link>http://localhost:1313/database-copy/</link>
+    <description>Recent content in System on mungOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    
+	  <atom:link href="http://localhost:1313/database-copy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
