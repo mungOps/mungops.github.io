@@ -237,9 +237,7 @@
       <description>
         
         
-        &lt;p&gt;이전 포맷을 유지하면서 &lt;strong&gt;Docker 설치 및 환경 구성, 이미지 &amp;amp; 컨테이너 관리&lt;/strong&gt;에 대한 내용을 상세하게 정리해볼게요! 🚀&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Docker 설치 및 환경 구성 🛠️&lt;/h1&gt;&lt;hr&gt;
+        &lt;h1&gt;Docker 설치 및 환경 구성 🛠️&lt;/h1&gt;&lt;hr&gt;
 &lt;h2&gt;1️⃣ Docker 설치 (Linux, Windows, Mac)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-docker-설치-linux-windows-mac&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#1-docker-%ec%84%a4%ec%b9%98-linux-windows-mac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;📌 Docker는 다양한 운영체제에서 설치할 수 있으며, 아래 방법을 따라 설치할 수 있습니다.&lt;/p&gt;
 &lt;h3&gt;🔹 1 Linux (Ubuntu 기준)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-linux-ubuntu-기준&#34;&gt;&lt;/span&gt;
@@ -619,9 +617,8 @@
       <description>
         
         
-        &lt;p&gt;이전 포맷을 유지하면서 &lt;strong&gt;Docker Compose 활용&lt;/strong&gt;에 대한 내용을 상세하게 정리해볼게요! 🚀&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Docker Compose 활용 🛠️&lt;/h1&gt;&lt;h2&gt;1️⃣ Docker Compose 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-docker-compose-설치&#34;&gt;&lt;/span&gt;
+        &lt;h1&gt;Docker Compose 활용 🛠️&lt;/h1&gt;&lt;hr&gt;
+&lt;h2&gt;1️⃣ Docker Compose 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-docker-compose-설치&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#1-docker-compose-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Docker Compose는 &lt;strong&gt;여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구&lt;/strong&gt;입니다.&lt;/p&gt;
 &lt;h3&gt;🔹 1 Linux에서 Docker Compose 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-linux에서-docker-compose-설치&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#-1-linux%ec%97%90%ec%84%9c-docker-compose-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;

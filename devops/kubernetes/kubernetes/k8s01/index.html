@@ -11,11 +11,12 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Architecture – mungOps</title>
-  <meta name="description" content="쿠버네티스 아키텍처 (Kubernetes Architecture)쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 자동으로 배포, 확장 및 운영할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.
+  <meta name="description" content="쿠버네티스 아키텍처 (Kubernetes Architecture) 쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 자동으로 배포, 확장 및 운영할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.
 이를 가능하게 하는 구조는 크게 컨트롤 플레인(Control Plane)과 워커 노드(Worker Node) 로 나뉜다." /><link rel="canonical" href="https://mungops.github.io/devops/kubernetes/kubernetes/k8s01/" itemprop="url" />
 
 <meta property="og:title" content="Architecture" />
-<meta property="og:description" content="쿠버네티스 아키텍처 (Kubernetes Architecture)쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 자동으로 배포, 확장 및 운영할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.
+<meta property="og:description" content="쿠버네티스 아키텍처 (Kubernetes Architecture)
+쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 자동으로 배포, 확장 및 운영할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.
 이를 가능하게 하는 구조는 크게 컨트롤 플레인(Control Plane)과 워커 노드(Worker Node) 로 나뉜다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/devops/kubernetes/kubernetes/k8s01/" /><meta property="article:section" content="devops" />
@@ -23,12 +24,12 @@
 
 
   <meta itemprop="name" content="Architecture">
-  <meta itemprop="description" content="쿠버네티스 아키텍처 (Kubernetes Architecture)쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 자동으로 배포, 확장 및 운영할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.
+  <meta itemprop="description" content="쿠버네티스 아키텍처 (Kubernetes Architecture) 쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 자동으로 배포, 확장 및 운영할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.
 이를 가능하게 하는 구조는 크게 컨트롤 플레인(Control Plane)과 워커 노드(Worker Node) 로 나뉜다.">
-  <meta itemprop="wordCount" content="1765">
+  <meta itemprop="wordCount" content="1753">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Architecture">
-  <meta name="twitter:description" content="쿠버네티스 아키텍처 (Kubernetes Architecture)쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 자동으로 배포, 확장 및 운영할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.
+  <meta name="twitter:description" content="쿠버네티스 아키텍처 (Kubernetes Architecture) 쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 자동으로 배포, 확장 및 운영할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.
 이를 가능하게 하는 구조는 크게 컨트롤 플레인(Control Plane)과 워커 노드(Worker Node) 로 나뉜다.">
 
     <link rel="preload" href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" as="style" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
@@ -3434,7 +3435,8 @@
 
         <div class="content">
           <h1>Architecture</h1>
-          <h1><strong>쿠버네티스 아키텍처 (Kubernetes Architecture)</strong></h1><p>쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 <strong>자동으로 배포, 확장 및 운영</strong>할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.<br>
+          <h1><strong>쿠버네티스 아키텍처 (Kubernetes Architecture)</strong></h1><hr>
+<p>쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 <strong>자동으로 배포, 확장 및 운영</strong>할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.<br>
 이를 가능하게 하는 구조는 크게 <strong>컨트롤 플레인(Control Plane)과 워커 노드(Worker Node)</strong> 로 나뉜다.</p>
 <p><img src="https://kubernetes.io/images/docs/components-of-kubernetes.svg" alt="Kubernetes 아키텍처 개요" loading="lazy" /><br>
 <em>출처: Kubernetes 공식 문서</em></p>

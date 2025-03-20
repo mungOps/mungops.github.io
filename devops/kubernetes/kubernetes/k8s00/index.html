@@ -11,14 +11,12 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Kubernetes – mungOps</title>
-  <meta name="description" content="아래와 같이 Kubernetes 개요에 대한 포스팅 초안을 작성해봤어. 추가로 원하는 내용이나 수정할 부분이 있으면 말해줘!
-📌 쿠버네티스(Kubernetes) 개요 1️⃣ 쿠버네티스란? 쿠버네티스(Kubernetes, K8s)는 컨테이너 오케스트레이션(Container Orchestration) 플랫폼으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다." /><link rel="canonical" href="https://mungops.github.io/devops/kubernetes/kubernetes/k8s00/" itemprop="url" />
+  <meta name="description" content="📌 쿠버네티스(Kubernetes) 개요 1️⃣ 쿠버네티스란? 쿠버네티스(Kubernetes, K8s)는 컨테이너 오케스트레이션(Container Orchestration) 플랫폼으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다." /><link rel="canonical" href="https://mungops.github.io/devops/kubernetes/kubernetes/k8s00/" itemprop="url" />
 
 <meta property="og:title" content="Kubernetes" />
-<meta property="og:description" content="아래와 같이 Kubernetes 개요에 대한 포스팅 초안을 작성해봤어. 추가로 원하는 내용이나 수정할 부분이 있으면 말해줘!
-
-📌 쿠버네티스(Kubernetes) 개요
-    1️⃣ 쿠버네티스란?
+<meta property="og:description" content="📌 쿠버네티스(Kubernetes) 개요
+    
+1️⃣ 쿠버네티스란?
     쿠버네티스(Kubernetes, K8s)는 컨테이너 오케스트레이션(Container Orchestration) 플랫폼으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/devops/kubernetes/kubernetes/k8s00/" /><meta property="article:section" content="devops" />
@@ -26,13 +24,11 @@
 
 
   <meta itemprop="name" content="Kubernetes">
-  <meta itemprop="description" content="아래와 같이 Kubernetes 개요에 대한 포스팅 초안을 작성해봤어. 추가로 원하는 내용이나 수정할 부분이 있으면 말해줘!
-📌 쿠버네티스(Kubernetes) 개요 1️⃣ 쿠버네티스란? 쿠버네티스(Kubernetes, K8s)는 컨테이너 오케스트레이션(Container Orchestration) 플랫폼으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다.">
-  <meta itemprop="wordCount" content="1329">
+  <meta itemprop="description" content="📌 쿠버네티스(Kubernetes) 개요 1️⃣ 쿠버네티스란? 쿠버네티스(Kubernetes, K8s)는 컨테이너 오케스트레이션(Container Orchestration) 플랫폼으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다.">
+  <meta itemprop="wordCount" content="1283">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Kubernetes">
-  <meta name="twitter:description" content="아래와 같이 Kubernetes 개요에 대한 포스팅 초안을 작성해봤어. 추가로 원하는 내용이나 수정할 부분이 있으면 말해줘!
-📌 쿠버네티스(Kubernetes) 개요 1️⃣ 쿠버네티스란? 쿠버네티스(Kubernetes, K8s)는 컨테이너 오케스트레이션(Container Orchestration) 플랫폼으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다.">
+  <meta name="twitter:description" content="📌 쿠버네티스(Kubernetes) 개요 1️⃣ 쿠버네티스란? 쿠버네티스(Kubernetes, K8s)는 컨테이너 오케스트레이션(Container Orchestration) 플랫폼으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다.">
 
     <link rel="preload" href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" as="style" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
     <link href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" rel="stylesheet" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
@@ -3393,10 +3389,9 @@
 
         <div class="content">
           <h1>Kubernetes</h1>
-          <p>아래와 같이 Kubernetes 개요에 대한 포스팅 초안을 작성해봤어. 추가로 원하는 내용이나 수정할 부분이 있으면 말해줘!</p>
-<hr>
-<h3>📌 <strong>쿠버네티스(Kubernetes) 개요</strong><span class="hx-absolute -hx-mt-20" id="-쿠버네티스kubernetes-개요"></span>
-    <a href="#-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4kubernetes-%ea%b0%9c%ec%9a%94" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h2>1️⃣ <strong>쿠버네티스란?</strong><span class="hx-absolute -hx-mt-20" id="1-쿠버네티스란"></span>
+          <h3>📌 <strong>쿠버네티스(Kubernetes) 개요</strong><span class="hx-absolute -hx-mt-20" id="-쿠버네티스kubernetes-개요"></span>
+    <a href="#-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4kubernetes-%ea%b0%9c%ec%9a%94" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><hr>
+<h2>1️⃣ <strong>쿠버네티스란?</strong><span class="hx-absolute -hx-mt-20" id="1-쿠버네티스란"></span>
     <a href="#1-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4%eb%9e%80" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>쿠버네티스(Kubernetes, K8s)는 <strong>컨테이너 오케스트레이션(Container Orchestration) 플랫폼</strong>으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다.</p>
 <p>Google이 내부에서 사용하던 Borg 시스템을 기반으로 개발한 오픈소스 프로젝트로, 현재는 CNCF(Cloud Native Computing Foundation)에서 관리하고 있다.</p>
 <h3>🔹 <strong>컨테이너 오케스트레이션 개념</strong><span class="hx-absolute -hx-mt-20" id="-컨테이너-오케스트레이션-개념"></span>

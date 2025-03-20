@@ -23,10 +23,9 @@
       <description>
         
         
-        &lt;p&gt;아래와 같이 Kubernetes 개요에 대한 포스팅 초안을 작성해봤어. 추가로 원하는 내용이나 수정할 부분이 있으면 말해줘!&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3&gt;📌 &lt;strong&gt;쿠버네티스(Kubernetes) 개요&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-쿠버네티스kubernetes-개요&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4kubernetes-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h2&gt;1️⃣ &lt;strong&gt;쿠버네티스란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-쿠버네티스란&#34;&gt;&lt;/span&gt;
+        &lt;h3&gt;📌 &lt;strong&gt;쿠버네티스(Kubernetes) 개요&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-쿠버네티스kubernetes-개요&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4kubernetes-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;
+&lt;h2&gt;1️⃣ &lt;strong&gt;쿠버네티스란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-쿠버네티스란&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#1-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;쿠버네티스(Kubernetes, K8s)는 &lt;strong&gt;컨테이너 오케스트레이션(Container Orchestration) 플랫폼&lt;/strong&gt;으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다.&lt;/p&gt;
 &lt;p&gt;Google이 내부에서 사용하던 Borg 시스템을 기반으로 개발한 오픈소스 프로젝트로, 현재는 CNCF(Cloud Native Computing Foundation)에서 관리하고 있다.&lt;/p&gt;
 &lt;h3&gt;🔹 &lt;strong&gt;컨테이너 오케스트레이션 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-컨테이너-오케스트레이션-개념&#34;&gt;&lt;/span&gt;
@@ -135,7 +134,8 @@
       <description>
         
         
-        &lt;h1&gt;&lt;strong&gt;쿠버네티스 아키텍처 (Kubernetes Architecture)&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 &lt;strong&gt;자동으로 배포, 확장 및 운영&lt;/strong&gt;할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.&lt;br&gt;
+        &lt;h1&gt;&lt;strong&gt;쿠버네티스 아키텍처 (Kubernetes Architecture)&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 &lt;strong&gt;자동으로 배포, 확장 및 운영&lt;/strong&gt;할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.&lt;br&gt;
 이를 가능하게 하는 구조는 크게 &lt;strong&gt;컨트롤 플레인(Control Plane)과 워커 노드(Worker Node)&lt;/strong&gt; 로 나뉜다.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kubernetes.io/images/docs/components-of-kubernetes.svg&#34; alt=&#34;Kubernetes 아키텍처 개요&#34; loading=&#34;lazy&#34; /&gt;&lt;br&gt;
 &lt;em&gt;출처: Kubernetes 공식 문서&lt;/em&gt;&lt;/p&gt;
@@ -402,7 +402,8 @@ Pod 개수를 자동으로 유지하는 &lt;strong&gt;ReplicaSet&lt;/strong&gt; 
       <description>
         
         
-        &lt;h1&gt;&lt;strong&gt;쿠버네티스 설치 및 환경 구성 (Kubernetes Installation)&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;쿠버네티스를 구축하는 방법은 여러 가지가 있다.&lt;/p&gt;
+        &lt;h1&gt;&lt;strong&gt;쿠버네티스 설치 및 환경 구성 (Kubernetes Installation)&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;쿠버네티스를 구축하는 방법은 여러 가지가 있다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Minikube&lt;/strong&gt;: 로컬 개발 환경에서 쿠버네티스를 실행하는 가장 쉬운 방법&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;kubeadm&lt;/strong&gt;: 온프레미스 또는 가상화 환경에서 쿠버네티스 클러스터를 직접 구축&lt;/li&gt;
@@ -699,11 +700,8 @@ Pod 개수를 자동으로 유지하는 &lt;strong&gt;ReplicaSet&lt;/strong&gt; 
       <description>
         
         
-        &lt;p&gt;이제부터 &lt;strong&gt;쿠버네티스의 핵심 오브젝트&lt;/strong&gt;들을 깊이 있게 다뤄볼게!&lt;br&gt;
-각 컴포넌트별로 &lt;strong&gt;구조, 데이터 흐름, 예제, 그림&lt;/strong&gt;까지 포함해서 설명할 거야.&lt;br&gt;
-🚀 &lt;strong&gt;쿠버네티스를 확실하게 이해할 수 있도록 만들겠어!&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;&lt;strong&gt;4️⃣ 쿠버네티스 주요 오브젝트 (Kubernetes Core Objects)&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;쿠버네티스에서 오브젝트(Object)란 &lt;strong&gt;쿠버네티스 클러스터에서 관리하는 리소스&lt;/strong&gt;를 의미한다.&lt;br&gt;
+        &lt;h1&gt;&lt;strong&gt;쿠버네티스 오브젝트 (Kubernetes Core Objects)&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;쿠버네티스에서 오브젝트(Object)란 &lt;strong&gt;쿠버네티스 클러스터에서 관리하는 리소스&lt;/strong&gt;를 의미한다.&lt;br&gt;
 모든 오브젝트는 &lt;strong&gt;YAML 또는 JSON 형식&lt;/strong&gt;으로 정의되며, API를 통해 생성 및 관리할 수 있다.&lt;/p&gt;
 &lt;p&gt;아래 주요 오브젝트들을 각각 상세하게 설명할게.&lt;/p&gt;
 &lt;h2&gt;&lt;strong&gt;📌 1️⃣ Pod (파드)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-pod-파드&#34;&gt;&lt;/span&gt;

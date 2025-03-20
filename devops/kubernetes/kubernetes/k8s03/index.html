@@ -11,29 +11,26 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Core Objects – mungOps</title>
-  <meta name="description" content="이제부터 쿠버네티스의 핵심 오브젝트들을 깊이 있게 다뤄볼게!
-각 컴포넌트별로 구조, 데이터 흐름, 예제, 그림까지 포함해서 설명할 거야.
-🚀 쿠버네티스를 확실하게 이해할 수 있도록 만들겠어!" /><link rel="canonical" href="https://mungops.github.io/devops/kubernetes/kubernetes/k8s03/" itemprop="url" />
+  <meta name="description" content="쿠버네티스 오브젝트 (Kubernetes Core Objects) 쿠버네티스에서 오브젝트(Object)란 쿠버네티스 클러스터에서 관리하는 리소스를 의미한다.
+모든 오브젝트는 YAML 또는 JSON 형식으로 정의되며, API를 통해 생성 및 관리할 수 있다." /><link rel="canonical" href="https://mungops.github.io/devops/kubernetes/kubernetes/k8s03/" itemprop="url" />
 
 <meta property="og:title" content="Core Objects" />
-<meta property="og:description" content="이제부터 쿠버네티스의 핵심 오브젝트들을 깊이 있게 다뤄볼게!
-각 컴포넌트별로 구조, 데이터 흐름, 예제, 그림까지 포함해서 설명할 거야.
-🚀 쿠버네티스를 확실하게 이해할 수 있도록 만들겠어!" />
+<meta property="og:description" content="쿠버네티스 오브젝트 (Kubernetes Core Objects)
+쿠버네티스에서 오브젝트(Object)란 쿠버네티스 클러스터에서 관리하는 리소스를 의미한다.
+모든 오브젝트는 YAML 또는 JSON 형식으로 정의되며, API를 통해 생성 및 관리할 수 있다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/devops/kubernetes/kubernetes/k8s03/" /><meta property="article:section" content="devops" />
 
 
 
   <meta itemprop="name" content="Core Objects">
-  <meta itemprop="description" content="이제부터 쿠버네티스의 핵심 오브젝트들을 깊이 있게 다뤄볼게!
-각 컴포넌트별로 구조, 데이터 흐름, 예제, 그림까지 포함해서 설명할 거야.
-🚀 쿠버네티스를 확실하게 이해할 수 있도록 만들겠어!">
-  <meta itemprop="wordCount" content="1466">
+  <meta itemprop="description" content="쿠버네티스 오브젝트 (Kubernetes Core Objects) 쿠버네티스에서 오브젝트(Object)란 쿠버네티스 클러스터에서 관리하는 리소스를 의미한다.
+모든 오브젝트는 YAML 또는 JSON 형식으로 정의되며, API를 통해 생성 및 관리할 수 있다.">
+  <meta itemprop="wordCount" content="1371">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Core Objects">
-  <meta name="twitter:description" content="이제부터 쿠버네티스의 핵심 오브젝트들을 깊이 있게 다뤄볼게!
-각 컴포넌트별로 구조, 데이터 흐름, 예제, 그림까지 포함해서 설명할 거야.
-🚀 쿠버네티스를 확실하게 이해할 수 있도록 만들겠어!">
+  <meta name="twitter:description" content="쿠버네티스 오브젝트 (Kubernetes Core Objects) 쿠버네티스에서 오브젝트(Object)란 쿠버네티스 클러스터에서 관리하는 리소스를 의미한다.
+모든 오브젝트는 YAML 또는 JSON 형식으로 정의되며, API를 통해 생성 및 관리할 수 있다.">
 
     <link rel="preload" href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" as="style" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
     <link href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" rel="stylesheet" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
@@ -3492,11 +3489,8 @@
 
         <div class="content">
           <h1>Core Objects</h1>
-          <p>이제부터 <strong>쿠버네티스의 핵심 오브젝트</strong>들을 깊이 있게 다뤄볼게!<br>
-각 컴포넌트별로 <strong>구조, 데이터 흐름, 예제, 그림</strong>까지 포함해서 설명할 거야.<br>
-🚀 <strong>쿠버네티스를 확실하게 이해할 수 있도록 만들겠어!</strong></p>
-<hr>
-<h1><strong>4️⃣ 쿠버네티스 주요 오브젝트 (Kubernetes Core Objects)</strong></h1><p>쿠버네티스에서 오브젝트(Object)란 <strong>쿠버네티스 클러스터에서 관리하는 리소스</strong>를 의미한다.<br>
+          <h1><strong>쿠버네티스 오브젝트 (Kubernetes Core Objects)</strong></h1><hr>
+<p>쿠버네티스에서 오브젝트(Object)란 <strong>쿠버네티스 클러스터에서 관리하는 리소스</strong>를 의미한다.<br>
 모든 오브젝트는 <strong>YAML 또는 JSON 형식</strong>으로 정의되며, API를 통해 생성 및 관리할 수 있다.</p>
 <p>아래 주요 오브젝트들을 각각 상세하게 설명할게.</p>
 <h2><strong>📌 1️⃣ Pod (파드)</strong><span class="hx-absolute -hx-mt-20" id="-1-pod-파드"></span>

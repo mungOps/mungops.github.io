@@ -11,27 +11,39 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Docker-compose – mungOps</title>
-  <meta name="description" content="이전 포맷을 유지하면서 Docker Compose 활용에 대한 내용을 상세하게 정리해볼게요! 🚀
-Docker Compose 활용 🛠️1️⃣ Docker Compose 설치 Docker Compose는 여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구입니다." /><link rel="canonical" href="https://mungops.github.io/devops/docker/docker02/" itemprop="url" />
+  <meta name="description" content="Docker Compose 활용 🛠️ 1️⃣ Docker Compose 설치 Docker Compose는 여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구입니다.
+🔹 1 Linux에서 Docker Compose 설치 sudo curl -L &#34;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose sudo chmod &#43;x /usr/local/bin/docker-compose 🛠 설치 확인" /><link rel="canonical" href="https://mungops.github.io/devops/docker/docker02/" itemprop="url" />
 
 <meta property="og:title" content="Docker-compose" />
-<meta property="og:description" content="이전 포맷을 유지하면서 Docker Compose 활용에 대한 내용을 상세하게 정리해볼게요! 🚀
+<meta property="og:description" content="Docker Compose 활용 🛠️
+1️⃣ Docker Compose 설치
+    Docker Compose는 여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구입니다.
+🔹 1 Linux에서 Docker Compose 설치
+    
 
-Docker Compose 활용 🛠️1️⃣ Docker Compose 설치
-    Docker Compose는 여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구입니다." />
+sudo curl -L &#34;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose
+sudo chmod &#43;x /usr/local/bin/docker-compose
+  
+    
+    
+  
+
+
+
+  🛠 설치 확인" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/devops/docker/docker02/" /><meta property="article:section" content="devops" />
 
 
 
   <meta itemprop="name" content="Docker-compose">
-  <meta itemprop="description" content="이전 포맷을 유지하면서 Docker Compose 활용에 대한 내용을 상세하게 정리해볼게요! 🚀
-Docker Compose 활용 🛠️1️⃣ Docker Compose 설치 Docker Compose는 여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구입니다.">
-  <meta itemprop="wordCount" content="1046">
+  <meta itemprop="description" content="Docker Compose 활용 🛠️ 1️⃣ Docker Compose 설치 Docker Compose는 여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구입니다.
+🔹 1 Linux에서 Docker Compose 설치 sudo curl -L &#34;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose sudo chmod &#43;x /usr/local/bin/docker-compose 🛠 설치 확인">
+  <meta itemprop="wordCount" content="1014">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Docker-compose">
-  <meta name="twitter:description" content="이전 포맷을 유지하면서 Docker Compose 활용에 대한 내용을 상세하게 정리해볼게요! 🚀
-Docker Compose 활용 🛠️1️⃣ Docker Compose 설치 Docker Compose는 여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구입니다.">
+  <meta name="twitter:description" content="Docker Compose 활용 🛠️ 1️⃣ Docker Compose 설치 Docker Compose는 여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구입니다.
+🔹 1 Linux에서 Docker Compose 설치 sudo curl -L &#34;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose sudo chmod &#43;x /usr/local/bin/docker-compose 🛠 설치 확인">
 
     <link rel="preload" href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" as="style" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
     <link href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" rel="stylesheet" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
@@ -3457,9 +3469,8 @@ Docker Compose 활용 🛠️1️⃣ Docker Compose 설치 Docker Compose는 여
 
         <div class="content">
           <h1>Docker-compose</h1>
-          <p>이전 포맷을 유지하면서 <strong>Docker Compose 활용</strong>에 대한 내용을 상세하게 정리해볼게요! 🚀</p>
-<hr>
-<h1>Docker Compose 활용 🛠️</h1><h2>1️⃣ Docker Compose 설치<span class="hx-absolute -hx-mt-20" id="1-docker-compose-설치"></span>
+          <h1>Docker Compose 활용 🛠️</h1><hr>
+<h2>1️⃣ Docker Compose 설치<span class="hx-absolute -hx-mt-20" id="1-docker-compose-설치"></span>
     <a href="#1-docker-compose-%ec%84%a4%ec%b9%98" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Docker Compose는 <strong>여러 개의 컨테이너를 한 번에 정의하고 실행할 수 있는 도구</strong>입니다.</p>
 <h3>🔹 1 Linux에서 Docker Compose 설치<span class="hx-absolute -hx-mt-20" id="-1-linux에서-docker-compose-설치"></span>
     <a href="#-1-linux%ec%97%90%ec%84%9c-docker-compose-%ec%84%a4%ec%b9%98" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
