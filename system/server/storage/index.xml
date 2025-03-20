@@ -1,0 +1,500 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mungOps – Storage</title>
+    <link>https://mungops.github.io/system/server/storage/</link>
+    <description>Recent content in Storage on mungOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    
+	  <atom:link href="https://mungops.github.io/system/server/storage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>ISCSI</title>
+      <link>https://mungops.github.io/system/server/storage/iscsi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/system/server/storage/iscsi/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;📌 iSCSI Server Guide&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-iscsi-server-guide&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-iscsi-server-guide&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;h2&gt;1️⃣ iSCSI란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-iscsi란&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-iscsi%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;iSCSI(&lt;strong&gt;Internet Small Computer Systems Interface&lt;/strong&gt;)는 IP 네트워크를 통해 스토리지를 연결하는 프로토콜입니다.&lt;br&gt;
+서버(이니시에이터, Initiator)와 스토리지 타겟(Target) 간에 SCSI 명령을 TCP/IP 네트워크로 전송하여 디스크를 공유할 수 있도록 합니다.&lt;/p&gt;
+&lt;p&gt;✅ &lt;strong&gt;iSCSI의 특징&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;기존 이더넷 네트워크를 사용하여 SAN(Storage Area Network) 구축 가능&lt;/li&gt;
+&lt;li&gt;별도의 전용 하드웨어가 필요하지 않아 비용 절감 가능&lt;/li&gt;
+&lt;li&gt;스토리지 확장이 용이하며, 데이터센터에서 널리 사용됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ iSCSI 구성 요소&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-iscsi-구성-요소&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-iscsi-%ea%b5%ac%ec%84%b1-%ec%9a%94%ec%86%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;🔹 &lt;strong&gt;iSCSI Initiator (클라이언트)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iSCSI 스토리지를 마운트하여 로컬 디스크처럼 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔹 &lt;strong&gt;iSCSI Target (서버)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iSCSI 클라이언트에 디스크를 제공하는 서버 역할 수행&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔹 &lt;strong&gt;iSCSI LUN (Logical Unit Number)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;실제 할당된 스토리지 단위 (예: 논리 볼륨)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ iSCSI 서버 설정 (Ubuntu 기준)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-iscsi-서버-설정-ubuntu-기준&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-iscsi-%ec%84%9c%eb%b2%84-%ec%84%a4%ec%a0%95-ubuntu-%ea%b8%b0%ec%a4%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;📌 1. iSCSI Target 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-iscsi-target-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-iscsi-target-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install tgt -y&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 2. iSCSI 디스크 생성&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-2-iscsi-디스크-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-iscsi-%eb%94%94%ec%8a%a4%ed%81%ac-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /iscsi
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fallocate -l 10G /iscsi/iscsi_disk.img
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod &lt;span class=&#34;m&#34;&gt;600&lt;/span&gt; /iscsi/iscsi_disk.img&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 3. Target 구성 (&lt;code&gt;/etc/tgt/conf.d/iscsi.conf&lt;/code&gt;)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-3-target-구성-etctgtconfdiscsiconf&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-3-target-%ea%b5%ac%ec%84%b1-etctgtconfdiscsiconf&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;target iqn.2025-03.mungdocs:storage.target1&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    backing-store /iscsi/iscsi_disk.img
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    initiator-address 192.168.1.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    incominguser iscsiuser password123
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/target&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 4. iSCSI 서비스 재시작 및 확인&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-4-iscsi-서비스-재시작-및-확인&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-4-iscsi-%ec%84%9c%eb%b9%84%ec%8a%a4-%ec%9e%ac%ec%8b%9c%ec%9e%91-%eb%b0%8f-%ed%99%95%ec%9d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart tgt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tgtadm --mode target --op show&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ iSCSI 클라이언트 설정 (Ubuntu 기준)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-iscsi-클라이언트-설정-ubuntu-기준&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-iscsi-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ec%84%a4%ec%a0%95-ubuntu-%ea%b8%b0%ec%a4%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;📌 1. iSCSI Initiator 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-iscsi-initiator-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-iscsi-initiator-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install open-iscsi -y&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 2. iSCSI Target 검색&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-2-iscsi-target-검색&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-iscsi-target-%ea%b2%80%ec%83%89&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo iscsiadm -m discovery -t sendtargets -p 192.168.1.10&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 3. Target 로그인&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-3-target-로그인&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-3-target-%eb%a1%9c%ea%b7%b8%ec%9d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo iscsiadm -m node --targetname &lt;span class=&#34;s2&#34;&gt;&amp;#34;iqn.2025-03.mungdocs:storage.target1&amp;#34;&lt;/span&gt; --portal 192.168.1.10 --login&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 4. 디스크 확인 및 마운트&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-4-디스크-확인-및-마운트&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-4-%eb%94%94%ec%8a%a4%ed%81%ac-%ed%99%95%ec%9d%b8-%eb%b0%8f-%eb%a7%88%ec%9a%b4%ed%8a%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lsblk
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkfs.ext4 /dev/sdX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount /dev/sdX /mnt&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ 결론&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-결론&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-%ea%b2%b0%eb%a1%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;iSCSI는 기존 네트워크를 활용하여 비용 효율적인 스토리지 솔루션을 제공합니다.&lt;br&gt;
+위의 설정을 통해 iSCSI 서버 및 클라이언트를 구성할 수 있으며, SAN 환경을 구축할 수도 있습니다. 🚀&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;📌 참고자료&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-참고자료&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;1️⃣ &lt;a href=&#34;https://www.tecmint.com/setup-iscsi-target-and-initiator-on-linux/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux iSCSI 설정 가이드&lt;/a&gt;&lt;br&gt;
+2️⃣ &lt;a href=&#34;https://www.redhat.com/en/topics/storage/what-is-iscsi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iSCSI 개념 및 활용&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>NFS</title>
+      <link>https://mungops.github.io/system/server/storage/nfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/system/server/storage/nfs/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;📌 NFS Server Guide&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-nfs-server-guide&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-nfs-server-guide&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;h2&gt;1️⃣ NFS란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-nfs란&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-nfs%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;NFS(Network File System)&lt;/strong&gt; 는 네트워크를 통해 파일 시스템을 공유하는 프로토콜입니다.&lt;br&gt;
+서버와 클라이언트 간에 원격 디렉터리를 마운트하여 로컬 디스크처럼 사용할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;✅ &lt;strong&gt;NFS의 특징&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;여러 클라이언트가 동일한 디렉터리에 접근 가능&lt;/li&gt;
+&lt;li&gt;파일 및 디렉터리 공유가 용이&lt;/li&gt;
+&lt;li&gt;리눅스 및 유닉스 환경에서 널리 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ NFS 구성 요소&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-nfs-구성-요소&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-nfs-%ea%b5%ac%ec%84%b1-%ec%9a%94%ec%86%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;🔹 &lt;strong&gt;NFS Server&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;파일을 공유하는 서버&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔹 &lt;strong&gt;NFS Client&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;공유된 파일 시스템을 마운트하여 사용하는 클라이언트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ NFS 서버 설정 (Ubuntu 기준)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-nfs-서버-설정-ubuntu-기준&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-nfs-%ec%84%9c%eb%b2%84-%ec%84%a4%ec%a0%95-ubuntu-%ea%b8%b0%ec%a4%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;📌 1. NFS 서버 패키지 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-nfs-서버-패키지-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-nfs-%ec%84%9c%eb%b2%84-%ed%8c%a8%ed%82%a4%ec%a7%80-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install nfs-kernel-server -y&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 2. 공유할 디렉터리 생성&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-2-공유할-디렉터리-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-%ea%b3%b5%ec%9c%a0%ed%95%a0-%eb%94%94%eb%a0%89%ed%84%b0%eb%a6%ac-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /mnt/nfs_share
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod &lt;span class=&#34;m&#34;&gt;777&lt;/span&gt; /mnt/nfs_share&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 3. NFS 익스포트 설정 (&lt;code&gt;/etc/exports&lt;/code&gt;)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-3-nfs-익스포트-설정-etcexports&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-3-nfs-%ec%9d%b5%ec%8a%a4%ed%8f%ac%ed%8a%b8-%ec%84%a4%ec%a0%95-etcexports&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/mnt/nfs_share 192.168.1.0/24&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,sync,no_root_squash,no_subtree_check&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;📌 &lt;code&gt;192.168.1.0/24&lt;/code&gt;: 특정 네트워크 대역에 공유&lt;br&gt;
+📌 &lt;code&gt;rw&lt;/code&gt;: 읽기/쓰기 권한 제공&lt;br&gt;
+📌 &lt;code&gt;sync&lt;/code&gt;: 동기화하여 데이터 손실 방지&lt;br&gt;
+📌 &lt;code&gt;no_root_squash&lt;/code&gt;: 클라이언트에서 root 권한 유지&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;📌 4. NFS 서비스 재시작&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-4-nfs-서비스-재시작&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-4-nfs-%ec%84%9c%eb%b9%84%ec%8a%a4-%ec%9e%ac%ec%8b%9c%ec%9e%91&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo exportfs -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart nfs-kernel-server&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ NFS 클라이언트 설정 (Ubuntu 기준)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-nfs-클라이언트-설정-ubuntu-기준&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-nfs-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ec%84%a4%ec%a0%95-ubuntu-%ea%b8%b0%ec%a4%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;📌 1. NFS 클라이언트 패키지 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-nfs-클라이언트-패키지-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-nfs-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ed%8c%a8%ed%82%a4%ec%a7%80-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install nfs-common -y&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 2. NFS 마운트 확인&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-2-nfs-마운트-확인&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-nfs-%eb%a7%88%ec%9a%b4%ed%8a%b8-%ed%99%95%ec%9d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;showmount -e 192.168.1.10&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 3. NFS 공유 디렉터리 마운트&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-3-nfs-공유-디렉터리-마운트&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-3-nfs-%ea%b3%b5%ec%9c%a0-%eb%94%94%eb%a0%89%ed%84%b0%eb%a6%ac-%eb%a7%88%ec%9a%b4%ed%8a%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount 192.168.1.10:/mnt/nfs_share /mnt&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;📌 &lt;code&gt;/mnt/nfs_share&lt;/code&gt;를 &lt;code&gt;/mnt&lt;/code&gt;에 마운트&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;📌 4. fstab에 자동 마운트 설정 (&lt;code&gt;/etc/fstab&lt;/code&gt;)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-4-fstab에-자동-마운트-설정-etcfstab&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-4-fstab%ec%97%90-%ec%9e%90%eb%8f%99-%eb%a7%88%ec%9a%b4%ed%8a%b8-%ec%84%a4%ec%a0%95-etcfstab&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;192.168.1.10:/mnt/nfs_share /mnt nfs defaults &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ 결론&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-결론&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-%ea%b2%b0%eb%a1%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;NFS는 간단하면서도 강력한 네트워크 파일 공유 솔루션입니다.&lt;br&gt;
+위의 설정을 통해 여러 클라이언트가 동일한 디렉터리를 공유할 수 있습니다. 🚀&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;📌 참고자료&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-참고자료&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;1️⃣ &lt;a href=&#34;https://www.tecmint.com/install-nfs-server-on-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NFS 개념 및 설정&lt;/a&gt;&lt;br&gt;
+2️⃣ &lt;a href=&#34;https://linuxhint.com/mount-nfs-share-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NFS 공유 디렉터리 마운트&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>SMB</title>
+      <link>https://mungops.github.io/system/server/storage/smb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/system/server/storage/smb/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;📌 SMB Server Guide&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-smb-server-guide&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-smb-server-guide&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;h2&gt;1️⃣ SMB란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-smb란&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-smb%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;SMB(Server Message Block)&lt;/strong&gt; 는 네트워크를 통해 파일 및 프린터를 공유하는 프로토콜입니다.&lt;br&gt;
+주로 &lt;strong&gt;Windows 환경&lt;/strong&gt;에서 사용되지만, &lt;strong&gt;Linux 및 macOS&lt;/strong&gt;에서도 지원됩니다.&lt;/p&gt;
+&lt;p&gt;✅ &lt;strong&gt;SMB의 특징&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 및 Linux 간 파일 공유 가능&lt;/li&gt;
+&lt;li&gt;인증 기반 접근 제어 제공&lt;/li&gt;
+&lt;li&gt;CIFS(Common Internet File System)으로도 알려짐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ SMB 구성 요소&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-smb-구성-요소&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-smb-%ea%b5%ac%ec%84%b1-%ec%9a%94%ec%86%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;🔹 &lt;strong&gt;SMB Server&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;공유 디렉터리를 제공하는 서버&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔹 &lt;strong&gt;SMB Client&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;공유된 디렉터리에 접근하는 클라이언트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ SMB 서버 설정 (Ubuntu 기준)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-smb-서버-설정-ubuntu-기준&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-smb-%ec%84%9c%eb%b2%84-%ec%84%a4%ec%a0%95-ubuntu-%ea%b8%b0%ec%a4%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;📌 1. Samba 패키지 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-samba-패키지-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-samba-%ed%8c%a8%ed%82%a4%ec%a7%80-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install samba -y&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 2. 공유할 디렉터리 생성&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-2-공유할-디렉터리-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-%ea%b3%b5%ec%9c%a0%ed%95%a0-%eb%94%94%eb%a0%89%ed%84%b0%eb%a6%ac-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /mnt/smb_share
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod &lt;span class=&#34;m&#34;&gt;777&lt;/span&gt; /mnt/smb_share&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 3. Samba 설정 수정 (&lt;code&gt;/etc/samba/smb.conf&lt;/code&gt;)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-3-samba-설정-수정-etcsambasmbconf&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-3-samba-%ec%84%a4%ec%a0%95-%ec%88%98%ec%a0%95-etcsambasmbconf&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[smb_share]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;na&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;/mnt/smb_share
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;   browseable = yes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;   writable = yes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;   guest ok = yes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;   create mask = 0777
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;   directory mask = 0777&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 4. Samba 서비스 재시작&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-4-samba-서비스-재시작&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-4-samba-%ec%84%9c%eb%b9%84%ec%8a%a4-%ec%9e%ac%ec%8b%9c%ec%9e%91&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart smbd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; smbd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ SMB 클라이언트 설정 (Windows 기준)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-smb-클라이언트-설정-windows-기준&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-smb-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ec%84%a4%ec%a0%95-windows-%ea%b8%b0%ec%a4%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;📌 1. 공유 폴더 접근&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-공유-폴더-접근&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-%ea%b3%b5%ec%9c%a0-%ed%8f%b4%eb%8d%94-%ec%a0%91%ea%b7%bc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;1️⃣ &lt;code&gt;윈도우 + R&lt;/code&gt; 키 입력&lt;br&gt;
+2️⃣ &lt;code&gt;\\192.168.1.10\smb_share&lt;/code&gt; 입력 후 &lt;strong&gt;Enter&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;📌 2. 네트워크 드라이브 연결&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-2-네트워크-드라이브-연결&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-%eb%93%9c%eb%9d%bc%ec%9d%b4%eb%b8%8c-%ec%97%b0%ea%b2%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;1️⃣ &lt;strong&gt;파일 탐색기&lt;/strong&gt; → &lt;strong&gt;내 PC&lt;/strong&gt;&lt;br&gt;
+2️⃣ &lt;strong&gt;네트워크 드라이브 연결&lt;/strong&gt; 클릭&lt;br&gt;
+3️⃣ 폴더에 &lt;code&gt;\\192.168.1.10\smb_share&lt;/code&gt; 입력&lt;br&gt;
+4️⃣ &lt;strong&gt;마침&lt;/strong&gt; 버튼 클릭&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ SMB 클라이언트 설정 (Linux 기준)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-smb-클라이언트-설정-linux-기준&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-smb-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ec%84%a4%ec%a0%95-linux-%ea%b8%b0%ec%a4%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;📌 1. CIFS 패키지 설치&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-1-cifs-패키지-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-cifs-%ed%8c%a8%ed%82%a4%ec%a7%80-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install cifs-utils -y&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 2. SMB 마운트&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-2-smb-마운트&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-smb-%eb%a7%88%ec%9a%b4%ed%8a%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount -t cifs -o &lt;span class=&#34;nv&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;guest,password&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; //192.168.1.10/smb_share /mnt&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;📌 3. fstab 자동 마운트 설정 (&lt;code&gt;/etc/fstab&lt;/code&gt;)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-3-fstab-자동-마운트-설정-etcfstab&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-3-fstab-%ec%9e%90%eb%8f%99-%eb%a7%88%ec%9a%b4%ed%8a%b8-%ec%84%a4%ec%a0%95-etcfstab&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//192.168.1.10/smb_share /mnt cifs guest,uid&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1000,gid&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1000&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;6️⃣ 결론&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6-결론&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-%ea%b2%b0%eb%a1%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;SMB는 Windows와 Linux 간 파일 공유를 간편하게 설정할 수 있는 강력한 프로토콜입니다.&lt;br&gt;
+위 설정을 통해 네트워크에서 손쉽게 파일을 공유할 수 있습니다. 🚀&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;📌 참고자료&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-참고자료&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;1️⃣ &lt;a href=&#34;https://wiki.samba.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SMB 설정 가이드&lt;/a&gt;&lt;br&gt;
+2️⃣ &lt;a href=&#34;https://linuxize.com/post/how-to-mount-cifs-share-on-linux/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux에서 SMB 마운트하기&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
