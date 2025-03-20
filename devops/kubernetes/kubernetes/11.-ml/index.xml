@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mungOps – Monitoring and Logging</title>
-    <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/</link>
+    <link>http://localhost:1313/devops/kubernetes/kubernetes/11.-ml/</link>
     <description>Recent content in Monitoring and Logging on mungOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     
-	  <atom:link href="https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/devops/kubernetes/kubernetes/11.-ml/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Elasticsearch</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/elasticsearch/</link>
+      <link>http://localhost:1313/devops/kubernetes/kubernetes/11.-ml/elasticsearch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/elasticsearch/</guid>
+      <guid>http://localhost:1313/devops/kubernetes/kubernetes/11.-ml/elasticsearch/</guid>
       <description>
         
         
@@ -29,10 +29,10 @@
     
     <item>
       <title>Fluentd</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/fluentd/</link>
+      <link>http://localhost:1313/devops/kubernetes/kubernetes/11.-ml/fluentd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/fluentd/</guid>
+      <guid>http://localhost:1313/devops/kubernetes/kubernetes/11.-ml/fluentd/</guid>
       <description>
         
         
@@ -42,10 +42,10 @@
     
     <item>
       <title>Kibana</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/kibana/</link>
+      <link>http://localhost:1313/devops/kubernetes/kubernetes/11.-ml/kibana/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/11.-ml/kibana/</guid>
+      <guid>http://localhost:1313/devops/kubernetes/kubernetes/11.-ml/kibana/</guid>
       <description>
         
         

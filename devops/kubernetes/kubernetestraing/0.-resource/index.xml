@@ -1,0 +1,168 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mungOps – Requirements source</title>
+    <link>http://localhost:1313/devops/kubernetes/kubernetestraing/0.-resource/</link>
+    <description>Recent content in Requirements source on mungOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    
+	  <atom:link href="http://localhost:1313/devops/kubernetes/kubernetestraing/0.-resource/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Manger Node</title>
+      <link>http://localhost:1313/devops/kubernetes/kubernetestraing/0.-resource/file0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/devops/kubernetes/kubernetestraing/0.-resource/file0/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;&lt;strong&gt;Kubernets Manager Node&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubernets-manager-node&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubernets-manager-node&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
+&lt;br&gt;
+&lt;h3&gt;&lt;strong&gt;Kubernets Manager Node&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubernets-manager-node-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubernets-manager-node-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Manager Node는 노드는 클러스터에 대한 요청을 수신하고 분배하는 역할을 하는 로드 밸런서 역할을 하는 서버를 의미합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;일반적으로 NGINX, HAProxy와 같은 프록시 서버를 사용하며, 여기서는 Nginx로 구성합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;해당 노드의 주 역할은 아래와 같습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;역할&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;예시&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;요청 라우팅&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;클라이언트의 API 요청을 적절한 서비스나 백엔드 노드로 전달합니다.&lt;/td&gt;
+          &lt;td&gt;NGINX가 클라이언트 요청을 받아 특정 서비스로 라우팅합니다. 예를 들어, &lt;code&gt;/api/users&lt;/code&gt; 요청은 사용자 서비스로 전달됩니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;로드 밸런싱&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;요청을 여러 백엔드 노드에 균등하게 분배하여 성능을 최적화합니다.&lt;/td&gt;
+          &lt;td&gt;HAProxy가 두 개의 인스턴스(예: &lt;code&gt;app-1&lt;/code&gt;, &lt;code&gt;app-2&lt;/code&gt;)로 요청을 분배합니다. 각 인스턴스가 50%의 트래픽을 처리합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;SSL 종료&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;HTTPS 요청을 처리하고 SSL 인증서를 관리하여 보안을 강화합니다.&lt;/td&gt;
+          &lt;td&gt;NGINX가 SSL 인증서를 사용하여 클라이언트와의 연결을 암호화합니다. 내부 통신은 HTTP로 유지합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;캐싱&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;정적 콘텐츠를 캐싱하여 반복적인 요청에 대한 응답 속도를 향상시킵니다.&lt;/td&gt;
+          &lt;td&gt;NGINX가 자주 요청되는 이미지 파일을 캐싱하여, 사용자가 이미지를 요청할 때마다 백엔드 서버에 요청하지 않습니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;트래픽 관리&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;요청의 수를 제한하거나 특정 요청을 차단하여 트래픽을 관리합니다.&lt;/td&gt;
+          &lt;td&gt;HAProxy가 특정 IP에서의 요청 수를 제한하여 DDoS 공격을 방어합니다. 예를 들어, 100초당 10회 요청으로 제한할 수 있습니다.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;상태 검사&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;백엔드 서비스의 상태를 주기적으로 확인하여, 실패한 서비스에 요청을 보내지 않도록 합니다.&lt;/td&gt;
+          &lt;td&gt;HAProxy가 &lt;code&gt;app-1&lt;/code&gt; 인스턴스의 상태를 확인하고, 문제가 발생한 경우 해당 인스턴스에 요청을 보내지 않도록 합니다.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;간단하게 기존에 사용하던 &lt;strong&gt;Docker engine을 사용하지 않고 ContainerD를 사용 하게된 이유&lt;/strong&gt;를 정리하자면
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;쿠버네티스는 여러 컨테이너 런타임과 통신할 수 있도록 하는 CRI라는 표준 인터페이스를 설계함.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Docker engine은 CRI 인터페이스가 생기기전 존재한 기술로 CRI 인터페이스와 맞지 않았음.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이를 해결하기 위해 dockershim이라는 어댑터 컴포넌트를 개발하였음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이 쉼의 존재는 kubelet 자체에 많은 불필요한 복잡성을 도입했고, 일부 통합은 이 쉼 때문에 Docker에 대해 일관성 없게 구현되었으며, 이로 인해 유지 관리 부담이 증가하게 됨.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;text-align: center;&#34;&gt;
+    &lt;img src=&#34;https://storage.googleapis.com/static.fastcampus.co.kr/prod/uploads/202206/092600-704/%EC%98%A4%EA%B0%80%EB%8B%89%EC%B5%9C%EC%A2%85.png&#34; alt=&#34;image.png&#34; style=&#34;width: 1200px; height: auto;&#34;&gt;
+&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;이처럼 벤더 특정 코드(특정 제품인 Docker에 종속적인 코드)를 유지 관리하는 것은 쿠버네티스의 오픈 소스 철학에 부합하지 않았고, 2022년 4월 v1.24에서 완전한 제거를 발표하였음.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h3&gt;&lt;strong&gt;Kubernets Manager Node Install&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;kubernets-manager-node-install&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kubernets-manager-node-install&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;
+&lt;br&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# nginx를 설치합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt -y install nginx libnginx-mod-stream
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# nginx에 프록시를 세팅합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ vi /etc/nginx/nginx.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;stream &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    upstream k8s-api &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        server 7.7.7.100:6443&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# contolplan IP&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    server &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        listen 6443&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        proxy_pass k8s-api&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Nginx의 default 웹을 비활성화합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ unlink /etc/nginx/sites-enabled/default
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ systemctl restart nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# kubectl 레포지터리를 등록하고 설치합니다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tee /etc/apt/sources.list.d/kubernetes.list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt -y install kubectl
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# (option) kubectl alias k&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt -y install bash-completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /usr/share/bash-completion/bash_completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ kubectl completion bash &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tee /etc/bash_completion.d/kubectl &amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;alias k=kubectl&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;complete -o default -F __start_kubectl k&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; bash&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

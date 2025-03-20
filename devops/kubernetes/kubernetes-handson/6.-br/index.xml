@@ -1,0 +1,31 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mungOps – Backup and Restore Service</title>
+    <link>http://localhost:1313/devops/kubernetes/kubernetes-handson/6.-br/</link>
+    <description>Recent content in Backup and Restore Service on mungOps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    
+	  <atom:link href="http://localhost:1313/devops/kubernetes/kubernetes-handson/6.-br/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Velero</title>
+      <link>http://localhost:1313/devops/kubernetes/kubernetes-handson/6.-br/velero/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/devops/kubernetes/kubernetes-handson/6.-br/velero/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
