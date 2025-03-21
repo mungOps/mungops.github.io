@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mungOps – Devops</title>
+    <title>mungOps – ArgoCI/CD</title>
     <link>https://mungops.github.io/devops/argo/</link>
-    <description>Recent content in Devops on mungOps</description>
+    <description>Recent content in ArgoCI/CD on mungOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     

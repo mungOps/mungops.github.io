@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mungOps – </title>
+    <title>mungOps – Docker</title>
     <link>https://mungops.github.io/devops/docker/</link>
-    <description>Recent content on mungOps</description>
+    <description>Recent content in Docker on mungOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     
