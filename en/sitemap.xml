@@ -258,7 +258,7 @@
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/helm/</loc>
-    <lastmod>2025-03-21T09:28:38+09:00</lastmod>
+    <lastmod>2025-03-21T09:31:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s02/</loc>
   </url><url>
@@ -275,7 +275,7 @@
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/argo/</loc>
-    <lastmod>2025-03-21T09:28:38+09:00</lastmod>
+    <lastmod>2025-03-21T09:31:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/aws/amazonwebservice/aws_network/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -317,6 +317,8 @@
   </url><url>
     <loc>https://mungops.github.io/system/server/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/terraform/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/4.-tools/</loc>
   </url><url>
