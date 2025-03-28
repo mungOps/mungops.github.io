@@ -1065,6 +1065,165 @@
     </item>
     
     <item>
+      <title>Ceph 개요 및 기본 개념</title>
+      <link>https://mungops.github.io/system/ceph/ceph00/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/system/ceph/ceph00/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;1️⃣ &lt;strong&gt;Ceph란 무엇인가? (역사, 배경, 발전 과정)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph란-무엇인가-역사-배경-발전-과정&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-ceph%eb%9e%80-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80-%ec%97%ad%ec%82%ac-%eb%b0%b0%ea%b2%bd-%eb%b0%9c%ec%a0%84-%ea%b3%bc%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph는 분산형 소프트웨어 정의 스토리지(SDS, Software Defined Storage)로서, 높은 확장성과 고가용성을 제공하는 오픈소스 스토리지 솔루션입니다.&lt;br&gt;
+2003년 Sage Weil이 박사 논문 프로젝트로 시작하였으며, 이후 2012년 Inktank라는 회사가 Ceph를 상업적으로 지원하기 시작했습니다.&lt;br&gt;
+2014년 Red Hat이 Inktank를 인수하면서 Ceph는 엔터프라이즈 환경에서도 주요 스토리지 솔루션으로 자리 잡게 되었습니다.&lt;/p&gt;
+&lt;h3&gt;1.1 &lt;strong&gt;Ceph의 주요 발전 과정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;11-ceph의-주요-발전-과정&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#11-ceph%ec%9d%98-%ec%a3%bc%ec%9a%94-%eb%b0%9c%ec%a0%84-%ea%b3%bc%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2003년:&lt;/strong&gt; Sage Weil이 Ceph 프로젝트 시작&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2012년:&lt;/strong&gt; Inktank에 의해 상업적 지원 시작&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2014년:&lt;/strong&gt; Red Hat이 Inktank 인수&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2016년:&lt;/strong&gt; Ceph가 OpenStack의 기본 스토리지 솔루션으로 채택됨&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;현재:&lt;/strong&gt; 클라우드, 컨테이너, 기업 데이터센터에서 널리 사용됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ &lt;strong&gt;Ceph의 주요 특징 (고가용성, 확장성, 자가 복구, 자율 관리)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-ceph의-주요-특징-고가용성-확장성-자가-복구-자율-관리&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-ceph%ec%9d%98-%ec%a3%bc%ec%9a%94-%ed%8a%b9%ec%a7%95-%ea%b3%a0%ea%b0%80%ec%9a%a9%ec%84%b1-%ed%99%95%ec%9e%a5%ec%84%b1-%ec%9e%90%ea%b0%80-%eb%b3%b5%ea%b5%ac-%ec%9e%90%ec%9c%a8-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph는 다음과 같은 주요 기능을 제공합니다.&lt;/p&gt;
+&lt;h3&gt;2.1 &lt;strong&gt;고가용성 (High Availability)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;21-고가용성-high-availability&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#21-%ea%b3%a0%ea%b0%80%ec%9a%a9%ec%84%b1-high-availability&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;데이터를 여러 노드에 분산 저장하여 장애 발생 시에도 지속적인 데이터 접근 가능&lt;/li&gt;
+&lt;li&gt;OSD (Object Storage Daemon) 장애 시 자동으로 데이터 복구 수행&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2.2 &lt;strong&gt;확장성 (Scalability)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;22-확장성-scalability&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#22-%ed%99%95%ec%9e%a5%ec%84%b1-scalability&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;노드 추가만으로 용량 및 성능 확장 가능&lt;/li&gt;
+&lt;li&gt;페타바이트(PB)급 데이터도 효율적으로 관리 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2.3 &lt;strong&gt;자가 복구 (Self-healing)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;23-자가-복구-self-healing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#23-%ec%9e%90%ea%b0%80-%eb%b3%b5%ea%b5%ac-self-healing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;손상된 데이터를 자동으로 복제하여 원래 상태로 복구&lt;/li&gt;
+&lt;li&gt;클러스터 내부에서 데이터 무결성 유지&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2.4 &lt;strong&gt;자율 관리 (Self-managing)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;24-자율-관리-self-managing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#24-%ec%9e%90%ec%9c%a8-%ea%b4%80%eb%a6%ac-self-managing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;CRUSH (Controlled Replication Under Scalable Hashing) 알고리즘을 사용하여 데이터 배치 자동화&lt;/li&gt;
+&lt;li&gt;별도의 중앙 제어 없이 스토리지 노드 간 균형을 유지&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ &lt;strong&gt;기존 스토리지 시스템과의 비교 (SAN, NAS, Object Storage vs Ceph)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-기존-스토리지-시스템과의-비교-san-nas-object-storage-vs-ceph&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%ea%b8%b0%ec%a1%b4-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ec%8b%9c%ec%8a%a4%ed%85%9c%ea%b3%bc%ec%9d%98-%eb%b9%84%ea%b5%90-san-nas-object-storage-vs-ceph&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;특징&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;SAN (Storage Area Network)&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;NAS (Network Attached Storage)&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Object Storage&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Ceph&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;데이터 접근 방식&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;블록 스토리지&lt;/td&gt;
+          &lt;td&gt;파일 스토리지&lt;/td&gt;
+          &lt;td&gt;오브젝트 기반&lt;/td&gt;
+          &lt;td&gt;블록, 파일, 오브젝트 모두 지원&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;확장성&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;제한적&lt;/td&gt;
+          &lt;td&gt;제한적&lt;/td&gt;
+          &lt;td&gt;뛰어남&lt;/td&gt;
+          &lt;td&gt;뛰어남&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;고가용성&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;RAID 기반&lt;/td&gt;
+          &lt;td&gt;제한적&lt;/td&gt;
+          &lt;td&gt;뛰어남&lt;/td&gt;
+          &lt;td&gt;뛰어남&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;비용&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;높은 초기 비용&lt;/td&gt;
+          &lt;td&gt;중간 수준&lt;/td&gt;
+          &lt;td&gt;저렴함&lt;/td&gt;
+          &lt;td&gt;오픈소스 기반, 저렴&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;주요 사용처&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;엔터프라이즈 DB, 가상화&lt;/td&gt;
+          &lt;td&gt;파일 공유&lt;/td&gt;
+          &lt;td&gt;클라우드 스토리지&lt;/td&gt;
+          &lt;td&gt;클라우드, 가상화, 컨테이너&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ceph는 SAN, NAS, Object Storage의 장점을 통합하여 하나의 솔루션에서 다양한 스토리지 요구사항을 충족할 수 있도록 설계되었습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ &lt;strong&gt;Ceph의 주요 사용 사례 (클라우드 스토리지, 컨테이너 스토리지, 백업 등)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-ceph의-주요-사용-사례-클라우드-스토리지-컨테이너-스토리지-백업-등&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-ceph%ec%9d%98-%ec%a3%bc%ec%9a%94-%ec%82%ac%ec%9a%a9-%ec%82%ac%eb%a1%80-%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%eb%b0%b1%ec%97%85-%eb%93%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;4.1 &lt;strong&gt;클라우드 스토리지&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;41-클라우드-스토리지&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#41-%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;OpenStack 및 Kubernetes 환경에서 백엔드 스토리지로 활용&lt;/li&gt;
+&lt;li&gt;Amazon S3와 유사한 Object Storage 제공&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4.2 &lt;strong&gt;컨테이너 스토리지&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;42-컨테이너-스토리지&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#42-%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Kubernetes의 CSI (Container Storage Interface) 드라이버를 통해 컨테이너 환경에서 스토리지 제공&lt;/li&gt;
+&lt;li&gt;RBD (RADOS Block Device) 및 CephFS를 활용한 고성능 컨테이너 스토리지 구축 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4.3 &lt;strong&gt;백업 및 재해 복구 (Disaster Recovery)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;43-백업-및-재해-복구-disaster-recovery&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#43-%eb%b0%b1%ec%97%85-%eb%b0%8f-%ec%9e%ac%ed%95%b4-%eb%b3%b5%ea%b5%ac-disaster-recovery&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;분산 스토리지 기반의 백업 솔루션으로 활용 가능&lt;/li&gt;
+&lt;li&gt;다른 데이터센터로의 복제 기능 제공&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ &lt;strong&gt;Ceph의 기본 구성 요소 및 전체 아키텍처 개요&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-ceph의-기본-구성-요소-및-전체-아키텍처-개요&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-ceph%ec%9d%98-%ea%b8%b0%eb%b3%b8-%ea%b5%ac%ec%84%b1-%ec%9a%94%ec%86%8c-%eb%b0%8f-%ec%a0%84%ec%b2%b4-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph의 전체 아키텍처는 다음과 같은 주요 구성 요소로 이루어져 있습니다.&lt;/p&gt;
+&lt;h3&gt;5.1 &lt;strong&gt;구성 요소&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;51-구성-요소&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#51-%ea%b5%ac%ec%84%b1-%ec%9a%94%ec%86%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Monitor (MON):&lt;/strong&gt; 클러스터 상태 및 메타데이터 관리&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manager (MGR):&lt;/strong&gt; 모니터링 및 관리 기능 제공&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Object Storage Daemon (OSD):&lt;/strong&gt; 실제 데이터를 저장하는 노드&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metadata Server (MDS):&lt;/strong&gt; CephFS의 파일 메타데이터 관리&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RADOS Gateway (RGW):&lt;/strong&gt; S3 및 Swift API를 지원하는 오브젝트 스토리지 게이트웨이&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;5.2 &lt;strong&gt;Ceph의 전체 아키텍처&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;52-ceph의-전체-아키텍처&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#52-ceph%ec%9d%98-%ec%a0%84%ec%b2%b4-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;--------------------&amp;#43;   &amp;#43;--------------------&amp;#43;
+|  Client           |   |  CephFS Client     |
+&amp;#43;--------------------&amp;#43;   &amp;#43;--------------------&amp;#43;
+       |                        |
+       v                        v
+&amp;#43;------------------------------------------&amp;#43;
+|           Monitor (MON) Nodes            |
+&amp;#43;------------------------------------------&amp;#43;
+       |                        |
+       v                        v
+&amp;#43;------------------------------------------&amp;#43;
+|         Manager (MGR) Nodes              |
+&amp;#43;------------------------------------------&amp;#43;
+       |                        |
+       v                        v
+&amp;#43;------------------------------------------&amp;#43;
+|  OSD Nodes  |  Metadata Server (MDS)     |
+&amp;#43;------------------------------------------&amp;#43;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Ceph는 클라이언트가 OSD 노드와 직접 통신하도록 설계되어 있어, 병목 없이 고성능 스토리지를 제공합니다.&lt;/p&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>CloudComputing과 AWS</title>
       <link>https://mungops.github.io/system/aws/amazonwebservice/aws%EB%9E%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -8475,6 +8634,203 @@ GUI 환경과 강력한 기능을 제공하며, &lt;code&gt;PowerShell&lt;/code&
     </item>
     
     <item>
+      <title>Ceph 기본 아키텍처</title>
+      <link>https://mungops.github.io/system/ceph/ceph01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/system/ceph/ceph01/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;1️⃣ &lt;strong&gt;Ceph Cluster의 주요 컴포넌트&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-cluster의-주요-컴포넌트&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-ceph-cluster%ec%9d%98-%ec%a3%bc%ec%9a%94-%ec%bb%b4%ed%8f%ac%eb%84%8c%ed%8a%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph 클러스터는 다양한 컴포넌트로 구성되며, 각 컴포넌트는 역할을 나누어 분산 스토리지를 효율적으로 운영합니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;Ceph의 주요 컴포넌트 개요&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph의-주요-컴포넌트-개요&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-ceph%ec%9d%98-%ec%a3%bc%ec%9a%94-%ec%bb%b4%ed%8f%ac%eb%84%8c%ed%8a%b8-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph 클러스터는 아래와 같은 핵심 구성 요소로 이루어져 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Monitor (MON)&lt;/strong&gt; - 클러스터 상태 및 Quorum 관리&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manager (MGR)&lt;/strong&gt; - 클러스터 메트릭, UI, API 제공&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Object Storage Daemon (OSD)&lt;/strong&gt; - 데이터 저장, 복제 및 분배&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metadata Server (MDS)&lt;/strong&gt; - CephFS 메타데이터 관리&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RADOS Gateway (RGW)&lt;/strong&gt; - 오브젝트 스토리지 인터페이스 제공&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ &lt;strong&gt;Monitor (MON): 클러스터 상태 및 Quorum 관리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-monitor-mon-클러스터-상태-및-quorum-관리&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-monitor-mon-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%ec%83%81%ed%83%9c-%eb%b0%8f-quorum-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Monitor의 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-monitor의-역할&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-monitor%ec%9d%98-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;클러스터의 상태를 유지 및 관리&lt;/li&gt;
+&lt;li&gt;클러스터 구성원(노드) 간 Quorum(과반수 동의) 유지&lt;/li&gt;
+&lt;li&gt;OSD 및 MDS의 상태 모니터링&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;Quorum이란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-quorum이란&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-quorum%ec%9d%b4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Quorum은 클러스터 내에서 과반수 이상의 MON 노드가 활성 상태여야 클러스터가 정상적으로 동작할 수 있도록 보장하는 메커니즘입니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;예시:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3개의 MON이 있는 경우, 최소 2개 이상이 동작해야 함&lt;/li&gt;
+&lt;li&gt;5개의 MON이 있는 경우, 최소 3개 이상이 필요함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ &lt;strong&gt;Manager (MGR): 클러스터 메트릭, UI, API 제공&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-manager-mgr-클러스터-메트릭-ui-api-제공&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-manager-mgr-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%eb%a9%94%ed%8a%b8%eb%a6%ad-ui-api-%ec%a0%9c%ea%b3%b5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Manager의 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-manager의-역할&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-manager%ec%9d%98-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;클러스터 운영을 위한 메트릭 제공&lt;/li&gt;
+&lt;li&gt;Ceph Dashboard UI 제공&lt;/li&gt;
+&lt;li&gt;외부 API 연동 지원 (Prometheus, Grafana)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;Ceph Dashboard 예시&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-ceph-dashboard-예시&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-ceph-dashboard-%ec%98%88%ec%8b%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph mgr module &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; dashboard&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;위 명령어를 실행하면, Ceph Dashboard를 활성화하여 웹 UI를 통해 클러스터 상태를 모니터링할 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ &lt;strong&gt;Object Storage Daemon (OSD): 데이터 저장, 복제 및 분배&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-object-storage-daemon-osd-데이터-저장-복제-및-분배&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-object-storage-daemon-osd-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ec%a0%80%ec%9e%a5-%eb%b3%b5%ec%a0%9c-%eb%b0%8f-%eb%b6%84%eb%b0%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;OSD의 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-osd의-역할&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-osd%ec%9d%98-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;실제 데이터를 저장하는 데몬 프로세스&lt;/li&gt;
+&lt;li&gt;데이터 복제 및 Erasure Coding 수행&lt;/li&gt;
+&lt;li&gt;CRUSH 맵을 사용하여 데이터 분산&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;OSD 프로세스 예제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-osd-프로세스-예제&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-osd-%ed%94%84%eb%a1%9c%ec%84%b8%ec%8a%a4-%ec%98%88%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status ceph-osd@1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;이 명령어를 실행하면 특정 OSD의 상태를 확인할 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ &lt;strong&gt;Metadata Server (MDS): CephFS 메타데이터 관리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-metadata-server-mds-cephfs-메타데이터-관리&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-metadata-server-mds-cephfs-%eb%a9%94%ed%83%80%eb%8d%b0%ec%9d%b4%ed%84%b0-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;MDS의 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mds의-역할&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-mds%ec%9d%98-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;CephFS의 파일 시스템 메타데이터 관리&lt;/li&gt;
+&lt;li&gt;파일 및 디렉터리 구조 유지&lt;/li&gt;
+&lt;li&gt;POSIX 호환 파일 시스템 제공&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;MDS 확인 명령어&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-mds-확인-명령어&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-mds-%ed%99%95%ec%9d%b8-%eb%aa%85%eb%a0%b9%ec%96%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph fs status&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;이 명령어를 실행하면 CephFS의 상태 및 MDS 상태를 확인할 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;6️⃣ &lt;strong&gt;RADOS Gateway (RGW): 오브젝트 스토리지 인터페이스 제공&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6-rados-gateway-rgw-오브젝트-스토리지-인터페이스-제공&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-rados-gateway-rgw-%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4-%ec%a0%9c%ea%b3%b5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;RGW의 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rgw의-역할&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-rgw%ec%9d%98-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Amazon S3 및 OpenStack Swift 호환 API 제공&lt;/li&gt;
+&lt;li&gt;Ceph를 오브젝트 스토리지로 사용 가능하게 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;RGW 예제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-rgw-예제&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-rgw-%ec%98%88%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;radosgw-admin user create --uid&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;testuser&amp;#34;&lt;/span&gt; --display-name&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Test User&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;위 명령어를 실행하면 S3와 같은 방식으로 Ceph RGW에서 사용할 수 있는 사용자를 생성할 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;7️⃣ &lt;strong&gt;Ceph의 데이터 분산 및 CRUSH 알고리즘&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;7-ceph의-데이터-분산-및-crush-알고리즘&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#7-ceph%ec%9d%98-%eb%8d%b0%ec%9d%b4%ed%84%b0-%eb%b6%84%ec%82%b0-%eb%b0%8f-crush-%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;CRUSH (Controlled Replication Under Scalable Hashing)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-crush-controlled-replication-under-scalable-hashing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-crush-controlled-replication-under-scalable-hashing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;CRUSH는 데이터를 효율적으로 분산 저장하기 위한 Ceph의 핵심 알고리즘입니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CRUSH 알고리즘 특징:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;중앙 집중식 메타데이터 서버 없이 데이터 위치 결정&lt;/li&gt;
+&lt;li&gt;하드웨어 장애 시 자동으로 데이터 복구 수행&lt;/li&gt;
+&lt;li&gt;정책 기반 데이터 배치 가능 (SSD, HDD 분리 등)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;CRUSH 맵 예시&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-crush-맵-예시&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-crush-%eb%a7%b5-%ec%98%88%ec%8b%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph osd crush tree&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;위 명령어를 실행하면 현재 클러스터의 CRUSH 맵을 확인할 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;8️⃣ &lt;strong&gt;Placement Group (PG) 개념과 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;8-placement-group-pg-개념과-역할&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#8-placement-group-pg-%ea%b0%9c%eb%85%90%ea%b3%bc-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;PG란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-pg란&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-pg%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;PG(Placement Group)는 데이터의 논리적 그룹이며, CRUSH 알고리즘을 통해 OSD에 분배됩니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;예시:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터를 직접 OSD에 저장하는 것이 아니라 PG를 통해 저장&lt;/li&gt;
+&lt;li&gt;PG가 여러 OSD에 복제되어 데이터 보호&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;PG 상태 확인&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-pg-상태-확인&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-pg-%ec%83%81%ed%83%9c-%ed%99%95%ec%9d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph pg stat&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;이 명령어를 실행하면 PG의 현재 상태를 확인할 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;9️⃣ &lt;strong&gt;Ceph의 데이터 복제 및 Erasure Coding&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;9-ceph의-데이터-복제-및-erasure-coding&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#9-ceph%ec%9d%98-%eb%8d%b0%ec%9d%b4%ed%84%b0-%eb%b3%b5%ec%a0%9c-%eb%b0%8f-erasure-coding&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;데이터 복제 방식&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-데이터-복제-방식&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%eb%8d%b0%ec%9d%b4%ed%84%b0-%eb%b3%b5%ec%a0%9c-%eb%b0%a9%ec%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Ceph는 기본적으로 데이터를 여러 OSD에 복제하여 저장&lt;/li&gt;
+&lt;li&gt;기본 복제 수치는 3개이며, 3개의 OSD에 동일한 데이터를 저장하여 내구성을 확보&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;Erasure Coding (EC)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-erasure-coding-ec&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-erasure-coding-ec&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Erasure Coding은 RAID-5, RAID-6과 유사한 방식으로 데이터를 저장하여 저장 효율성을 높이는 방식입니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;예제:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph osd pool create mypool &lt;span class=&#34;m&#34;&gt;8&lt;/span&gt; erasure&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;위 명령어를 실행하면 Erasure Coding을 적용한 새로운 스토리지 풀을 생성할 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Keystone</title>
       <link>https://mungops.github.io/system/openstack/openstack/keystone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -9970,6 +10326,212 @@ GUI 환경과 강력한 기능을 제공하며, &lt;code&gt;PowerShell&lt;/code&
 &lt;li&gt;Cold HDD( sc1 ): 시스템 부트 사용 불가능, 자주 엑세스하지 않는 대용량 데이터 처리에 적합, 스토리지 비용이 최대한 낮아야 할 경우 사용&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;&lt;/h1&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Ceph 설치 및 환경 구성</title>
+      <link>https://mungops.github.io/system/ceph/ceph02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/system/ceph/ceph02/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;1️⃣ &lt;strong&gt;Ceph 클러스터 배포 방식 비교&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-클러스터-배포-방식-비교&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-ceph-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%eb%b0%b0%ed%8f%ac-%eb%b0%a9%ec%8b%9d-%eb%b9%84%ea%b5%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph을 구축하는 방법은 여러 가지가 있으며, 환경에 따라 적절한 배포 방식을 선택해야 합니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;Manual 설치&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-manual-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-manual-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;개별 노드에 직접 패키지를 설치하고 설정 파일을 수동으로 구성&lt;/li&gt;
+&lt;li&gt;설치 과정에 대한 완전한 제어 가능&lt;/li&gt;
+&lt;li&gt;복잡하고 유지보수 부담이 큼&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;Ceph-Ansible&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-ceph-ansible&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-ceph-ansible&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Ansible을 사용하여 자동화된 설치 및 설정 적용&lt;/li&gt;
+&lt;li&gt;대규모 환경에서 반복적인 설치 작업을 단순화&lt;/li&gt;
+&lt;li&gt;설정이 잘못되면 디버깅이 어려울 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. &lt;strong&gt;Cephadm&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-cephadm&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-cephadm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;최신 Ceph 배포 방식으로, 컨테이너 기반 관리 지원&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ceph orch&lt;/code&gt; 명령을 통해 클러스터를 쉽게 관리 가능&lt;/li&gt;
+&lt;li&gt;지속적인 유지보수 및 확장에 유리&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;💡 &lt;strong&gt;추천:&lt;/strong&gt; 신규 설치 환경에서는 &lt;strong&gt;Cephadm&lt;/strong&gt;을 사용하는 것이 가장 쉽고 관리가 편리합니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ &lt;strong&gt;Ceph 설치 전 사전 준비&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-ceph-설치-전-사전-준비&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-ceph-%ec%84%a4%ec%b9%98-%ec%a0%84-%ec%82%ac%ec%a0%84-%ec%a4%80%eb%b9%84&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;하드웨어 요구 사항&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-하드웨어-요구-사항&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%ed%95%98%eb%93%9c%ec%9b%a8%ec%96%b4-%ec%9a%94%ea%b5%ac-%ec%82%ac%ed%95%ad&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph 클러스터의 성능과 안정성을 위해 적절한 하드웨어가 필요합니다.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;구성 요소&lt;/th&gt;
+          &lt;th&gt;최소 요구 사항&lt;/th&gt;
+          &lt;th&gt;권장 사양&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;CPU&lt;/td&gt;
+          &lt;td&gt;4코어 이상&lt;/td&gt;
+          &lt;td&gt;8코어 이상&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;RAM&lt;/td&gt;
+          &lt;td&gt;OSD당 2GB 이상&lt;/td&gt;
+          &lt;td&gt;OSD당 4GB 이상&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;디스크&lt;/td&gt;
+          &lt;td&gt;HDD, SSD 지원&lt;/td&gt;
+          &lt;td&gt;OSD: SSD + HDD 조합&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;네트워크&lt;/td&gt;
+          &lt;td&gt;1Gbps 최소&lt;/td&gt;
+          &lt;td&gt;10Gbps 이상&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;💡 &lt;strong&gt;NVMe SSD를 WAL/DB 용도로 활용하면 성능이 향상됩니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;2. &lt;strong&gt;네트워크 구성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-네트워크-구성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-%ea%b5%ac%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph에서는 데이터 트래픽과 관리 트래픽을 분리하는 것이 중요합니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Public Network&lt;/strong&gt;: 클라이언트와의 통신 (예: &lt;code&gt;192.168.1.0/24&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Private Network&lt;/strong&gt;: OSD 간 데이터 복제 (예: &lt;code&gt;10.0.0.0/24&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;💡 &lt;strong&gt;고가용성을 위해 VLAN 또는 BGP를 활용한 네트워크 구성 고려&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;3. &lt;strong&gt;클러스터 사이징 및 스토리지 설계&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-클러스터-사이징-및-스토리지-설계&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%ec%82%ac%ec%9d%b4%ec%a7%95-%eb%b0%8f-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ec%84%a4%ea%b3%84&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph 클러스터를 설계할 때 고려해야 할 사항:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터 복제(Redundancy): 2-way vs 3-way 복제&lt;/li&gt;
+&lt;li&gt;Erasure Coding 사용 여부&lt;/li&gt;
+&lt;li&gt;OSD당 PG 개수 설정 (권장 PG 수 계산법: &lt;code&gt;OSD 수 × 100 / 복제 수&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;💡 &lt;strong&gt;데이터 신뢰성을 위해 최소 3개의 MON 노드 필요&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ &lt;strong&gt;Cephadm을 이용한 클러스터 구축&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-cephadm을-이용한-클러스터-구축&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-cephadm%ec%9d%84-%ec%9d%b4%ec%9a%a9%ed%95%9c-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%ea%b5%ac%ec%b6%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Cephadm은 최신 Ceph 설치 방식으로, 컨테이너 기반으로 Ceph을 쉽게 배포하고 관리할 수 있습니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;Cephadm 다운로드 및 초기화&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-cephadm-다운로드-및-초기화&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-cephadm-%eb%8b%a4%ec%9a%b4%eb%a1%9c%eb%93%9c-%eb%b0%8f-%ec%b4%88%ea%b8%b0%ed%99%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl --silent --remote-name --location https://download.ceph.com/cephadm/cephadm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x cephadm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./cephadm add-repo --release quincy
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./cephadm install ceph-common&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;2. &lt;strong&gt;클러스터 부트스트랩&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-클러스터-부트스트랩&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%eb%b6%80%ed%8a%b8%ec%8a%a4%ed%8a%b8%eb%9e%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cephadm bootstrap --mon-ip 192.168.1.100&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;💡 &lt;code&gt;--mon-ip&lt;/code&gt; 옵션은 초기 Monitor 노드의 IP 주소를 지정하는 데 사용됩니다.&lt;/p&gt;
+&lt;h3&gt;3. &lt;strong&gt;노드 추가&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-노드-추가&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%eb%85%b8%eb%93%9c-%ec%b6%94%ea%b0%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;추가적인 노드를 Ceph 클러스터에 포함하려면:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph orch host add node1 192.168.1.101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph orch host add node2 192.168.1.102&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;💡 &lt;strong&gt;Cephadm을 이용하면 모든 클러스터 노드를 자동으로 관리할 수 있음&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ &lt;strong&gt;Ceph 설정 파일 (ceph.conf) 이해 및 튜닝&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-ceph-설정-파일-cephconf-이해-및-튜닝&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-ceph-%ec%84%a4%ec%a0%95-%ed%8c%8c%ec%9d%bc-cephconf-%ec%9d%b4%ed%95%b4-%eb%b0%8f-%ed%8a%9c%eb%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph 설정 파일 &lt;code&gt;ceph.conf&lt;/code&gt;는 클러스터 동작을 제어하는 주요 구성 요소입니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;기본 &lt;code&gt;ceph.conf&lt;/code&gt; 예제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-기본&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%ea%b8%b0%eb%b3%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[global]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;fsid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;7f4e14b4-5f6a-4c6b-a9d5-ef14a7b6b9c8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;mon_initial_members&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;mon1, mon2, mon3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;mon_host&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;192.168.1.100,192.168.1.101,192.168.1.102&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;public_network&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;192.168.1.0/24&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;cluster_network&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;10.0.0.0/24&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;osd_pool_default_size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;2. &lt;strong&gt;튜닝 옵션&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-튜닝-옵션&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%ed%8a%9c%eb%8b%9d-%ec%98%b5%ec%85%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;설정 옵션&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+          &lt;th&gt;권장 값&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;osd_pool_default_size&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;복제본 개수&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;osd_pool_default_min_size&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;최소 복제본 개수&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;ms_bind_ipv6&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;IPv6 활성화 여부&lt;/td&gt;
+          &lt;td&gt;false&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;bluestore_cache_size&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;블루스토어 캐시 크기&lt;/td&gt;
+          &lt;td&gt;OSD RAM의 50%&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;💡 &lt;strong&gt;네트워크 튜닝 예제&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ethtool -K eth0 tx off rx off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sysctl -w net.core.rmem_max&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;67108864&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sysctl -w net.core.wmem_max&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;67108864&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+
       </description>
     </item>
     
@@ -11709,6 +12271,188 @@ GUI 환경과 강력한 기능을 제공하며, &lt;code&gt;PowerShell&lt;/code&
 &lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;다음 장에서는 이번에 생성한 VPC를 사용하여, EC2를 생성해보도록 하겠습니다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Ceph RADOS</title>
+      <link>https://mungops.github.io/system/ceph/ceph03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mungops.github.io/system/ceph/ceph03/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;1️⃣ &lt;strong&gt;RADOS Reliable Autonomic Distributed Object Store) 개념 및 핵심 기능&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rados-reliable-autonomic-distributed-object-store-개념-및-핵심-기능&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-rados-reliable-autonomic-distributed-object-store-%ea%b0%9c%eb%85%90-%eb%b0%8f-%ed%95%b5%ec%8b%ac-%ea%b8%b0%eb%8a%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;RADOS(Reliable Autonomic Distributed Object Store)는 Ceph의 핵심 스토리지 엔진으로, Ceph 클러스터 내에서 데이터를 안정적으로 분산 및 관리하는 역할을 합니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;RADOS의 핵심 기능&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rados의-핵심-기능&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-rados%ec%9d%98-%ed%95%b5%ec%8b%ac-%ea%b8%b0%eb%8a%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;분산 스토리지&lt;/strong&gt;: 데이터를 여러 OSD에 자동 분산&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;자가 복구(Self-Healing)&lt;/strong&gt;: 장애 발생 시 데이터 복제 및 복구 자동 수행&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;확장성&lt;/strong&gt;: OSD 추가 시 자동으로 데이터 재분배&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;자율 관리(Self-Managing)&lt;/strong&gt;: CRUSH 알고리즘 기반으로 데이터 배치 자동 조정&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔹 &lt;strong&gt;💡 RADOS는 Ceph의 가장 중요한 구성 요소이며, 모든 Ceph 서비스가 RADOS 위에서 동작합니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;2️⃣ &lt;strong&gt;Ceph 클라이언트와 RADOS의 관계&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-ceph-클라이언트와-rados의-관계&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-ceph-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8%ec%99%80-rados%ec%9d%98-%ea%b4%80%ea%b3%84&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph 클라이언트는 다양한 인터페이스를 통해 RADOS와 직접 통신합니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;클라이언트 유형&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-클라이언트-유형&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ec%9c%a0%ed%98%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;클라이언트&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Librados&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;직접 RADOS API를 사용하는 애플리케이션&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;RBD&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;블록 스토리지 인터페이스 제공&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;CephFS&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;POSIX 호환 파일 시스템 인터페이스 제공&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;RGW&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;S3 호환 오브젝트 스토리지 제공&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;2. &lt;strong&gt;클라이언트와 RADOS의 데이터 흐름&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-클라이언트와-rados의-데이터-흐름&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8%ec%99%80-rados%ec%9d%98-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ed%9d%90%eb%a6%84&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;클라이언트 요청 -&amp;gt; CRUSH 알고리즘을 통해 PG 결정 -&amp;gt; 해당 PG가 포함된 OSD로 요청 전달&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 클라이언트는 데이터를 직접 OSD에 저장하며, MON 노드는 데이터 전송에 개입하지 않습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ &lt;strong&gt;Ceph OSD의 데이터 저장 구조&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-ceph-osd의-데이터-저장-구조&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-ceph-osd%ec%9d%98-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ec%a0%80%ec%9e%a5-%ea%b5%ac%ec%a1%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;OSD(Object Storage Daemon)는 Ceph 클러스터에서 데이터를 저장하는 핵심 구성 요소입니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;OSD의 데이터 저장 방식&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-osd의-데이터-저장-방식&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-osd%ec%9d%98-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ec%a0%80%ec%9e%a5-%eb%b0%a9%ec%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bluestore&lt;/strong&gt;: 최신 OSD 저장 방식 (메타데이터는 RocksDB, 데이터는 원본 디스크)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Filestore&lt;/strong&gt;(Deprecated): 기존 파일시스템 기반 저장 방식&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;OSD의 내부 구성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-osd의-내부-구성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-osd%ec%9d%98-%eb%82%b4%eb%b6%80-%ea%b5%ac%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;block.db&lt;/code&gt; (Metadata 저장, SSD 권장)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;block.wal&lt;/code&gt; (Write-Ahead Logging 저장, SSD 권장)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;block&lt;/code&gt; (실제 데이터 저장, HDD/SSD 가능)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 Bluestore는 SSD를 &lt;code&gt;block.db&lt;/code&gt;로 활용하면 성능이 크게 향상됩니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ &lt;strong&gt;PG (Placement Group)와 OSD 매핑&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-pg-placement-group와-osd-매핑&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-pg-placement-group%ec%99%80-osd-%eb%a7%a4%ed%95%91&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Placement Group (PG) 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-placement-group-pg-개념&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-placement-group-pg-%ea%b0%9c%eb%85%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;PG(Placement Group)는 데이터를 OSD에 효과적으로 분산하기 위한 중간 계층입니다.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;객체 -&amp;gt; Placement Group (PG) -&amp;gt; OSD&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;🔹 &lt;strong&gt;💡 PG는 CRUSH 알고리즘을 기반으로 OSD에 매핑됩니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;2. &lt;strong&gt;PG 수 설정 예제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-pg-수-설정-예제&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-pg-%ec%88%98-%ec%84%a4%ec%a0%95-%ec%98%88%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;PG 수 계산 공식:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;PG 수 = (OSD 수 × 100) / 복제본 수&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;💡 예를 들어, OSD가 10개이고 복제본이 3개라면:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;(10 × 100) / 3 ≈ 333개&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 PG 수를 너무 작게 설정하면 데이터 불균형이 발생할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ &lt;strong&gt;데이터 복제 및 Erasure Coding의 차이&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-데이터-복제-및-erasure-coding의-차이&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-%eb%8d%b0%ec%9d%b4%ed%84%b0-%eb%b3%b5%ec%a0%9c-%eb%b0%8f-erasure-coding%ec%9d%98-%ec%b0%a8%ec%9d%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph은 두 가지 방식으로 데이터를 보호할 수 있습니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;데이터 복제 (Replication)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-데이터-복제-replication&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%eb%8d%b0%ec%9d%b4%ed%84%b0-%eb%b3%b5%ec%a0%9c-replication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;데이터를 지정된 개수(예: 3개)만큼 복제하여 여러 OSD에 저장&lt;/li&gt;
+&lt;li&gt;장애 발생 시 빠른 복구 가능&lt;/li&gt;
+&lt;li&gt;스토리지 사용량이 증가 (복제본 개수만큼 용량 필요)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;Erasure Coding (EC)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-erasure-coding-ec&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-erasure-coding-ec&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;RAID와 유사한 방식으로 데이터 조각을 여러 OSD에 저장&lt;/li&gt;
+&lt;li&gt;저장 공간 효율이 높음&lt;/li&gt;
+&lt;li&gt;복구 시 계산 부하가 크며, 성능이 다소 저하될 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 성능이 중요한 환경에서는 Replication을, 저장 공간이 중요한 환경에서는 Erasure Coding을 사용합니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;6️⃣ &lt;strong&gt;OSD Failure 대응 및 자동 복구 과정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6-osd-failure-대응-및-자동-복구-과정&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-osd-failure-%eb%8c%80%ec%9d%91-%eb%b0%8f-%ec%9e%90%eb%8f%99-%eb%b3%b5%ea%b5%ac-%ea%b3%bc%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph은 OSD 장애가 발생하면 데이터를 자동으로 복구합니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;OSD 장애 감지&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-osd-장애-감지&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-osd-%ec%9e%a5%ec%95%a0-%ea%b0%90%ec%a7%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;MON이 OSD Heartbeat(하트비트)를 감지하여 장애 발생 여부 판단&lt;/li&gt;
+&lt;li&gt;장애 발생 시 CRUSH 맵에서 해당 OSD를 제거&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;데이터 복구 과정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-데이터-복구-과정&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%eb%8d%b0%ec%9d%b4%ed%84%b0-%eb%b3%b5%ea%b5%ac-%ea%b3%bc%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Ceph은 복제본을 기준으로 데이터 누락 확인&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Healthy OSD들이 누락된 데이터를 자동 복구&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;복구 완료 후 클러스터 상태가 HEALTH_OK로 변경&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 &lt;strong&gt;복구 진행 중에는 클러스터 상태가 &lt;code&gt;HEALTH_WARN&lt;/code&gt; 또는 &lt;code&gt;HEALTH_ERR&lt;/code&gt;로 나타날 수 있음&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;7️⃣ &lt;strong&gt;Ceph OSD Heartbeat 및 Failure Detection&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;7-ceph-osd-heartbeat-및-failure-detection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#7-ceph-osd-heartbeat-%eb%b0%8f-failure-detection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;OSD 간 Heartbeat(하트비트) 검사를 통해 장애를 감지합니다.&lt;/p&gt;
+&lt;h3&gt;1. &lt;strong&gt;Heartbeat 방식&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-heartbeat-방식&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-heartbeat-%eb%b0%a9%ec%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;OSD는 주기적으로 다른 OSD에 신호를 보냄&lt;/li&gt;
+&lt;li&gt;일정 시간(기본 20초) 내 응답이 없으면 장애로 간주&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;Heartbeat 튜닝 예제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-heartbeat-튜닝-예제&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-heartbeat-%ed%8a%9c%eb%8b%9d-%ec%98%88%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph config &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; osd osd_heartbeat_grace &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 기본 20초 -&amp;gt; 10초로 단축&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ceph config &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; osd osd_heartbeat_interval &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 기본 6초 -&amp;gt; 3초로 단축&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 Heartbeat 값을 너무 낮게 설정하면 네트워크 지연으로 인한 오탐이 발생할 수 있음&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
 
       </description>
     </item>
@@ -13769,544 +14513,60 @@ qemu-kvm | KVM 하이퍼바이저&lt;/p&gt;
     </item>
     
     <item>
-      <title>Neutron</title>
-      <link>https://mungops.github.io/system/openstack/openstack/neutron/</link>
+      <title>Ceph 블록 스토리지 (RBD) 실무</title>
+      <link>https://mungops.github.io/system/ceph/ceph04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mungops.github.io/system/openstack/openstack/neutron/</guid>
+      <guid>https://mungops.github.io/system/ceph/ceph04/</guid>
       <description>
         
         
-        &lt;h1&gt;&lt;strong&gt;네트워크를 관리하는 서비스: Neutron&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;strong&gt;네트워크를 관리하는 서비스: Neutron&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;네트워크를-관리하는-서비스-neutron-1&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%eb%a5%bc-%ea%b4%80%eb%a6%ac%ed%95%98%eb%8a%94-%ec%84%9c%eb%b9%84%ec%8a%a4-neutron-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Neutron은 네트워크 서비스로 여러 노드에 여러 프로세스를 배치하는 독립형 서비스&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;프로세스는 서로 및 다른 OpenStack의 서비스와 상화 작용&lt;/strong&gt;&lt;/li&gt;
+        &lt;h2&gt;1️⃣ &lt;strong&gt;Ceph RBD 개념 및 사용 사례&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-rbd-개념-및-사용-사례&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-ceph-rbd-%ea%b0%9c%eb%85%90-%eb%b0%8f-%ec%82%ac%ec%9a%a9-%ec%82%ac%eb%a1%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Ceph RBD란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-rbd란&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-ceph-rbd%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;RBD(RADOS Block Device)는 Ceph의 블록 스토리지 솔루션으로, 클라우드 및 가상화 환경에서 활용됩니다.&lt;/p&gt;
+&lt;p&gt;🔹 &lt;strong&gt;주요 특징&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;확장성과 고가용성을 갖춘 분산 블록 스토리지&lt;/li&gt;
+&lt;li&gt;스냅샷 및 클론 기능 제공&lt;/li&gt;
+&lt;li&gt;동적 크기 조정 가능&lt;/li&gt;
+&lt;li&gt;고성능을 위한 캐시 및 스트라이핑 기능 제공&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Neutron의 논리 아키텍처&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;neutron의-논리-아키텍처&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#neutron%ec%9d%98-%eb%85%bc%eb%a6%ac-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/images/Openstack/Neutron/Neutron01.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;table&gt;
+&lt;h3&gt;2. &lt;strong&gt;RBD 사용 사례&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-rbd-사용-사례&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-rbd-%ec%82%ac%ec%9a%a9-%ec%82%ac%eb%a1%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th&gt;구성요소&lt;/th&gt;
-          &lt;th&gt;기능&lt;/th&gt;
+          &lt;th&gt;사용 사례&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;neutron-server&lt;/td&gt;
-          &lt;td&gt;network api의 기능 및 네트워크 확장 기능을 서비스하며, 각 포트의 대한 모델 및 Pfmf 지정, AMQP를 사용하여 데이터베이스와 통신하는 플러그인을 통해 수행&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;KVM/Proxmox&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;VM 디스크 백엔드로 사용&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;neutron-L2-agent&lt;/td&gt;
-          &lt;td&gt;OVS 가상 Bridge 사이에서데이터 패킷을 전달하기 위한 중계장치&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;OpenStack&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Cinder 블록 스토리지로 통합&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;neutron-l3-agent&lt;/td&gt;
-          &lt;td&gt;태넌트 네트워크에서 VM의 외부 네트워크 엑세서를 위한 L3/ NAT 전달을 제공&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;CSI 기반의 블록 스토리지 활용&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;neutron-dhcp-agent&lt;/td&gt;
-          &lt;td&gt;테넌트 네트워크에 DHCP 서비스를 제공, DHCP agent는 메시지 큐에 엑세스할 수 있는 권한이 필요&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Queue&lt;/td&gt;
-          &lt;td&gt;다른 서비스 간의 통신의 역할을 수행&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Neutron Database&lt;/td&gt;
-          &lt;td&gt;Neutron 서비스를 수행하기 위한 일련의 정보들은 보관, 관리하는 DB&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Neutron 3rd Party Plugin&lt;/td&gt;
-          &lt;td&gt;Neutron 서비스의 안정적인 통신 역할을 수행&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;plugin agent&lt;/td&gt;
-          &lt;td&gt;각 compute node에서 실행되며 로컬 vswitch을 구성 및 관리&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;network provider services&lt;/td&gt;
-          &lt;td&gt;테넌트 네트워크에 추가 네트워킹 서비스를 제공&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;Docker&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;컨테이너 볼륨으로 사용 가능&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Neutron은 다양한 네트워크 플러그인이나 네트워크 모델을 지원&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;사용자는 Neutron API를 이용해 neutron-server로 IP 할당을 요청&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;neutron-server 들어온 요청을 Queue로 다시 요청&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Queue는 neutron-dhcp-agent와 Neutron 3rd Party plugin으로 IP 할당 지시를 내림&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;neutron-dhcp-agent와 Neutron 3rd Party Plugin은 지시 받은 작업 수행을 시작&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;neutron-server는 수시로 작업 상태를 Neutron database에 저장&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;할당된 IP를 인스턴스에서 사용 가능&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Neutron의 네트워킹 프로세스&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;neutron의-네트워킹-프로세스&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#neutron%ec%9d%98-%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%82%b9-%ed%94%84%eb%a1%9c%ec%84%b8%ec%8a%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/images/Openstack/Neutron/Neutron02.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;neutron-server에 의해 명령을 요청을 받음&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;plugin을 토대로 Messae queue를 통해 각 agent의 기능을 수행&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;이와 함께 SDN 서비스를 수행&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Neutron network의 종류&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;neutron-network의-종류&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#neutron-network%ec%9d%98-%ec%a2%85%eb%a5%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/images/Openstack/Neutron/Neutron03.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;네트워크의 종류&lt;/th&gt;
-          &lt;th&gt;기능&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Management network&lt;/td&gt;
-          &lt;td&gt;OpenStack 구성 요소 간의 내부 통신에 사용, 기본적으로 IP 주소는 데이터 센터 내에서만 사용이 가능&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Guest network&lt;/td&gt;
-          &lt;td&gt;클라우드 배포 내에서 인스턴스 데이터 통신에 사용되며, 네트워킹 플러그인 및 테넌트가 만든 가상 네트워크의 구성 선택에 따라 변동&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;External network&lt;/td&gt;
-          &lt;td&gt;외부에서 인스턴스에 대한 엑세스를 위해 제공되는 네트워크&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;API network&lt;/td&gt;
-          &lt;td&gt;OpneStack API를 외부에 노출시키는 네트워크&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Neutron과 VRRP, DVR&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;neutron과-vrrp-dvr&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#neutron%ea%b3%bc-vrrp-dvr&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;VRRP(Virtual Router Redundancy Protocl)로 랜에서 정적으로 설정된 기본 라우터를 사용할 때, 하나 이상의 백업 라우터를 사용하는 방법을 제공하는 인터넷 프로토콜&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;DVR(Distributed Virtual Router)이란 VRRP 기능을 향상시키고, 분산 라우팅 기능과 HA(High Availability), 로드밸런싱 기능을 사용할 수 있음&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;기존 레거시 HA 라우터와 마찬가지로 DVR/ SNAT(Static NAT), HA 라우터는 다른 노드에서 실행되는 L3 Agent의 백업 DVR/ SNAT 라우터에서 SNAT 서비스 장애를 빠르게 해결 가능&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/Line/Open.png&#34; alt=&#34;Line&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;네트워크 관련 명령어&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;네트워크-관련-명령어&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-%ea%b4%80%eb%a0%a8-%eb%aa%85%eb%a0%b9%ec%96%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ openstack network list
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 네트워크 확인
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ openstack network show [네트워크 이름]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 네트워크 정보 조회
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ ip netns
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 라우터 정보 조회
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ ip netns exec [라우터이름] [리눅스 명령어]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;      netstat -r
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;      arp -an
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;      ifconfig
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;      ping
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 라우터의 자세한 정보 조회
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ openstack network create --provider-network-type [타입] [네트워크 이름]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 네트워크 생성
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# openstack subnet create --network [네트워크 이름] --gateway [GW주소] --subnet-range [서브넷 범위] [서브넷 이름
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 서브넷 생성
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ openstack router list
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 라우터 목록 확인
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ openstack router show [라우터 이름]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 라우터 정보 조회
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ openstack router add subnet [라우터 이름] [서브넷 이름]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 라우터에 서브넷 추가
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ openstack port create --network [네트워크 이름] --fixed-ip subnet=[서브넷 이름] [포트 이름]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 포트 생성
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ openstack router add port [라우터 이름] [포트 이름]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 라우터에 포트 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
-    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;fixed-ip, floating-ip&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;fixed-ip-floating-ip&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#fixed-ip-floating-ip&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;IP&lt;/th&gt;
-          &lt;th&gt;역할&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Fixed IP&lt;/td&gt;
-          &lt;td&gt;가상머신에 할당되는 내부 IP를 의미&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Floating IP&lt;/td&gt;
-          &lt;td&gt;클라우드 내의 가상머신이 인터넷 외부망과 연결되기 위해 배정 받는 IP를 의미&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Security Group&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;security-group&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#security-group&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;인스턴스에 대한 인바운드 및 아웃바운드 트래픽을 제어하는 가상의 네트워크 방화벽&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;하나의 인스턴스에 여러 개의 보안 그룹 적용도 가능&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/Line/Open2.png&#34; alt=&#34;Line&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>What is RC</title>
-      <link>https://mungops.github.io/system/hardware/rc/</link>
-      <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://mungops.github.io/system/hardware/rc/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;RaidController&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;raidcontroller&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#raidcontroller&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt; &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;R/C(Raid Controller)란 &lt;code&gt;RAID 인프라에서 디스크 드라이브를 관리하는 스토리지 구성 요소&lt;/code&gt; 유형입니다.&lt;/li&gt;
-&lt;li&gt;즉, RAID 디스크를 관리하는 서버에 &lt;code&gt;물리 디스크 드라이브를 논리 장치로 제공&lt;/code&gt;한다.&lt;/li&gt;
-&lt;li&gt;RAID 컨트롤러는 디스크 어레이 컨트롤러를 의미힌다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt; &lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>6장 인증과 권한</title>
-      <link>https://mungops.github.io/system/aws/awssaa/saa-6/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mungops.github.io/system/aws/awssaa/saa-6/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;&lt;strong&gt;6장 인증과 권한 부여 - AWS Identity and Access Management&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;strong&gt;6장의 목표&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6장의-목표&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#6%ec%9e%a5%ec%9d%98-%eb%aa%a9%ed%91%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;안전한 애플리케이션 및 아키텍처 설명&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;어떻게 애플리케이션 티어를 보호할지 결정한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;어떻게 데이터르 보호하맂 결정한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;AWS 리소스는 기업의 소중한 자산이므로 엄격하게 보호돼야 한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;그렇다고 관리자와 고객조차 액세스 할 수 없을 정도로 보안 수준을 높일 수도 없다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;높은 보안 수준을 유지하면서 관리자와 고객의 액세스는 허용할 수 있는 완벽한 절충점이 IAM이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;IAM은 사용자의 요청을 인증 (Authentification),해서 정당하게 사용하는 것을 확인하고 권한 부여 (Authorization)로 필요한 만큼 정확하게 액세스 할 수 있게 할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;AWS는 주로 IAM으 통해 자격을 인증학 권한을 부여한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;6장에서는 IAM 자격증명, 보안 주체를 학습하며 자격 증면은 AWS의 사용자의 역할을 나타내고, 여기서의 역할이란 애플리케이션 서비스, 사용자, 그룹에 일시적으로 할당할 수 있는 자격 증명을 의미한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;자격증명은 다른 서비스와 연동해서 사용할 수 있으며, AWS 계정 외부의 사용자나 애플리케이션을 인증하고, AWS 리소스에 임시 액세스하는 데 Kerberos, Microsoft Active Directory, LDAP (Lightweight Directory Access Protocol)과 같은 외부 서비스를 사용할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;정책을 통해서 AWS 계정의 모든 리소스아 상호 작용할 수 있는 방법을 정교하게 정의해서 자격 증명을 제어할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;정책은 보안 주체(Principal, 자격 증명 기반) 또는 리소스에 연결한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;계정에서 보안 주체의 작업을 자세히 통제하기 위한 정책 수립&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;보안 주체의 자격을 증명하기 위해 사용되는 다양한 종류의 키 또는 토큰 관리&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;자격 증명 연동을 사용해서 IAM을 외부 공급자와 통합하기 위한 Single Sign-On 솔루션 제공&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;리소스를 적절하게 보호하기 위해 계정과 역할을 구성하는 모범 사례 구현&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;IAM 자격 증명&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;iam-자격-증명&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#iam-%ec%9e%90%ea%b2%a9-%ec%a6%9d%eb%aa%85&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;새 AWS 계정을 만들면 하나의 자격 증명이 같이 만들어지며, 이 자격 증명은 루트 사용자이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;루트는 기본적으로 계정에 연결된 서비스와 리소스 전체에 완전한 권한을 가지고 있으며, 오직 루트 사용자만이 모든 서비스에 완벽하게 액세스 할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;루트의 모든 권한을 가지고 있는 사용자는 해커에 공격에 매우 위험하며, 이 경우 계정 전체가 위험에 빠질 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;AWS는 보안 취약점 노출을 줄이기 위해 루트 계정을 철저하게 보호하고 일상적 작업에 필요한 구체적 권한을 다른 사용자에게 위임하는 것을 제안한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;IAM 정책&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 RBD는 Ceph 클러스터의 분산 스토리지 기능을 활용하여, 안정성과 성능을 극대화할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>AWS AMI 생성</title>
-      <link>https://mungops.github.io/system/aws/awstraining/ami/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mungops.github.io/system/aws/awstraining/ami/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;&lt;strong&gt;AWS AMI 생성&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;저번 장에서는 EC2를 생성해보았습니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;이번 Marketplace에서 AMI를 사용해서 인스턴스를 만들고, 생성한 인스턴스를 사용해서 AMI를 만들어 보도록하겠습니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AMI에 대한 학습을 원하는 분들은 &lt;a href=&#34;&#34; &gt;AWS AMI&lt;/a&gt;를 참고해주세요.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;blockquote&gt;
-  &lt;h2&gt;&lt;strong&gt;AWS AMI 생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;aws-ami-생성-1&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#aws-ami-%ec%83%9d%ec%84%b1-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/AWS/AMI/AMI01.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;먼저 EC2 생성을 위해 인스턴스 시작을 클릭 합니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/AWS/AMI/AMI02.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;AMI 선택화면이 나오면 AWS Marketplace에서 CentOS를 입력 후, 선택합니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;이와 같이 Marketplace에서는 사람들이 만들어둔 이미지를 사용할 수 있습니다. ( 단, 유료도 있으니 주의가 필요합니다. )&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/AWS/AMI/AMI03.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;AMI를 선택 후, EC2를 생성합니다. 혹시 생성방법을 모르시는 분들은 &lt;a href=&#34;https://mung0001.github.io/docs/cloudcomputing/training/ec2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EC2 생성&lt;/a&gt; 를 참조해주세요&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;인스턴스의 생성이 완료되면 퍼블릭 IP로 접속합니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ sudo yum install -y httpd
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ sudo systemctl enable httpd&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
-    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Apache 설치 및 자동시작을 등록합니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;퍼블릭 IP로 접속하여 확인해보세요.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/AWS/AMI/AMI04.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;이제 AMI를 만들어보겠습니다. AWS Console 환경에서 AMI를 만들 인스턴스를 우 클릭 후, 이미지 -&amp;gt; 이미지 생성을 클릭합니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/AWS/AMI/AMI05.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;이미지 이름과 설명을 입력 후, 원하는 볼륨을 설정하여 이미지를 생성합니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/AWS/AMI/AMI06.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;메뉴바의 이미지에서 AMI를 클릭하면, 현재 만든 AMI를 확인할 수 있습니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/AWS/AMI/AMI07.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;만든 AMI의 상태가 available이 되면, 다시 인스턴스 생성으로 돌아와 AMI 선택에서 이번에는 AWS Marketplace가 아닌, 나의 AMI를 선택하여 생성합니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;생성 후, 퍼블릭 IP로 접속하면 Apache가 설치되어 있는 것을 확인 할 수 있습니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;이와 같이 AMI를 사용하면, 보다 편리하고 빠르개 인스턴스를 생성할 수 있습니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;strong&gt;AWS CLI로 AMI 생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;aws-cli로-ami-생성&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#aws-cli%eb%a1%9c-ami-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;AMI 또한 AWS CLI를 통해 생성이 가능합니다.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ aws ec2 create-image \
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;--instance-id [ 인스턴스 ID ]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;--name &amp;#34;[ AMI 이름 ]&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;--description &amp;#34;[ AMI 설명 ]&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 인스턴스 ID를 가진 인스턴스를 AMI 이름과 AMI 설명을 가진 AMI 이미지로 생성합니다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;$ aws ec2 describe-images \
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;--image-id [ AMI ID ]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# AMI ID를 가진 AMI에 대한 정보를 알려줍니다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
-    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>AWS Developer</title>
-      <link>https://mungops.github.io/system/aws/amazonwebservice/aws_developer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mungops.github.io/system/aws/amazonwebservice/aws_developer/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;&lt;strong&gt;AWS_Developer&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;strong&gt;AWS CodeBuild&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;aws-codebuild&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#aws-codebuild&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/images/AWS/Developer/Codebuild.png&#34; alt=&#34;AWS&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;AWS CodeBuild는 소스 코드를 컴파일하는 단계부터 테스트 실행 후 소프트웨어 패키지를 개발하여 배포하는 단계까지 마칠 수 있는 완전관리형의 지속적 통합 서비스&lt;/li&gt;
-&lt;li&gt;CodeBuild는 지속적으로 확장되며 여러 빌드를 동시에 처리&lt;/li&gt;
-&lt;li&gt;사전 패키징된 빌드 환경을 사용하면 신속하게 시작할 수 있으며 혹은 자체 빌드 도구를 사용하는 사용자 지정 빌드 환경제작 가능&lt;/li&gt;
-&lt;li&gt;AWS CodeBuild는 코드를 실행하고 아티팩트를 Amazon S3 버킷에 저장&lt;/li&gt;
-&lt;li&gt;CodeBuild에서는 사용한 컴퓨팅 리소스에 대한 분당 요금이 청구&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;AWS CodeCommit&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;aws-codecommit&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#aws-codecommit&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/images/AWS/Developer/ACC.png&#34; alt=&#34;AWS&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;AWS CodeCommit은 안전한 Git 기반 리포지토리를 호스팅하는 완전관리형 소스 제어 서비스&lt;/li&gt;
-&lt;li&gt;뛰어난 확장성의 안전한 에코시스템에서 여러 팀이 협업하여 코드 작업을 수행가능&lt;/li&gt;
-&lt;li&gt;CodeCommit을 사용하면 소스 코드에서 바이너리까지 모든 항목을 안전하게 저장할 수 있고 기존 Git 도구와 원활하게 연동
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;에코시스템&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;자연계의 생태계처럼 관련 기업이 협력하여 공생하는 시스템을 의미&lt;/li&gt;
-&lt;li&gt;IT 분야의 여러 기업이 몇몇 리더 기업을 중심으로 경쟁과 협력을 통해 공생하고 함께 발전해 나가는 모습을 지칭&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;AWS CodeDeploy&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;aws-codedeploy&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#aws-codedeploy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/Deploy/Code.png&#34; alt=&#34;AWS&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;AWS에서 제공하는 배포 자동화 서비스&lt;/li&gt;
-&lt;li&gt;EC2 인스턴스들에 코드를 배포하는 과정을 자동으로 진행시켜 줌&lt;/li&gt;
-&lt;li&gt;카피스트라노 ( Capistrano )나 젠킨스 ( Jenkins ) 같은 서드파티 배포 자동화도구 보다 AWS 내 다양한 서비스와 손쉽게 연동이 가능하다.&lt;/li&gt;
-&lt;li&gt;CodeDeploy는 무중단 배포 기법들인 IDP/ BGD를 둘다 지원한다.&lt;/li&gt;
-&lt;li&gt;CodeDeploy란 단순히 명령어를 적어두고 프로그램이 그 명령을 순차적으로 실행하는 것 뿐이다.&lt;/li&gt;
-&lt;li&gt;단순히 우리가 해주는 일을 대신 해주는 Auto Scaling과 같은 개념&lt;/li&gt;
-&lt;li&gt;CodeDeploy로 배포하고자 한다면 EC2 인스턴스에 반드시 설치되어 있어야 하며 *.yml파일에 있는 절차를 따라서 배포를 진행한다.
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;&lt;strong&gt;CodeDeploy 구성요소&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;codedeploy-구성요소&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#codedeploy-%ea%b5%ac%ec%84%b1%ec%9a%94%ec%86%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;vesion: 0.0
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;os: linux
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 윈도우, 리눅스 등 어떤 OS를 위한 배포 파일인지를 명시한다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# CodeDeploy Agent는 배포 명령을 받으면 코드 저장소에 있는 프로젝트 전체를 서버의 임시 결로로 내려 받는다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 내려받은 프로젝트를 서버 내 어느 경로로 이동시킬지 명시할 수 있다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;files:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    - source: /
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;      destination: /var/www
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# AppSpec.yml에서는 배포 시 발생하는 다양한 생명주기마다 원하는 스크립트를 실행할 수 있게 후크를 제공해준다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 배포 시 사용하는 스크립트들은 훤하는 곳에 둬도 되며, 보통은 프로젝트에 AppSpec.yml 파일을 포함하듯이 함께 포함한다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;# 이 예시에서는 프로젝트 최상단에 scripts라는 디렉터리를 만들어 그 안에 스크립트들을 보관해 둔다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;hooks:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    # 코드 저장소에서 프로젝트를 낼받은 뒤 인스턴스 내 배포를 원하느 경로에 파일들을 옮기기 전이며, 예시에서 사용한 스크립트의 이름을 보면 리소스 데이터 번들을 압축 해제하는 것으로 추축할 수 있다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    BeforeInstall:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;        - location: scripts/UnzipResourceBundle.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;        - location: scripts/UnzipDataBundle.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    # 파일을 모두 이동한 후 실행되는 스크립트들이다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    # 파일 이름을 봐서 리소스 파일들이 제대로 존재하는 지 테스트하는 것으로 추측할 수 있다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    # 또한 Timeout 옵션을 두어 180초 이내에 스크립트가 완료되지 않으면 배포에 실패한 것으로 간주한다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;AfterInstall:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    - location: scripts/RunResourceTests.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    timeout: 180
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    # 애플리케이션을 시작할 때 사용하는 스크립트들이다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    # 예시에서는 서버를 재시작하고 최대 240초 동안 기다리는 것을 알 수 있다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;ApplicationStart:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    - location: scripts/RestartServer.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    timeout: 240
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    # 서비스를 재시작한 후 실제로 서비스가 올바르게 실행됐는 지 확인 할 때 사용한느 스크립트들이다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    # runas 옵션을 주어 기본 사용자인 ec2-user가 아닌 codedeployuser라는 다른 user로 실행하게 했다.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;ValidateService:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    - location: scripts/ValidateService.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    timeout: 30
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;x&#34;&gt;    runas: codedeployuser&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
-    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;스크립트 파일들에 실행 권항을 추가해서 Git에 올리고 싶다면 다음과 같은 명령어를 이용하면 된다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2&gt;2️⃣ &lt;strong&gt;RBD 이미지 생성, 관리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-rbd-이미지-생성-관리&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-rbd-%ec%9d%b4%eb%af%b8%ec%a7%80-%ec%83%9d%ec%84%b1-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;RBD 이미지 생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rbd-이미지-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-rbd-%ec%9d%b4%eb%af%b8%ec%a7%80-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph의 RBD는 &lt;code&gt;rbd&lt;/code&gt; 명령어를 이용하여 생성할 수 있습니다.&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;git update-index --chmod=&amp;#43;x &amp;lt;스크립트 파일 이름&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 10GB 크기의 RBD 이미지 생성&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd create mydisk --size 10G --pool rbd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
     title=&#34;Copy code&#34;
@@ -14316,42 +14576,251 @@ qemu-kvm | KVM 하이퍼바이저&lt;/p&gt;
   &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;strong&gt;CodeDeploy 작동절차&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;codedeploy-작동절차&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#codedeploy-%ec%9e%91%eb%8f%99%ec%a0%88%ec%b0%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;AppSpec.yml 파일을 추가한 후, 프로젝트를 코드 저장소인 GitHub 혹은 AWS S3에 업로드한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;CodeDeploy에 프로젝트의 특정 버전을 배포해 달라 요청한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;CodeDeploy는 배포를 진행할 EC2 인스턴스들에 설치되어 있는 CodeDeploy Agent들과 통신하며 Agent들에게 요청받은 버전을 배포해 달라고 요청한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;요청을 받은 CodeDeploy Agent들은 코드 저장소에서 프로젝트 전체를 서버로 내려받는다. 그리고 내려받은 프로젝트에 있는 AppSpec.yml 파일을 읽고 해당 파일에 적힌 절차대로 배포를 진행한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;CodeDeploy Agent를 배포를 진행할 후 성공/ 실패 등 결과를 CodeDeploy에게 전달한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;strong&gt;AWS CodePipeling&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;aws-codepipeling&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#aws-codepipeling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/images/AWS/Developer/ACP.png&#34; alt=&#34;AWS&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;AWS CodePipeline은 빠르고 안정적인 애플리케이션 및 인프라 업데이트를 위해 릴리스 파이프라인을 자동화하는 데 도움이 되는 완전관리형 지속적 전달 서비스&lt;/li&gt;
-&lt;li&gt;코드 변경이 발생할 때마다 사용자가 정의한 릴리스 모델을 기반으로 릴리스 프로세스의 빌드, 테스트 및 배포 단계를 자동화&lt;/li&gt;
-&lt;li&gt;AWS CodePipeline을 GitHub 또는 자체 사용자 지정 플러그인과 같은 타사 서비스와 손쉽게 통합가능&lt;/li&gt;
-&lt;li&gt;사용한 만큼만 비용을 지불합니다. 선결제 금액이나 장기 약정이 존재하지 않음&lt;/li&gt;
+&lt;h3&gt;2. &lt;strong&gt;RBD 이미지 목록 조회&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-rbd-이미지-목록-조회&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-rbd-%ec%9d%b4%eb%af%b8%ec%a7%80-%eb%aa%a9%eb%a1%9d-%ec%a1%b0%ed%9a%8c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd ls --pool rbd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;3. &lt;strong&gt;RBD 이미지 크기 조정 (확장)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-rbd-이미지-크기-조정-확장&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-rbd-%ec%9d%b4%eb%af%b8%ec%a7%80-%ed%81%ac%ea%b8%b0-%ec%a1%b0%ec%a0%95-%ed%99%95%ec%9e%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd resize mydisk --size 20G&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;4. &lt;strong&gt;RBD 이미지 삭제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-rbd-이미지-삭제&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-rbd-%ec%9d%b4%eb%af%b8%ec%a7%80-%ec%82%ad%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd rm mydisk&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 RBD 이미지는 VM, 컨테이너, 데이터 저장용 디스크 등으로 활용할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;3️⃣ &lt;strong&gt;RBD Snapshots 및 Cloning&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-rbd-snapshots-및-cloning&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-rbd-snapshots-%eb%b0%8f-cloning&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;RBD Snapshot 생성 및 관리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rbd-snapshot-생성-및-관리&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-rbd-snapshot-%ec%83%9d%ec%84%b1-%eb%b0%8f-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 스냅샷 생성&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd snap create mydisk --snap snap1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 스냅샷 목록 확인&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd snap ls mydisk
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 스냅샷 삭제&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd snap rm mydisk@snap1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;2. &lt;strong&gt;RBD Clone 생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-rbd-clone-생성&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-rbd-clone-%ec%83%9d%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# RBD 스냅샷을 읽기 전용 클론으로 생성&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd clone mydisk@snap1 myclone&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 RBD 스냅샷과 클론 기능을 활용하면, VM의 빠른 배포 및 백업이 가능합니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;4️⃣ &lt;strong&gt;RBD Striping과 성능 튜닝&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-rbd-striping과-성능-튜닝&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-rbd-striping%ea%b3%bc-%ec%84%b1%eb%8a%a5-%ed%8a%9c%eb%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Striping이란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-striping이란&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-striping%ec%9d%b4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;데이터를 여러 OSD에 균등하게 배치하여 성능을 향상시키는 기법&lt;/li&gt;
+&lt;li&gt;디스크 I/O 부하를 분산하여 병목 현상을 방지&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;
-&lt;h2&gt;&lt;strong&gt;AWS X-Ray&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;aws-x-ray&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#aws-x-ray&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/images/AWS/Developer/X.png&#34; alt=&#34;AWS&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;AWS X-Ray는 개발자가 마이크로 서비스 아키텍처를 사용해 구축된 애플리케이션과 같은 프로덕션 분산 애플리케이션을 분석하고 디버그하는 데 도움을 주는 서비스&lt;/li&gt;
-&lt;li&gt;X-Ray를 사용해 자신이 개발한 애플리케이션과 기본 서비스가 성능 문제와 오류의 근본 원인 식별과 문제 해결을 올바로 수행하는지 파악가능&lt;/li&gt;
-&lt;li&gt;X-Ray는 요청이 애플리케이션을 통과함에 따라 요청에 대한 엔드 투 엔드 뷰를 제공하고 애플리케이션의 기본 구성 요소를 맵으로 제시&lt;/li&gt;
-&lt;li&gt;3-티어 애플리케이션에서부터 수천 개의 서비스로 구성된 복잡한 마이크로 서비스 애플리케이션에 이르기까지 개발 중인 애플리케이션과 프로덕션에 적용된 애플리케이션 모두 분석가능&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3&gt;2. &lt;strong&gt;Striping 활성화 예제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-striping-활성화-예제&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-striping-%ed%99%9c%ec%84%b1%ed%99%94-%ec%98%88%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd create mydisk --size 10G --stripe-unit 64K --stripe-count &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 &lt;code&gt;stripe-unit&lt;/code&gt;: 한 번에 기록할 데이터 크기, &lt;code&gt;stripe-count&lt;/code&gt;: 병렬 저장할 OSD 수&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;5️⃣ &lt;strong&gt;RBD Cache 및 성능 최적화&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-rbd-cache-및-성능-최적화&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-rbd-cache-%eb%b0%8f-%ec%84%b1%eb%8a%a5-%ec%b5%9c%ec%a0%81%ed%99%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;RBD 성능 벤치마크&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rbd-성능-벤치마크&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-rbd-%ec%84%b1%eb%8a%a5-%eb%b2%a4%ec%b9%98%eb%a7%88%ed%81%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# RBD 벤치마크 실행&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rbd bench --io-type write --io-size 4K --io-threads &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; mydisk&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;2. &lt;strong&gt;RADOS 벤치마크 테스트&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-rados-벤치마크-테스트&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-rados-%eb%b2%a4%ec%b9%98%eb%a7%88%ed%81%ac-%ed%85%8c%ec%8a%a4%ed%8a%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# RADOS 스토리지 성능 테스트&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rados bench -p rbd &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; write --no-cleanup&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 벤치마크 테스트를 통해 블록 스토리지의 성능을 최적화할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;6️⃣ &lt;strong&gt;KVM/Proxmox/OpenStack에서 Ceph RBD 사용법&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6-kvmproxmoxopenstack에서-ceph-rbd-사용법&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-kvmproxmoxopenstack%ec%97%90%ec%84%9c-ceph-rbd-%ec%82%ac%ec%9a%a9%eb%b2%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;KVM에서 RBD 스토리지 사용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-kvm에서-rbd-스토리지-사용&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-kvm%ec%97%90%ec%84%9c-rbd-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ec%82%ac%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;qemu-img convert -O raw vm-disk.img rbd:rbd/mydisk&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 KVM은 RBD를 VM의 디스크로 직접 마운트할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;2. &lt;strong&gt;Proxmox에서 RBD 스토리지 추가&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-proxmox에서-rbd-스토리지-추가&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-proxmox%ec%97%90%ec%84%9c-rbd-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ec%b6%94%ea%b0%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pveceph pool create rbd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pvesm add ceph rbd --monhost 10.0.0.1 --pool rbd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;3. &lt;strong&gt;OpenStack에서 Ceph RBD 연동&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-openstack에서-ceph-rbd-연동&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-openstack%ec%97%90%ec%84%9c-ceph-rbd-%ec%97%b0%eb%8f%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[ceph]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;rbd_store_pool&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;volumes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;rbd_user&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;openstack&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;rbd_secret_uuid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;lt;UUID&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 Proxmox와 OpenStack에서 Ceph RBD를 활용하면, VM 디스크를 분산 스토리지로 사용할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;7️⃣ &lt;strong&gt;RBD를 Kubernetes에서 활용하기 (Rook-Ceph)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;7-rbd를-kubernetes에서-활용하기-rook-ceph&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#7-rbd%eb%a5%bc-kubernetes%ec%97%90%ec%84%9c-%ed%99%9c%ec%9a%a9%ed%95%98%ea%b8%b0-rook-ceph&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Kubernetes에 Rook-Ceph 설치&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-kubernetes에-rook-ceph-설치&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-kubernetes%ec%97%90-rook-ceph-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl create -f common.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl create -f operator.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl create -f cluster.yaml&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;2. &lt;strong&gt;Ceph RBD 기반 PVC 생성 예제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-ceph-rbd-기반-pvc-생성-예제&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-ceph-rbd-%ea%b8%b0%eb%b0%98-pvc-%ec%83%9d%ec%84%b1-%ec%98%88%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;apiVersion&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;PersistentVolumeClaim&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;metadata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;my-rbd-pvc&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;spec&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;accessModes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;ReadWriteOnce&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;10Gi&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;storageClassName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;rook-ceph-block&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;3. &lt;strong&gt;PVC를 Pod에서 사용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-pvc를-pod에서-사용&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-pvc%eb%a5%bc-pod%ec%97%90%ec%84%9c-%ec%82%ac%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;apiVersion&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Pod&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;metadata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;my-pod&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;spec&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;containers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;my-container&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ubuntu&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;volumeMounts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;mountPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/mnt/data&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ceph-volume&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ceph-volume&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;persistentVolumeClaim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;claimName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;my-rbd-pvc&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;💡 Rook-Ceph을 활용하면 Kubernetes 환경에서도 Ceph RBD를 쉽게 사용할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
 
       </description>
     </item>
