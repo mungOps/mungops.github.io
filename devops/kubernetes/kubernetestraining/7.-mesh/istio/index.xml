@@ -1,46 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mungOps – Istio</title>
+    <title>Istio on mungOps</title>
     <link>https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/istio/</link>
     <description>Recent content in Istio on mungOps</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ko</language>
-    
-	  <atom:link href="https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/istio/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+    <atom:link href="https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/istio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> install</title>
       <link>https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/istio/file1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/istio/file1/</guid>
-      <description>
-        
-        
-        &lt;p&gt;aaa&lt;/p&gt;
-
-      </description>
+      <description>&lt;p&gt;aaa&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title> Concept</title>
       <link>https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/istio/file0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/istio/file0/</guid>
-      <description>
-        
-        
-        &lt;p&gt;aaa&lt;/p&gt;
-
-      </description>
+      <description>&lt;p&gt;aaa&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

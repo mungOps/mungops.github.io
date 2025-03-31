@@ -257,10 +257,11 @@ project/
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/programing/python/fastapi/fastapi01/" /><meta property="article:section" content="programing" />
 
-
+<meta property="article:modified_time" content="2025-03-31T09:24:03+09:00" />
 
   <meta itemprop="name" content="1. FastAPI 기초 다지기">
   <meta itemprop="description" content="FastAPI 기초다지기 개발환경은 여기를 참조해주세요. FastAPI 프로젝트 구조 FastAPI 프로젝트를 만들고자 한다면 프로젝트 구조를 잘 만들어야 한다. 그런데 FastAPI에는 프로젝트의 구조를 정의하는 규칙이 없다. (?) 기본적으로는 아래의 구조를 가진다. ├── main.py ├── database.py ├── models.py ├── domain │ ├── answer │ ├── question │ └── user └── frontend 프로젝트를 설정하는 main main.py는 FastAPI 애플리케이션의 진입점 역할을 합니다. 여기서 라우터를 등록, 미들웨어 설정, 데이터베이스 연결 등을 수행합니다. from fastapi import FastAPI from domain.question import question_router from domain.answer import answer_router from domain.user import user_router app = FastAPI() # 라우터 등록 app.include_router(question_router.router, prefix=&#34;/questions&#34;, tags=[&#34;questions&#34;]) app.include_router(answer_router.router, prefix=&#34;/answers&#34;, tags=[&#34;answers&#34;]) app.include_router(user_router.router, prefix=&#34;/users&#34;, tags=[&#34;users&#34;]) 주요 역할: FastAPI 객체 생성 라우터를 include_router로 등록 (선택) 데이터베이스 연결, 미들웨어 추가 데이터베이스를 설정하는 database database.py는 데이터베이스와의 연결 및 ORM 설정을 담당합니다. FastAPI에서는 일반적으로 SQLAlchemy 또는 Tortoise ORM을 사용합니다. from sqlalchemy import create_engine from sqlalchemy.ext.declarative import declarative_base from sqlalchemy.orm import sessionmaker DATABASE_URL = &#34;sqlite:///./test.db&#34; engine = create_engine(DATABASE_URL, connect_args={&#34;check_same_thread&#34;: False}) SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine) Base = declarative_base() 주요 역할: 데이터베이스 URL 정의 엔진과 세션 구성 Base 객체 생성 (모델 클래스의 기반) 모델을 관리하는 models models.py는 데이터베이스 테이블을 정의하는 파일입니다. SQLAlchemy를 사용하여 각 테이블의 스키마를 선언합니다. from sqlalchemy import Column, Integer, String, Text, ForeignKey from database import Base class Question(Base): __tablename__ = &#34;questions&#34; id = Column(Integer, primary_key=True, index=True) title = Column(String, index=True) content = Column(Text) user_id = Column(Integer, ForeignKey(&#34;users.id&#34;)) API 프로젝트 구조 비교1. Domain-Driven Design (DDD) 기반 구조 구조 설명 도메인별로 비즈니스 로직, 데이터 처리, 라우팅, 스키마를 모듈화하여 관리합니다. 도메인이 복잡하거나 확장 가능한 시스템에서 적합합니다. 구조 예시 project/ ├── domain/ │ ├── question/ │ │ ├── question_router.py │ │ ├── question_crud.py │ │ └── question_schema.py │ ├── answer/ │ └── user/ ├── main.py ├── database.py └── models.py 2. Service-Oriented Architecture (SOA) 구조 설명 기능별로 서비스를 분리하여 관리합니다. 각 서비스는 독립적이며, 서로 최소한의 의존성을 가집니다. 대규모 서비스에서 적합하며, 마이크로서비스로 전환하기 쉽게 확장 가능합니다. 구조 예시 project/ ├── services/ │ ├── user_service/ │ │ ├── router.py │ │ ├── service.py │ │ └── models.py │ ├── product_service/ │ │ ├── router.py │ │ ├── service.py │ │ └── models.py │ └── order_service/ │ ├── router.py │ ├── service.py │ └── models.py ├── main.py └── shared/ ├── database.py └── utils 3. Monolithic 구조 구조 설명 단일 코드베이스에서 모든 기능을 관리합니다. 소규모 프로젝트 또는 빠른 개발 주기를 요구하는 프로젝트에 적합합니다. 구조 예시 project/ ├── app/ │ ├── routers/ │ │ ├── user_router.py │ │ ├── product_router.py │ │ └── order_router.py │ ├── models/ │ │ ├── user_model.py │ │ ├── product_model.py │ │ └── order_model.py │ └── services/ │ ├── user_service.py │ ├── product_service.py │ └── order_service.py ├── main.py └── database.py 구조 비교 구조 장점 단점 적합한 프로젝트 Domain-Driven Design (DDD) 모듈화로 유지보수 및 확장성 용이 초기 설계 및 도메인 정의에 시간 소요 복잡하고 도메인이 명확한 프로젝트 Service-Oriented Architecture (SOA) 독립성 높은 서비스로 마이크로서비스 전환 용이, 대규모 시스템 관리 적합 서비스 간 통신 설계 및 관리의 복잡성 대규모 및 확장 가능한 프로젝트 Monolithic 구조 간단한 구조로 빠른 개발 가능 규모가 커지면 유지보수 어려움 소규모 프로젝트, 프로토타이핑 등">
+  <meta itemprop="dateModified" content="2025-03-31T09:24:03+09:00">
   <meta itemprop="wordCount" content="1157">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="1. FastAPI 기초 다지기">
@@ -274,6 +275,10 @@ project/
   <link href="/css/custom.min.a1a8c4a08d5cbf5d8c1c7fe718da7a344b6919804b75477fc5a3ff67513ccc97.css" rel="stylesheet" integrity="sha256-oajEoI1cv12MHH/nGNp6NEtpGYBLdUd/xaP/Z1E8zJc=" />
 
 
+
+  /* Google Adsense */
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4274477834047595"
+     crossorigin="anonymous"></script>
   <script>
      
     const defaultTheme = 'system';
@@ -4426,7 +4431,8 @@ project/
 </table>
 
         </div>
-        <div class="hx-mt-16"></div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-03-31T09:24:03.000Z">March 31, 2025</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/programing/python/fastapi/fastapi00/"
         title="0. FastAPI이란?"

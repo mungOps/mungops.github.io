@@ -58,11 +58,12 @@ FAST API의 역사
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/programing/python/fastapi/fastapi00/" /><meta property="article:section" content="programing" />
 
-
+<meta property="article:modified_time" content="2025-03-31T09:24:03+09:00" />
 
   <meta itemprop="name" content="0. FastAPI이란?">
   <meta itemprop="description" content="FastAPI
 FastAPI 공식문서 FAST API란? FastAPI는 Python으로 작성된 현대적인 웹 프레임워크로, asyncio를 기반으로 한 ASGI(Asynchronous Server Gateway Interface)를 사용하여 비동기 작업을 통해 고성능과 간단한 코드 작성 방식을 제공합니다. 비동기 작업은 요청이 들어올 때 블로킹되지 않고 여러 작업을 병렬로 처리하므로, I/O 바운드 작업(예: 데이터베이스 쿼리, 외부 API 호출)에 대해 매우 높은 성능을 발휘합니다. # 예시 from fastapi import FastAPI app = FastAPI() @app.get(&#34;/async-example&#34;) async def async_example(): data = await fetch_data_from_api() db_result = await fetch_data_from_db() return {&#34;api_data&#34;: data, &#34;db_result&#34;: db_result} FastAPI는 비동기 처리와 함께 Pydantic의 데이터 검증을 활용하여 JSON 데이터의 직렬화 및 역직렬화를 최적화 Starlette와 Uvicorn 사용 FastAPI는 Starlette을 기반으로 하여 HTTP 및 WebSocket 처리 성능이 뛰어나며, Uvicorn이라는 ASGI 서버로 실행됩니다. Uvicorn은 단일 스레드로도 높은 요청 처리량을 제공하며, 멀티프로세스 옵션을 통해 대규모 서비스에서도 확장 가능합니다 Swagger UI 및 ReDoc 같은 UI로 API 문서를 확인하고 테스트가 가능합니다. FAST API의 역사 FastAPI는 2018년에 Sebastián Ramírez에 의해 처음 발표되었습니다. Flask와 Django와 같은 기존 프레임워크의 제한점을 보완하고, 비동기 프로그래밍의 필요성을 반영하여 설계되었습니다.">
+  <meta itemprop="dateModified" content="2025-03-31T09:24:03+09:00">
   <meta itemprop="wordCount" content="1186">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="0. FastAPI이란?">
@@ -77,6 +78,10 @@ FastAPI 공식문서 FAST API란? FastAPI는 Python으로 작성된 현대적인
   <link href="/css/custom.min.a1a8c4a08d5cbf5d8c1c7fe718da7a344b6919804b75477fc5a3ff67513ccc97.css" rel="stylesheet" integrity="sha256-oajEoI1cv12MHH/nGNp6NEtpGYBLdUd/xaP/Z1E8zJc=" />
 
 
+
+  /* Google Adsense */
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4274477834047595"
+     crossorigin="anonymous"></script>
   <script>
      
     const defaultTheme = 'system';
@@ -4095,7 +4100,8 @@ FastAPI는 비동기 기능 덕분에 고성능 머신러닝 API를 쉽게 구�
 <hr>
 
         </div>
-        <div class="hx-mt-16"></div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-03-31T09:24:03.000Z">March 31, 2025</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/programing/python/fastapi/fastapi01/"
         title="1. FastAPI 기초 다지기"

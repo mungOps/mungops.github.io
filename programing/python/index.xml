@@ -1,44 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mungOps – Python</title>
+    <title>Python on mungOps</title>
     <link>https://mungops.github.io/programing/python/</link>
     <description>Recent content in Python on mungOps</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ko</language>
-    
-	  <atom:link href="https://mungops.github.io/programing/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>FastAPI</title>
-      <link>https://mungops.github.io/programing/python/fastapi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mungops.github.io/programing/python/fastapi/</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://mungops.github.io/programing/python/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mungops.github.io/programing/python/python/</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
-    
+    <atom:link href="https://mungops.github.io/programing/python/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
