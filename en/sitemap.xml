@@ -7,8 +7,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/1.-runtime/containerd/file0/</loc>
   </url><url>
-    <loc>https://mungops.github.io/programing/fastapi/fastapi/fastapi00/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+    <loc>https://mungops.github.io/programing/python/fastapi/fastapi00/</loc>
   </url><url>
     <loc>https://mungops.github.io/programing/git/git/git00/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -56,8 +55,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/11.-ml/elasticsearch/</loc>
   </url><url>
-    <loc>https://mungops.github.io/programing/fastapi/fastapi/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+    <loc>https://mungops.github.io/programing/python/fastapi/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/server/network/ftp/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
@@ -136,6 +134,7 @@
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql01/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/server/network/proxy/</loc>
     <lastmod>2025-03-20T17:42:46+09:00</lastmod>
@@ -153,6 +152,7 @@
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis01/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/0.-resource/</loc>
   </url><url>
@@ -230,8 +230,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/99.-etc/0/file1/</loc>
   </url><url>
-    <loc>https://mungops.github.io/programing/fastapi/fastapi/fastapi01/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+    <loc>https://mungops.github.io/programing/python/fastapi/fastapi01/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/aws/awssaa/saa-2/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -288,9 +287,10 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/4.-tools/openlens/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/</loc>
-    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql02/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python01/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
@@ -323,8 +323,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/docker/docker02/</loc>
   </url><url>
-    <loc>https://mungops.github.io/programing/fastapi/fastapi/fastapi02/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+    <loc>https://mungops.github.io/programing/python/fastapi/fastapi02/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/glance/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -351,14 +350,16 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/3.-cni/nginx/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql03/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python02/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/</loc>
-    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis03/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/server/storage/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
@@ -402,6 +403,7 @@
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis04/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/server/auth/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
@@ -409,6 +411,7 @@
     <loc>https://mungops.github.io/programing/go/go/go03/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql04/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/hardware/nic/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -453,8 +456,10 @@
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql05/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis05/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/server/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -508,11 +513,13 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s05/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql06/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python05/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis06/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/argo/argo06/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
@@ -542,11 +549,13 @@
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql07/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python06/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis07/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s06/</loc>
   </url><url>
@@ -589,6 +598,7 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis08/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/swift/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -645,9 +655,6 @@
   </url><url>
     <loc>https://mungops.github.io/system/ceph/ceph09/</loc>
     <lastmod>2025-03-28T09:51:13+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/programing/fastapi/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/go/go/go09/</loc>
   </url><url>
@@ -1050,6 +1057,7 @@
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis02/</loc>
+    <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
