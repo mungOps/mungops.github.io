@@ -118,8 +118,10 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/0.-resource/file0/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb01/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/server/storage/nfs/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
@@ -132,6 +134,8 @@
   </url><url>
     <loc>https://mungops.github.io/system/server/os/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/postgresql/postgresql01/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/server/network/proxy/</loc>
     <lastmod>2025-03-20T17:42:46+09:00</lastmod>
@@ -147,6 +151,8 @@
   </url><url>
     <loc>https://mungops.github.io/system/server/auth/radius/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/redis/redis01/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/0.-resource/</loc>
   </url><url>
@@ -272,6 +278,7 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb02/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/3.-cni/metallb/</loc>
   </url><url>
@@ -281,6 +288,9 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/4.-tools/openlens/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/postgresql/postgresql02/</loc>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python01/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
@@ -336,13 +346,19 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb03/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/3.-cni/nginx/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/database/postgresql/postgresql03/</loc>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python02/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/redis/redis03/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/server/storage/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
@@ -377,6 +393,7 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins04/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb04/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/nova/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -384,10 +401,14 @@
     <loc>https://mungops.github.io/programing/python/python/python03/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/database/redis/redis04/</loc>
+  </url><url>
     <loc>https://mungops.github.io/system/server/auth/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/go/go/go03/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/database/postgresql/postgresql04/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/hardware/nic/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -426,9 +447,14 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins05/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb05/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/neutron/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/postgresql/postgresql05/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/database/redis/redis05/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/server/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -474,14 +500,19 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins06/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb06/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/server/monitoring/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s05/</loc>
   </url><url>
+    <loc>https://mungops.github.io/database/postgresql/postgresql06/</loc>
+  </url><url>
     <loc>https://mungops.github.io/programing/python/python/python05/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/redis/redis06/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/argo/argo06/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
@@ -508,9 +539,14 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins07/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb07/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/postgresql/postgresql07/</loc>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python06/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/redis/redis07/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s06/</loc>
   </url><url>
@@ -548,8 +584,11 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s07/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb08/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/database/redis/redis08/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/swift/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -584,6 +623,7 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins09/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb09/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python08/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
@@ -618,6 +658,7 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/9.-kms/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb10/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -655,6 +696,7 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins11/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb11/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/azure/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -677,6 +719,7 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins12/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb12/</loc>
+    <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/11.-ml/</loc>
   </url><url>
@@ -1005,6 +1048,8 @@
   </url><url>
     <loc>https://mungops.github.io/programing/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/database/redis/redis02/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
