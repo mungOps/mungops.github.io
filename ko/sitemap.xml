@@ -2,33 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mungops.github.io/ko/docs/advanced/multi-language/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/organize-files/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/configuration/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/markdown/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/syntax-highlighting/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/latex/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/diagrams/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
     <loc>https://mungops.github.io/ko/tags/example/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
     <xhtml:link
@@ -107,9 +80,6 @@
                 href="https://mungops.github.io/ko/"
                 />
   </url><url>
-    <loc>https://mungops.github.io/ko/docs/advanced/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
     <loc>https://mungops.github.io/ko/blog/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
     <xhtml:link
@@ -123,12 +93,6 @@
                 href="https://mungops.github.io/ko/blog/"
                 />
   </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/callout/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/cards/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
     <loc>https://mungops.github.io/ko/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -140,33 +104,6 @@
                 hreflang="ko"
                 href="https://mungops.github.io/ko/categories/"
                 />
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/advanced/comments/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/advanced/customization/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/deploy-site/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/details/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/filetree/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/icon/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/jupyter/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/others/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/ko/portfolio/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -180,11 +117,5 @@
                 hreflang="ko"
                 href="https://mungops.github.io/ko/portfolio/"
                 />
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/steps/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/ko/docs/guide/shortcodes/tabs/</loc>
-    <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url>
 </urlset>
