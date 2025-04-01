@@ -103,6 +103,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/8.-ams/keycloak/</loc>
   </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive01/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/file0/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/</loc>
@@ -277,6 +279,8 @@
     <loc>https://mungops.github.io/system/openstack/openstack/keystone/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive02/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/file1/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/file2/</loc>
@@ -352,6 +356,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/11.-ml/kibana/</loc>
   </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive03/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb03/</loc>
@@ -402,6 +408,8 @@
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins04/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive04/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb04/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -461,6 +469,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins05/</loc>
   </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive05/</loc>
+  </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb05/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
@@ -518,6 +528,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins06/</loc>
   </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive06/</loc>
+  </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb06/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
@@ -562,6 +574,8 @@
     <loc>https://mungops.github.io/devops/kubernetes/istio/istio07/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins07/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive07/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb07/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -610,6 +624,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins08/</loc>
   </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive08/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s07/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb08/</loc>
@@ -654,6 +670,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins09/</loc>
   </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive09/</loc>
+  </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb09/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
   </url><url>
@@ -687,6 +705,8 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins10/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/9.-kms/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive10/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb10/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
