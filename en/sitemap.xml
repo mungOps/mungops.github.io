@@ -7,6 +7,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/1.-runtime/containerd/file0/</loc>
   </url><url>
+    <loc>https://mungops.github.io/devops/terraform/terraform01/</loc>
+  </url><url>
     <loc>https://mungops.github.io/programing/python/fastapi/fastapi00/</loc>
     <lastmod>2025-03-31T09:24:03+09:00</lastmod>
   </url><url>
@@ -95,7 +97,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/7.-mesh/istio/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio01/</loc>
+    <loc>https://mungops.github.io/devops/istio/istio01/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins01/</loc>
   </url><url>
@@ -103,7 +105,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/8.-ams/keycloak/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive01/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive01/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/file0/</loc>
   </url><url>
@@ -180,7 +182,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/6.-br/velero/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero01/</loc>
+    <loc>https://mungops.github.io/devops/velero/velero01/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/server/virtualization/virtualization/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
@@ -274,14 +276,14 @@
     <loc>https://mungops.github.io/devops/helm/helm01/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio02/</loc>
+    <loc>https://mungops.github.io/devops/istio/istio02/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins02/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/keystone/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive02/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive02/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/file1/</loc>
   </url><url>
@@ -308,7 +310,9 @@
     <loc>https://mungops.github.io/programing/python/python/python01/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero02/</loc>
+    <loc>https://mungops.github.io/devops/terraform/terraform02/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/velero/velero02/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/hardware/disk/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -354,13 +358,13 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s02/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio03/</loc>
+    <loc>https://mungops.github.io/devops/istio/istio03/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins03/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/11.-ml/kibana/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive03/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive03/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/</loc>
   </url><url>
@@ -384,7 +388,9 @@
     <loc>https://mungops.github.io/system/server/storage/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero03/</loc>
+    <loc>https://mungops.github.io/devops/terraform/terraform03/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/velero/velero03/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/aws/awssaa/saa-4/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -415,7 +421,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins04/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive04/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive04/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb04/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -432,14 +438,16 @@
     <loc>https://mungops.github.io/system/server/auth/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero04/</loc>
+    <loc>https://mungops.github.io/devops/terraform/terraform04/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/velero/velero04/</loc>
   </url><url>
     <loc>https://mungops.github.io/programing/go/go/go03/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql04/</loc>
     <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio04/</loc>
+    <loc>https://mungops.github.io/devops/istio/istio04/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/hardware/nic/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -477,7 +485,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins05/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive05/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive05/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb05/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -497,13 +505,15 @@
     <loc>https://mungops.github.io/devops/terraform/</loc>
     <lastmod>2025-03-23T16:18:06+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/terraform/terraform05/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/4.-tools/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero05/</loc>
+    <loc>https://mungops.github.io/devops/velero/velero05/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s04/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio05/</loc>
+    <loc>https://mungops.github.io/devops/istio/istio05/</loc>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python04/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
@@ -538,7 +548,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins06/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive06/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive06/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb06/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -557,9 +567,11 @@
     <loc>https://mungops.github.io/database/redis/redis06/</loc>
     <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero06/</loc>
+    <loc>https://mungops.github.io/devops/terraform/terraform06/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio06/</loc>
+    <loc>https://mungops.github.io/devops/velero/velero06/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/istio/istio06/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/argo/argo06/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
@@ -583,11 +595,11 @@
     <loc>https://mungops.github.io/devops/helm/helm06/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio07/</loc>
+    <loc>https://mungops.github.io/devops/istio/istio07/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins07/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive07/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive07/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb07/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -603,7 +615,9 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s06/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero07/</loc>
+    <loc>https://mungops.github.io/devops/terraform/terraform07/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/velero/velero07/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/server/virtualization/</loc>
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
@@ -634,11 +648,11 @@
     <loc>https://mungops.github.io/system/openstack/openstack/horizon/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio08/</loc>
+    <loc>https://mungops.github.io/devops/istio/istio08/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins08/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive08/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive08/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s07/</loc>
   </url><url>
@@ -653,7 +667,9 @@
     <loc>https://mungops.github.io/system/openstack/openstack/swift/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero08/</loc>
+    <loc>https://mungops.github.io/devops/terraform/terraform08/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/velero/velero08/</loc>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python07/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
@@ -682,11 +698,11 @@
     <loc>https://mungops.github.io/devops/helm/helm08/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/istio09/</loc>
+    <loc>https://mungops.github.io/devops/istio/istio09/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins09/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive09/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive09/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb09/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -694,7 +710,9 @@
     <loc>https://mungops.github.io/programing/python/python/python08/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero09/</loc>
+    <loc>https://mungops.github.io/devops/terraform/terraform09/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/velero/velero09/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/argo/argo09/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
@@ -718,13 +736,13 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetes/k8s09/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/istio/</loc>
+    <loc>https://mungops.github.io/devops/istio/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins10/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/9.-kms/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/knstive10/</loc>
+    <loc>https://mungops.github.io/devops/knative/knstive10/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb10/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -738,7 +756,9 @@
     <loc>https://mungops.github.io/programing/python/python/python09/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/velero10/</loc>
+    <loc>https://mungops.github.io/devops/terraform/terraform10/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/velero/velero10/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/aws/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -766,7 +786,7 @@
   </url><url>
     <loc>https://mungops.github.io/devops/jenkins/jenkins11/</loc>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/knative/</loc>
+    <loc>https://mungops.github.io/devops/knative/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb11/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -799,7 +819,7 @@
     <loc>https://mungops.github.io/programing/python/python/python11/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/kubernetes/velero/</loc>
+    <loc>https://mungops.github.io/devops/velero/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/azure/azuretraining/azure02/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
