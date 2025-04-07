@@ -9,24 +9,17 @@
     <lastBuildDate>Wed, 19 Mar 2025 20:18:39 +0900</lastBuildDate>
     <atom:link href="https://mungops.github.io/ko/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Example</title>
-      <link>https://mungops.github.io/ko/tags/example/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/ko/tags/example/</guid>
+      <title>삽질 중</title>
+      <link>https://mungops.github.io/ko/tags/%EC%82%BD%EC%A7%88-%EC%A4%91/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/ko/tags/%EC%82%BD%EC%A7%88-%EC%A4%91/</guid>
       <description></description>
     </item>
     <item>
-      <title>Guide</title>
-      <link>https://mungops.github.io/ko/tags/guide/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/ko/tags/guide/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Markdown</title>
-      <link>https://mungops.github.io/ko/tags/markdown/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/ko/tags/markdown/</guid>
+      <title>정리 중</title>
+      <link>https://mungops.github.io/ko/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/ko/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/</guid>
       <description></description>
     </item>
   </channel>

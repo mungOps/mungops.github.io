@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown on mungOps</title>
-    <link>https://mungops.github.io/tags/markdown/</link>
+    <link>http://localhost:1313/tags/markdown/</link>
     <description>Recent content in Markdown on mungOps</description>
     <generator>Hugo</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 17 Mar 2025 16:33:32 +0900</lastBuildDate>
-    <atom:link href="https://mungops.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>https://mungops.github.io/blog/markdown/</link>
+      <link>http://localhost:1313/blog/markdown/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/markdown/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/markdown/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

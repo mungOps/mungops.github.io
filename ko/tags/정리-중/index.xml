@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>정리 중 on mungOps manual (dev)</title>
+    <link>https://mungops.github.io/ko/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/</link>
+    <description>Recent content in 정리 중 on mungOps manual (dev)</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 19 Mar 2025 20:18:39 +0900</lastBuildDate>
+    <atom:link href="https://mungops.github.io/ko/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>정리 중!</title>
+      <link>https://mungops.github.io/ko/blog/markdown/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/ko/blog/markdown/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/GoGo.png&#34; alt=&#34;GoGo&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
