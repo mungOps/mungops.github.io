@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Valut on mungOps</title>
+    <link>https://mungops.github.io/devops/valut/</link>
+    <description>Recent content in Valut on mungOps</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <atom:link href="https://mungops.github.io/devops/valut/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vault 소개 및 기본 개념</title>
+      <link>https://mungops.github.io/devops/valut/valut01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut01/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Vault의 탄생 배경과 해결하려는 문제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-vault의-탄생-배경과-해결하려는-문제&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-vault%ec%9d%98-%ed%83%84%ec%83%9d-%eb%b0%b0%ea%b2%bd%ea%b3%bc-%ed%95%b4%ea%b2%b0%ed%95%98%eb%a0%a4%eb%8a%94-%eb%ac%b8%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. 보안 문제는 점점 더 복잡해지고 있다&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-보안-문제는-점점-더-복잡해지고-있다&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%eb%b3%b4%ec%95%88-%eb%ac%b8%ec%a0%9c%eb%8a%94-%ec%a0%90%ec%a0%90-%eb%8d%94-%eb%b3%b5%ec%9e%a1%ed%95%b4%ec%a7%80%ea%b3%a0-%ec%9e%88%eb%8b%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;현대의 인프라 환경은 빠르게 변화하고 있습니다. 특히 &lt;strong&gt;클라우드, 컨테이너, 마이크로서비스&lt;/strong&gt;의 도입으로 인해 다음과 같은 문제가 생겼습니다:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vault 아키텍처 이해</title>
+      <link>https://mungops.github.io/devops/valut/valut02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut02/</guid>
+      <description>&lt;h2&gt;2️⃣ &lt;strong&gt;Vault 서버 구성 요소 (Core, Storage, API, Auth Backends)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-vault-서버-구성-요소-core-storage-api-auth-backends&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#2-vault-%ec%84%9c%eb%b2%84-%ea%b5%ac%ec%84%b1-%ec%9a%94%ec%86%8c-core-storage-api-auth-backends&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 단순히 &amp;ldquo;Secret 저장소&amp;quot;를 넘어서, &lt;strong&gt;보안 관리 플랫폼&lt;/strong&gt;으로 설계된 시스템입니다.&lt;br&gt;&#xA;이 복잡한 구조를 이해하려면 Vault 내부 구성 요소부터 짚고 넘어가야 합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vault 설치 및 초기 구성</title>
+      <link>https://mungops.github.io/devops/valut/valut03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut03/</guid>
+      <description>&lt;h2&gt;3️⃣ &lt;strong&gt;Vault 설치 및 초기 구성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-vault-설치-및-초기-구성&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#3-vault-%ec%84%a4%ec%b9%98-%eb%b0%8f-%ec%b4%88%ea%b8%b0-%ea%b5%ac%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;HashiCorp Vault를 제대로 이해하려면, 먼저 직접 설치하고 실행해보는 경험이 가장 중요합니다.&lt;br&gt;&#xA;이번 파트에서는 &lt;strong&gt;개발용 Standalone 모드&lt;/strong&gt;, &lt;strong&gt;HA 구성 개요&lt;/strong&gt;, &lt;strong&gt;Kubernetes 설치&lt;/strong&gt;, 그리고 &lt;strong&gt;초기화 &amp;amp; unseal 실습&lt;/strong&gt;까지 다룹니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>인증 방법(Auth Methods)</title>
+      <link>https://mungops.github.io/devops/valut/valut04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut04/</guid>
+      <description>&lt;h2&gt;4️⃣ &lt;strong&gt;인증 방법(Auth Methods)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-인증-방법auth-methods&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#4-%ec%9d%b8%ec%a6%9d-%eb%b0%a9%eb%b2%95auth-methods&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 다양한 **인증 백엔드(Auth Methods)**를 지원하며, 사용자의 신원을 검증한 후 **정책(Policy)**을 적용해 접근을 제어합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Secret 엔진 이해 및 활용</title>
+      <link>https://mungops.github.io/devops/valut/valut05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut05/</guid>
+      <description>&lt;h2&gt;5️⃣ &lt;strong&gt;Secret 엔진 이해 및 활용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-secret-엔진-이해-및-활용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#5-secret-%ec%97%94%ec%a7%84-%ec%9d%b4%ed%95%b4-%eb%b0%8f-%ed%99%9c%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 다양한 &lt;strong&gt;Secret Engine&lt;/strong&gt;을 통해 다양한 유형의 비밀(Secrets)을 생성, 저장, 동적으로 발급할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>정책과 권한 제어 (ACL)</title>
+      <link>https://mungops.github.io/devops/valut/valut06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut06/</guid>
+      <description>&lt;h2&gt;6️⃣ &lt;strong&gt;정책과 권한 제어 (ACL)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6-정책과-권한-제어-acl&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#6-%ec%a0%95%ec%b1%85%ea%b3%bc-%ea%b6%8c%ed%95%9c-%ec%a0%9c%ec%96%b4-acl&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 민감한 정보를 다루기 때문에 &lt;strong&gt;세밀한 권한 제어&lt;/strong&gt;가 필수입니다. Vault는 정책 기반의 접근 제어를 통해 다양한 사용자, 시스템, 애플리케이션이 필요한 정보만 접근하도록 통제할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>동적 시크릿(Dynamic Secrets)</title>
+      <link>https://mungops.github.io/devops/valut/valut07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut07/</guid>
+      <description>&lt;h2&gt;7️⃣ &lt;strong&gt;동적 시크릿(Dynamic Secrets)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;7-동적-시크릿dynamic-secrets&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#7-%eb%8f%99%ec%a0%81-%ec%8b%9c%ed%81%ac%eb%a6%bfdynamic-secrets&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault의 핵심 기능 중 하나는 **동적 시크릿(Dynamic Secrets)**입니다. 기존의 &lt;strong&gt;정적 시크릿&lt;/strong&gt;과 달리, &lt;strong&gt;요청 시점에 실시간으로 생성되고 만료되는 일회성 자격 증명&lt;/strong&gt;을 발급함으로써 보안성과 유연성을 극대화할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shamir Secret Sharing &amp; Auto-unseal</title>
+      <link>https://mungops.github.io/devops/valut/valut08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut08/</guid>
+      <description>&lt;h2&gt;8️⃣ &lt;strong&gt;Shamir Secret Sharing &amp;amp; Auto-unseal&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;8-shamir-secret-sharing--auto-unseal&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#8-shamir-secret-sharing--auto-unseal&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 고도의 보안 체계를 갖춘 비밀 관리 시스템입니다. 이 중 &lt;strong&gt;Shamir Secret Sharing&lt;/strong&gt;과 &lt;strong&gt;Auto-unseal&lt;/strong&gt;은 Vault 보안 아키텍처의 핵심 개념으로, 초기화 및 시크릿 보호에 깊은 관련이 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>스토리지 백엔드와 고가용성(HA)</title>
+      <link>https://mungops.github.io/devops/valut/valut09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut09/</guid>
+      <description>&lt;h2&gt;9️⃣ &lt;strong&gt;스토리지 백엔드와 고가용성(HA)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;9-스토리지-백엔드와-고가용성ha&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#9-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%eb%b0%b1%ec%97%94%eb%93%9c%ec%99%80-%ea%b3%a0%ea%b0%80%ec%9a%a9%ec%84%b1ha&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 &lt;strong&gt;상태 기반 시스템&lt;/strong&gt;이기 때문에 내부 상태(시크릿, 구성, 토큰 등)를 안전하게 저장하고, &lt;strong&gt;고가용성&lt;/strong&gt;(High Availability)을 통해 장애에 대응할 수 있는 구성이 필수적입니다. 이를 위해 다양한 &lt;strong&gt;스토리지 백엔드&lt;/strong&gt;를 지원하며, &lt;strong&gt;리더 선출과 복제&lt;/strong&gt;를 기반으로 안정성을 보장합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kubernetes에서 Vault 사용하기</title>
+      <link>https://mungops.github.io/devops/valut/valut10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut10/</guid>
+      <description>&lt;h2&gt;🔟 &lt;strong&gt;Kubernetes에서 Vault 사용하기&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-kubernetes에서-vault-사용하기&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-kubernetes%ec%97%90%ec%84%9c-vault-%ec%82%ac%ec%9a%a9%ed%95%98%ea%b8%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 시크릿을 안전하게 관리하는 강력한 도구입니다. Kubernetes와 통합하면 Pod에 시크릿을 안전하게 &lt;strong&gt;자동 주입&lt;/strong&gt;하거나 &lt;strong&gt;마운트&lt;/strong&gt;할 수 있으며, 동적으로 갱신 가능한 보안 환경을 구축할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vault Agent와 자동화</title>
+      <link>https://mungops.github.io/devops/valut/valut11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut11/</guid>
+      <description>&lt;h2&gt;1️⃣1️⃣ &lt;strong&gt;Vault Agent와 자동화&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;11-vault-agent와-자동화&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#11-vault-agent%ec%99%80-%ec%9e%90%eb%8f%99%ed%99%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault Agent는 Vault 환경에서 자동화를 위한 핵심 구성 요소입니다. 시크릿을 주기적으로 가져오고, 인증과 갱신을 자동으로 처리하며, 파일로 템플릿 렌더링까지 지원하여 &lt;strong&gt;Vault 운영을 자동화&lt;/strong&gt;할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transit Engine – Encryption as a Service</title>
+      <link>https://mungops.github.io/devops/valut/valut12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut12/</guid>
+      <description>&lt;h2&gt;1️⃣2️⃣ &lt;strong&gt;Transit Engine – Encryption as a Service&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;12-transit-engine--encryption-as-a-service&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#12-transit-engine--encryption-as-a-service&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault의 &lt;strong&gt;Transit Secret Engine&lt;/strong&gt;은 데이터를 저장하지 않고, &lt;strong&gt;암호화 및 복호화 서비스만 제공&lt;/strong&gt;합니다. 애플리케이션은 민감한 데이터를 저장하기 전 Vault를 통해 실시간으로 암호화하거나, 복호화할 수 있습니다. 이를 통해 외부 시스템은 &lt;strong&gt;Vault를 암호화 서비스로 사용&lt;/strong&gt;할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vault &#43; CI/CD 통합</title>
+      <link>https://mungops.github.io/devops/valut/valut13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut13/</guid>
+      <description>&lt;h2&gt;1️⃣3️⃣ &lt;strong&gt;Vault + CI/CD 통합&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;13-vault--cicd-통합&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#13-vault--cicd-%ed%86%b5%ed%95%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 단순한 비밀 저장소를 넘어 &lt;strong&gt;CI/CD 파이프라인과의 통합&lt;/strong&gt;을 통해 민감 정보(토큰, API 키, DB 크리덴셜 등)를 안전하게 주입하고 관리할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>운영 관리와 모니터링</title>
+      <link>https://mungops.github.io/devops/valut/valut14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut14/</guid>
+      <description>&lt;h2&gt;1️⃣4️⃣ &lt;strong&gt;운영 관리와 모니터링&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;14-운영-관리와-모니터링&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#14-%ec%9a%b4%ec%98%81-%ea%b4%80%eb%a6%ac%ec%99%80-%eb%aa%a8%eb%8b%88%ed%84%b0%eb%a7%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 민감한 정보를 다루는 시스템이므로, **운영 관점의 로깅, 모니터링, 경고(Alerting)**가 매우 중요합니다. 단순한 구성 이상으로 실시간 이상 징후를 감지하고 감사(Audit)가 가능한 환경을 구축해야 보안 사고를 막을 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>보안 Best Practices</title>
+      <link>https://mungops.github.io/devops/valut/valut15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut15/</guid>
+      <description>&lt;h2&gt;1️⃣5️⃣ &lt;strong&gt;보안 Best Practices&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;15-보안-best-practices&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#15-%eb%b3%b4%ec%95%88-best-practices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 강력한 보안 기능을 제공하지만, &lt;strong&gt;운영자의 보안 수칙 준수&lt;/strong&gt;가 시스템 전반의 안정성을 좌우합니다. 본 절에서는 Vault 운영 시 반드시 실천해야 할 **보안 모범 사례(Best Practices)**를 소개합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>백업, 복구, 마이그레이션</title>
+      <link>https://mungops.github.io/devops/valut/valut16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut16/</guid>
+      <description>&lt;h2&gt;1️⃣6️⃣ &lt;strong&gt;백업, 복구, 마이그레이션&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;16-백업-복구-마이그레이션&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#16-%eb%b0%b1%ec%97%85-%eb%b3%b5%ea%b5%ac-%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vault는 보안 정보 저장소인 만큼, 장애나 데이터 손실 시 빠르게 복구할 수 있는 체계가 반드시 필요합니다. 이 포스팅에서는 &lt;strong&gt;Raft Snapshot 방식의 백업/복구&lt;/strong&gt;, &lt;strong&gt;파일 이관 전략&lt;/strong&gt;, &lt;strong&gt;DR(Disaster Recovery) 클러스터 구성&lt;/strong&gt;을 실무 예제와 함께 다룹니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>문제 해결 및 트러블슈팅</title>
+      <link>https://mungops.github.io/devops/valut/valut18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut18/</guid>
+      <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;&amp;ldquo;Unseal Error&amp;rdquo;, &amp;ldquo;Permission Denied&amp;rdquo; 등 주요 이슈 대응법&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Unseal Error&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-unseal-error&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-unseal-error&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Vault는 초기화 후 Unseal 키가 입력되어야 작동합니다. 클러스터 내 Vault Pod가 재시작되거나 재배포되었을 때, Unseal 오류가 자주 발생합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>실무 시나리오 예제</title>
+      <link>https://mungops.github.io/devops/valut/valut17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/valut/valut17/</guid>
+      <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;Microservice 구조에서 Vault 활용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--microservice-구조에서-vault-활용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--microservice-%ea%b5%ac%ec%a1%b0%ec%97%90%ec%84%9c-vault-%ed%99%9c%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;시나리오 개요&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-시나리오-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%8b%9c%eb%82%98%eb%a6%ac%ec%98%a4-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Microservice 아키텍처에서는 서비스 간 통신과 외부 시스템 접근에 다양한 시크릿(비밀번호, API 키, 인증서 등)이 필요합니다. Vault는 이 시크릿을 중앙 집중식으로 관리하고, 각 마이크로서비스에 안전하게 전달합니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

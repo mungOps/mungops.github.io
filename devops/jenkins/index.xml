@@ -105,19 +105,5 @@
       <guid>https://mungops.github.io/devops/jenkins/jenkins14/</guid>
       <description>&lt;h2&gt;1️⃣4️⃣ &lt;strong&gt;Jenkins 최신 트렌드 및 Best Practices&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;14-jenkins-최신-트렌드-및-best-practices&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#14-jenkins-%ec%b5%9c%ec%8b%a0-%ed%8a%b8%eb%a0%8c%eb%93%9c-%eb%b0%8f-best-practices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1️⃣ &lt;strong&gt;GitOps와 Jenkins의 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-gitops와-jenkins의-역할&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-gitops%ec%99%80-jenkins%ec%9d%98-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;GitOps는 Git을 소스 코드와 인프라의 단일 진실의 원천으로 사용하는 DevOps 관행입니다. Jenkins는 GitOps 파이프라인을 구현하는 데 중요한 역할을 하며, Jenkins를 사용하여 GitHub와 GitLab의 레포지토리에서 CI/CD 작업을 자동화할 수 있습니다.&lt;/p&gt;</description>
     </item>
-    <item>
-      <title></title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins0-copy-8/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins0-copy-8/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins0-copy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins0-copy/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>

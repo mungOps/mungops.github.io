@@ -105,6 +105,7 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/8.-ams/keycloak/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak01/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/knative/knstive01/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
@@ -187,6 +188,8 @@
     <lastmod>2025-03-20T12:46:40+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/9.-kms/vault/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut01/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/6.-br/velero/</loc>
   </url><url>
@@ -291,6 +294,7 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins02/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak02/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/keystone/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -328,6 +332,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/terraform/terraform02/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut02/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/velero/velero02/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
@@ -382,8 +388,10 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins03/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak03/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/11.-ml/kibana/</loc>
   </url><url>
@@ -417,6 +425,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/terraform/terraform03/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut03/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/velero/velero03/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
@@ -466,6 +476,7 @@
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak04/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis04/</loc>
     <lastmod>2025-03-31T09:22:43+09:00</lastmod>
@@ -476,6 +487,8 @@
     <loc>https://mungops.github.io/devops/terraform/terraform04/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/valut/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/velero/velero04/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
   </url><url>
@@ -483,6 +496,8 @@
   </url><url>
     <loc>https://mungops.github.io/database/postgresql/postgresql04/</loc>
     <lastmod>2025-03-31T09:22:43+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut04/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/istio/istio04/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
@@ -541,6 +556,8 @@
     <loc>https://mungops.github.io/database/redis/redis05/</loc>
     <lastmod>2025-03-31T09:22:43+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut05/</loc>
+  </url><url>
     <loc>https://mungops.github.io/system/server/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
@@ -559,6 +576,9 @@
   </url><url>
     <loc>https://mungops.github.io/devops/istio/istio05/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/keycloak/keycloak05/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python04/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
@@ -626,6 +646,9 @@
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak06/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut06/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/argo/argo06/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
@@ -655,6 +678,7 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins07/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak07/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/knative/knstive07/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
@@ -684,6 +708,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/rook/rook07/</loc>
     <lastmod>2025-04-05T15:46:20+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut07/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/argo/argo07/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
@@ -717,6 +743,7 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins08/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak08/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/knative/knstive08/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
@@ -730,6 +757,8 @@
   </url><url>
     <loc>https://mungops.github.io/database/redis/redis08/</loc>
     <lastmod>2025-03-31T09:22:43+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut08/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/swift/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -793,7 +822,10 @@
     <loc>https://mungops.github.io/devops/rook/rook09/</loc>
     <lastmod>2025-04-05T15:46:20+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut09/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak09/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/argo/argo09/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
@@ -825,9 +857,12 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/9.-kms/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak10/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/knative/knstive10/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut10/</loc>
   </url><url>
     <loc>https://mungops.github.io/database/mariadb/mariadb10/</loc>
     <lastmod>2025-03-30T21:06:53+09:00</lastmod>
@@ -877,6 +912,7 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins11/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak11/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/knative/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
@@ -892,6 +928,8 @@
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstack/trove/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut11/</loc>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python10/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
@@ -918,10 +956,13 @@
     <loc>https://mungops.github.io/devops/rook/rook12/</loc>
     <lastmod>2025-04-05T15:46:20+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut12/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/velero/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak12/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/azure/azuretraining/azure02/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -939,12 +980,15 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins13/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak13/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/python/python/python12/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/rook/rook13/</loc>
     <lastmod>2025-04-05T15:46:20+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut13/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/azure/azuretraining/azure12/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -957,8 +1001,10 @@
     <loc>https://mungops.github.io/devops/jenkins/jenkins14/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak15/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak14/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/13.-mcm/</loc>
   </url><url>
@@ -971,6 +1017,8 @@
     <loc>https://mungops.github.io/devops/rook/rook14/</loc>
     <lastmod>2025-04-05T15:46:20+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut14/</loc>
+  </url><url>
     <loc>https://mungops.github.io/system/azure/azuretraining/az-900/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
@@ -980,16 +1028,25 @@
     <loc>https://mungops.github.io/programing/python/python/python14/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut15/</loc>
+  </url><url>
     <loc>https://mungops.github.io/system/azure/microsoftazure/azure06/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut16/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak16/</loc>
+    <lastmod>2025-04-06T23:01:03+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/aws/awssaa/saa_all/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/azure/microsoftazure/azure07/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut18/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/valut/valut17/</loc>
   </url><url>
     <loc>https://mungops.github.io/system/azure/microsoftazure/azure08/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
@@ -1163,10 +1220,6 @@
                 href="https://mungops.github.io/tags/"
                 />
   </url><url>
-    <loc>https://mungops.github.io/devops/jenkins/jenkins0-copy-8/</loc>
-  </url><url>
-    <loc>https://mungops.github.io/devops/jenkins/jenkins0-copy/</loc>
-  </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/10.-cims/harbor/file0/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/11.-ml/elasticsearch/file0/</loc>
@@ -1200,8 +1253,6 @@
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/9.-kms/vault/file0/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/99.-etc/0/file0/</loc>
-  </url><url>
-    <loc>https://mungops.github.io/devops/keycloak/keycloak05/</loc>
   </url><url>
     <loc>https://mungops.github.io/blog/</loc>
     <lastmod>2025-03-17T16:33:32+09:00</lastmod>
