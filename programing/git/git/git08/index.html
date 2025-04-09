@@ -36,10 +36,11 @@ git reset --hard HEAD~1   # 커밋 &#43; 작업 내용 모두 제거
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/programing/git/git/git08/" /><meta property="article:section" content="programing" />
 
-
+<meta property="article:modified_time" content="2025-04-08T09:08:33+09:00" />
 
   <meta itemprop="name" content="Git 되돌리기">
   <meta itemprop="description" content="1️⃣ &#43; reset, revert, checkout의 차이점 1. git reset – 커밋을 되돌리되 기록에서 삭제 커밋을 과거 시점으로 되돌리며 현재 브랜치의 히스토리를 바꿉니다. 주로 개인 브랜치, push 전 작업에서 사용합니다. git reset --soft HEAD~1 # 커밋만 제거, 작업 파일은 그대로 git reset --mixed HEAD~1 # 커밋 &#43; 스테이징 제거 (기본) git reset --hard HEAD~1 # 커밋 &#43; 작업 내용 모두 제거 🛑 주의: --hard는 삭제된 내용을 복구하기 어렵습니다!">
+  <meta itemprop="dateModified" content="2025-04-08T09:08:33+09:00">
   <meta itemprop="wordCount" content="931">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Git 되돌리기">
@@ -5854,7 +5855,8 @@ abc1234 HEAD@{1}: commit: fix login bug
 <hr>
 
         </div>
-        <div class="hx-mt-16"></div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-04-08T09:08:33.000Z">April 8, 2025</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/programing/git/git/git07/"
         title="브랜칭 전략"
