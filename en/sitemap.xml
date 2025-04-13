@@ -211,6 +211,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/99.-etc/0/</loc>
   </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor01/</loc>
+  </url><url>
     <loc>https://mungops.github.io/system/hardware/cpu/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
@@ -285,6 +287,8 @@
     <lastmod>2025-04-08T09:08:33+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/go/go/go01/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor02/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/helm/helm01/</loc>
     <lastmod>2025-03-23T22:37:28+09:00</lastmod>
@@ -375,6 +379,8 @@
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/programing/go/go/go02/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor03/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/helm/</loc>
     <lastmod>2025-03-21T09:31:05+09:00</lastmod>
@@ -510,6 +516,8 @@
     <loc>https://mungops.github.io/devops/istio/istio04/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor04/</loc>
+  </url><url>
     <loc>https://mungops.github.io/system/hardware/nic/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
   </url><url>
@@ -589,6 +597,8 @@
     <loc>https://mungops.github.io/devops/istio/istio05/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor05/</loc>
+  </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak05/</loc>
     <lastmod>2025-04-07T10:10:25+09:00</lastmod>
   </url><url>
@@ -656,6 +666,8 @@
   </url><url>
     <loc>https://mungops.github.io/devops/istio/istio06/</loc>
     <lastmod>2025-04-04T11:00:45+09:00</lastmod>
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor06/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/keycloak/keycloak06/</loc>
     <lastmod>2025-04-06T23:01:03+09:00</lastmod>
@@ -1073,6 +1085,8 @@
     <loc>https://mungops.github.io/programing/git/git/git15/</loc>
     <lastmod>2025-04-08T09:08:33+09:00</lastmod>
   </url><url>
+    <loc>https://mungops.github.io/devops/harbor/</loc>
+  </url><url>
     <loc>https://mungops.github.io/programing/python/python/python14/</loc>
     <lastmod>2025-03-27T09:52:05+09:00</lastmod>
   </url><url>
@@ -1258,6 +1272,18 @@
                 hreflang="ko"
                 href="https://mungops.github.io/blog/markdown/"
                 />
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor07/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor08/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor09/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor10/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor11/</loc>
+  </url><url>
+    <loc>https://mungops.github.io/devops/harbor/harbor12/</loc>
   </url><url>
     <loc>https://mungops.github.io/devops/kubernetes/kubernetestraining/10.-cims/harbor/file0/</loc>
   </url><url>
