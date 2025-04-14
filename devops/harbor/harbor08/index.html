@@ -10,21 +10,24 @@
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
-<title>mungOps</title>
-  <meta name="description" content="" /><link rel="canonical" href="https://mungops.github.io/devops/harbor/harbor08/" itemprop="url" />
+<title>Webhook 및 이벤트 트리거 – mungOps</title>
+  <meta name="description" content="1️⃣ &#43; Harbor 이벤트 구조 이해 Harbor는 다양한 **이벤트(Event)**가 발생했을 때 외부 시스템에 알릴 수 있도록 Webhook 기능을 제공합니다." /><link rel="canonical" href="https://mungops.github.io/devops/harbor/harbor08/" itemprop="url" />
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Webhook 및 이벤트 트리거" />
+<meta property="og:description" content="1️⃣ &#43; Harbor 이벤트 구조 이해
+    Harbor는 다양한 **이벤트(Event)**가 발생했을 때 외부 시스템에 알릴 수 있도록 Webhook 기능을 제공합니다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/devops/harbor/harbor08/" /><meta property="article:section" content="devops" />
 
+<meta property="article:modified_time" content="2025-04-13T21:56:58+09:00" />
 
-
-  <meta itemprop="name" content="mungOps">
-  <meta itemprop="description" content="This web site offer to information that IT, opensource, stack etc.">
+  <meta itemprop="name" content="Webhook 및 이벤트 트리거">
+  <meta itemprop="description" content="1️⃣ &#43; Harbor 이벤트 구조 이해 Harbor는 다양한 **이벤트(Event)**가 발생했을 때 외부 시스템에 알릴 수 있도록 Webhook 기능을 제공합니다.">
+  <meta itemprop="dateModified" content="2025-04-13T21:56:58+09:00">
+  <meta itemprop="wordCount" content="857">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="mungOps">
-  <meta name="twitter:description" content="This web site offer to information that IT, opensource, stack etc.">
+  <meta name="twitter:title" content="Webhook 및 이벤트 트리거">
+  <meta name="twitter:description" content="1️⃣ &#43; Harbor 이벤트 구조 이해 Harbor는 다양한 **이벤트(Event)**가 발생했을 때 외부 시스템에 알릴 수 있도록 Webhook 기능을 제공합니다.">
 
     <link rel="preload" href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" as="style" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
     <link href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" rel="stylesheet" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
@@ -2859,7 +2862,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor07/"
     
-  >Harbor07
+  >레플리케이션 (Replication)
     </a>
               
             </li><li class="hx-flex hx-flex-col open"><a
@@ -2867,8 +2870,34 @@
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/devops/harbor/harbor08/"
     
-  >Harbor08
+  >Webhook 및 이벤트 트리거
     </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#1--harbor-%ec%9d%b4%eb%b2%a4%ed%8a%b8-%ea%b5%ac%ec%a1%b0-%ec%9d%b4%ed%95%b4"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >1️⃣ &#43; Harbor 이벤트 구조 이해</a>
+            </li>
+          <li>
+              <a
+                href="#2--webhook-%eb%93%b1%eb%a1%9d--cicd-%ed%8a%b8%eb%a6%ac%ea%b1%b0"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >2️⃣ &#43; Webhook 등록 → CI/CD 트리거</a>
+            </li>
+          <li>
+              <a
+                href="#3--gitlab--jenkins--argo-cd-%ec%97%b0%eb%8f%99-%ec%98%88%ec%8b%9c"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >3️⃣ &#43; GitLab / Jenkins / Argo CD 연동 예시</a>
+            </li>
+          <li>
+              <a
+                href="#-%ec%a0%95%eb%a6%ac-%ec%9a%94%ec%95%bd"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >🧠 정리 요약</a>
+            </li>
+          </ul>
   
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -2876,7 +2905,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor09/"
     
-  >Harbor09
+  >정책 기반 접근 제어
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -2884,7 +2913,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor10/"
     
-  >Harbor10
+  >CI/CD 파이프라인에서의 Harbor
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -2892,7 +2921,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor11/"
     
-  >Harbor11
+  >Harbor REST API
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -2900,7 +2929,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor12/"
     
-  >Harbor12
+  >고급 운영 및 트러블슈팅
     </a>
               
             </li></ul>
@@ -7133,7 +7162,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor07/"
     
-  >Harbor07
+  >레플리케이션 (Replication)
     </a>
               
             </li><li class="hx-flex hx-flex-col open"><a
@@ -7141,7 +7170,7 @@
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/devops/harbor/harbor08/"
     
-  >Harbor08
+  >Webhook 및 이벤트 트리거
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -7149,7 +7178,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor09/"
     
-  >Harbor09
+  >정책 기반 접근 제어
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -7157,7 +7186,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor10/"
     
-  >Harbor10
+  >CI/CD 파이프라인에서의 Harbor
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -7165,7 +7194,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor11/"
     
-  >Harbor11
+  >Harbor REST API
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -7173,7 +7202,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/harbor/harbor12/"
     
-  >Harbor12
+  >고급 운영 및 트러블슈팅
     </a>
               
             </li></ul>
@@ -7230,8 +7259,60 @@
 </div></aside>
     
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
-    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4">
-      <div class=" hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://mungops.github.io/main/content/devops/harbor/harbor08.md" target="_blank" rel="noreferrer">GitHub에서 편집하기 →</a>
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">페이지 목차</p><ul>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#1--harbor-%ec%9d%b4%eb%b2%a4%ed%8a%b8-%ea%b5%ac%ec%a1%b0-%ec%9d%b4%ed%95%b4">1️⃣ &#43; Harbor 이벤트 구조 이해
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#1-%ec%a7%80%ec%9b%90%ed%95%98%eb%8a%94-%ec%a3%bc%ec%9a%94-%ec%9d%b4%eb%b2%a4%ed%8a%b8">1. 지원하는 주요 이벤트
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#2-harbor%ec%9d%98-%ec%9d%b4%eb%b2%a4%ed%8a%b8-%ec%b2%98%eb%a6%ac-%ed%9d%90%eb%a6%84">2. Harbor의 이벤트 처리 흐름
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98-%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8">✅ 아키텍처 다이어그램
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#2--webhook-%eb%93%b1%eb%a1%9d--cicd-%ed%8a%b8%eb%a6%ac%ea%b1%b0">2️⃣ &#43; Webhook 등록 → CI/CD 트리거
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#1-webhook-%eb%93%b1%eb%a1%9d-%eb%b0%a9%eb%b2%95">1. Webhook 등록 방법
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#2-webhook-payload-%ec%98%88%ec%8b%9c-push_">2. Webhook Payload 예시 (PUSH_ARTIFACT)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#3-gitlab-ci%ec%99%80-%ec%97%b0%eb%8f%99-%ec%98%88%ec%8b%9c">3. GitLab CI와 연동 예시
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#3--gitlab--jenkins--argo-cd-%ec%97%b0%eb%8f%99-%ec%98%88%ec%8b%9c">3️⃣ &#43; GitLab / Jenkins / Argo CD 연동 예시
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-1-gitlab-ci-%ec%97%b0%eb%8f%99">✅ 1. GitLab CI 연동
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-2-jenkins-%ec%97%b0%eb%8f%99">✅ 2. Jenkins 연동
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-3-argo-cd-%ec%97%b0%eb%8f%99">✅ 3. Argo CD 연동
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-%ec%a0%95%eb%a6%ac-%ec%9a%94%ec%95%bd">🧠 정리 요약
+        </a>
+      </li></ul>
+      <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://mungops.github.io/main/content/devops/harbor/harbor08.md" target="_blank" rel="noreferrer">GitHub에서 편집하기 →</a>
         <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
           <span>맨위로 스크롤</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50">
@@ -7258,23 +7339,282 @@
         </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
           <a href="/devops/harbor/">harbor</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Harbor08</div>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Webhook 및 이벤트 트리거</div>
   </div>
 
         <div class="content">
-          
-          
+          <h1>Webhook 및 이벤트 트리거</h1>
+          <h2>1️⃣ + <strong>Harbor 이벤트 구조 이해</strong><span class="hx-absolute -hx-mt-20" id="1--harbor-이벤트-구조-이해"></span>
+    <a href="#1--harbor-%ec%9d%b4%eb%b2%a4%ed%8a%b8-%ea%b5%ac%ec%a1%b0-%ec%9d%b4%ed%95%b4" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Harbor는 다양한 **이벤트(Event)**가 발생했을 때 외부 시스템에 알릴 수 있도록 <strong>Webhook 기능</strong>을 제공합니다.</p>
+<p>이 기능을 활용하면 이미지가 업로드되거나 삭제될 때 자동으로 <strong>CI/CD 파이프라인</strong>, <strong>감시 시스템</strong>, <strong>Slack 알림</strong>, <strong>Argo CD 배포 트리거</strong> 등 다양한 자동화가 가능합니다.</p>
+<hr>
+<h3>1. <strong>지원하는 주요 이벤트</strong><span class="hx-absolute -hx-mt-20" id="1-지원하는-주요-이벤트"></span>
+    <a href="#1-%ec%a7%80%ec%9b%90%ed%95%98%eb%8a%94-%ec%a3%bc%ec%9a%94-%ec%9d%b4%eb%b2%a4%ed%8a%b8" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>이벤트 종류</th>
+          <th>설명</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>PUSH_ARTIFACT</td>
+          <td>이미지가 Harbor에 Push됨</td>
+      </tr>
+      <tr>
+          <td>PULL_ARTIFACT</td>
+          <td>이미지가 Harbor에서 Pull됨</td>
+      </tr>
+      <tr>
+          <td>DELETE_ARTIFACT</td>
+          <td>이미지가 삭제됨</td>
+      </tr>
+      <tr>
+          <td>SCAN_COMPLETED</td>
+          <td>보안 스캔이 완료됨</td>
+      </tr>
+      <tr>
+          <td>TAG_RETENTION</td>
+          <td>이미지 삭제 정책 실행됨</td>
+      </tr>
+      <tr>
+          <td>REPLICATION</td>
+          <td>복제 작업 수행됨</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>2. <strong>Harbor의 이벤트 처리 흐름</strong><span class="hx-absolute -hx-mt-20" id="2-harbor의-이벤트-처리-흐름"></span>
+    <a href="#2-harbor%ec%9d%98-%ec%9d%b4%eb%b2%a4%ed%8a%b8-%ec%b2%98%eb%a6%ac-%ed%9d%90%eb%a6%84" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">이미지 Push
+</span></span><span class="line"><span class="cl">   ↓
+</span></span><span class="line"><span class="cl">Harbor 내부 이벤트 감지
+</span></span><span class="line"><span class="cl">   ↓
+</span></span><span class="line"><span class="cl">Webhook URL로 HTTP POST 요청 전송
+</span></span><span class="line"><span class="cl">   ↓
+</span></span><span class="line"><span class="cl">CI/CD 혹은 알림 시스템에서 후속 작업 수행</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h3>✅ 아키텍처 다이어그램<span class="hx-absolute -hx-mt-20" id="-아키텍처-다이어그램"></span>
+    <a href="#-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98-%eb%8b%a4%ec%9d%b4%ec%96%b4%ea%b7%b8%eb%9e%a8" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>         [User]
+           ↓
+    docker push myapp:1.0
+           ↓
+      ┌────────────┐
+      │  Harbor    │
+      │ Webhook    │─────▶ POST JSON Payload ─────▶ [GitLab CI, Jenkins, Argo CD 등]
+      └────────────┘</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h2>2️⃣ + <strong>Webhook 등록 → CI/CD 트리거</strong><span class="hx-absolute -hx-mt-20" id="2--webhook-등록--cicd-트리거"></span>
+    <a href="#2--webhook-%eb%93%b1%eb%a1%9d--cicd-%ed%8a%b8%eb%a6%ac%ea%b1%b0" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Harbor에서는 <strong>프로젝트 단위로 Webhook을 설정</strong>할 수 있습니다.</p>
+<hr>
+<h3>1. <strong>Webhook 등록 방법</strong><span class="hx-absolute -hx-mt-20" id="1-webhook-등록-방법"></span>
+    <a href="#1-webhook-%eb%93%b1%eb%a1%9d-%eb%b0%a9%eb%b2%95" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><blockquote>
+  <p><code>Projects → [프로젝트명] → Webhooks → NEW WEBHOOK</code></p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>항목</th>
+          <th>설명</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Name</td>
+          <td>식별 가능한 Webhook 이름</td>
+      </tr>
+      <tr>
+          <td>Endpoint URL</td>
+          <td>이벤트를 받을 외부 서비스의 HTTP URL</td>
+      </tr>
+      <tr>
+          <td>Auth Header</td>
+          <td>선택적으로 인증 토큰 설정 가능</td>
+      </tr>
+      <tr>
+          <td>Event Filter</td>
+          <td>트리거할 이벤트 선택 가능</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>2. <strong>Webhook Payload 예시 (PUSH_ARTIFACT)</strong><span class="hx-absolute -hx-mt-20" id="2-webhook-payload-예시-push_"></span>
+    <a href="#2-webhook-payload-%ec%98%88%ec%8b%9c-push_" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;PUSH_ARTIFACT&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;occur_at&#34;</span><span class="p">:</span> <span class="mi">1712970000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;operator&#34;</span><span class="p">:</span> <span class="s2">&#34;developer1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;event_data&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;repository&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;myapp&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;namespace&#34;</span><span class="p">:</span> <span class="s2">&#34;dev-team&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;repo_full_name&#34;</span><span class="p">:</span> <span class="s2">&#34;dev-team/myapp&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;resources&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;digest&#34;</span><span class="p">:</span> <span class="s2">&#34;sha256:abcd1234...&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;v1.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;resource_url&#34;</span><span class="p">:</span> <span class="s2">&#34;harbor.example.com/dev-team/myapp:v1.0&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h3>3. <strong>GitLab CI와 연동 예시</strong><span class="hx-absolute -hx-mt-20" id="3-gitlab-ci와-연동-예시"></span>
+    <a href="#3-gitlab-ci%ec%99%80-%ec%97%b0%eb%8f%99-%ec%98%88%ec%8b%9c" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># .gitlab-ci.yml (WebHook를 통해 트리거될 파이프라인)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">stages</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">deploy-job</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">echo &#34;New image pushed: $CI_COMMIT_REF_NAME&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">kubectl rollout restart deployment myapp</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h2>3️⃣ + <strong>GitLab / Jenkins / Argo CD 연동 예시</strong><span class="hx-absolute -hx-mt-20" id="3--gitlab--jenkins--argo-cd-연동-예시"></span>
+    <a href="#3--gitlab--jenkins--argo-cd-%ec%97%b0%eb%8f%99-%ec%98%88%ec%8b%9c" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><hr>
+<h3>✅ 1. GitLab CI 연동<span class="hx-absolute -hx-mt-20" id="-1-gitlab-ci-연동"></span>
+    <a href="#-1-gitlab-ci-%ec%97%b0%eb%8f%99" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>GitLab 프로젝트의 CI/CD 설정에서 <strong>Trigger Token</strong> 발급</li>
+<li>Harbor Webhook에 GitLab Trigger URL 등록</li>
+</ul>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">https://gitlab.example.com/api/v4/projects/1234/trigger/pipeline?token=XXXXXX</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h3>✅ 2. Jenkins 연동<span class="hx-absolute -hx-mt-20" id="-2-jenkins-연동"></span>
+    <a href="#-2-jenkins-%ec%97%b0%eb%8f%99" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>Jenkins Job에서 <code>Generic Webhook Trigger Plugin</code> 설치</li>
+<li>URL 등록 후 Harbor에서 Webhook으로 연결</li>
+</ul>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">http://jenkins.local/job/my-deploy/buildWithParameters?token<span class="o">=</span>abcdef</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h3>✅ 3. Argo CD 연동<span class="hx-absolute -hx-mt-20" id="-3-argo-cd-연동"></span>
+    <a href="#-3-argo-cd-%ec%97%b0%eb%8f%99" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>Argo CD는 이미지 Push 이벤트를 기반으로 <strong>자동 배포</strong>가 가능</li>
+<li>Harbor Webhook이 Argo CD의 Image Updater 또는 Kustomize Controller를 트리거</li>
+</ul>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l">harbor.example.com/dev/myapp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l">v1.0</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<ul>
+<li>Argo CD Image Updater는 Harbor 레지스트리를 주기적으로 감시하거나 Webhook으로 수신 가능</li>
+</ul>
+<hr>
+<h2>🧠 정리 요약<span class="hx-absolute -hx-mt-20" id="-정리-요약"></span>
+    <a href="#-%ec%a0%95%eb%a6%ac-%ec%9a%94%ec%95%bd" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><table>
+  <thead>
+      <tr>
+          <th>항목</th>
+          <th>내용</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>이벤트 기반 자동화</td>
+          <td>이미지 Push, 삭제, 스캔 완료 등 다양한 이벤트 제공</td>
+      </tr>
+      <tr>
+          <td>외부 시스템 연동</td>
+          <td>GitLab, Jenkins, Argo CD, Slack 등 Webhook 통해 연동 가능</td>
+      </tr>
+      <tr>
+          <td>실시간 자동 배포</td>
+          <td>CI/CD 파이프라인 트리거 또는 Kubernetes 롤링 배포 가능</td>
+      </tr>
+      <tr>
+          <td>실습 추천</td>
+          <td>Harbor + GitLab 또는 Harbor + Jenkins 연동부터 실습 시작 추천</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+
         </div>
-        <div class="hx-mt-16"></div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-04-13T21:56:58.000Z">April 13, 2025</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/devops/harbor/harbor07/"
-        title="Harbor07"
+        title="레플리케이션 (Replication)"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Harbor07</a><a
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>레플리케이션 (Replication)</a><a
         href="/devops/harbor/harbor09/"
-        title="Harbor09"
+        title="정책 기반 접근 제어"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
-      >Harbor09<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >정책 기반 접근 제어<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
         
       </main>
     </article>

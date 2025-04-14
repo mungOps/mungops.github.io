@@ -50,46 +50,46 @@
       <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;취약점 스캐너 (Trivy, Clair) 통합&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--취약점-스캐너-trivy-clair-통합&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--%ec%b7%a8%ec%95%bd%ec%a0%90-%ec%8a%a4%ec%ba%90%eb%84%88-trivy-clair-%ed%86%b5%ed%95%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Harbor는 이미지 보안을 위해 &lt;strong&gt;취약점 스캐너&lt;/strong&gt;를 통합할 수 있으며,&lt;br&gt;&#xA;기본적으로 &lt;strong&gt;Trivy&lt;/strong&gt; 또는 &lt;strong&gt;Clair&lt;/strong&gt;를 사용할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
+      <title>레플리케이션 (Replication)</title>
       <link>https://mungops.github.io/devops/harbor/harbor07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mungops.github.io/devops/harbor/harbor07/</guid>
-      <description></description>
+      <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;Harbor ↔ Harbor 또는 ↔ Docker Hub 복제 설정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--harbor--harbor-또는--docker-hub-복제-설정&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--harbor--harbor-%eb%98%90%eb%8a%94--docker-hub-%eb%b3%b5%ec%a0%9c-%ec%84%a4%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Harbor는 &lt;strong&gt;멀티 레지스트리 환경&lt;/strong&gt;에서 이미지를 동기화(복제)하기 위한 &lt;strong&gt;Replication 기능&lt;/strong&gt;을 기본 제공합니다.&lt;br&gt;&#xA;이를 통해 &lt;strong&gt;다른 Harbor 인스턴스&lt;/strong&gt;나 &lt;strong&gt;Docker Hub&lt;/strong&gt;, &lt;strong&gt;Quay&lt;/strong&gt;, &lt;strong&gt;Harbor Mirror&lt;/strong&gt; 등 다양한 원격 레지스트리와 연결할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
+      <title>Webhook 및 이벤트 트리거</title>
       <link>https://mungops.github.io/devops/harbor/harbor08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mungops.github.io/devops/harbor/harbor08/</guid>
-      <description></description>
+      <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;Harbor 이벤트 구조 이해&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--harbor-이벤트-구조-이해&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--harbor-%ec%9d%b4%eb%b2%a4%ed%8a%b8-%ea%b5%ac%ec%a1%b0-%ec%9d%b4%ed%95%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Harbor는 다양한 **이벤트(Event)**가 발생했을 때 외부 시스템에 알릴 수 있도록 &lt;strong&gt;Webhook 기능&lt;/strong&gt;을 제공합니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
+      <title>정책 기반 접근 제어</title>
       <link>https://mungops.github.io/devops/harbor/harbor09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mungops.github.io/devops/harbor/harbor09/</guid>
-      <description></description>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Content Trust + CVE Severity 정책 적용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-content-trust--cve-severity-정책-적용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-content-trust--cve-severity-%ec%a0%95%ec%b1%85-%ec%a0%81%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Content Trust&lt;/strong&gt;와 &lt;strong&gt;취약점 심각도(CVE Severity)&lt;/strong&gt; 기반 정책은 이미지에 대한 &lt;strong&gt;신뢰성과 보안성&lt;/strong&gt;을 강화하는 핵심 기능입니다.&lt;/p&gt;&#xA;&lt;p&gt;Harbor에서는 다음과 같은 정책을 설정하여 보안 기준을 자동으로 강제할 수 있습니다:&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
+      <title>CI/CD 파이프라인에서의 Harbor</title>
       <link>https://mungops.github.io/devops/harbor/harbor10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mungops.github.io/devops/harbor/harbor10/</guid>
-      <description></description>
+      <description>&lt;p&gt;물론입니다! 아래는 &lt;strong&gt;🔟 CI/CD 파이프라인에서의 Harbor&lt;/strong&gt; 항목에 대해 마크다운 형식으로 작성한 강의용 포스팅 자료입니다. CI/CD에서 Harbor가 어떤 역할을 하며, 어떻게 연동되고 활용되는지 그림과 실습 예시까지 포함해 구성하였습니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
+      <title>Harbor REST API</title>
       <link>https://mungops.github.io/devops/harbor/harbor11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mungops.github.io/devops/harbor/harbor11/</guid>
-      <description></description>
+      <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;Harbor API 인증 방식 이해 (Token, Cookie)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--harbor-api-인증-방식-이해-token-cookie&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--harbor-api-%ec%9d%b8%ec%a6%9d-%eb%b0%a9%ec%8b%9d-%ec%9d%b4%ed%95%b4-token-cookie&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Harbor는 REST API를 통해 사용자, 프로젝트, 이미지 레포지토리 등 다양한 자원을 제어할 수 있도록 지원합니다.&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
+      <title>고급 운영 및 트러블슈팅</title>
       <link>https://mungops.github.io/devops/harbor/harbor12/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mungops.github.io/devops/harbor/harbor12/</guid>
-      <description></description>
+      <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;로그 확인 및 문제 해결&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--로그-확인-및-문제-해결&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--%eb%a1%9c%ea%b7%b8-%ed%99%95%ec%9d%b8-%eb%b0%8f-%eb%ac%b8%ec%a0%9c-%ed%95%b4%ea%b2%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Harbor는 여러 컴포넌트로 구성되어 있으며, 각각의 서비스는 컨테이너로 분리되어 있습니다. 문제가 발생했을 때 로그를 빠르게 확인하고 원인을 파악하는 능력이 매우 중요합니다.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
