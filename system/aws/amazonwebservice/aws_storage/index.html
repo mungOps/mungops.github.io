@@ -60,7 +60,7 @@ S3 사용
   <meta itemprop="name" content="AWS Storage">
   <meta itemprop="description" content="AWS Storage S3 ( Simple Storage Service ) 웹 서비스 인터페이스( HTTP ) 를 이용하여 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있는 스토리지 버킷( Bucket )과 객체 ( Object )로 나뉘며, 저장하고자 하는 모든 요소는 하나의 객체로 저장되고, 객체를 담는 곳이 버킷 S3 자체는 글로벌 서비스이지만 버킷을 생성 할 때에는 리전을 선택해야 함 객체는 객체 데이터와 메타 데이터로 나뉘며, 각자의 고유한 URL을 가지며 해당 URL로 접속 가능 버킷( Bucket )의 정의와 특징 객체를 담고 있는 구성 요소 크기는 무제한, 리전을 지정하여 버킷을 생성해야 함 버킷의 이름은 반드시 고유해야하며, 증복이 불가능 한번 설정된 버킷의 이름은 다른 계정에서 사용불가 객체( Object ) 의 정의와 특징 S3에 업로드되는 1개의 데이터를 객체라 함 키, 버전 ID, 값, 메타데이터 등으로 구성 객체 하나의 최소 크기는 1(0) byte ~ 5TB 스토리지 클래스, 암호화, 태그, 메타데이터, 객체 잠금 설정 가능 객체의 크기가 매우 클 경우 멀티파트 업로드를 통해 신속하게 업로드 가능 객체의 스토리지 클래스 객체의 접근빈도 및 저장기안에 따라 결정되는 객체의 특성 Standard Type : 클래스를 선택하지 않을 경우 선택되는 일반적인 클래스 Strandard_IA(Ifrequent Access ) : 자주 엑세스하지는 않지만 즉시 액세스할 수 있는 데이터여야하는 경우 선택되는 클래스 One Zone_iA : Standard_IA와 기능은 동일하나 Standard_IA의 경우 세 곳의 AZ에 저장되는 것과 달리 한 군데의 AZ에만 저장되어 해당 AZ가 파괴될 경우 정보 손실 가능성 존재 ( 저장 요금이 적음 ) Intelligent tiering : 엑세스 빈도가 불규칙하여 빈도를 가늠하기 어려운 경우 선택되는 클래스 Glancier : 검색이 아닌 저장이 주용도인 스토리지로 저장요금이 위 클래스들보다 훨씬 저렴한, 다만 저장이 주용도이기 때문에 검색이 3~ 5시간이 소요 Glacier Deep Archive : 10년 이상 저장할 데이터를 저장하는 스토리지 클래스 S3 사용 S3 생성">
   <meta itemprop="dateModified" content="2025-03-19T20:18:39+09:00">
-  <meta itemprop="wordCount" content="3037">
+  <meta itemprop="wordCount" content="3039">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AWS Storage">
   <meta name="twitter:description" content="AWS Storage S3 ( Simple Storage Service ) 웹 서비스 인터페이스( HTTP ) 를 이용하여 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있는 스토리지 버킷( Bucket )과 객체 ( Object )로 나뉘며, 저장하고자 하는 모든 요소는 하나의 객체로 저장되고, 객체를 담는 곳이 버킷 S3 자체는 글로벌 서비스이지만 버킷을 생성 할 때에는 리전을 선택해야 함 객체는 객체 데이터와 메타 데이터로 나뉘며, 각자의 고유한 URL을 가지며 해당 URL로 접속 가능 버킷( Bucket )의 정의와 특징 객체를 담고 있는 구성 요소 크기는 무제한, 리전을 지정하여 버킷을 생성해야 함 버킷의 이름은 반드시 고유해야하며, 증복이 불가능 한번 설정된 버킷의 이름은 다른 계정에서 사용불가 객체( Object ) 의 정의와 특징 S3에 업로드되는 1개의 데이터를 객체라 함 키, 버전 ID, 값, 메타데이터 등으로 구성 객체 하나의 최소 크기는 1(0) byte ~ 5TB 스토리지 클래스, 암호화, 태그, 메타데이터, 객체 잠금 설정 가능 객체의 크기가 매우 클 경우 멀티파트 업로드를 통해 신속하게 업로드 가능 객체의 스토리지 클래스 객체의 접근빈도 및 저장기안에 따라 결정되는 객체의 특성 Standard Type : 클래스를 선택하지 않을 경우 선택되는 일반적인 클래스 Strandard_IA(Ifrequent Access ) : 자주 엑세스하지는 않지만 즉시 액세스할 수 있는 데이터여야하는 경우 선택되는 클래스 One Zone_iA : Standard_IA와 기능은 동일하나 Standard_IA의 경우 세 곳의 AZ에 저장되는 것과 달리 한 군데의 AZ에만 저장되어 해당 AZ가 파괴될 경우 정보 손실 가능성 존재 ( 저장 요금이 적음 ) Intelligent tiering : 엑세스 빈도가 불규칙하여 빈도를 가늠하기 어려운 경우 선택되는 클래스 Glancier : 검색이 아닌 저장이 주용도인 스토리지로 저장요금이 위 클래스들보다 훨씬 저렴한, 다만 저장이 주용도이기 때문에 검색이 3~ 5시간이 소요 Glacier Deep Archive : 10년 이상 저장할 데이터를 저장하는 스토리지 클래스 S3 사용 S3 생성">
@@ -7011,7 +7011,18 @@ S3 사용
 <li>처리량 최적회돤 HDD( st1 ): 시스템 부트 사용 불가능, IOPS가 아닌 처리량을 기준으로 하며 자주 엑세스하는 워크로드에 적합한 저비용 HDD 볼륨, 빅데이터나 데이터 웨어 하우스에 사용</li>
 <li>Cold HDD( sc1 ): 시스템 부트 사용 불가능, 자주 엑세스하지 않는 대용량 데이터 처리에 적합, 스토리지 비용이 최대한 낮아야 할 경우 사용</li>
 </ul>
-<h1></h1>
+<h1></h1><div style="text-align: center; margin-top: 1em;">
+<a
+  href="index.xml"
+  class=" not-prose hx-inline-flex hx-items-center hx-rounded-full hx-gap-2 hx-px-3 hx-py-1 hx-text-xs hx-text-gray-600 dark:hx-text-gray-400 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-border-neutral-800 hx-border hover:hx-border-gray-400 dark:hover:hx-text-gray-50 dark:hover:hx-border-gray-600 hx-transition-all hx-ease-in hx-duration-200"
+  
+  >
+  <span>RSS Feed</span>
+<span class="hx-inline-block hx-align-text-bottom icon"><svg height=14 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/></svg></span>
+</a>
+
+</div>
+
         </div>
         
     <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-03-19T20:18:39.000Z">March 19, 2025</time></div>

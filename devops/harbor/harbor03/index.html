@@ -91,7 +91,7 @@
   <meta itemprop="description" content="1️⃣ &#43; 단일 노드/멀티 노드 설치 Harbor는 다양한 환경에 배포할 수 있습니다:
 환경 유형 설명 단일 노드 테스트/소규모 환경에 적합 멀티 노드 고가용성(HA), 대규모 서비스 운영 시 사용 Kubernetes 기반 마이크로서비스 및 클라우드 환경에서 이상적 1. 단일 노드 구조 예시 ┌──────────────────────┐ │ 단일 서버 │ │ │ │ ┌───────┐ │ │ │ Docker│ │ │ └──┬────┘ │ │ ▼ │ │ ┌─────────────┐ │ │ │ Harbor stack│ │ │ └─────────────┘ │ └──────────────────────┘ 2. 멀티 노드 구조 예시 (고가용성) ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ │ Node 1 │ │ Node 2 │ │ Node 3 │ │ (UI, Core) │ │ (Job, DB) │ │ (Registry) │ └────┬────────┘ └────┬────────┘ └────┬────────┘ ▼ ▼ ▼ ┌────────────────────────────┐ │ Shared DB / Redis │ │ Shared Storage (S3) │ └────────────────────────────┘ 2️⃣ &#43; Docker Compose 기반 설치 Harbor는 기본적으로 Docker Compose로 쉽게 설치할 수 있도록 제공됩니다.">
   <meta itemprop="dateModified" content="2025-04-13T21:56:58+09:00">
-  <meta itemprop="wordCount" content="1110">
+  <meta itemprop="wordCount" content="1112">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harbor 설치 및 구성">
   <meta name="twitter:description" content="1️⃣ &#43; 단일 노드/멀티 노드 설치 Harbor는 다양한 환경에 배포할 수 있습니다:
@@ -7834,6 +7834,17 @@
 </div>
 </div>
 <hr>
+<div style="text-align: center; margin-top: 1em;">
+<a
+  href="index.xml"
+  class=" not-prose hx-inline-flex hx-items-center hx-rounded-full hx-gap-2 hx-px-3 hx-py-1 hx-text-xs hx-text-gray-600 dark:hx-text-gray-400 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-border-neutral-800 hx-border hover:hx-border-gray-400 dark:hover:hx-text-gray-50 dark:hover:hx-border-gray-600 hx-transition-all hx-ease-in hx-duration-200"
+  
+  >
+  <span>RSS Feed</span>
+<span class="hx-inline-block hx-align-text-bottom icon"><svg height=14 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/></svg></span>
+</a>
+
+</div>
 
         </div>
         

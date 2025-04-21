@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Kubeadm install – mungOps</title>
-  <meta name="description" content="Kubeadm Install kubeadm을 설치하기 위한 환경은 전 인덱스를 참고 부탁드립니다. # 쿠버네티스 패키지 저장소에서 GPG 키를 다운로드 $ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg # 쿠버네티스 저장소를 추가 $ echo &#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&#34; | tee /etc/apt/sources.list.d/kubernetes.list # 패키지 목록 업데이트 $ apt update # kubeadm kubelet kubectl Install $ apt -y install kubeadm kubelet kubectl 명령어 설명 주요 기능 및 역할 예시 kubeadm 쿠버네티스 클러스터를 초기화하고 관리하는 도구입니다. 클러스터 초기화, 클러스터 업그레이드, 인증서 관리, 토큰 관리 kubeadm initkubeadm join kubelet 각 노드에서 실행되는 주요 에이전트로, 컨테이너의 상태를 관리하는 역할을 수행합니다. 컨테이너 생성 및 관리, Pod 상태 확인 및 보고- 노드 상태 확인 /etc/systemd/system/kubelet.service로 실행 kubectl 쿠버네티스 클러스터를 관리하고 조작하기 위한 CLI(Command Line Interface) 도구입니다. 리소스 조회 및 관리, 애플리케이션 배포 및 업데이트, 로그 확인 kubectl get podskubectl apply -f deployment.yaml " /><link rel="canonical" href="https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/file1/" itemprop="url" />
+  <meta name="description" content="Kubeadm Install kubeadm을 설치하기 위한 환경은 전 인덱스를 참고 부탁드립니다. # 쿠버네티스 패키지 저장소에서 GPG 키를 다운로드 $ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg # 쿠버네티스 저장소를 추가 $ echo &#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&#34; | tee /etc/apt/sources.list.d/kubernetes.list # 패키지 목록 업데이트 $ apt update # kubeadm kubelet kubectl Install $ apt -y install kubeadm kubelet kubectl 명령어 설명 주요 기능 및 역할 예시 kubeadm 쿠버네티스 클러스터를 초기화하고 관리하는 도구입니다. 클러스터 초기화, 클러스터 업그레이드, 인증서 관리, 토큰 관리 kubeadm initkubeadm join kubelet 각 노드에서 실행되는 주요 에이전트로, 컨테이너의 상태를 관리하는 역할을 수행합니다. 컨테이너 생성 및 관리, Pod 상태 확인 및 보고- 노드 상태 확인 /etc/systemd/system/kubelet.service로 실행 kubectl 쿠버네티스 클러스터를 관리하고 조작하기 위한 CLI(Command Line Interface) 도구입니다. 리소스 조회 및 관리, 애플리케이션 배포 및 업데이트, 로그 확인 kubectl get podskubectl apply -f deployment.yaml RSS Feed " /><link rel="canonical" href="https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/file1/" itemprop="url" />
 
 <meta property="og:title" content="Kubeadm install" />
 <meta property="og:description" content="Kubeadm Install
@@ -70,6 +70,13 @@ $ apt -y install kubeadm kubelet kubectl
           kubectl get podskubectl apply -f deployment.yaml
       
   
+
+
+
+  RSS Feed
+
+
+
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/devops/kubernetes/kubernetestraining/2.-provisioning/kubeadm/file1/" /><meta property="article:section" content="devops" />
@@ -77,11 +84,11 @@ $ apt -y install kubeadm kubelet kubectl
 
 
   <meta itemprop="name" content="Kubeadm install">
-  <meta itemprop="description" content="Kubeadm Install kubeadm을 설치하기 위한 환경은 전 인덱스를 참고 부탁드립니다. # 쿠버네티스 패키지 저장소에서 GPG 키를 다운로드 $ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg # 쿠버네티스 저장소를 추가 $ echo &#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&#34; | tee /etc/apt/sources.list.d/kubernetes.list # 패키지 목록 업데이트 $ apt update # kubeadm kubelet kubectl Install $ apt -y install kubeadm kubelet kubectl 명령어 설명 주요 기능 및 역할 예시 kubeadm 쿠버네티스 클러스터를 초기화하고 관리하는 도구입니다. 클러스터 초기화, 클러스터 업그레이드, 인증서 관리, 토큰 관리 kubeadm initkubeadm join kubelet 각 노드에서 실행되는 주요 에이전트로, 컨테이너의 상태를 관리하는 역할을 수행합니다. 컨테이너 생성 및 관리, Pod 상태 확인 및 보고- 노드 상태 확인 /etc/systemd/system/kubelet.service로 실행 kubectl 쿠버네티스 클러스터를 관리하고 조작하기 위한 CLI(Command Line Interface) 도구입니다. 리소스 조회 및 관리, 애플리케이션 배포 및 업데이트, 로그 확인 kubectl get podskubectl apply -f deployment.yaml">
-  <meta itemprop="wordCount" content="345">
+  <meta itemprop="description" content="Kubeadm Install kubeadm을 설치하기 위한 환경은 전 인덱스를 참고 부탁드립니다. # 쿠버네티스 패키지 저장소에서 GPG 키를 다운로드 $ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg # 쿠버네티스 저장소를 추가 $ echo &#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&#34; | tee /etc/apt/sources.list.d/kubernetes.list # 패키지 목록 업데이트 $ apt update # kubeadm kubelet kubectl Install $ apt -y install kubeadm kubelet kubectl 명령어 설명 주요 기능 및 역할 예시 kubeadm 쿠버네티스 클러스터를 초기화하고 관리하는 도구입니다. 클러스터 초기화, 클러스터 업그레이드, 인증서 관리, 토큰 관리 kubeadm initkubeadm join kubelet 각 노드에서 실행되는 주요 에이전트로, 컨테이너의 상태를 관리하는 역할을 수행합니다. 컨테이너 생성 및 관리, Pod 상태 확인 및 보고- 노드 상태 확인 /etc/systemd/system/kubelet.service로 실행 kubectl 쿠버네티스 클러스터를 관리하고 조작하기 위한 CLI(Command Line Interface) 도구입니다. 리소스 조회 및 관리, 애플리케이션 배포 및 업데이트, 로그 확인 kubectl get podskubectl apply -f deployment.yaml RSS Feed">
+  <meta itemprop="wordCount" content="347">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Kubeadm install">
-  <meta name="twitter:description" content="Kubeadm Install kubeadm을 설치하기 위한 환경은 전 인덱스를 참고 부탁드립니다. # 쿠버네티스 패키지 저장소에서 GPG 키를 다운로드 $ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg # 쿠버네티스 저장소를 추가 $ echo &#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&#34; | tee /etc/apt/sources.list.d/kubernetes.list # 패키지 목록 업데이트 $ apt update # kubeadm kubelet kubectl Install $ apt -y install kubeadm kubelet kubectl 명령어 설명 주요 기능 및 역할 예시 kubeadm 쿠버네티스 클러스터를 초기화하고 관리하는 도구입니다. 클러스터 초기화, 클러스터 업그레이드, 인증서 관리, 토큰 관리 kubeadm initkubeadm join kubelet 각 노드에서 실행되는 주요 에이전트로, 컨테이너의 상태를 관리하는 역할을 수행합니다. 컨테이너 생성 및 관리, Pod 상태 확인 및 보고- 노드 상태 확인 /etc/systemd/system/kubelet.service로 실행 kubectl 쿠버네티스 클러스터를 관리하고 조작하기 위한 CLI(Command Line Interface) 도구입니다. 리소스 조회 및 관리, 애플리케이션 배포 및 업데이트, 로그 확인 kubectl get podskubectl apply -f deployment.yaml">
+  <meta name="twitter:description" content="Kubeadm Install kubeadm을 설치하기 위한 환경은 전 인덱스를 참고 부탁드립니다. # 쿠버네티스 패키지 저장소에서 GPG 키를 다운로드 $ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg # 쿠버네티스 저장소를 추가 $ echo &#34;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /&#34; | tee /etc/apt/sources.list.d/kubernetes.list # 패키지 목록 업데이트 $ apt update # kubeadm kubelet kubectl Install $ apt -y install kubeadm kubelet kubectl 명령어 설명 주요 기능 및 역할 예시 kubeadm 쿠버네티스 클러스터를 초기화하고 관리하는 도구입니다. 클러스터 초기화, 클러스터 업그레이드, 인증서 관리, 토큰 관리 kubeadm initkubeadm join kubelet 각 노드에서 실행되는 주요 에이전트로, 컨테이너의 상태를 관리하는 역할을 수행합니다. 컨테이너 생성 및 관리, Pod 상태 확인 및 보고- 노드 상태 확인 /etc/systemd/system/kubelet.service로 실행 kubectl 쿠버네티스 클러스터를 관리하고 조작하기 위한 CLI(Command Line Interface) 도구입니다. 리소스 조회 및 관리, 애플리케이션 배포 및 업데이트, 로그 확인 kubectl get podskubectl apply -f deployment.yaml RSS Feed">
 
     <link rel="preload" href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" as="style" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
     <link href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" rel="stylesheet" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
@@ -7418,6 +7425,17 @@ $ apt -y install kubeadm kubelet kubectl
       </tr>
   </tbody>
 </table>
+<div style="text-align: center; margin-top: 1em;">
+<a
+  href="index.xml"
+  class=" not-prose hx-inline-flex hx-items-center hx-rounded-full hx-gap-2 hx-px-3 hx-py-1 hx-text-xs hx-text-gray-600 dark:hx-text-gray-400 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-border-neutral-800 hx-border hover:hx-border-gray-400 dark:hover:hx-text-gray-50 dark:hover:hx-border-gray-600 hx-transition-all hx-ease-in hx-duration-200"
+  
+  >
+  <span>RSS Feed</span>
+<span class="hx-inline-block hx-align-text-bottom icon"><svg height=14 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/></svg></span>
+</a>
+
+</div>
 
         </div>
         <div class="hx-mt-16"></div>

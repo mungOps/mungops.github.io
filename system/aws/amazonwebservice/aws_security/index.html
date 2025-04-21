@@ -78,7 +78,7 @@ Amazon Inspector
   <meta itemprop="name" content="AWS Security">
   <meta itemprop="description" content="AWS Security 기본적으로 AWS의 보안적 요소는 설비, 인프라 등과 관련된 물리적인 부분과 네트워크 인프라 등은 AWS가 책임을 지고 보안 대책을 수행합니다. 이러한 인프라 위의 OS, 애플리케이션, 네트워크 설정, 계정 관리 등은 사용자가 책임을 져야 하는 공유 책임 모델의 구조를 띄고 있습니다. AWS가 제공하는 기본적인 보안 서비스 AWS 제공 서비스 서비스 개요 통신 경로 암호화 AWS 매니지먼트 콘솔로의 접속 또는 API를 사용할 때 HTTPS를 사용해 데이터를 암호화합니다. Security Group&amp; NetworkACL 인스턴스들의 보안 그룹과 서브넷들의 통신 허가/ 거부 설정을 하는 네트워크 ACL을 사용해 예상하지 못하는 통신을 사전차단합니다. Identity and Access Management( IAM ) 사용자의 역할을 분리하고 최소한의 권한만을 부여하여 보안을 유지합니다. Multi Factor Authentication ( MFA ) AWS 계정 또는 IAM 계정에 일회성 비밀번호 인증을 추가합니다. Virtual Private Cloud ( VPC ) 퍼블릭 클라우드에 프라이빗 환경을 구축합니다. 다른 거점에서 VPN으로 접속할 수도 있습니다. Direct Connect ( 전용선 연결 ) On Premise 환경에서 AWS 전용선을 통해 직접 연결하여 데이터 도청, 변조 등의 위험을 줄일 수 있습니다. 데이터 암호화 EBS, S3, Glacier, Redshift, RDS에 저장하고 있는 데이터 또는 객체를 암호화할 수 있습니다. Hardware Security Module ( CloudHSM ) 암호화 키를 안전하게 저장하고 관리합니다. Trusted Advisor AWS 지원이 제공하는 서비스 중에 하나로, 각종 서비스의 설정과 운용 상황을 확인해서 개선할 부분을 제공해줍니다. Amazon Inspector">
   <meta itemprop="dateModified" content="2025-03-19T20:18:39+09:00">
-  <meta itemprop="wordCount" content="4387">
+  <meta itemprop="wordCount" content="4389">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AWS Security">
   <meta name="twitter:description" content="AWS Security 기본적으로 AWS의 보안적 요소는 설비, 인프라 등과 관련된 물리적인 부분과 네트워크 인프라 등은 AWS가 책임을 지고 보안 대책을 수행합니다. 이러한 인프라 위의 OS, 애플리케이션, 네트워크 설정, 계정 관리 등은 사용자가 책임을 져야 하는 공유 책임 모델의 구조를 띄고 있습니다. AWS가 제공하는 기본적인 보안 서비스 AWS 제공 서비스 서비스 개요 통신 경로 암호화 AWS 매니지먼트 콘솔로의 접속 또는 API를 사용할 때 HTTPS를 사용해 데이터를 암호화합니다. Security Group&amp; NetworkACL 인스턴스들의 보안 그룹과 서브넷들의 통신 허가/ 거부 설정을 하는 네트워크 ACL을 사용해 예상하지 못하는 통신을 사전차단합니다. Identity and Access Management( IAM ) 사용자의 역할을 분리하고 최소한의 권한만을 부여하여 보안을 유지합니다. Multi Factor Authentication ( MFA ) AWS 계정 또는 IAM 계정에 일회성 비밀번호 인증을 추가합니다. Virtual Private Cloud ( VPC ) 퍼블릭 클라우드에 프라이빗 환경을 구축합니다. 다른 거점에서 VPN으로 접속할 수도 있습니다. Direct Connect ( 전용선 연결 ) On Premise 환경에서 AWS 전용선을 통해 직접 연결하여 데이터 도청, 변조 등의 위험을 줄일 수 있습니다. 데이터 암호화 EBS, S3, Glacier, Redshift, RDS에 저장하고 있는 데이터 또는 객체를 암호화할 수 있습니다. Hardware Security Module ( CloudHSM ) 암호화 키를 안전하게 저장하고 관리합니다. Trusted Advisor AWS 지원이 제공하는 서비스 중에 하나로, 각종 서비스의 설정과 운용 상황을 확인해서 개선할 부분을 제공해줍니다. Amazon Inspector">
@@ -6895,6 +6895,17 @@ Amazon Inspector
 <li>방화벽이 L4/ L4 Layer의 방어 ( IP와 Port 차단 )을 이용</li>
 <li>웹 방화벽은 L7( HTTP 헤더, HTTP 본문, URI 문자열, SQL 명령어, 스크립팅 )을 이용한 공격을 방어</li>
 </ul>
+<div style="text-align: center; margin-top: 1em;">
+<a
+  href="index.xml"
+  class=" not-prose hx-inline-flex hx-items-center hx-rounded-full hx-gap-2 hx-px-3 hx-py-1 hx-text-xs hx-text-gray-600 dark:hx-text-gray-400 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-border-neutral-800 hx-border hover:hx-border-gray-400 dark:hover:hx-text-gray-50 dark:hover:hx-border-gray-600 hx-transition-all hx-ease-in hx-duration-200"
+  
+  >
+  <span>RSS Feed</span>
+<span class="hx-inline-block hx-align-text-bottom icon"><svg height=14 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/></svg></span>
+</a>
+
+</div>
 
         </div>
         
