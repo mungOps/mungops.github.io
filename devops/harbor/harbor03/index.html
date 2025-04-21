@@ -85,12 +85,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/devops/harbor/harbor03/" /><meta property="article:section" content="devops" />
 
-<meta property="article:modified_time" content="2025-04-13T21:56:58+09:00" />
+<meta property="article:modified_time" content="2025-04-21T20:34:23+09:00" />
 
   <meta itemprop="name" content="Harbor 설치 및 구성">
   <meta itemprop="description" content="1️⃣ &#43; 단일 노드/멀티 노드 설치 Harbor는 다양한 환경에 배포할 수 있습니다:
 환경 유형 설명 단일 노드 테스트/소규모 환경에 적합 멀티 노드 고가용성(HA), 대규모 서비스 운영 시 사용 Kubernetes 기반 마이크로서비스 및 클라우드 환경에서 이상적 1. 단일 노드 구조 예시 ┌──────────────────────┐ │ 단일 서버 │ │ │ │ ┌───────┐ │ │ │ Docker│ │ │ └──┬────┘ │ │ ▼ │ │ ┌─────────────┐ │ │ │ Harbor stack│ │ │ └─────────────┘ │ └──────────────────────┘ 2. 멀티 노드 구조 예시 (고가용성) ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ │ Node 1 │ │ Node 2 │ │ Node 3 │ │ (UI, Core) │ │ (Job, DB) │ │ (Registry) │ └────┬────────┘ └────┬────────┘ └────┬────────┘ ▼ ▼ ▼ ┌────────────────────────────┐ │ Shared DB / Redis │ │ Shared Storage (S3) │ └────────────────────────────┘ 2️⃣ &#43; Docker Compose 기반 설치 Harbor는 기본적으로 Docker Compose로 쉽게 설치할 수 있도록 제공됩니다.">
-  <meta itemprop="dateModified" content="2025-04-13T21:56:58+09:00">
+  <meta itemprop="dateModified" content="2025-04-21T20:34:23+09:00">
   <meta itemprop="wordCount" content="1112">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Harbor 설치 및 구성">
@@ -7848,7 +7848,7 @@
 
         </div>
         
-    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-04-13T21:56:58.000Z">April 13, 2025</time></div>
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-04-21T20:34:23.000Z">April 21, 2025</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/devops/harbor/harbor02/"
         title="Harbor 아키텍처 구조 이해"

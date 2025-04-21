@@ -80,11 +80,11 @@ $ controller&gt; firewall-cmd --reload
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-08/" /><meta property="article:section" content="system" />
 
-<meta property="article:modified_time" content="2025-03-19T20:18:39+09:00" />
+<meta property="article:modified_time" content="2025-04-21T20:34:23+09:00" />
 
   <meta itemprop="name" content="OpenStack Ussuri : Horizon">
   <meta itemprop="description" content="OpenStack : HorizonOpenStack : Horizon Horizon은 openstack에서 GUI 환경을 제공해주는 서비스입니다. Horizon에 대한 자세한 설명은 Horizon을 참조해주세요. $ controller&gt; dnf --enablerepo=centos-openstack-ussuri,powertools,epel -y install openstack-dashboard $ controller&gt; vi /etc/openstack-dashboard/local_settings ALLOWED_HOSTS = [&#39;*&#39;,&#39;&#39;] # 모든 host의 접속이 가능하게 설정합니다. CACHES = { &#39;default&#39;: { &#39;BACKEND&#39;: &#39;django.core.cache.backends.memcached.MemcachedCache&#39;, &#39;LOCATION&#39;: &#39;controller:11211&#39;, }, } SESSION_ENGINE = &#34;django.contrib.sessions.backends.cache&#34; OPENSTACK_HOST = &#34;controller&#34; OPENSTACK_KEYSTONE_URL = &#34;http://controller:5000/v3&#34; # openstack host와 SESSION 서버의 host를 지정합니다. TIME_ZONE = &#34;Asia/Seoul&#34; # 시간을 지정합니다. WEBROOT = &#39;/dashboard/&#39; LOGIN_URL = &#39;/dashboard/auth/login/&#39; LOGOUT_URL = &#39;/dashboard/auth/logout/&#39; LOGIN_REDIRECT_URL = &#39;/dashboard/&#39; OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = True OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = &#39;Default&#39; OPENSTACK_API_VERSIONS = { &#34;identity&#34;: 3, &#34;volume&#34;: 3, &#34;compute&#34;: 2, } # 끝에 추가합니다. $ controller&gt; vi /etc/httpd/conf.d/openstack-dashboard.conf .... .... WSGIApplicationGroup %{GLOBAL} # 상단에 추가합니다. $ controller&gt; systemctl restart httpd # httpd를 재 시작합니다. $ controller&gt; setsebool -P httpd_can_network_connect on $ controller&gt; firewall-cmd --add-service={http,https} --permanent $ controller&gt; firewall-cmd --reload # SELinux 및 방화벽을 설정합니다.">
-  <meta itemprop="dateModified" content="2025-03-19T20:18:39+09:00">
+  <meta itemprop="dateModified" content="2025-04-21T20:34:23+09:00">
   <meta itemprop="wordCount" content="285">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="OpenStack Ussuri : Horizon">
@@ -6516,7 +6516,7 @@ $ controller&gt; firewall-cmd --reload
 
         </div>
         
-    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-03-19T20:18:39.000Z">March 19, 2025</time></div>
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-04-21T20:34:23.000Z">April 21, 2025</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/system/openstack/openstacktraining/openstack-ussuri-07/"
         title="OpenStack Ussuri : Cinder"

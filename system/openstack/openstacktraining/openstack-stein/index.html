@@ -133,11 +133,11 @@ $ chronyc sources
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/system/openstack/openstacktraining/openstack-stein/" /><meta property="article:section" content="system" />
 
-<meta property="article:modified_time" content="2025-03-19T20:18:39+09:00" />
+<meta property="article:modified_time" content="2025-04-21T20:34:23+09:00" />
 
   <meta itemprop="name" content="Openstack Stain Manual 설치">
   <meta itemprop="description" content="Openstack Stain Manual 설치 1. 시스템 및 네트워크 구성 여기서는 Nat 네트워크를 외부, host1 대역을 내부로 사용하여 Openstack을 구축해보도록 하겠습니다. 운영체제 및 네트워크 구성 Hypervisor : Vmware Workstation 15 OS : CentOS7 노드 구성 OS Hostname Network Interface Network Interface2 CPU RAM DISK CentOS7 controller Nat ( 192.168.10.100 ) HOST1 ( 10.10.10.10 ) 2cpu 4thread 8 RAm 30G CentOS7 natwork Nat ( 192.168.10.101 ) HOST1 ( 10.10.10.20 ) 1cpu 2thread 2 RAm 20G CentOS7 compute Nat ( 192.168.10.102 ) HOST1 ( 10.10.10.30 ) 1cpu 4thread 4 RAm 100G 기본적인 업데이트 및 설정을 모든 노드에 진행합니다. $ yum -y update # 업데이트 $ vi /etc/hosts 10.10.10.10 controller 10.10.10.20 network 10.10.10.30 compute # known host 등록 설정이 완료되면 기본 구성을 모든 노드에 진행합니다. $ yum -y install chrony # 시간 동기화를 위한 chrony 설치 $ vi /etc/chrony.conf #server 0.centos.pool.ntp.org iburst #server 1.centos.pool.ntp.org iburst #server 2.centos.pool.ntp.org iburst #server 3.centos.pool.ntp.org iburst server ntp1.jst.mfeed.ad.jp iburst server ntp2.jst.mfeed.ad.jp iburst server ntp3.jst.mfeed.ad.jp iburst allow 10.10.10.0/24 # 시간동기화 $ firewall-cmd --add-service=ntp --permanent $ firewall-cmd --reload # ntp 방화벽 허용 및 리로딩 $ init 6 # 시스템 재시작 $ chronyc sources # 확인">
-  <meta itemprop="dateModified" content="2025-03-19T20:18:39+09:00">
+  <meta itemprop="dateModified" content="2025-04-21T20:34:23+09:00">
   <meta itemprop="wordCount" content="11113">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Openstack Stain Manual 설치">
@@ -9572,7 +9572,7 @@ $ chronyc sources
 
         </div>
         
-    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-03-19T20:18:39.000Z">March 19, 2025</time></div>
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2025-04-21T20:34:23.000Z">April 21, 2025</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/system/openstack/openstacktraining/openstack-ussuri-10/"
         title="OpenStack Ussuri : Heat"
