@@ -10,12 +10,531 @@
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
-<title> Concept – mungOps</title>
-  <meta name="description" content="aaa
-RSS Feed " /><link rel="canonical" href="https://mungops.github.io/devops/kubernetes/kubernetestraining/11.-ml/fluentd/file0/" itemprop="url" />
+<title>명령어 정리 – mungOps</title>
+  <meta name="description" content="📘 자꾸 잊어버려보는 명령어 정리🐳 Docker 명령어 전체 정리 🧱 1. 이미지(Image) 명령어 설명 예시 docker pull &lt;이미지&gt; 이미지 다운로드 docker pull nginx docker push &lt;이미지&gt; 레지스트리에 이미지 업로드 docker push myrepo/nginx:1.0 docker build -t &lt;이름&gt;:&lt;태그&gt; &lt;경로&gt; Dockerfile로 이미지 빌드 docker build -t myapp:v1 . docker images 로컬 이미지 목록 확인 - docker rmi &lt;이미지&gt; 이미지 삭제 docker rmi nginx docker tag &lt;이미지&gt; &lt;새이름&gt; 이미지 태그 복사 docker tag nginx myrepo/nginx:latest docker save -o &lt;파일&gt; 이미지 tar로 저장 docker save -o nginx.tar nginx docker load -i &lt;파일&gt; 저장된 이미지 로드 docker load -i nginx.tar docker history &lt;이미지&gt; 이미지 빌드 히스토리 docker history nginx docker inspect &lt;이미지&gt; 이미지 상세 정보 docker inspect nginx 🚀 2. 컨테이너(Container) 명령어 설명 예시 docker run &lt;이미지&gt; 새 컨테이너 생성 및 실행 docker run nginx docker run -it &lt;이미지&gt; bash 상호작용 셸 실행 docker run -it ubuntu bash docker run -d &lt;이미지&gt; 백그라운드 실행 docker run -d nginx docker run --name &lt;이름&gt; 컨테이너 이름 지정 docker run --name web nginx docker run -p 8080:80 포트 포워딩 docker run -p 8080:80 nginx docker run -v /host:/container 볼륨 마운트 docker run -v /tmp:/data nginx docker exec -it &lt;컨테이너&gt; &lt;명령&gt; 실행 중인 컨테이너 내 명령 실행 docker exec -it web bash docker start &lt;컨테이너&gt; 정지된 컨테이너 시작 docker start web docker stop &lt;컨테이너&gt; 컨테이너 중지 docker stop web docker restart &lt;컨테이너&gt; 컨테이너 재시작 docker restart web docker kill &lt;컨테이너&gt; 강제 종료 (SIGKILL) docker kill web docker rm &lt;컨테이너&gt; 컨테이너 삭제 docker rm web docker rename &lt;old&gt; &lt;new&gt; 이름 변경 docker rename web web-old docker ps 실행 중인 컨테이너 목록 - docker ps -a 전체 컨테이너 목록 - docker logs &lt;컨테이너&gt; 로그 출력 docker logs web docker logs -f &lt;컨테이너&gt; 로그 실시간 보기 docker logs -f web docker inspect &lt;컨테이너&gt; 상세 정보 출력 docker inspect web docker top &lt;컨테이너&gt; 컨테이너 내 프로세스 보기 docker top web docker attach &lt;컨테이너&gt; 컨테이너 출력에 붙기 docker attach web docker cp &lt;src&gt; &lt;dst&gt; 파일 복사 (호스트 ↔ 컨테이너) docker cp web:/file.txt ./ docker diff &lt;컨테이너&gt; 변경된 파일 확인 docker diff web docker commit &lt;컨테이너&gt; &lt;이미지&gt; 컨테이너를 이미지로 저장 docker commit web myweb:v1 📁 3. 볼륨(Volume) 명령어 설명 예시 docker volume create &lt;이름&gt; 볼륨 생성 docker volume create data_vol docker volume ls 볼륨 목록 확인 - docker volume inspect &lt;이름&gt; 상세 정보 확인 docker volume inspect data_vol docker volume rm &lt;이름&gt; 볼륨 삭제 docker volume rm data_vol docker volume prune 미사용 볼륨 일괄 삭제 - 🌐 4. 네트워크(Network) 명령어 설명 예시 docker network ls 네트워크 목록 - docker network create &lt;이름&gt; 사용자 정의 네트워크 생성 docker network create mynet docker network inspect &lt;이름&gt; 상세 정보 확인 docker network inspect mynet docker network rm &lt;이름&gt; 네트워크 삭제 docker network rm mynet docker network connect &lt;네트워크&gt; &lt;컨테이너&gt; 네트워크에 컨테이너 연결 docker network connect mynet web docker network disconnect &lt;네트워크&gt; &lt;컨테이너&gt; 연결 해제 docker network disconnect mynet web 🧹 5. 시스템 관리 명령어 설명 예시 docker system df 디스크 사용량 확인 - docker system prune 모든 미사용 리소스 정리 - docker container prune 중지 컨테이너 삭제 - docker image prune 태그 없는 이미지 삭제 - docker volume prune 사용되지 않는 볼륨 삭제 - docker network prune 미사용 네트워크 삭제 - 🛠️ 6. Docker Compose 명령어 설명 예시 docker-compose up 서비스 시작 docker-compose up docker-compose up -d 백그라운드 실행 docker-compose up -d docker-compose down 서비스 중지 및 정리 - docker-compose build 이미지 빌드 - docker-compose restart 재시작 - docker-compose logs 로그 출력 docker-compose logs -f docker-compose ps 서비스 상태 확인 - docker-compose exec &lt;서비스&gt; &lt;명령&gt; 실행 중인 서비스에 명령 docker-compose exec web bash docker-compose config 설정 확인 - docker-compose rm 서비스 삭제 - 🌍 7. Docker Registry 명령어 설명 예시 docker login 레지스트리 로그인 docker login registry.my.com docker logout 로그아웃 docker logout registry.my.com docker tag 이미지 태그 재지정 docker tag nginx registry.my.com/nginx:v1 docker push 레지스트리에 푸시 docker push registry.my.com/nginx:v1 docker pull 레지스트리에서 풀 docker pull registry.my.com/nginx:v1 🐝 8. Docker Swarm 명령어 설명 예시 docker swarm init 스웜 초기화 - docker swarm join 워커 노드 연결 - docker service create 스웜 서비스 생성 docker service create --name web -p 80:80 nginx docker service ls 서비스 목록 - docker service ps &lt;서비스&gt; 서비스의 태스크 확인 - docker service scale 서비스 수 조정 docker service scale web=3 docker node ls 노드 목록 - docker node inspect &lt;노드&gt; 노드 정보 확인 - 🧾 주요 단축옵션 요약 옵션 설명 -d 백그라운드 실행 (detached mode) -it 상호작용 &#43; 터미널 연결 --rm 컨테이너 종료 시 삭제 -p 포트 매핑 (호스트:컨테이너) -v 볼륨 마운트 --name 이름 지정 --network 네트워크 설정 -e 환경 변수 설정 (-e KEY=VAL) 📚 참고 자료 Docker 공식 문서: https://docs.docker.com Docker CLI 문서: https://docs.docker.com/engine/reference/commandline/docker RSS Feed " /><link rel="canonical" href="https://mungops.github.io/devops/docker/docker09/" itemprop="url" />
 
-<meta property="og:title" content=" Concept" />
-<meta property="og:description" content="aaa
+<meta property="og:title" content="명령어 정리" />
+<meta property="og:description" content="📘 자꾸 잊어버려보는 명령어 정리🐳 Docker 명령어 전체 정리
+    
+
+🧱 1. 이미지(Image)
+    
+  
+      
+          명령어
+          설명
+          예시
+      
+  
+  
+      
+          docker pull &lt;이미지&gt;
+          이미지 다운로드
+          docker pull nginx
+      
+      
+          docker push &lt;이미지&gt;
+          레지스트리에 이미지 업로드
+          docker push myrepo/nginx:1.0
+      
+      
+          docker build -t &lt;이름&gt;:&lt;태그&gt; &lt;경로&gt;
+          Dockerfile로 이미지 빌드
+          docker build -t myapp:v1 .
+      
+      
+          docker images
+          로컬 이미지 목록 확인
+          -
+      
+      
+          docker rmi &lt;이미지&gt;
+          이미지 삭제
+          docker rmi nginx
+      
+      
+          docker tag &lt;이미지&gt; &lt;새이름&gt;
+          이미지 태그 복사
+          docker tag nginx myrepo/nginx:latest
+      
+      
+          docker save -o &lt;파일&gt;
+          이미지 tar로 저장
+          docker save -o nginx.tar nginx
+      
+      
+          docker load -i &lt;파일&gt;
+          저장된 이미지 로드
+          docker load -i nginx.tar
+      
+      
+          docker history &lt;이미지&gt;
+          이미지 빌드 히스토리
+          docker history nginx
+      
+      
+          docker inspect &lt;이미지&gt;
+          이미지 상세 정보
+          docker inspect nginx
+      
+  
+
+
+🚀 2. 컨테이너(Container)
+    
+  
+      
+          명령어
+          설명
+          예시
+      
+  
+  
+      
+          docker run &lt;이미지&gt;
+          새 컨테이너 생성 및 실행
+          docker run nginx
+      
+      
+          docker run -it &lt;이미지&gt; bash
+          상호작용 셸 실행
+          docker run -it ubuntu bash
+      
+      
+          docker run -d &lt;이미지&gt;
+          백그라운드 실행
+          docker run -d nginx
+      
+      
+          docker run --name &lt;이름&gt;
+          컨테이너 이름 지정
+          docker run --name web nginx
+      
+      
+          docker run -p 8080:80
+          포트 포워딩
+          docker run -p 8080:80 nginx
+      
+      
+          docker run -v /host:/container
+          볼륨 마운트
+          docker run -v /tmp:/data nginx
+      
+      
+          docker exec -it &lt;컨테이너&gt; &lt;명령&gt;
+          실행 중인 컨테이너 내 명령 실행
+          docker exec -it web bash
+      
+      
+          docker start &lt;컨테이너&gt;
+          정지된 컨테이너 시작
+          docker start web
+      
+      
+          docker stop &lt;컨테이너&gt;
+          컨테이너 중지
+          docker stop web
+      
+      
+          docker restart &lt;컨테이너&gt;
+          컨테이너 재시작
+          docker restart web
+      
+      
+          docker kill &lt;컨테이너&gt;
+          강제 종료 (SIGKILL)
+          docker kill web
+      
+      
+          docker rm &lt;컨테이너&gt;
+          컨테이너 삭제
+          docker rm web
+      
+      
+          docker rename &lt;old&gt; &lt;new&gt;
+          이름 변경
+          docker rename web web-old
+      
+      
+          docker ps
+          실행 중인 컨테이너 목록
+          -
+      
+      
+          docker ps -a
+          전체 컨테이너 목록
+          -
+      
+      
+          docker logs &lt;컨테이너&gt;
+          로그 출력
+          docker logs web
+      
+      
+          docker logs -f &lt;컨테이너&gt;
+          로그 실시간 보기
+          docker logs -f web
+      
+      
+          docker inspect &lt;컨테이너&gt;
+          상세 정보 출력
+          docker inspect web
+      
+      
+          docker top &lt;컨테이너&gt;
+          컨테이너 내 프로세스 보기
+          docker top web
+      
+      
+          docker attach &lt;컨테이너&gt;
+          컨테이너 출력에 붙기
+          docker attach web
+      
+      
+          docker cp &lt;src&gt; &lt;dst&gt;
+          파일 복사 (호스트 ↔ 컨테이너)
+          docker cp web:/file.txt ./
+      
+      
+          docker diff &lt;컨테이너&gt;
+          변경된 파일 확인
+          docker diff web
+      
+      
+          docker commit &lt;컨테이너&gt; &lt;이미지&gt;
+          컨테이너를 이미지로 저장
+          docker commit web myweb:v1
+      
+  
+
+
+📁 3. 볼륨(Volume)
+    
+  
+      
+          명령어
+          설명
+          예시
+      
+  
+  
+      
+          docker volume create &lt;이름&gt;
+          볼륨 생성
+          docker volume create data_vol
+      
+      
+          docker volume ls
+          볼륨 목록 확인
+          -
+      
+      
+          docker volume inspect &lt;이름&gt;
+          상세 정보 확인
+          docker volume inspect data_vol
+      
+      
+          docker volume rm &lt;이름&gt;
+          볼륨 삭제
+          docker volume rm data_vol
+      
+      
+          docker volume prune
+          미사용 볼륨 일괄 삭제
+          -
+      
+  
+
+
+🌐 4. 네트워크(Network)
+    
+  
+      
+          명령어
+          설명
+          예시
+      
+  
+  
+      
+          docker network ls
+          네트워크 목록
+          -
+      
+      
+          docker network create &lt;이름&gt;
+          사용자 정의 네트워크 생성
+          docker network create mynet
+      
+      
+          docker network inspect &lt;이름&gt;
+          상세 정보 확인
+          docker network inspect mynet
+      
+      
+          docker network rm &lt;이름&gt;
+          네트워크 삭제
+          docker network rm mynet
+      
+      
+          docker network connect &lt;네트워크&gt; &lt;컨테이너&gt;
+          네트워크에 컨테이너 연결
+          docker network connect mynet web
+      
+      
+          docker network disconnect &lt;네트워크&gt; &lt;컨테이너&gt;
+          연결 해제
+          docker network disconnect mynet web
+      
+  
+
+
+🧹 5. 시스템 관리
+    
+  
+      
+          명령어
+          설명
+          예시
+      
+  
+  
+      
+          docker system df
+          디스크 사용량 확인
+          -
+      
+      
+          docker system prune
+          모든 미사용 리소스 정리
+          -
+      
+      
+          docker container prune
+          중지 컨테이너 삭제
+          -
+      
+      
+          docker image prune
+          태그 없는 이미지 삭제
+          -
+      
+      
+          docker volume prune
+          사용되지 않는 볼륨 삭제
+          -
+      
+      
+          docker network prune
+          미사용 네트워크 삭제
+          -
+      
+  
+
+
+🛠️ 6. Docker Compose
+    
+  
+      
+          명령어
+          설명
+          예시
+      
+  
+  
+      
+          docker-compose up
+          서비스 시작
+          docker-compose up
+      
+      
+          docker-compose up -d
+          백그라운드 실행
+          docker-compose up -d
+      
+      
+          docker-compose down
+          서비스 중지 및 정리
+          -
+      
+      
+          docker-compose build
+          이미지 빌드
+          -
+      
+      
+          docker-compose restart
+          재시작
+          -
+      
+      
+          docker-compose logs
+          로그 출력
+          docker-compose logs -f
+      
+      
+          docker-compose ps
+          서비스 상태 확인
+          -
+      
+      
+          docker-compose exec &lt;서비스&gt; &lt;명령&gt;
+          실행 중인 서비스에 명령
+          docker-compose exec web bash
+      
+      
+          docker-compose config
+          설정 확인
+          -
+      
+      
+          docker-compose rm
+          서비스 삭제
+          -
+      
+  
+
+
+🌍 7. Docker Registry
+    
+  
+      
+          명령어
+          설명
+          예시
+      
+  
+  
+      
+          docker login
+          레지스트리 로그인
+          docker login registry.my.com
+      
+      
+          docker logout
+          로그아웃
+          docker logout registry.my.com
+      
+      
+          docker tag
+          이미지 태그 재지정
+          docker tag nginx registry.my.com/nginx:v1
+      
+      
+          docker push
+          레지스트리에 푸시
+          docker push registry.my.com/nginx:v1
+      
+      
+          docker pull
+          레지스트리에서 풀
+          docker pull registry.my.com/nginx:v1
+      
+  
+
+
+🐝 8. Docker Swarm
+    
+  
+      
+          명령어
+          설명
+          예시
+      
+  
+  
+      
+          docker swarm init
+          스웜 초기화
+          -
+      
+      
+          docker swarm join
+          워커 노드 연결
+          -
+      
+      
+          docker service create
+          스웜 서비스 생성
+          docker service create --name web -p 80:80 nginx
+      
+      
+          docker service ls
+          서비스 목록
+          -
+      
+      
+          docker service ps &lt;서비스&gt;
+          서비스의 태스크 확인
+          -
+      
+      
+          docker service scale
+          서비스 수 조정
+          docker service scale web=3
+      
+      
+          docker node ls
+          노드 목록
+          -
+      
+      
+          docker node inspect &lt;노드&gt;
+          노드 정보 확인
+          -
+      
+  
+
+
+🧾 주요 단축옵션 요약
+    
+  
+      
+          옵션
+          설명
+      
+  
+  
+      
+          -d
+          백그라운드 실행 (detached mode)
+      
+      
+          -it
+          상호작용 &#43; 터미널 연결
+      
+      
+          --rm
+          컨테이너 종료 시 삭제
+      
+      
+          -p
+          포트 매핑 (호스트:컨테이너)
+      
+      
+          -v
+          볼륨 마운트
+      
+      
+          --name
+          이름 지정
+      
+      
+          --network
+          네트워크 설정
+      
+      
+          -e
+          환경 변수 설정 (-e KEY=VAL)
+      
+  
+
+
+📚 참고 자료
+    
+Docker 공식 문서: https://docs.docker.com
+Docker CLI 문서: https://docs.docker.com/engine/reference/commandline/docker
+
 
 
   RSS Feed
@@ -24,18 +543,16 @@ RSS Feed " /><link rel="canonical" href="https://mungops.github.io/devops/kubern
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mungops.github.io/devops/kubernetes/kubernetestraining/11.-ml/fluentd/file0/" /><meta property="article:section" content="devops" />
+<meta property="og:url" content="https://mungops.github.io/devops/docker/docker09/" /><meta property="article:section" content="devops" />
 
 
 
-  <meta itemprop="name" content=" Concept">
-  <meta itemprop="description" content="aaa
-RSS Feed">
-  <meta itemprop="wordCount" content="3">
+  <meta itemprop="name" content="명령어 정리">
+  <meta itemprop="description" content="📘 자꾸 잊어버려보는 명령어 정리🐳 Docker 명령어 전체 정리 🧱 1. 이미지(Image) 명령어 설명 예시 docker pull &lt;이미지&gt; 이미지 다운로드 docker pull nginx docker push &lt;이미지&gt; 레지스트리에 이미지 업로드 docker push myrepo/nginx:1.0 docker build -t &lt;이름&gt;:&lt;태그&gt; &lt;경로&gt; Dockerfile로 이미지 빌드 docker build -t myapp:v1 . docker images 로컬 이미지 목록 확인 - docker rmi &lt;이미지&gt; 이미지 삭제 docker rmi nginx docker tag &lt;이미지&gt; &lt;새이름&gt; 이미지 태그 복사 docker tag nginx myrepo/nginx:latest docker save -o &lt;파일&gt; 이미지 tar로 저장 docker save -o nginx.tar nginx docker load -i &lt;파일&gt; 저장된 이미지 로드 docker load -i nginx.tar docker history &lt;이미지&gt; 이미지 빌드 히스토리 docker history nginx docker inspect &lt;이미지&gt; 이미지 상세 정보 docker inspect nginx 🚀 2. 컨테이너(Container) 명령어 설명 예시 docker run &lt;이미지&gt; 새 컨테이너 생성 및 실행 docker run nginx docker run -it &lt;이미지&gt; bash 상호작용 셸 실행 docker run -it ubuntu bash docker run -d &lt;이미지&gt; 백그라운드 실행 docker run -d nginx docker run --name &lt;이름&gt; 컨테이너 이름 지정 docker run --name web nginx docker run -p 8080:80 포트 포워딩 docker run -p 8080:80 nginx docker run -v /host:/container 볼륨 마운트 docker run -v /tmp:/data nginx docker exec -it &lt;컨테이너&gt; &lt;명령&gt; 실행 중인 컨테이너 내 명령 실행 docker exec -it web bash docker start &lt;컨테이너&gt; 정지된 컨테이너 시작 docker start web docker stop &lt;컨테이너&gt; 컨테이너 중지 docker stop web docker restart &lt;컨테이너&gt; 컨테이너 재시작 docker restart web docker kill &lt;컨테이너&gt; 강제 종료 (SIGKILL) docker kill web docker rm &lt;컨테이너&gt; 컨테이너 삭제 docker rm web docker rename &lt;old&gt; &lt;new&gt; 이름 변경 docker rename web web-old docker ps 실행 중인 컨테이너 목록 - docker ps -a 전체 컨테이너 목록 - docker logs &lt;컨테이너&gt; 로그 출력 docker logs web docker logs -f &lt;컨테이너&gt; 로그 실시간 보기 docker logs -f web docker inspect &lt;컨테이너&gt; 상세 정보 출력 docker inspect web docker top &lt;컨테이너&gt; 컨테이너 내 프로세스 보기 docker top web docker attach &lt;컨테이너&gt; 컨테이너 출력에 붙기 docker attach web docker cp &lt;src&gt; &lt;dst&gt; 파일 복사 (호스트 ↔ 컨테이너) docker cp web:/file.txt ./ docker diff &lt;컨테이너&gt; 변경된 파일 확인 docker diff web docker commit &lt;컨테이너&gt; &lt;이미지&gt; 컨테이너를 이미지로 저장 docker commit web myweb:v1 📁 3. 볼륨(Volume) 명령어 설명 예시 docker volume create &lt;이름&gt; 볼륨 생성 docker volume create data_vol docker volume ls 볼륨 목록 확인 - docker volume inspect &lt;이름&gt; 상세 정보 확인 docker volume inspect data_vol docker volume rm &lt;이름&gt; 볼륨 삭제 docker volume rm data_vol docker volume prune 미사용 볼륨 일괄 삭제 - 🌐 4. 네트워크(Network) 명령어 설명 예시 docker network ls 네트워크 목록 - docker network create &lt;이름&gt; 사용자 정의 네트워크 생성 docker network create mynet docker network inspect &lt;이름&gt; 상세 정보 확인 docker network inspect mynet docker network rm &lt;이름&gt; 네트워크 삭제 docker network rm mynet docker network connect &lt;네트워크&gt; &lt;컨테이너&gt; 네트워크에 컨테이너 연결 docker network connect mynet web docker network disconnect &lt;네트워크&gt; &lt;컨테이너&gt; 연결 해제 docker network disconnect mynet web 🧹 5. 시스템 관리 명령어 설명 예시 docker system df 디스크 사용량 확인 - docker system prune 모든 미사용 리소스 정리 - docker container prune 중지 컨테이너 삭제 - docker image prune 태그 없는 이미지 삭제 - docker volume prune 사용되지 않는 볼륨 삭제 - docker network prune 미사용 네트워크 삭제 - 🛠️ 6. Docker Compose 명령어 설명 예시 docker-compose up 서비스 시작 docker-compose up docker-compose up -d 백그라운드 실행 docker-compose up -d docker-compose down 서비스 중지 및 정리 - docker-compose build 이미지 빌드 - docker-compose restart 재시작 - docker-compose logs 로그 출력 docker-compose logs -f docker-compose ps 서비스 상태 확인 - docker-compose exec &lt;서비스&gt; &lt;명령&gt; 실행 중인 서비스에 명령 docker-compose exec web bash docker-compose config 설정 확인 - docker-compose rm 서비스 삭제 - 🌍 7. Docker Registry 명령어 설명 예시 docker login 레지스트리 로그인 docker login registry.my.com docker logout 로그아웃 docker logout registry.my.com docker tag 이미지 태그 재지정 docker tag nginx registry.my.com/nginx:v1 docker push 레지스트리에 푸시 docker push registry.my.com/nginx:v1 docker pull 레지스트리에서 풀 docker pull registry.my.com/nginx:v1 🐝 8. Docker Swarm 명령어 설명 예시 docker swarm init 스웜 초기화 - docker swarm join 워커 노드 연결 - docker service create 스웜 서비스 생성 docker service create --name web -p 80:80 nginx docker service ls 서비스 목록 - docker service ps &lt;서비스&gt; 서비스의 태스크 확인 - docker service scale 서비스 수 조정 docker service scale web=3 docker node ls 노드 목록 - docker node inspect &lt;노드&gt; 노드 정보 확인 - 🧾 주요 단축옵션 요약 옵션 설명 -d 백그라운드 실행 (detached mode) -it 상호작용 &#43; 터미널 연결 --rm 컨테이너 종료 시 삭제 -p 포트 매핑 (호스트:컨테이너) -v 볼륨 마운트 --name 이름 지정 --network 네트워크 설정 -e 환경 변수 설정 (-e KEY=VAL) 📚 참고 자료 Docker 공식 문서: https://docs.docker.com Docker CLI 문서: https://docs.docker.com/engine/reference/commandline/docker RSS Feed">
+  <meta itemprop="wordCount" content="1695">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content=" Concept">
-  <meta name="twitter:description" content="aaa
-RSS Feed">
+  <meta name="twitter:title" content="명령어 정리">
+  <meta name="twitter:description" content="📘 자꾸 잊어버려보는 명령어 정리🐳 Docker 명령어 전체 정리 🧱 1. 이미지(Image) 명령어 설명 예시 docker pull &lt;이미지&gt; 이미지 다운로드 docker pull nginx docker push &lt;이미지&gt; 레지스트리에 이미지 업로드 docker push myrepo/nginx:1.0 docker build -t &lt;이름&gt;:&lt;태그&gt; &lt;경로&gt; Dockerfile로 이미지 빌드 docker build -t myapp:v1 . docker images 로컬 이미지 목록 확인 - docker rmi &lt;이미지&gt; 이미지 삭제 docker rmi nginx docker tag &lt;이미지&gt; &lt;새이름&gt; 이미지 태그 복사 docker tag nginx myrepo/nginx:latest docker save -o &lt;파일&gt; 이미지 tar로 저장 docker save -o nginx.tar nginx docker load -i &lt;파일&gt; 저장된 이미지 로드 docker load -i nginx.tar docker history &lt;이미지&gt; 이미지 빌드 히스토리 docker history nginx docker inspect &lt;이미지&gt; 이미지 상세 정보 docker inspect nginx 🚀 2. 컨테이너(Container) 명령어 설명 예시 docker run &lt;이미지&gt; 새 컨테이너 생성 및 실행 docker run nginx docker run -it &lt;이미지&gt; bash 상호작용 셸 실행 docker run -it ubuntu bash docker run -d &lt;이미지&gt; 백그라운드 실행 docker run -d nginx docker run --name &lt;이름&gt; 컨테이너 이름 지정 docker run --name web nginx docker run -p 8080:80 포트 포워딩 docker run -p 8080:80 nginx docker run -v /host:/container 볼륨 마운트 docker run -v /tmp:/data nginx docker exec -it &lt;컨테이너&gt; &lt;명령&gt; 실행 중인 컨테이너 내 명령 실행 docker exec -it web bash docker start &lt;컨테이너&gt; 정지된 컨테이너 시작 docker start web docker stop &lt;컨테이너&gt; 컨테이너 중지 docker stop web docker restart &lt;컨테이너&gt; 컨테이너 재시작 docker restart web docker kill &lt;컨테이너&gt; 강제 종료 (SIGKILL) docker kill web docker rm &lt;컨테이너&gt; 컨테이너 삭제 docker rm web docker rename &lt;old&gt; &lt;new&gt; 이름 변경 docker rename web web-old docker ps 실행 중인 컨테이너 목록 - docker ps -a 전체 컨테이너 목록 - docker logs &lt;컨테이너&gt; 로그 출력 docker logs web docker logs -f &lt;컨테이너&gt; 로그 실시간 보기 docker logs -f web docker inspect &lt;컨테이너&gt; 상세 정보 출력 docker inspect web docker top &lt;컨테이너&gt; 컨테이너 내 프로세스 보기 docker top web docker attach &lt;컨테이너&gt; 컨테이너 출력에 붙기 docker attach web docker cp &lt;src&gt; &lt;dst&gt; 파일 복사 (호스트 ↔ 컨테이너) docker cp web:/file.txt ./ docker diff &lt;컨테이너&gt; 변경된 파일 확인 docker diff web docker commit &lt;컨테이너&gt; &lt;이미지&gt; 컨테이너를 이미지로 저장 docker commit web myweb:v1 📁 3. 볼륨(Volume) 명령어 설명 예시 docker volume create &lt;이름&gt; 볼륨 생성 docker volume create data_vol docker volume ls 볼륨 목록 확인 - docker volume inspect &lt;이름&gt; 상세 정보 확인 docker volume inspect data_vol docker volume rm &lt;이름&gt; 볼륨 삭제 docker volume rm data_vol docker volume prune 미사용 볼륨 일괄 삭제 - 🌐 4. 네트워크(Network) 명령어 설명 예시 docker network ls 네트워크 목록 - docker network create &lt;이름&gt; 사용자 정의 네트워크 생성 docker network create mynet docker network inspect &lt;이름&gt; 상세 정보 확인 docker network inspect mynet docker network rm &lt;이름&gt; 네트워크 삭제 docker network rm mynet docker network connect &lt;네트워크&gt; &lt;컨테이너&gt; 네트워크에 컨테이너 연결 docker network connect mynet web docker network disconnect &lt;네트워크&gt; &lt;컨테이너&gt; 연결 해제 docker network disconnect mynet web 🧹 5. 시스템 관리 명령어 설명 예시 docker system df 디스크 사용량 확인 - docker system prune 모든 미사용 리소스 정리 - docker container prune 중지 컨테이너 삭제 - docker image prune 태그 없는 이미지 삭제 - docker volume prune 사용되지 않는 볼륨 삭제 - docker network prune 미사용 네트워크 삭제 - 🛠️ 6. Docker Compose 명령어 설명 예시 docker-compose up 서비스 시작 docker-compose up docker-compose up -d 백그라운드 실행 docker-compose up -d docker-compose down 서비스 중지 및 정리 - docker-compose build 이미지 빌드 - docker-compose restart 재시작 - docker-compose logs 로그 출력 docker-compose logs -f docker-compose ps 서비스 상태 확인 - docker-compose exec &lt;서비스&gt; &lt;명령&gt; 실행 중인 서비스에 명령 docker-compose exec web bash docker-compose config 설정 확인 - docker-compose rm 서비스 삭제 - 🌍 7. Docker Registry 명령어 설명 예시 docker login 레지스트리 로그인 docker login registry.my.com docker logout 로그아웃 docker logout registry.my.com docker tag 이미지 태그 재지정 docker tag nginx registry.my.com/nginx:v1 docker push 레지스트리에 푸시 docker push registry.my.com/nginx:v1 docker pull 레지스트리에서 풀 docker pull registry.my.com/nginx:v1 🐝 8. Docker Swarm 명령어 설명 예시 docker swarm init 스웜 초기화 - docker swarm join 워커 노드 연결 - docker service create 스웜 서비스 생성 docker service create --name web -p 80:80 nginx docker service ls 서비스 목록 - docker service ps &lt;서비스&gt; 서비스의 태스크 확인 - docker service scale 서비스 수 조정 docker service scale web=3 docker node ls 노드 목록 - docker node inspect &lt;노드&gt; 노드 정보 확인 - 🧾 주요 단축옵션 요약 옵션 설명 -d 백그라운드 실행 (detached mode) -it 상호작용 &#43; 터미널 연결 --rm 컨테이너 종료 시 삭제 -p 포트 매핑 (호스트:컨테이너) -v 볼륨 마운트 --name 이름 지정 --network 네트워크 설정 -e 환경 변수 설정 (-e KEY=VAL) 📚 참고 자료 Docker 공식 문서: https://docs.docker.com Docker CLI 문서: https://docs.docker.com/engine/reference/commandline/docker RSS Feed">
 
     <link rel="preload" href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" as="style" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
     <link href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" rel="stylesheet" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
@@ -586,7 +1103,7 @@ RSS Feed">
   data-ad-height = "250"></ins>
   <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script></span>
     </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/"
@@ -698,7 +1215,7 @@ RSS Feed">
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/kubernetestraining/"
@@ -1345,7 +1862,7 @@ RSS Feed">
       </div>
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/kubernetestraining/11.-ml/"
@@ -1393,7 +1910,7 @@ RSS Feed">
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/kubernetestraining/11.-ml/fluentd/"
@@ -1416,14 +1933,13 @@ RSS Feed">
   > install
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/kubernetestraining/11.-ml/fluentd/file0/"
     
   > Concept
     </a>
-  
               
             </li></ul>
       </div>
@@ -1616,7 +2132,7 @@ RSS Feed">
       </div>
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/docker/"
@@ -1671,13 +2187,22 @@ RSS Feed">
   >Firecracker
     </a>
               
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/devops/docker/docker09/"
     
   >명령어 정리
     </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#-docker-%eb%aa%85%eb%a0%b9%ec%96%b4-%ec%a0%84%ec%b2%b4-%ec%a0%95%eb%a6%ac"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >🐳 Docker 명령어 전체 정리</a>
+            </li>
+          </ul>
+  
               
             </li></ul>
       </div>
@@ -4898,7 +5423,7 @@ RSS Feed">
 
     <ul class="hx-flex hx-flex-col hx-gap-1 max-md:hx-hidden">
         
-          <li class="open"><a
+          <li class=""><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/"
@@ -5009,7 +5534,7 @@ RSS Feed">
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/kubernetestraining/"
@@ -5656,7 +6181,7 @@ RSS Feed">
       </div>
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/kubernetestraining/11.-ml/"
@@ -5704,7 +6229,7 @@ RSS Feed">
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/kubernetestraining/11.-ml/fluentd/"
@@ -5727,9 +6252,9 @@ RSS Feed">
   > install
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/kubernetes/kubernetestraining/11.-ml/fluentd/file0/"
     
   > Concept
@@ -5926,7 +6451,7 @@ RSS Feed">
       </div>
             </li></ul>
       </div></li>
-          <li class=""><a
+          <li class="open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/devops/docker/"
@@ -5980,9 +6505,9 @@ RSS Feed">
   >Firecracker
     </a>
               
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/devops/docker/docker09/"
     
   >명령어 정리
@@ -7249,7 +7774,7 @@ RSS Feed">
         
         <li class="hx-flex hx-flex-col">
           <a
-            href="/devops/kubernetes/kubernetestraining/11.-ml/fluentd/file0/"
+            href="/devops/docker/docker09/"
             class="hx-text-gray-800 dark:hx-text-gray-100 hover:hx-bg-primary-50 hover:hx-text-primary-600 hover:dark:hx-bg-primary-500/10 hover:dark:hx-text-primary-600 hx-relative hx-cursor-pointer hx-whitespace-nowrap hx-py-1.5 hx-transition-colors ltr:hx-pl-3 ltr:hx-pr-9 rtl:hx-pr-3 rtl:hx-pl-9"
           >Korea<span class="hx-absolute hx-inset-y-0 hx-flex hx-items-center ltr:hx-right-3 rtl:hx-left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
         </li>
@@ -7274,8 +7799,52 @@ RSS Feed">
 </div></aside>
     
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
-    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4">
-      <div class=" hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://mungops.github.io/main/content/devops/kubernetes/kubernetestraining/11.%20ML/Fluentd/file0.md" target="_blank" rel="noreferrer">GitHub에서 편집하기 →</a>
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">페이지 목차</p><ul>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-docker-%eb%aa%85%eb%a0%b9%ec%96%b4-%ec%a0%84%ec%b2%b4-%ec%a0%95%eb%a6%ac">🐳 Docker 명령어 전체 정리
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-1-%ec%9d%b4%eb%af%b8%ec%a7%80image">🧱 1. 이미지(Image)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-2-%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88container">🚀 2. 컨테이너(Container)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-3-%eb%b3%bc%eb%a5%a8volume">📁 3. 볼륨(Volume)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-4-%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%acnetwork">🌐 4. 네트워크(Network)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-5-%ec%8b%9c%ec%8a%a4%ed%85%9c-%ea%b4%80%eb%a6%ac">🧹 5. 시스템 관리
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-6-docker-compose">🛠️ 6. Docker Compose
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-7-docker-registry">🌍 7. Docker Registry
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-8-docker-swarm">🐝 8. Docker Swarm
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-%ec%a3%bc%ec%9a%94-%eb%8b%a8%ec%b6%95%ec%98%b5%ec%85%98-%ec%9a%94%ec%95%bd">🧾 주요 단축옵션 요약
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#-%ec%b0%b8%ea%b3%a0-%ec%9e%90%eb%a3%8c">📚 참고 자료
+        </a>
+      </li></ul>
+      <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://mungops.github.io/main/content/devops/docker/Docker09.md" target="_blank" rel="noreferrer">GitHub에서 편집하기 →</a>
         <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
           <span>맨위로 스크롤</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50">
@@ -7301,22 +7870,533 @@ RSS Feed">
           <a href="/devops/">Devops</a>
         </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
-          <a href="/devops/kubernetes/">Kubernetes</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
-          <a href="/devops/kubernetes/kubernetestraining/">Kubernetes Training</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
-          <a href="/devops/kubernetes/kubernetestraining/11.-ml/">Monitoring and Logging</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
-          <a href="/devops/kubernetes/kubernetestraining/11.-ml/fluentd/">Fluentd</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current"> Concept</div>
+          <a href="/devops/docker/">Docker</a>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">명령어 정리</div>
   </div>
 
         <div class="content">
-          <h1> Concept</h1>
-          <p>aaa</p>
+          <h1>명령어 정리</h1>
+          <h1>📘 자꾸 잊어버려보는 명령어 정리</h1><h2>🐳 Docker 명령어 전체 정리<span class="hx-absolute -hx-mt-20" id="-docker-명령어-전체-정리"></span>
+    <a href="#-docker-%eb%aa%85%eb%a0%b9%ec%96%b4-%ec%a0%84%ec%b2%b4-%ec%a0%95%eb%a6%ac" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><hr>
+<br>
+<h3>🧱 1. 이미지(Image)<span class="hx-absolute -hx-mt-20" id="-1-이미지image"></span>
+    <a href="#-1-%ec%9d%b4%eb%af%b8%ec%a7%80image" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>설명</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>docker pull &lt;이미지&gt;</code></td>
+          <td>이미지 다운로드</td>
+          <td><code>docker pull nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker push &lt;이미지&gt;</code></td>
+          <td>레지스트리에 이미지 업로드</td>
+          <td><code>docker push myrepo/nginx:1.0</code></td>
+      </tr>
+      <tr>
+          <td><code>docker build -t &lt;이름&gt;:&lt;태그&gt; &lt;경로&gt;</code></td>
+          <td>Dockerfile로 이미지 빌드</td>
+          <td><code>docker build -t myapp:v1 .</code></td>
+      </tr>
+      <tr>
+          <td><code>docker images</code></td>
+          <td>로컬 이미지 목록 확인</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker rmi &lt;이미지&gt;</code></td>
+          <td>이미지 삭제</td>
+          <td><code>docker rmi nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker tag &lt;이미지&gt; &lt;새이름&gt;</code></td>
+          <td>이미지 태그 복사</td>
+          <td><code>docker tag nginx myrepo/nginx:latest</code></td>
+      </tr>
+      <tr>
+          <td><code>docker save -o &lt;파일&gt;</code></td>
+          <td>이미지 tar로 저장</td>
+          <td><code>docker save -o nginx.tar nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker load -i &lt;파일&gt;</code></td>
+          <td>저장된 이미지 로드</td>
+          <td><code>docker load -i nginx.tar</code></td>
+      </tr>
+      <tr>
+          <td><code>docker history &lt;이미지&gt;</code></td>
+          <td>이미지 빌드 히스토리</td>
+          <td><code>docker history nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker inspect &lt;이미지&gt;</code></td>
+          <td>이미지 상세 정보</td>
+          <td><code>docker inspect nginx</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>🚀 2. 컨테이너(Container)<span class="hx-absolute -hx-mt-20" id="-2-컨테이너container"></span>
+    <a href="#-2-%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88container" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>설명</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>docker run &lt;이미지&gt;</code></td>
+          <td>새 컨테이너 생성 및 실행</td>
+          <td><code>docker run nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker run -it &lt;이미지&gt; bash</code></td>
+          <td>상호작용 셸 실행</td>
+          <td><code>docker run -it ubuntu bash</code></td>
+      </tr>
+      <tr>
+          <td><code>docker run -d &lt;이미지&gt;</code></td>
+          <td>백그라운드 실행</td>
+          <td><code>docker run -d nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker run --name &lt;이름&gt;</code></td>
+          <td>컨테이너 이름 지정</td>
+          <td><code>docker run --name web nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker run -p 8080:80</code></td>
+          <td>포트 포워딩</td>
+          <td><code>docker run -p 8080:80 nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker run -v /host:/container</code></td>
+          <td>볼륨 마운트</td>
+          <td><code>docker run -v /tmp:/data nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker exec -it &lt;컨테이너&gt; &lt;명령&gt;</code></td>
+          <td>실행 중인 컨테이너 내 명령 실행</td>
+          <td><code>docker exec -it web bash</code></td>
+      </tr>
+      <tr>
+          <td><code>docker start &lt;컨테이너&gt;</code></td>
+          <td>정지된 컨테이너 시작</td>
+          <td><code>docker start web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker stop &lt;컨테이너&gt;</code></td>
+          <td>컨테이너 중지</td>
+          <td><code>docker stop web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker restart &lt;컨테이너&gt;</code></td>
+          <td>컨테이너 재시작</td>
+          <td><code>docker restart web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker kill &lt;컨테이너&gt;</code></td>
+          <td>강제 종료 (SIGKILL)</td>
+          <td><code>docker kill web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker rm &lt;컨테이너&gt;</code></td>
+          <td>컨테이너 삭제</td>
+          <td><code>docker rm web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker rename &lt;old&gt; &lt;new&gt;</code></td>
+          <td>이름 변경</td>
+          <td><code>docker rename web web-old</code></td>
+      </tr>
+      <tr>
+          <td><code>docker ps</code></td>
+          <td>실행 중인 컨테이너 목록</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker ps -a</code></td>
+          <td>전체 컨테이너 목록</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker logs &lt;컨테이너&gt;</code></td>
+          <td>로그 출력</td>
+          <td><code>docker logs web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker logs -f &lt;컨테이너&gt;</code></td>
+          <td>로그 실시간 보기</td>
+          <td><code>docker logs -f web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker inspect &lt;컨테이너&gt;</code></td>
+          <td>상세 정보 출력</td>
+          <td><code>docker inspect web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker top &lt;컨테이너&gt;</code></td>
+          <td>컨테이너 내 프로세스 보기</td>
+          <td><code>docker top web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker attach &lt;컨테이너&gt;</code></td>
+          <td>컨테이너 출력에 붙기</td>
+          <td><code>docker attach web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker cp &lt;src&gt; &lt;dst&gt;</code></td>
+          <td>파일 복사 (호스트 ↔ 컨테이너)</td>
+          <td><code>docker cp web:/file.txt ./</code></td>
+      </tr>
+      <tr>
+          <td><code>docker diff &lt;컨테이너&gt;</code></td>
+          <td>변경된 파일 확인</td>
+          <td><code>docker diff web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker commit &lt;컨테이너&gt; &lt;이미지&gt;</code></td>
+          <td>컨테이너를 이미지로 저장</td>
+          <td><code>docker commit web myweb:v1</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>📁 3. 볼륨(Volume)<span class="hx-absolute -hx-mt-20" id="-3-볼륨volume"></span>
+    <a href="#-3-%eb%b3%bc%eb%a5%a8volume" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>설명</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>docker volume create &lt;이름&gt;</code></td>
+          <td>볼륨 생성</td>
+          <td><code>docker volume create data_vol</code></td>
+      </tr>
+      <tr>
+          <td><code>docker volume ls</code></td>
+          <td>볼륨 목록 확인</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker volume inspect &lt;이름&gt;</code></td>
+          <td>상세 정보 확인</td>
+          <td><code>docker volume inspect data_vol</code></td>
+      </tr>
+      <tr>
+          <td><code>docker volume rm &lt;이름&gt;</code></td>
+          <td>볼륨 삭제</td>
+          <td><code>docker volume rm data_vol</code></td>
+      </tr>
+      <tr>
+          <td><code>docker volume prune</code></td>
+          <td>미사용 볼륨 일괄 삭제</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>🌐 4. 네트워크(Network)<span class="hx-absolute -hx-mt-20" id="-4-네트워크network"></span>
+    <a href="#-4-%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%acnetwork" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>설명</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>docker network ls</code></td>
+          <td>네트워크 목록</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker network create &lt;이름&gt;</code></td>
+          <td>사용자 정의 네트워크 생성</td>
+          <td><code>docker network create mynet</code></td>
+      </tr>
+      <tr>
+          <td><code>docker network inspect &lt;이름&gt;</code></td>
+          <td>상세 정보 확인</td>
+          <td><code>docker network inspect mynet</code></td>
+      </tr>
+      <tr>
+          <td><code>docker network rm &lt;이름&gt;</code></td>
+          <td>네트워크 삭제</td>
+          <td><code>docker network rm mynet</code></td>
+      </tr>
+      <tr>
+          <td><code>docker network connect &lt;네트워크&gt; &lt;컨테이너&gt;</code></td>
+          <td>네트워크에 컨테이너 연결</td>
+          <td><code>docker network connect mynet web</code></td>
+      </tr>
+      <tr>
+          <td><code>docker network disconnect &lt;네트워크&gt; &lt;컨테이너&gt;</code></td>
+          <td>연결 해제</td>
+          <td><code>docker network disconnect mynet web</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>🧹 5. 시스템 관리<span class="hx-absolute -hx-mt-20" id="-5-시스템-관리"></span>
+    <a href="#-5-%ec%8b%9c%ec%8a%a4%ed%85%9c-%ea%b4%80%eb%a6%ac" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>설명</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>docker system df</code></td>
+          <td>디스크 사용량 확인</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker system prune</code></td>
+          <td>모든 미사용 리소스 정리</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker container prune</code></td>
+          <td>중지 컨테이너 삭제</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker image prune</code></td>
+          <td>태그 없는 이미지 삭제</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker volume prune</code></td>
+          <td>사용되지 않는 볼륨 삭제</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker network prune</code></td>
+          <td>미사용 네트워크 삭제</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>🛠️ 6. Docker Compose<span class="hx-absolute -hx-mt-20" id="-6-docker-compose"></span>
+    <a href="#-6-docker-compose" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>설명</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>docker-compose up</code></td>
+          <td>서비스 시작</td>
+          <td><code>docker-compose up</code></td>
+      </tr>
+      <tr>
+          <td><code>docker-compose up -d</code></td>
+          <td>백그라운드 실행</td>
+          <td><code>docker-compose up -d</code></td>
+      </tr>
+      <tr>
+          <td><code>docker-compose down</code></td>
+          <td>서비스 중지 및 정리</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker-compose build</code></td>
+          <td>이미지 빌드</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker-compose restart</code></td>
+          <td>재시작</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker-compose logs</code></td>
+          <td>로그 출력</td>
+          <td><code>docker-compose logs -f</code></td>
+      </tr>
+      <tr>
+          <td><code>docker-compose ps</code></td>
+          <td>서비스 상태 확인</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker-compose exec &lt;서비스&gt; &lt;명령&gt;</code></td>
+          <td>실행 중인 서비스에 명령</td>
+          <td><code>docker-compose exec web bash</code></td>
+      </tr>
+      <tr>
+          <td><code>docker-compose config</code></td>
+          <td>설정 확인</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker-compose rm</code></td>
+          <td>서비스 삭제</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>🌍 7. Docker Registry<span class="hx-absolute -hx-mt-20" id="-7-docker-registry"></span>
+    <a href="#-7-docker-registry" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>설명</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>docker login</code></td>
+          <td>레지스트리 로그인</td>
+          <td><code>docker login registry.my.com</code></td>
+      </tr>
+      <tr>
+          <td><code>docker logout</code></td>
+          <td>로그아웃</td>
+          <td><code>docker logout registry.my.com</code></td>
+      </tr>
+      <tr>
+          <td><code>docker tag</code></td>
+          <td>이미지 태그 재지정</td>
+          <td><code>docker tag nginx registry.my.com/nginx:v1</code></td>
+      </tr>
+      <tr>
+          <td><code>docker push</code></td>
+          <td>레지스트리에 푸시</td>
+          <td><code>docker push registry.my.com/nginx:v1</code></td>
+      </tr>
+      <tr>
+          <td><code>docker pull</code></td>
+          <td>레지스트리에서 풀</td>
+          <td><code>docker pull registry.my.com/nginx:v1</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>🐝 8. Docker Swarm<span class="hx-absolute -hx-mt-20" id="-8-docker-swarm"></span>
+    <a href="#-8-docker-swarm" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>설명</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>docker swarm init</code></td>
+          <td>스웜 초기화</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker swarm join</code></td>
+          <td>워커 노드 연결</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker service create</code></td>
+          <td>스웜 서비스 생성</td>
+          <td><code>docker service create --name web -p 80:80 nginx</code></td>
+      </tr>
+      <tr>
+          <td><code>docker service ls</code></td>
+          <td>서비스 목록</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker service ps &lt;서비스&gt;</code></td>
+          <td>서비스의 태스크 확인</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker service scale</code></td>
+          <td>서비스 수 조정</td>
+          <td><code>docker service scale web=3</code></td>
+      </tr>
+      <tr>
+          <td><code>docker node ls</code></td>
+          <td>노드 목록</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>docker node inspect &lt;노드&gt;</code></td>
+          <td>노드 정보 확인</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>🧾 주요 단축옵션 요약<span class="hx-absolute -hx-mt-20" id="-주요-단축옵션-요약"></span>
+    <a href="#-%ec%a3%bc%ec%9a%94-%eb%8b%a8%ec%b6%95%ec%98%b5%ec%85%98-%ec%9a%94%ec%95%bd" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>옵션</th>
+          <th>설명</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-d</code></td>
+          <td>백그라운드 실행 (detached mode)</td>
+      </tr>
+      <tr>
+          <td><code>-it</code></td>
+          <td>상호작용 + 터미널 연결</td>
+      </tr>
+      <tr>
+          <td><code>--rm</code></td>
+          <td>컨테이너 종료 시 삭제</td>
+      </tr>
+      <tr>
+          <td><code>-p</code></td>
+          <td>포트 매핑 (<code>호스트:컨테이너</code>)</td>
+      </tr>
+      <tr>
+          <td><code>-v</code></td>
+          <td>볼륨 마운트</td>
+      </tr>
+      <tr>
+          <td><code>--name</code></td>
+          <td>이름 지정</td>
+      </tr>
+      <tr>
+          <td><code>--network</code></td>
+          <td>네트워크 설정</td>
+      </tr>
+      <tr>
+          <td><code>-e</code></td>
+          <td>환경 변수 설정 (<code>-e KEY=VAL</code>)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3>📚 참고 자료<span class="hx-absolute -hx-mt-20" id="-참고-자료"></span>
+    <a href="#-%ec%b0%b8%ea%b3%a0-%ec%9e%90%eb%a3%8c" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>Docker 공식 문서: <a href="https://docs.docker.com" target="_blank" rel="noopener">https://docs.docker.com</a></li>
+<li>Docker CLI 문서: <a href="https://docs.docker.com/engine/reference/commandline/docker" target="_blank" rel="noopener">https://docs.docker.com/engine/reference/commandline/docker</a></li>
+</ul>
 <div style="text-align: center; margin-top: 1em;">
 <a
   href="index.xml"
@@ -7332,10 +8412,10 @@ RSS Feed">
         </div>
         <div class="hx-mt-16"></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
-        href="/devops/kubernetes/kubernetestraining/11.-ml/fluentd/file1/"
-        title=" install"
+        href="/devops/docker/docker04/"
+        title="Firecracker"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> install</a></div>
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Firecracker</a></div>
         
       </main>
     </article>
