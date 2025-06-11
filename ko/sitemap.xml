@@ -2,71 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mungops.github.io/ko/tags/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/ko/tags/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/ko/tags/%EC%82%BD%EC%A7%88-%EC%A4%91/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/tags/%EC%82%BD%EC%A7%88-%EC%A4%91/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/ko/tags/%EC%82%BD%EC%A7%88-%EC%A4%91/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/ko/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/ko/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/ko/blog/markdown/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/blog/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/ko/blog/markdown/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/ko/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/ko/"
-                />
-  </url><url>
     <loc>https://mungops.github.io/ko/blog/</loc>
     <lastmod>2025-03-19T20:18:39+09:00</lastmod>
     <xhtml:link
@@ -78,18 +13,6 @@
                 rel="alternate"
                 hreflang="ko"
                 href="https://mungops.github.io/ko/blog/"
-                />
-  </url><url>
-    <loc>https://mungops.github.io/ko/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://mungops.github.io/ko/categories/"
                 />
   </url><url>
     <loc>https://mungops.github.io/ko/portfolio/</loc>

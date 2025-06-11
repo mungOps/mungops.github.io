@@ -129,8 +129,8 @@ $ netstat -anlp | grep :80
   <meta name="twitter:title" content="EC2 끄투온라인 서버 구축">
   <meta name="twitter:description" content="AWS 끄투온라인 서버 구축 AWS 끄투온라인 서버 구축 끄투 온라인은 오픈소스의 끝말잇기 게임입니다. EC2를 생성합니다. EC2 생성은 EC2 생성을 참조해주세요. OS 유형 disk security group Ubuntu18.04 t2.mini 8 all-open 인스턴스를 생성 후, 아래와 같이 진행합니다. $ sudo apt -y update $ sudo apt -y upgrade $ sudo apt -y install node.js $ sudo apt -y install npm $ npm install -g grunt grunt-cli $ sudo apt -y install postgresql $ sudo apt -y install git $ sudo git clone https://github.com/JJoriping/KKuTu.git # 서버 구축에 필요한 패키지들을 설치합니다. $ sudo su - postgres $ psql postgres=# ALTER USER postgres with encrypted password &#39;qwer1234&#39;; postgres=# CREATE DATABASE main; postgres-# \l List of databases Name | Owner | Encoding | Collate | Ctype | Access privileges -----------&#43;----------&#43;----------&#43;---------&#43;---------&#43;----------------------- main | postgres | UTF8 | C.UTF-8 | C.UTF-8 | postgres | postgres | UTF8 | C.UTF-8 | C.UTF-8 | template0 | postgres | UTF8 | C.UTF-8 | C.UTF-8 | =c/postgres &#43; | | | | | postgres=CTc/postgres template1 | postgres | UTF8 | C.UTF-8 | C.UTF-8 | =c/postgres &#43; | | | | | postgres=CTc/postgres # 게임 데이터의 삽입을 위한 DB를 생성합니다. # 새로운 커널 하나를 다시 킨 후 $ cd KKuTu/Server/lib/sub/ $ mv global.inc.json global.json $ mv auth.inc.json auth.json $ vi global.json &#34;PASS&#34;:&#34;...&#34;, &gt;&#34;PASS&#34;:&#34;qwer1234&#34;, &#34;PG_PASSWORD&#34;: &#34;...&#34;,&gt; &#34;PG_PASSWORD&#34;: &#34;qwer1234&#34;, # DB에 접속하기 위한 패스워드를 수정합니다. $ cd ~/KKuTu $ sudo -u postgres psql --quiet main &lt; ./db.sql # DB를 삽입합니다. $ chmod &#43;x server-setup.bat $ ./server-setup.bat $ node ./Server/lib/Game/cluster.js 0 1 $ ctrl &#43; z $ bg $ disown -h $ node Server/lib/Web/cluster.js 1 $ ctrl &#43; z $ bg $ disown -h $ netstat -anlp | grep :8496 $ netstat -anlp | grep :80 # 확인 IP ] 접속">
 
-    <link rel="preload" href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" as="style" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
-    <link href="/css/compiled/main.min.659ffb7d7111fe1408003e3bb009f428e2f0a37df8089f3eb743d73a1dd2f9d3.css" rel="stylesheet" integrity="sha256-ZZ/7fXER/hQIAD47sAn0KOLwo334CJ8&#43;t0PXOh3S&#43;dM=" />
+    <link rel="preload" href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" as="style" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
+    <link href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" rel="stylesheet" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
 
 
 
@@ -6599,7 +6599,7 @@ $ netstat -anlp | grep :80
     
     <script defer src="/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js" integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script>
 <script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
-    <script defer src="/en.search.min.55f7a7619a561fe87544a65eb522ccf45f87f36fd92a362660e4c9655402c3cb.js" integrity="sha256-VfenYZpWH&#43;h1RKZetSLM9F&#43;H82/ZKjYmYOTJZVQCw8s="></script>
+    <script defer src="/en.search.min.467af55671b5ee53c9cdfe80e6e0ee6791edc3374392318652fcf851a49db151.js" integrity="sha256-Rnr1VnG17lPJzf6A5uDuZ5HtwzdDkjGGUvz4UaSdsVE="></script>
 
   </body>
 </html>
