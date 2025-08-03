@@ -5,9 +5,16 @@
     <link>https://mungops.github.io/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/</link>
     <description>Recent content in 정리 중 on mungOps</description>
     <generator>Hugo</generator>
-    <language>ko</language>
+    <language>en</language>
     <lastBuildDate>Mon, 21 Apr 2025 20:34:23 +0900</lastBuildDate>
     <atom:link href="https://mungops.github.io/tags/%EC%A0%95%EB%A6%AC-%EC%A4%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>정리 중!</title>
+      <link>https://mungops.github.io/blog/markdown.ko/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/blog/markdown.ko/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/GoGo.png&#34; alt=&#34;GoGo&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;&#xA;&lt;div style=&#34;text-align: center; margin-top: 1em;&#34;&gt;&#xA;&lt;a&#xA;  href=&#34;index.xml&#34;&#xA;  class=&#34; not-prose hx-inline-flex hx-items-center hx-rounded-full hx-gap-2 hx-px-3 hx-py-1 hx-text-xs hx-text-gray-600 dark:hx-text-gray-400 hx-bg-gray-100 dark:hx-bg-neutral-800 dark:hx-border-neutral-800 hx-border hover:hx-border-gray-400 dark:hover:hx-text-gray-50 dark:hover:hx-border-gray-600 hx-transition-all hx-ease-in hx-duration-200&#34;&#xA;  &#xA;  &gt;&#xA;  &lt;span&gt;RSS Feed&lt;/span&gt;&#xA;&lt;span class=&#34;hx-inline-block hx-align-text-bottom icon&#34;&gt;&lt;svg height=14 xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>정리 중!</title>
       <link>https://mungops.github.io/blog/markdown/</link>
