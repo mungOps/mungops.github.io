@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis 퍼시스턴스 (데이터 영속성) on mungOps</title>
+    <link>https://mungops.github.io/database/redis/redis04/</link>
+    <description>Recent content in Redis 퍼시스턴스 (데이터 영속성) on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/database/redis/redis04/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

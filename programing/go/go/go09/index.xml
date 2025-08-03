@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go 언어와 외부 라이브러리 및 프레임워크 on mungOps</title>
+    <link>https://mungops.github.io/programing/go/go/go09/</link>
+    <description>Recent content in Go 언어와 외부 라이브러리 및 프레임워크 on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/programing/go/go/go09/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

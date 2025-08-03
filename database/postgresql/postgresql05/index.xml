@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PostgreSQL 고급 관리 및 운영 on mungOps</title>
+    <link>https://mungops.github.io/database/postgresql/postgresql05/</link>
+    <description>Recent content in PostgreSQL 고급 관리 및 운영 on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/database/postgresql/postgresql05/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

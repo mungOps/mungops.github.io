@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins 모니터링 및 성능 최적화 on mungOps</title>
+    <link>https://mungops.github.io/devops/jenkins/jenkins11/</link>
+    <description>Recent content in Jenkins 모니터링 및 성능 최적화 on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/devops/jenkins/jenkins11/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>운영 및 보안 Best Practices on mungOps</title>
+    <link>https://mungops.github.io/devops/keycloak/keycloak12/</link>
+    <description>Recent content in 운영 및 보안 Best Practices on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/devops/keycloak/keycloak12/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
