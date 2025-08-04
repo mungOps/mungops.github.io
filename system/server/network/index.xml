@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network Service on mungOps</title>
+    <link>https://mungops.github.io/system/server/network/</link>
+    <description>Recent content in Network Service on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/system/server/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DHCP</title>
+      <link>https://mungops.github.io/system/server/network/dhcp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/network/dhcp/</guid>
+      <description>&lt;h2&gt;📌 DHCP Server Guide&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-dhcp-server-guide&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-dhcp-server-guide&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ DHCP란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-dhcp란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-dhcp%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;DHCP(Dynamic Host Configuration Protocol)&lt;/strong&gt; 는 네트워크 장치(클라이언트)에 &lt;strong&gt;IP 주소, 서브넷 마스크, 게이트웨이, DNS 서버 등의 네트워크 설정을 자동으로 할당&lt;/strong&gt;하는 프로토콜입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FTP/TFTP</title>
+      <link>https://mungops.github.io/system/server/network/ftp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/network/ftp/</guid>
+      <description>&lt;h1&gt;📌 FTP &amp;amp; SFTP Server 구축 및 설정 가이드 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ FTP &amp;amp; SFTP란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ftp--sftp란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ftp--sftp%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;**FTP (File Transfer Protocol)**는 &lt;strong&gt;네트워크를 통해 파일을 전송하는 프로토콜&lt;/strong&gt;입니다.&lt;br&gt;&#xA;**SFTP (SSH File Transfer Protocol)**는 &lt;strong&gt;SSH 기반의 보안 파일 전송 프로토콜&lt;/strong&gt;로, FTP보다 보안성이 뛰어납니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Load Balancer</title>
+      <link>https://mungops.github.io/system/server/network/loadbalancer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/network/loadbalancer/</guid>
+      <description>&lt;h1&gt;⚖️ &lt;strong&gt;Load Balancer (로드 밸런서) 구축 가이드&lt;/strong&gt; 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ Load Balancer란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-load-balancer란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-load-balancer%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;로드 밸런서(Load Balancer)&lt;/strong&gt; 는 여러 서버로 트래픽을 분산하여 &lt;strong&gt;부하를 분산시키고 가용성을 높이는 기술&lt;/strong&gt;입니다.&lt;br&gt;&#xA;웹 서비스, 데이터베이스, API 서버 등 다양한 환경에서 사용됩니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NTP</title>
+      <link>https://mungops.github.io/system/server/network/ntp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/network/ntp/</guid>
+      <description>&lt;h1&gt;⏰ &lt;strong&gt;NTP (Network Time Protocol) 서버 구축 및 설정 가이드&lt;/strong&gt; 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ NTP란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ntp란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ntp%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;**NTP (Network Time Protocol)**는 네트워크 상의 &lt;strong&gt;시계를 동기화하는 프로토콜&lt;/strong&gt;입니다.&lt;br&gt;&#xA;인터넷 및 로컬 네트워크에서 &lt;strong&gt;서버와 클라이언트의 시간을 자동으로 조정&lt;/strong&gt;하여 시스템 간의 &lt;strong&gt;시간 차이를 최소화&lt;/strong&gt;하는 역할을 합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Proxy</title>
+      <link>https://mungops.github.io/system/server/network/proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/network/proxy/</guid>
+      <description>&lt;h1&gt;🌐 &lt;strong&gt;프록시 서버 (Proxy Server) 구축 가이드&lt;/strong&gt; 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ 프록시 서버란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-프록시-서버란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ed%94%84%eb%a1%9d%ec%8b%9c-%ec%84%9c%eb%b2%84%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;프록시 서버(Proxy Server)&lt;/strong&gt; 는 클라이언트와 인터넷 사이에서 &lt;strong&gt;중계 역할&lt;/strong&gt;을 하는 서버입니다.&lt;br&gt;&#xA;클라이언트가 인터넷에 직접 연결되지 않고 프록시를 통해 요청을 보내므로 &lt;strong&gt;보안, 성능, 접근 제어&lt;/strong&gt; 등의 이점을 제공합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VPN</title>
+      <link>https://mungops.github.io/system/server/network/vpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/network/vpn/</guid>
+      <description>&lt;h1&gt;🔒 &lt;strong&gt;VPN (Virtual Private Network) 구축 가이드&lt;/strong&gt; 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ VPN이란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-vpn이란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-vpn%ec%9d%b4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;VPN(Virtual Private Network)&lt;/strong&gt; 은 공용 네트워크(인터넷)를 통해 &lt;strong&gt;암호화된 안전한 연결을 제공하는 기술&lt;/strong&gt;입니다.&lt;br&gt;&#xA;이를 통해 &lt;strong&gt;원격 사용자가 내부 네트워크에 안전하게 접속&lt;/strong&gt;할 수 있으며, &lt;strong&gt;IP 우회 및 보안 강화&lt;/strong&gt;에도 활용됩니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DNS</title>
+      <link>https://mungops.github.io/system/server/network/dns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/network/dns/</guid>
+      <description>&lt;h3&gt;📌 DNS Server 개요&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-dns-server-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-dns-server-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;DNS(&lt;strong&gt;Domain Name System&lt;/strong&gt;)는 도메인 이름을 IP 주소로 변환해 주는 시스템으로, 인터넷의 전화번호부 역할을 합니다.&lt;br&gt;&#xA;웹사이트를 방문할 때 &lt;code&gt;www.example.com&lt;/code&gt;과 같은 도메인을 입력하면, DNS 서버가 해당 도메인에 매핑된 IP 주소를 찾아 연결해 줍니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

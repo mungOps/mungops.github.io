@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keycloak on mungOps</title>
+    <link>https://mungops.github.io/devops/keycloak/</link>
+    <description>Recent content in Keycloak on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/devops/keycloak/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Keycloak 개요 및 기본 개념</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak01/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Keycloak이란 무엇인가?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak이란-무엇인가&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak%ec%9d%b4%eb%9e%80-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Keycloak 소개&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak-소개&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak-%ec%86%8c%ea%b0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak은 &lt;strong&gt;오픈소스 Identity and Access Management (IAM)&lt;/strong&gt; 솔루션입니다. 인증(Authentication), 권한부여(Authorization), 사용자 관리(User Management)를 손쉽게 통합할 수 있도록 도와줍니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak 아키텍처 이해</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak02/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Keycloak 전체 컴포넌트 구조&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak-전체-컴포넌트-구조&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak-%ec%a0%84%ec%b2%b4-%ec%bb%b4%ed%8f%ac%eb%84%8c%ed%8a%b8-%ea%b5%ac%ec%a1%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Keycloak 구성 요소 개요&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak-구성-요소-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak-%ea%b5%ac%ec%84%b1-%ec%9a%94%ec%86%8c-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak은 인증/인가를 처리하기 위한 &lt;strong&gt;모듈화된 구조&lt;/strong&gt;를 갖고 있으며, 다음과 같은 주요 컴포넌트들로 구성됩니다:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak 설치 및 구성</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak03/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Standalone 모드 설치&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-standalone-모드-설치&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-standalone-%eb%aa%a8%eb%93%9c-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. 기본 설치 환경&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-기본-설치-환경&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ea%b8%b0%eb%b3%b8-%ec%84%a4%ec%b9%98-%ed%99%98%ea%b2%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak은 Java 기반이며, 기본적으로 &lt;strong&gt;Standalone 모드&lt;/strong&gt;로 동작할 수 있습니다. 개발, 테스트, POC 환경에서는 가장 빠르고 간단한 방식입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Realm, Client, Role, User 구조</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak04/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Realm: 멀티 테넌시 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-realm-멀티-테넌시-개념&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-realm-%eb%a9%80%ed%8b%b0-%ed%85%8c%eb%84%8c%ec%8b%9c-%ea%b0%9c%eb%85%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Realm이란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-realm이란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-realm%ec%9d%b4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Realm&lt;/strong&gt;은 Keycloak에서 인증 및 권한 부여를 독립적으로 관리할 수 있는 &lt;strong&gt;보안 도메인&lt;/strong&gt;입니다. 하나의 Keycloak 서버에서 여러 개의 Realm을 만들 수 있으며, 서로 완전히 격리됩니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>인증(Authentication) 구성</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak05/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Keycloak Login Flow 이해&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak-login-flow-이해&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak-login-flow-%ec%9d%b4%ed%95%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. 기본 Login Flow란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-기본-login-flow란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ea%b8%b0%eb%b3%b8-login-flow%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak에서 인증 절차는 &lt;strong&gt;Login Flow&lt;/strong&gt;라는 이름으로 구성되며, 사용자가 로그인할 때 어떤 과정을 거칠지를 정의합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>인가(Authorization) 구성</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak06/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Keycloak Authorization Services 이해&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak-authorization-services-이해&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak-authorization-services-%ec%9d%b4%ed%95%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Keycloak의 인가 서비스란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak의-인가-서비스란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak%ec%9d%98-%ec%9d%b8%ea%b0%80-%ec%84%9c%eb%b9%84%ec%8a%a4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak은 단순한 인증(로그인)뿐 아니라, 리소스 접근을 세밀하게 제어하는 &lt;strong&gt;Authorization Service&lt;/strong&gt;를 제공합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak과 외부 시스템 연동</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak07/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;LDAP / Active Directory 연동&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ldap--active-directory-연동&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ldap--active-directory-%ec%97%b0%eb%8f%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Keycloak과 LDAP 연동 개요&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak과-ldap-연동-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak%ea%b3%bc-ldap-%ec%97%b0%eb%8f%99-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak은 외부 디렉토리 서버(예: OpenLDAP, Microsoft AD)와 쉽게 연동할 수 있도록 &lt;strong&gt;User Federation&lt;/strong&gt; 기능을 제공합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak과 OAuth2 / OIDC</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak08/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Authorization Code Flow&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-authorization-code-flow&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-authorization-code-flow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. OAuth2 Authorization Code Flow란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-oauth2-authorization-code-flow란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-oauth2-authorization-code-flow%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;사용자가 Keycloak을 통해 로그인하면, 애플리케이션이 &lt;strong&gt;Authorization Code&lt;/strong&gt;를 받고, 이를 통해 &lt;strong&gt;Access Token&lt;/strong&gt;을 발급받는 표준적인 인증 방식입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>테마 및 UI 커스터마이징</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak09/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;로그인/계정 화면 커스터마이징&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-로그인계정-화면-커스터마이징&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%eb%a1%9c%ea%b7%b8%ec%9d%b8%ea%b3%84%ec%a0%95-%ed%99%94%eb%a9%b4-%ec%bb%a4%ec%8a%a4%ed%84%b0%eb%a7%88%ec%9d%b4%ec%a7%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Keycloak 기본 로그인 화면&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak-기본-로그인-화면&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak-%ea%b8%b0%eb%b3%b8-%eb%a1%9c%ea%b7%b8%ec%9d%b8-%ed%99%94%eb%a9%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak은 기본적으로 아래와 같은 로그인 화면을 제공합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak과 어플리케이션 통합</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak10/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Spring Boot, Node.js, React 등과의 연동&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-spring-boot-nodejs-react-등과의-연동&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-spring-boot-nodejs-react-%eb%93%b1%ea%b3%bc%ec%9d%98-%ec%97%b0%eb%8f%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Keycloak 연동 개요&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak-연동-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak-%ec%97%b0%eb%8f%99-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak은 다양한 언어나 프레임워크와 연동이 가능합니다.&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;기술스택&lt;/th&gt;&#xA;          &lt;th&gt;통합 방식&lt;/th&gt;&#xA;          &lt;th&gt;사용 기술&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Spring Boot&lt;/td&gt;&#xA;          &lt;td&gt;서버 사이드 인증&lt;/td&gt;&#xA;          &lt;td&gt;Spring Security Adapter&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Node.js&lt;/td&gt;&#xA;          &lt;td&gt;미들웨어 인증&lt;/td&gt;&#xA;          &lt;td&gt;Express + keycloak-connect&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;React&lt;/td&gt;&#xA;          &lt;td&gt;프론트엔드 인증&lt;/td&gt;&#xA;          &lt;td&gt;OIDC Client(JS) + Redirect Flow&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3&gt;2. Spring Boot 연동 예시&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-spring-boot-연동-예시&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#2-spring-boot-%ec%97%b0%eb%8f%99-%ec%98%88%ec%8b%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;의존성 추가 (build.gradle):&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak 고급 기능 활용</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak11/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;MFA 구성 (OTP, WebAuthn, 인증앱 등)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mfa-구성-otp-webauthn-인증앱-등&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-mfa-%ea%b5%ac%ec%84%b1-otp-webauthn-%ec%9d%b8%ec%a6%9d%ec%95%b1-%eb%93%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. MFA란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mfa란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-mfa%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;**MFA (Multi-Factor Authentication)**는 사용자 인증 시 2개 이상의 인증 요소를 요구하여 보안을 강화하는 방식입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>운영 및 보안 Best Practices</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak12/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Token 수명 전략 및 보안 설정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-token-수명-전략-및-보안-설정&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-token-%ec%88%98%eb%aa%85-%ec%a0%84%eb%9e%b5-%eb%b0%8f-%eb%b3%b4%ec%95%88-%ec%84%a4%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Token 종류 요약&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-token-종류-요약&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-token-%ec%a2%85%eb%a5%98-%ec%9a%94%ec%95%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak에서 사용하는 주요 토큰:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;토큰 종류&lt;/th&gt;&#xA;          &lt;th&gt;설명&lt;/th&gt;&#xA;          &lt;th&gt;기본 수명&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Access Token&lt;/td&gt;&#xA;          &lt;td&gt;리소스 접근용&lt;/td&gt;&#xA;          &lt;td&gt;5분&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Refresh Token&lt;/td&gt;&#xA;          &lt;td&gt;Access 토큰 재발급&lt;/td&gt;&#xA;          &lt;td&gt;30분&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;ID Token&lt;/td&gt;&#xA;          &lt;td&gt;사용자 정보 포함&lt;/td&gt;&#xA;          &lt;td&gt;5분&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3&gt;2. 토큰 수명 설정 방법&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-토큰-수명-설정-방법&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#2-%ed%86%a0%ed%81%b0-%ec%88%98%eb%aa%85-%ec%84%a4%ec%a0%95-%eb%b0%a9%eb%b2%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;📌 경로:&lt;br&gt;&#xA;&lt;code&gt;Realm &amp;gt; Clients &amp;gt; [클라이언트 선택] &amp;gt; Settings &amp;gt; Advanced Settings&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak HA 및 클러스터링</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak13/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Stateless 클러스터 구성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-stateless-클러스터-구성&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-stateless-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%ea%b5%ac%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Keycloak는 기본적으로 Stateless&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak는-기본적으로-stateless&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak%eb%8a%94-%ea%b8%b0%eb%b3%b8%ec%a0%81%ec%9c%bc%eb%a1%9c-stateless&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak는 17버전부터 &lt;strong&gt;Quarkus 기반&lt;/strong&gt;으로 전환되면서 완전한 &lt;strong&gt;Stateless 서비스&lt;/strong&gt;로 운영이 가능해졌습니다.&lt;br&gt;&#xA;이로 인해 Kubernetes 같은 클라우드 환경에서 &lt;strong&gt;확장성과 유연성&lt;/strong&gt;이 크게 향상됩니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak CI/CD 자동화 배포</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak15/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Helm Chart를 통한 GitOps 배포&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-helm-chart를-통한-gitops-배포&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-helm-chart%eb%a5%bc-%ed%86%b5%ed%95%9c-gitops-%eb%b0%b0%ed%8f%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Helm이란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-helm이란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-helm%ec%9d%b4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Helm은 Kubernetes 애플리케이션을 정의하고 설치하는 &lt;strong&gt;패키지 관리자&lt;/strong&gt;입니다.&lt;br&gt;&#xA;Keycloak도 Helm Chart를 사용하면 선언적이고 반복 가능한 방식으로 쉽게 배포할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Keycloak 백업, 복원, 마이그레이션</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak14/</guid>
+      <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;Realm/Client/User 설정 백업 방법&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--realmclientuser-설정-백업-방법&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--realmclientuser-%ec%84%a4%ec%a0%95-%eb%b0%b1%ec%97%85-%eb%b0%a9%eb%b2%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Keycloak Export 기능 사용&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-keycloak-export-기능-사용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-keycloak-export-%ea%b8%b0%eb%8a%a5-%ec%82%ac%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Keycloak에서는 Realm 단위로 전체 설정을 백업할 수 있는 내장 기능을 제공합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>실무에서의 Keycloak 적용 사례</title>
+      <link>https://mungops.github.io/devops/keycloak/keycloak16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/devops/keycloak/keycloak16/</guid>
+      <description>&lt;h2&gt;1️⃣ + &lt;strong&gt;사내 시스템 SSO 구성 예제&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1--사내-시스템-sso-구성-예제&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1--%ec%82%ac%eb%82%b4-%ec%8b%9c%ec%8a%a4%ed%85%9c-sso-%ea%b5%ac%ec%84%b1-%ec%98%88%ec%a0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. 사내 시스템 SSO란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-사내-시스템-sso란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%82%ac%eb%82%b4-%ec%8b%9c%ec%8a%a4%ed%85%9c-sso%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Single Sign-On(SSO)은 사용자가 한 번 로그인하면 다양한 시스템을 재인증 없이 사용할 수 있도록 해주는 인증 방식입니다.&lt;br&gt;&#xA;Keycloak은 사내 시스템들을 하나의 인증 플랫폼으로 통합할 수 있는 SSO 기능을 제공합니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

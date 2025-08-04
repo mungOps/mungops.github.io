@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security and Authentication on mungOps</title>
+    <link>https://mungops.github.io/system/server/auth/</link>
+    <description>Recent content in Security and Authentication on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/system/server/auth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LDAP</title>
+      <link>https://mungops.github.io/system/server/auth/ldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/auth/ldap/</guid>
+      <description>&lt;h2&gt;📌 LDAP (Lightweight Directory Access Protocol) Guide&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-ldap-lightweight-directory-access-protocol-guide&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-ldap-lightweight-directory-access-protocol-guide&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ LDAP란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ldap란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ldap%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;**LDAP (Lightweight Directory Access Protocol)**은 &lt;strong&gt;디렉터리 서비스&lt;/strong&gt;에 저장된 정보를 검색하고 수정하는 &lt;strong&gt;오픈 프로토콜&lt;/strong&gt;입니다.&lt;br&gt;&#xA;LDAP는 &lt;strong&gt;사용자 계정, 그룹, 네트워크 리소스 등의 정보를 중앙 집중적으로 관리&lt;/strong&gt;할 수 있도록 도와줍니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RADIUS/TACACS</title>
+      <link>https://mungops.github.io/system/server/auth/radius/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/auth/radius/</guid>
+      <description>&lt;h1&gt;🔐 RADIUS &amp;amp; TACACS+ 서버 구축 및 설정 가이드 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ RADIUS &amp;amp; TACACS+란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-radius--tacacs란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-radius--tacacs%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;**RADIUS (Remote Authentication Dial-In User Service)**와 **TACACS+ (Terminal Access Controller Access-Control System Plus)**는 네트워크 장비 및 시스템에 **사용자 인증, 권한 부여 및 계정 관리(AAA: Authentication, Authorization, Accounting)**를 제공하는 프로토콜입니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

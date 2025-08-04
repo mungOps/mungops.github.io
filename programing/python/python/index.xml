@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on mungOps</title>
+    <link>https://mungops.github.io/programing/python/python/</link>
+    <description>Recent content in Python on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/programing/python/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 소개 및 기본 개념</title>
+      <link>https://mungops.github.io/programing/python/python/python00/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python00/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;Python 언어의 역사 및 발전 배경&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-python-언어의-역사-및-발전-배경&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-python-%ec%96%b8%ec%96%b4%ec%9d%98-%ec%97%ad%ec%82%ac-%eb%b0%8f-%eb%b0%9c%ec%a0%84-%eb%b0%b0%ea%b2%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Python은 1991년 네덜란드의 프로그래머인 Guido van Rossum에 의해 처음 출시되었습니다. Python은 그 당시 존재하던 다양한 프로그래밍 언어들의 복잡성을 개선하고자 하는 목표로 만들어졌습니다. 그 이유는 많은 개발자들이 코드의 가독성을 중시하고, 배우기 쉬운 언어를 선호했기 때문입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python 설치 및 환경 설정</title>
+      <link>https://mungops.github.io/programing/python/python/python01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python01/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;Python 설치 (Windows, macOS, Linux)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-python-설치-windows-macos-linux&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-python-%ec%84%a4%ec%b9%98-windows-macos-linux&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Python은 다양한 운영 체제에서 설치할 수 있습니다. 각 운영 체제별로 설치 방법을 소개하겠습니다.&lt;/p&gt;&#xA;&lt;h3&gt;&lt;strong&gt;Windows에서 Python 설치&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;windows에서-python-설치&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#windows%ec%97%90%ec%84%9c-python-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.python.org/downloads/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python 공식 웹사이트&lt;/a&gt;에 접속하여 최신 버전의 Python 설치 파일을 다운로드합니다.&lt;/li&gt;&#xA;&lt;li&gt;설치 프로그램을 실행하고, &amp;ldquo;Add Python to PATH&amp;rdquo; 옵션을 체크한 후 &amp;ldquo;Install Now&amp;quot;를 클릭합니다.&lt;/li&gt;&#xA;&lt;li&gt;설치가 완료되면, 명령 프롬프트(또는 PowerShell)에서 &lt;code&gt;python --version&lt;/code&gt;을 입력하여 Python이 정상적으로 설치되었는지 확인합니다.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3&gt;&lt;strong&gt;macOS에서 Python 설치&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;macos에서-python-설치&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#macos%ec%97%90%ec%84%9c-python-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;macOS에서는 기본적으로 Python 2.x가 설치되어 있지만, 최신 버전의 Python 3.x를 설치하는 것이 좋습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python 기본 문법</title>
+      <link>https://mungops.github.io/programing/python/python/python02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python02/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;변수 선언 및 데이터 타입 (int, float, string, bool, list, tuple 등)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-변수-선언-및-데이터-타입-int-float-string-bool-list-tuple-등&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%eb%b3%80%ec%88%98-%ec%84%a0%ec%96%b8-%eb%b0%8f-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ed%83%80%ec%9e%85-int-float-string-bool-list-tuple-%eb%93%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;변수 선언&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;변수-선언&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#%eb%b3%80%ec%88%98-%ec%84%a0%ec%96%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Python에서 변수를 선언할 때는 자료형을 명시하지 않고 변수명에 값을 할당하는 방식으로 진행됩니다. Python은 동적 타이핑 언어이기 때문에 변수의 타입을 미리 정의할 필요가 없습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python 데이터 구조</title>
+      <link>https://mungops.github.io/programing/python/python/python03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python03/</guid>
+      <description>&lt;h1&gt;&lt;strong&gt;Python 데이터 구조&lt;/strong&gt;&lt;/h1&gt;&lt;h2&gt;1️⃣ &lt;strong&gt;리스트(List)와 그 활용법&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-리스트list와-그-활용법&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%eb%a6%ac%ec%8a%a4%ed%8a%b8list%ec%99%80-%ea%b7%b8-%ed%99%9c%ec%9a%a9%eb%b2%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;리스트 정의&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;리스트-정의&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#%eb%a6%ac%ec%8a%a4%ed%8a%b8-%ec%a0%95%ec%9d%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;리스트는 여러 개의 값을 저장할 수 있는 순차 자료형으로, 변경이 가능한(mutable) 특징을 가집니다. 대괄호 &lt;code&gt;[]&lt;/code&gt;를 사용하여 리스트를 정의합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>함수와 고급 함수 기능</title>
+      <link>https://mungops.github.io/programing/python/python/python04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python04/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;함수 정의와 반환값&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-함수-정의와-반환값&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ed%95%a8%ec%88%98-%ec%a0%95%ec%9d%98%ec%99%80-%eb%b0%98%ed%99%98%ea%b0%92&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;함수 정의&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;함수-정의&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#%ed%95%a8%ec%88%98-%ec%a0%95%ec%9d%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;함수는 특정 작업을 수행하는 코드 블록으로, &lt;code&gt;def&lt;/code&gt; 키워드를 사용하여 정의합니다. 함수를 정의할 때는 함수의 이름과 매개변수(입력값)를 지정하고, 함수 내에서 특정 작업을 처리한 후 &lt;code&gt;return&lt;/code&gt;을 사용해 값을 반환할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python의 객체지향 프로그래밍(OOP)</title>
+      <link>https://mungops.github.io/programing/python/python/python05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python05/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;객체와 클래스(Class)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-객체와-클래스class&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ea%b0%9d%ec%b2%b4%ec%99%80-%ed%81%b4%eb%9e%98%ec%8a%a4class&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;객체(Object)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;객체object&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#%ea%b0%9d%ec%b2%b4object&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;객체는 속성과 메서드를 가진 실체로, 클래스에서 정의된 구조를 실제로 메모리에 할당한 것입니다. 예를 들어, 자동차라는 클래스를 정의하면, 특정 자동차 객체는 클래스에서 정의된 속성(예: 색상, 모델)과 메서드(예: 운전, 정지)를 가질 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python의 고급 기능</title>
+      <link>https://mungops.github.io/programing/python/python/python06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python06/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;예외 처리 및 사용자 정의 예외 클래스&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-예외-처리-및-사용자-정의-예외-클래스&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%98%88%ec%99%b8-%ec%b2%98%eb%a6%ac-%eb%b0%8f-%ec%82%ac%ec%9a%a9%ec%9e%90-%ec%a0%95%ec%9d%98-%ec%98%88%ec%99%b8-%ed%81%b4%eb%9e%98%ec%8a%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;예외 처리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;예외-처리&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#%ec%98%88%ec%99%b8-%ec%b2%98%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Python에서 예외 처리는 &lt;code&gt;try&lt;/code&gt;, &lt;code&gt;except&lt;/code&gt;, &lt;code&gt;else&lt;/code&gt;, &lt;code&gt;finally&lt;/code&gt; 블록을 사용하여 발생할 수 있는 오류를 관리합니다. 예외 처리는 프로그램 실행 중 예상치 못한 상황이 발생했을 때 프로그램이 중단되지 않고 계속 실행되도록 도와줍니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>파일 입출력 및 데이터 처리</title>
+      <link>https://mungops.github.io/programing/python/python/python07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python07/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;파일 읽기 및 쓰기 (텍스트 파일, 이진 파일)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-파일-읽기-및-쓰기-텍스트-파일-이진-파일&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ed%8c%8c%ec%9d%bc-%ec%9d%bd%ea%b8%b0-%eb%b0%8f-%ec%93%b0%ea%b8%b0-%ed%85%8d%ec%8a%a4%ed%8a%b8-%ed%8c%8c%ec%9d%bc-%ec%9d%b4%ec%a7%84-%ed%8c%8c%ec%9d%bc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;텍스트 파일 읽기 및 쓰기&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;텍스트-파일-읽기-및-쓰기&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#%ed%85%8d%ec%8a%a4%ed%8a%b8-%ed%8c%8c%ec%9d%bc-%ec%9d%bd%ea%b8%b0-%eb%b0%8f-%ec%93%b0%ea%b8%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Python에서는 &lt;code&gt;open()&lt;/code&gt; 함수를 사용하여 파일을 열고, 파일을 읽거나 쓸 수 있습니다. 텍스트 파일을 읽고 쓰는 기본적인 예제입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python의 동시성 및 병렬성</title>
+      <link>https://mungops.github.io/programing/python/python/python08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python08/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;멀티스레딩(Multithreading) 개념과 활용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-멀티스레딩multithreading-개념과-활용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%eb%a9%80%ed%8b%b0%ec%8a%a4%eb%a0%88%eb%94%a9multithreading-%ea%b0%9c%eb%85%90%ea%b3%bc-%ed%99%9c%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;멀티스레딩의 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;멀티스레딩의-개념&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#%eb%a9%80%ed%8b%b0%ec%8a%a4%eb%a0%88%eb%94%a9%ec%9d%98-%ea%b0%9c%eb%85%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;멀티스레딩은 하나의 프로세스 내에서 여러 스레드를 실행하여 CPU를 효율적으로 사용하는 방법입니다. 여러 스레드를 동시에 실행하는 것처럼 보이지만, 실제로는 하나의 CPU 코어에서 빠르게 전환되는 방식으로 동작합니다. 멀티스레딩을 사용하면 I/O 작업과 같은 병목 현상을 줄일 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python의 웹 개발</title>
+      <link>https://mungops.github.io/programing/python/python/python09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python09/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;Flask로 웹 애플리케이션 개발&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-flask로-웹-애플리케이션-개발&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-flask%eb%a1%9c-%ec%9b%b9-%ec%95%a0%ed%94%8c%eb%a6%ac%ec%bc%80%ec%9d%b4%ec%85%98-%ea%b0%9c%eb%b0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;Flask란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;flask란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#flask%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Flask는 Python을 이용한 경량 웹 프레임워크입니다. 간단한 웹 애플리케이션을 빠르게 만들 수 있도록 도와주며, 확장성도 뛰어나서 복잡한 애플리케이션을 구축할 때도 사용됩니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>데이터베이스와 Python 연동</title>
+      <link>https://mungops.github.io/programing/python/python/python10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python10/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;SQLAlchemy를 이용한 관계형 데이터베이스 처리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-sqlalchemy를-이용한-관계형-데이터베이스-처리&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-sqlalchemy%eb%a5%bc-%ec%9d%b4%ec%9a%a9%ed%95%9c-%ea%b4%80%ea%b3%84%ed%98%95-%eb%8d%b0%ec%9d%b4%ed%84%b0%eb%b2%a0%ec%9d%b4%ec%8a%a4-%ec%b2%98%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;SQLAlchemy란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;sqlalchemy란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#sqlalchemy%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;SQLAlchemy는 Python에서 데이터베이스를 다룰 때 사용되는 대표적인 ORM(Object-Relational Mapping) 라이브러리입니다. 이를 사용하면 SQL문을 직접 작성하지 않고도 Python 객체와 데이터베이스 테이블 간의 매핑을 할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python에서의 테스트 및 디버깅</title>
+      <link>https://mungops.github.io/programing/python/python/python11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python11/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;Python의 unittest 모듈을 이용한 단위 테스트&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-python의-unittest-모듈을-이용한-단위-테스트&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-python%ec%9d%98-unittest-%eb%aa%a8%eb%93%88%ec%9d%84-%ec%9d%b4%ec%9a%a9%ed%95%9c-%eb%8b%a8%ec%9c%84-%ed%85%8c%ec%8a%a4%ed%8a%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;unittest란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;unittest란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#unittest%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;unittest&lt;/code&gt;는 Python에서 제공하는 기본적인 단위 테스트 프레임워크입니다. 이 모듈을 사용하면, 코드의 각 기능을 테스트할 수 있는 테스트 케이스를 작성할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python에서의 테스트 및 디버깅</title>
+      <link>https://mungops.github.io/programing/python/python/python12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python12/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;Python의 unittest 모듈을 이용한 단위 테스트&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-python의-unittest-모듈을-이용한-단위-테스트&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-python%ec%9d%98-unittest-%eb%aa%a8%eb%93%88%ec%9d%84-%ec%9d%b4%ec%9a%a9%ed%95%9c-%eb%8b%a8%ec%9c%84-%ed%85%8c%ec%8a%a4%ed%8a%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;unittest란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;unittest란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#unittest%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;unittest&lt;/code&gt;는 Python에서 제공하는 기본적인 단위 테스트 프레임워크입니다. 이 모듈을 사용하면 함수나 클래스가 예상대로 동작하는지 확인할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python의 데이터 분석 및 시각화</title>
+      <link>https://mungops.github.io/programing/python/python/python13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python13/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;NumPy로 고성능 배열 및 수학 연산&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-numpy로-고성능-배열-및-수학-연산&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-numpy%eb%a1%9c-%ea%b3%a0%ec%84%b1%eb%8a%a5-%eb%b0%b0%ec%97%b4-%eb%b0%8f-%ec%88%98%ed%95%99-%ec%97%b0%ec%82%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;NumPy란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;numpy란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#numpy%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;NumPy&lt;/code&gt;는 고성능 배열 객체와 수학 연산을 제공하는 Python 라이브러리로, 데이터 분석 및 과학적 계산에서 매우 중요한 역할을 합니다. &lt;code&gt;NumPy&lt;/code&gt; 배열은 Python의 기본 리스트보다 훨씬 빠르고 효율적입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python의 고급 주제 및 기타 활용</title>
+      <link>https://mungops.github.io/programing/python/python/python14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/programing/python/python/python14/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;Python의 고급 메모리 관리 (Garbage Collection, 메모리 프로파일링)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-python의-고급-메모리-관리-garbage-collection-메모리-프로파일링&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-python%ec%9d%98-%ea%b3%a0%ea%b8%89-%eb%a9%94%eb%aa%a8%eb%a6%ac-%ea%b4%80%eb%a6%ac-garbage-collection-%eb%a9%94%eb%aa%a8%eb%a6%ac-%ed%94%84%eb%a1%9c%ed%8c%8c%ec%9d%bc%eb%a7%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;Garbage Collection (GC)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;garbage-collection-gc&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#garbage-collection-gc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Python은 자동 메모리 관리를 제공하며, 그 중에서 가장 중요한 개념은 &amp;ldquo;Garbage Collection (GC)&amp;ldquo;입니다. GC는 더 이상 참조되지 않는 객체를 메모리에서 자동으로 제거하는 기능입니다. Python은 &lt;code&gt;reference counting&lt;/code&gt;과 &lt;code&gt;generational garbage collection&lt;/code&gt;을 통해 메모리를 관리합니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

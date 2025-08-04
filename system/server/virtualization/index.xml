@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualization on mungOps</title>
+    <link>https://mungops.github.io/system/server/virtualization/</link>
+    <description>Recent content in Virtualization on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/system/server/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Virtualization</title>
+      <link>https://mungops.github.io/system/server/virtualization/virtualization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/virtualization/virtualization/</guid>
+      <description>&lt;h1&gt;🖥️ &lt;strong&gt;가상화 (Virtualization) 구축 가이드&lt;/strong&gt; 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ 가상화(Virtualization)란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-가상화virtualization란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ea%b0%80%ec%83%81%ed%99%94virtualization%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;가상화(Virtualization)&lt;/strong&gt; 는 하나의 물리적인 하드웨어 리소스를 여러 개의 &lt;strong&gt;가상 환경&lt;/strong&gt;으로 나누어 사용하는 기술입니다.&lt;br&gt;&#xA;이를 통해 &lt;strong&gt;서버, 스토리지, 네트워크, 애플리케이션 등의 IT 리소스를 효율적으로 운영&lt;/strong&gt;할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WebSocket</title>
+      <link>https://mungops.github.io/system/server/virtualization/websocket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/server/virtualization/websocket/</guid>
+      <description>&lt;h1&gt;🌐 &lt;strong&gt;WebSocket 서버 구축 가이드&lt;/strong&gt; 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ WebSocket이란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-websocket이란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-websocket%ec%9d%b4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;WebSocket&lt;/strong&gt;은 &lt;strong&gt;브라우저와 서버 간 양방향 통신을 위한 프로토콜&lt;/strong&gt;입니다.&lt;br&gt;&#xA;기존의 HTTP는 요청-응답 방식이지만, WebSocket은 &lt;strong&gt;서버가 클라이언트에게 실시간으로 데이터를 보낼 수 있는&lt;/strong&gt; 특징이 있습니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
