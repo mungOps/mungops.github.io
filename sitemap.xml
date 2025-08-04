@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mungops.github.io/system/server/os/centos/</loc>
+    <loc>https://mungops.github.io/system/server/storage/iscsi/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/system/server/os/ubuntu/</loc>
+    <loc>https://mungops.github.io/system/server/storage/nfs/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/system/server/os/windows/</loc>
+    <loc>https://mungops.github.io/system/server/storage/smb/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url>
 </urlset>
-nstack-ussuri-03/</loc>
+ussuri-03/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url><url>
     <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-04/</loc>
