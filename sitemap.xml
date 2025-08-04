@@ -2,71 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mungops.github.io/system/server/os/centos/</loc>
+    <loc>https://mungops.github.io/system/server/storage/iscsi/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/system/server/os/ubuntu/</loc>
+    <loc>https://mungops.github.io/system/server/storage/nfs/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/system/server/os/windows/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url>
-</urlset>
-url><url>
-    <loc>https://mungops.github.io/system/server/network/ntp/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/server/network/proxy/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/server/network/vpn/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/server/network/dns/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url>
-</urlset>
-r/database/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url>
-</urlset>
-ktraining/openstack-ussuri-07/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-08/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-09/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-10/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-stein/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-11/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-12/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-13/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-14/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-15/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-16/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/devstack/</loc>
-    <lastmod>2025-04-21T20:34:23+09:00</lastmod>
-  </url><url>
-    <loc>https://mungops.github.io/system/openstack/openstacktraining/packstack/</loc>
+    <loc>https://mungops.github.io/system/server/storage/smb/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url>
 </urlset>
