@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenStack on mungOps</title>
-    <link>https://mungops.github.io/system/openstack/</link>
+    <link>http://localhost:1313/system/openstack/</link>
     <description>Recent content in OpenStack on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/system/openstack/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/system/openstack/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
