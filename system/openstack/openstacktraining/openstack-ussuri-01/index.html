@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>OpenStack Ussuri : Overview – mungOps</title>
-  <meta name="description" content="OpenStack Ussuri : OverviewOpenStack Ussuri : Overview OpenStack Ussuri 설치는 위의 그림과 표에 맞춰 설치가 진행됩니다. minimal 기본 설치는 keystone, glance, nova, neutron, cinder, horizon이며 여기서는 가능한 모든 서비스를 설치하도록 하겠습니다. OS HOST NAME CPU/thead RAM DISK Network Interface-1 Network Interface-2 CentOS8 controller 4/8 6144 100G Nat host1 CentOS8 network 2/4 2048 40G Nat host1 CentOS8 compute 4/8 4096 40G host1 CentOS8 storage1 1/2 1024 50G host1 CentOS8 storage2 1/2 1024 50G host1 CentOS8 storage3 1/2 1024 50G host1 Service Code Name Description Identity Service Keystone User Management Compute Service Nova Virtual Machine Management Image Service Glance Manages Virtual image like kernel image or disk image Dashboard Horizon Provides GUI console via Web browser Object Storage Swift Provides Cloud Storage Block Storage Cinder Storage Management for Virtual Machine Network Service Neutron Virtual Networking Management Orchestration Service Heat Provides Orchestration function for Virtual Machine Metering Service Ceilometer Provides the function of Usage measurement for accounting Database Service Trove Database resource Management Data Processing Service Sahara Provides Data Processing function Bare Metal Provisioning Ironic Provides Bare Metal Provisioning function Messaging Service Zaqar Provides Messaging Service function Shared File System Manila Provides File Sharing Service DNS Service Designate Provides DNS Server Service Key Manager Service Barbican Provides Key Management Service " /><link rel="canonical" href="https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-01/" itemprop="url" />
+  <meta name="description" content="OpenStack Ussuri : OverviewOpenStack Ussuri : Overview OpenStack Ussuri 설치는 위의 그림과 표에 맞춰 설치가 진행됩니다. minimal 기본 설치는 keystone, glance, nova, neutron, cinder, horizon이며 여기서는 가능한 모든 서비스를 설치하도록 하겠습니다. OS HOST NAME CPU/thead RAM DISK Network Interface-1 Network Interface-2 CentOS8 controller 4/8 6144 100G Nat host1 CentOS8 network 2/4 2048 40G Nat host1 CentOS8 compute 4/8 4096 40G host1 CentOS8 storage1 1/2 1024 50G host1 CentOS8 storage2 1/2 1024 50G host1 CentOS8 storage3 1/2 1024 50G host1 Service Code Name Description Identity Service Keystone User Management Compute Service Nova Virtual Machine Management Image Service Glance Manages Virtual image like kernel image or disk image Dashboard Horizon Provides GUI console via Web browser Object Storage Swift Provides Cloud Storage Block Storage Cinder Storage Management for Virtual Machine Network Service Neutron Virtual Networking Management Orchestration Service Heat Provides Orchestration function for Virtual Machine Metering Service Ceilometer Provides the function of Usage measurement for accounting Database Service Trove Database resource Management Data Processing Service Sahara Provides Data Processing function Bare Metal Provisioning Ironic Provides Bare Metal Provisioning function Messaging Service Zaqar Provides Messaging Service function Shared File System Manila Provides File Sharing Service DNS Service Designate Provides DNS Server Service Key Manager Service Barbican Provides Key Management Service " /><link rel="canonical" href="http://localhost:1313/system/openstack/openstacktraining/openstack-ussuri-01/" itemprop="url" />
 
 <meta property="og:title" content="OpenStack Ussuri : Overview" />
 <meta property="og:description" content="OpenStack Ussuri : OverviewOpenStack Ussuri : Overview
@@ -182,7 +182,7 @@ minimal 기본 설치는 keystone, glance, nova, neutron, cinder, horizon이며 
 
  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mungops.github.io/system/openstack/openstacktraining/openstack-ussuri-01/" /><meta property="article:section" content="system" />
+<meta property="og:url" content="http://localhost:1313/system/openstack/openstacktraining/openstack-ussuri-01/" /><meta property="article:section" content="system" />
 
 <meta property="article:modified_time" content="2025-04-21T20:34:23+09:00" />
 
@@ -194,26 +194,11 @@ minimal 기본 설치는 keystone, glance, nova, neutron, cinder, horizon이며 
   <meta name="twitter:title" content="OpenStack Ussuri : Overview">
   <meta name="twitter:description" content="OpenStack Ussuri : OverviewOpenStack Ussuri : Overview OpenStack Ussuri 설치는 위의 그림과 표에 맞춰 설치가 진행됩니다. minimal 기본 설치는 keystone, glance, nova, neutron, cinder, horizon이며 여기서는 가능한 모든 서비스를 설치하도록 하겠습니다. OS HOST NAME CPU/thead RAM DISK Network Interface-1 Network Interface-2 CentOS8 controller 4/8 6144 100G Nat host1 CentOS8 network 2/4 2048 40G Nat host1 CentOS8 compute 4/8 4096 40G host1 CentOS8 storage1 1/2 1024 50G host1 CentOS8 storage2 1/2 1024 50G host1 CentOS8 storage3 1/2 1024 50G host1 Service Code Name Description Identity Service Keystone User Management Compute Service Nova Virtual Machine Management Image Service Glance Manages Virtual image like kernel image or disk image Dashboard Horizon Provides GUI console via Web browser Object Storage Swift Provides Cloud Storage Block Storage Cinder Storage Management for Virtual Machine Network Service Neutron Virtual Networking Management Orchestration Service Heat Provides Orchestration function for Virtual Machine Metering Service Ceilometer Provides the function of Usage measurement for accounting Database Service Trove Database resource Management Data Processing Service Sahara Provides Data Processing function Bare Metal Provisioning Ironic Provides Bare Metal Provisioning function Messaging Service Zaqar Provides Messaging Service function Shared File System Manila Provides File Sharing Service DNS Service Designate Provides DNS Server Service Key Manager Service Barbican Provides Key Management Service">
 
-    <link rel="preload" href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" as="style" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
-    <link href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" rel="stylesheet" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
+    <link href="/css/compiled/main.css" rel="stylesheet" />
 
 
 
-  <link href="/css/custom.min.a1a8c4a08d5cbf5d8c1c7fe718da7a344b6919804b75477fc5a3ff67513ccc97.css" rel="stylesheet" integrity="sha256-oajEoI1cv12MHH/nGNp6NEtpGYBLdUd/xaP/Z1E8zJc=" />
-
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZW72SWRF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-H6ZW72SWRF");
-  </script>
+  <link href="/css/custom.css" rel="stylesheet" />
 
 
 
@@ -4142,31 +4127,6 @@ minimal 기본 설치는 keystone, glance, nova, neutron, cinder, horizon이며 
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/system/server/database/"
-    
-  >Database
-        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg>
-
-  <ins class="kakao_ad_area" style="display:none;"
-  data-ad-unit = "DAN-k9YLcHW8tuF1zWMK"
-  data-ad-width = "250"
-  data-ad-height = "250"></ins>
-  <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script></span>
-    </a>
-              <div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/system/server/database/database/"
-    
-  >Database
-    </a>
-              
-            </li></ul>
-      </div>
             </li></ul>
       </div>
             </li><li class="hx-flex hx-flex-col open"><a
@@ -5555,31 +5515,6 @@ minimal 기본 설치는 keystone, glance, nova, neutron, cinder, horizon이며 
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/system/server/database/"
-    
-  >Database
-        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg>
-
-  <ins class="kakao_ad_area" style="display:none;"
-  data-ad-unit = "DAN-k9YLcHW8tuF1zWMK"
-  data-ad-width = "250"
-  data-ad-height = "250"></ins>
-  <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script></span>
-    </a>
-              <div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/system/server/database/database/"
-    
-  >Database
-    </a>
-              
-            </li></ul>
-      </div>
             </li></ul>
       </div></li>
           <li class="open"><a
@@ -6716,9 +6651,9 @@ minimal 기본 설치는 keystone, glance, nova, neutron, cinder, horizon이며 
   </a></div><div class="hx-mt-6 hx-text-xs">© 2025 mungops</div></div>
       </div></footer>
     
-    <script defer src="/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js" integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script>
+    <script defer src="/js/main.js" integrity=""></script>
 <script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
-    <script defer src="/en.search.min.467af55671b5ee53c9cdfe80e6e0ee6791edc3374392318652fcf851a49db151.js" integrity="sha256-Rnr1VnG17lPJzf6A5uDuZ5HtwzdDkjGGUvz4UaSdsVE="></script>
+    <script defer src="/en.search.js" integrity=""></script>
 
   </body>
 </html>

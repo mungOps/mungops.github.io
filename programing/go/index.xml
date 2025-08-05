@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go lang on mungOps</title>
-    <link>https://mungops.github.io/programing/go/</link>
+    <link>http://localhost:1313/programing/go/</link>
     <description>Recent content in Go lang on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/programing/go/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/programing/go/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
