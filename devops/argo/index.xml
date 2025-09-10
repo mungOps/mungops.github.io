@@ -2,79 +2,79 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ArgoCI/CD on mungOps</title>
-    <link>http://localhost:1313/devops/argo/</link>
+    <link>https://mungops.github.io/devops/argo/</link>
     <description>Recent content in ArgoCI/CD on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/devops/argo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/devops/argo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Argo CD 개요</title>
-      <link>http://localhost:1313/devops/argo/argo00/</link>
+      <link>https://mungops.github.io/devops/argo/argo00/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo00/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo00/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Argo CD란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-argo-cd란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-argo-cd%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Argo CD는 쿠버네티스 환경에서 GitOps 방식을 구현하는 지속적 배포(CD) 도구입니다. Git 저장소를 단일 소스로 삼아 애플리케이션 상태를 정의하고, 쿠버네티스 클러스터의 실제 상태를 지속적으로 동기화합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD 설치 및 기본 설정</title>
-      <link>http://localhost:1313/devops/argo/argo01/</link>
+      <link>https://mungops.github.io/devops/argo/argo01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo01/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo01/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Argo CD 설치 방법 (Helm, Kustomize, YAML 배포)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-argo-cd-설치-방법-helm-kustomize-yaml-배포&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-argo-cd-%ec%84%a4%ec%b9%98-%eb%b0%a9%eb%b2%95-helm-kustomize-yaml-%eb%b0%b0%ed%8f%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Argo CD는 여러 가지 방법으로 설치할 수 있습니다. 대표적으로 &lt;strong&gt;YAML 배포, Helm Chart, Kustomize&lt;/strong&gt; 방식이 있으며, 각 방식별 설치 방법을 살펴보겠습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD 핵심 개념</title>
-      <link>http://localhost:1313/devops/argo/argo02/</link>
+      <link>https://mungops.github.io/devops/argo/argo02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo02/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo02/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Application: Argo CD의 애플리케이션 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-application-argo-cd의-애플리케이션-개념&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-application-argo-cd%ec%9d%98-%ec%95%a0%ed%94%8c%eb%a6%ac%ec%bc%80%ec%9d%b4%ec%85%98-%ea%b0%9c%eb%85%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Argo CD에서 애플리케이션(Application)은 Git 저장소에 정의된 애플리케이션 구성을 쿠버네티스 클러스터에 배포하는 단위입니다. 애플리케이션은 &lt;strong&gt;Git 저장소&lt;/strong&gt;와 &lt;strong&gt;Kubernetes 클러스터&lt;/strong&gt;를 연결하는 역할을 합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD와 GitOps</title>
-      <link>http://localhost:1313/devops/argo/argo03/</link>
+      <link>https://mungops.github.io/devops/argo/argo03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo03/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo03/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;GitOps 개념 및 Argo CD의 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-gitops-개념-및-argo-cd의-역할&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-gitops-%ea%b0%9c%eb%85%90-%eb%b0%8f-argo-cd%ec%9d%98-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;GitOps&lt;/strong&gt;는 Git을 단일 진리의 원천으로 사용하여 애플리케이션 및 인프라의 배포 및 관리를 자동화하는 방법론입니다. GitOps는 개발자가 코드를 Git에 푸시하고, 이 변경 사항을 통해 배포가 자동으로 이루어지도록 합니다. 이 과정에서 Argo CD는 GitOps의 핵심 툴로서, Git 저장소와 Kubernetes 클러스터 간의 동기화를 책임집니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD 애플리케이션 관리</title>
-      <link>http://localhost:1313/devops/argo/argo04/</link>
+      <link>https://mungops.github.io/devops/argo/argo04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo04/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo04/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Application 객체 생성 및 설정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-application-객체-생성-및-설정&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-application-%ea%b0%9d%ec%b2%b4-%ec%83%9d%ec%84%b1-%eb%b0%8f-%ec%84%a4%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Argo CD에서 애플리케이션은 Kubernetes 클러스터에 배포할 애플리케이션을 나타내는 기본적인 단위입니다. &lt;code&gt;Application&lt;/code&gt; 객체는 Git 저장소에서 Kubernetes 리소스를 가져와 자동으로 배포합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD Sync 및 배포 전략</title>
-      <link>http://localhost:1313/devops/argo/argo05/</link>
+      <link>https://mungops.github.io/devops/argo/argo05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo05/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo05/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;자동 vs 수동 Sync&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-자동-vs-수동-sync&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%9e%90%eb%8f%99-vs-%ec%88%98%eb%8f%99-sync&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Argo CD에서 애플리케이션의 상태를 Git 리포지토리와 동기화하는 방식에는 두 가지 주요 방식이 있습니다: 자동 Sync와 수동 Sync.&lt;/p&gt;&#xA;&lt;h3&gt;1. &lt;strong&gt;자동 Sync&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-자동-sync&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%9e%90%eb%8f%99-sync&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;자동 Sync는 Argo CD가 Git 리포지토리의 변경사항을 감지하고 이를 Kubernetes 클러스터에 자동으로 적용하는 방식입니다. 이 방식은 개발 및 운영 환경에서 애플리케이션 상태를 항상 최신 상태로 유지하는 데 유용합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD 보안 및 접근 제어</title>
-      <link>http://localhost:1313/devops/argo/argo06/</link>
+      <link>https://mungops.github.io/devops/argo/argo06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo06/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo06/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Argo CD RBAC(Role-Based Access Control) 설정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-argo-cd-rbacrole-based-access-control-설정&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-argo-cd-rbacrole-based-access-control-%ec%84%a4%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;RBAC는 사용자가 Argo CD에서 수행할 수 있는 작업을 제어하는 중요한 보안 기능입니다. 이를 통해 특정 사용자 또는 그룹에 대해 권한을 세밀하게 설정할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD와 CI/CD 통합</title>
-      <link>http://localhost:1313/devops/argo/argo07/</link>
+      <link>https://mungops.github.io/devops/argo/argo07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo07/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo07/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Argo CD와 Jenkins 연동&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-argo-cd와-jenkins-연동&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-argo-cd%ec%99%80-jenkins-%ec%97%b0%eb%8f%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Jenkins는 매우 인기 있는 CI/CD 도구로, Argo CD와 연동하여 강력한 자동화된 배포 파이프라인을 구축할 수 있습니다. Argo CD는 GitOps 방식을 따르기 때문에 Jenkins와 연동하여 CI 파이프라인을 실행한 후, Argo CD는 Kubernetes 클러스터에 애플리케이션을 배포합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD 모니터링 및 문제 해결</title>
-      <link>http://localhost:1313/devops/argo/argo08/</link>
+      <link>https://mungops.github.io/devops/argo/argo08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo08/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo08/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Argo CD의 로그 및 이벤트 확인&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-argo-cd의-로그-및-이벤트-확인&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-argo-cd%ec%9d%98-%eb%a1%9c%ea%b7%b8-%eb%b0%8f-%ec%9d%b4%eb%b2%a4%ed%8a%b8-%ed%99%95%ec%9d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Argo CD는 애플리케이션의 배포 및 동기화 상태를 모니터링하기 위한 다양한 로그 및 이벤트를 제공합니다. 이를 통해 애플리케이션의 상태를 확인하고 문제가 발생한 원인을 추적할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Argo CD 고급 활용 사례</title>
-      <link>http://localhost:1313/devops/argo/argo09/</link>
+      <link>https://mungops.github.io/devops/argo/argo09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/devops/argo/argo09/</guid>
+      <guid>https://mungops.github.io/devops/argo/argo09/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Multi-Tenant Argo CD 구성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-multi-tenant-argo-cd-구성&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-multi-tenant-argo-cd-%ea%b5%ac%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Multi-Tenant Argo CD 구성은 여러 팀이나 부서가 하나의 Argo CD 인스턴스를 공유하여, 각자의 애플리케이션을 독립적으로 관리하는 환경을 제공합니다. 이를 통해 Argo CD를 효율적으로 분리하고, 각 팀의 애플리케이션을 논리적으로 격리할 수 있습니다.&lt;/p&gt;</description>
     </item>
   </channel>

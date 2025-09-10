@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>postgresql on mungOps</title>
-    <link>http://localhost:1313/database/postgresql/</link>
+    <link>https://mungops.github.io/database/postgresql/</link>
     <description>Recent content in postgresql on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/database/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/database/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PostgreSQL 개요 및 기본 개념</title>
-      <link>http://localhost:1313/database/postgresql/postgresql01/</link>
+      <link>https://mungops.github.io/database/postgresql/postgresql01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/database/postgresql/postgresql01/</guid>
+      <guid>https://mungops.github.io/database/postgresql/postgresql01/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;PostgreSQL 소개 및 기본 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-postgresql-소개-및-기본-개념&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-postgresql-%ec%86%8c%ea%b0%9c-%eb%b0%8f-%ea%b8%b0%eb%b3%b8-%ea%b0%9c%eb%85%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;PostgreSQL 소개 및 역사&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-postgresql-소개-및-역사&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-postgresql-%ec%86%8c%ea%b0%9c-%eb%b0%8f-%ec%97%ad%ec%82%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;PostgreSQL(줄여서 &lt;strong&gt;Postgres&lt;/strong&gt;)는 객체-관계형 데이터베이스 관리 시스템(&lt;strong&gt;ORDBMS&lt;/strong&gt;)으로, 뛰어난 확장성, ACID 트랜잭션 지원, JSON/BSON 데이터 타입을 포함한 다양한 기능을 제공합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PostgreSQL 아키텍처 심층 분석</title>
-      <link>http://localhost:1313/database/postgresql/postgresql02/</link>
+      <link>https://mungops.github.io/database/postgresql/postgresql02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/database/postgresql/postgresql02/</guid>
+      <guid>https://mungops.github.io/database/postgresql/postgresql02/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;PostgreSQL의 내부 구조&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-postgresql의-내부-구조&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-postgresql%ec%9d%98-%eb%82%b4%eb%b6%80-%ea%b5%ac%ec%a1%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;프로세스 모델&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-프로세스-모델&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ed%94%84%eb%a1%9c%ec%84%b8%ec%8a%a4-%eb%aa%a8%eb%8d%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;PostgreSQL은 &lt;strong&gt;멀티 프로세스 기반 아키텍처&lt;/strong&gt;를 사용하며, 주요 프로세스는 다음과 같습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PostgreSQL 고급 SQL 및 함수</title>
-      <link>http://localhost:1313/database/postgresql/postgresql03/</link>
+      <link>https://mungops.github.io/database/postgresql/postgresql03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/database/postgresql/postgresql03/</guid>
+      <guid>https://mungops.github.io/database/postgresql/postgresql03/</guid>
       <description>&lt;h2&gt;1️⃣ 고급 SQL 기능&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-고급-sql-기능&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ea%b3%a0%ea%b8%89-sql-%ea%b8%b0%eb%8a%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. CTE (Common Table Expressions)와 Recursive Query&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-cte-common-table-expressions와-recursive-query&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-cte-common-table-expressions%ec%99%80-recursive-query&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;CTE(Common Table Expression)는 복잡한 쿼리를 쉽게 구성할 수 있도록 도와주는 기능입니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>인덱스 및 성능 최적화</title>
-      <link>http://localhost:1313/database/postgresql/postgresql04/</link>
+      <link>https://mungops.github.io/database/postgresql/postgresql04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/database/postgresql/postgresql04/</guid>
+      <guid>https://mungops.github.io/database/postgresql/postgresql04/</guid>
       <description>&lt;h2&gt;4️⃣ 인덱스 및 성능 최적화&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-인덱스-및-성능-최적화&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#4-%ec%9d%b8%eb%8d%b1%ec%8a%a4-%eb%b0%8f-%ec%84%b1%eb%8a%a5-%ec%b5%9c%ec%a0%81%ed%99%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. PostgreSQL 인덱스 종류 및 활용&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-postgresql-인덱스-종류-및-활용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-postgresql-%ec%9d%b8%eb%8d%b1%ec%8a%a4-%ec%a2%85%eb%a5%98-%eb%b0%8f-%ed%99%9c%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;PostgreSQL은 다양한 인덱스 타입을 제공하며, 각 인덱스는 특정한 사용 사례에 최적화되어 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PostgreSQL 고급 관리 및 운영</title>
-      <link>http://localhost:1313/database/postgresql/postgresql05/</link>
+      <link>https://mungops.github.io/database/postgresql/postgresql05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/database/postgresql/postgresql05/</guid>
+      <guid>https://mungops.github.io/database/postgresql/postgresql05/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;백업 및 복구 전략&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-백업-및-복구-전략&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%eb%b0%b1%ec%97%85-%eb%b0%8f-%eb%b3%b5%ea%b5%ac-%ec%a0%84%eb%9e%b5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;code&gt;pg_dump&lt;/code&gt; 및 &lt;code&gt;pg_restore&lt;/code&gt; 사용법&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-pg_dump-및-pg_restore-사용법&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-pg_dump-%eb%b0%8f-pg_restore-%ec%82%ac%ec%9a%a9%eb%b2%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;pg_dump&lt;/code&gt;와 &lt;code&gt;pg_restore&lt;/code&gt;는 PostgreSQL에서 데이터베이스 백업과 복구를 수행하는 주요 도구입니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PostgreSQL 확장 기능 및 클러스터링</title>
-      <link>http://localhost:1313/database/postgresql/postgresql06/</link>
+      <link>https://mungops.github.io/database/postgresql/postgresql06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/database/postgresql/postgresql06/</guid>
+      <guid>https://mungops.github.io/database/postgresql/postgresql06/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;PostgreSQL 확장 기능 (Extensions)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-postgresql-확장-기능-extensions&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-postgresql-%ed%99%95%ec%9e%a5-%ea%b8%b0%eb%8a%a5-extensions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;PostgreSQL은 기본적으로 강력한 기능을 제공하지만, 여러 확장 기능을 통해 데이터베이스의 기능을 확장할 수 있습니다. 이들은 PostgreSQL의 기능을 개선하거나 특정 요구 사항을 충족하는 데 유용합니다. 주요 확장 기능에 대해 알아보겠습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PostgreSQL 실무 적용 사례</title>
-      <link>http://localhost:1313/database/postgresql/postgresql07/</link>
+      <link>https://mungops.github.io/database/postgresql/postgresql07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/database/postgresql/postgresql07/</guid>
+      <guid>https://mungops.github.io/database/postgresql/postgresql07/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;대량 데이터 처리 및 최적화 사례&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-대량-데이터-처리-및-최적화-사례&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%eb%8c%80%eb%9f%89-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ec%b2%98%eb%a6%ac-%eb%b0%8f-%ec%b5%9c%ec%a0%81%ed%99%94-%ec%82%ac%eb%a1%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;PostgreSQL은 강력한 성능과 확장성을 제공하지만, 대량 데이터를 처리할 때 최적화가 필요합니다. 실제 환경에서 대량 데이터를 다룰 때 PostgreSQL을 최적화한 방법을 살펴보겠습니다.&lt;/p&gt;</description>
     </item>
   </channel>

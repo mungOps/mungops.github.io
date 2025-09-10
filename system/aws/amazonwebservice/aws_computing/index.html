@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="en"><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="index, follow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>AWS Computing – mungOps</title>
-  <meta name="description" content="AWS 컴퓨팅 서비스 EC2 ( Elastic Compute Cloud ) EC2 공식 홈페이지 가상 컴퓨팅 서비스를 제공해주는 서버로 실제 물리서버와 똑같은 형태의 서비스를 제공 AMI를 통해 필요한 운영체제와 여러 소프트웨어를 쉽게 생성 가능 키 페어를 사용하여 로그린 정보 보호 SSH로 원격 연결이 가능 중지가 가능한 EBS 기반 인스턴스와 임시 스토리지를 제공하여 중지가 불가능한 Instance Store 기반 EC2로 분류 됨 ( 재부팅은 모두 가능 ) 인스턴스의 유형으로는 범용, 컴퓨팅 최적화, 메모리 최적화, 스토리지 최적화 등이 존재 EC2 상태의 종류 Pending : 인스턴스가 구동하기 위해 준비중인 상태, 요금 미청구 Runnung : 인스턴스가 실행하고 사용할 준비가 된 상태, 요금 청구 Stopping : 인스턴스가 중지 모드로 전환되려는 상태, 요금 미청구 Shutting-down : 인스턴스가 종료를 위해 준비중인 상태, 요금 미청구 Terminated : 인스턴스가 종료된 상태, 요금 미청구 EC2 구매옵션 On demand : 필요할 때 바로 생성하는 방식으로 1시간 단위로 과금이 이루어짐 ( 1분 사용시도 1시간 ) Spot : 경매방식의 인스턴스 기준가격보다 높은 가격 제시시 사용가능하며, 타인에 의해 불시로 종료되거나 정지될 수 있어 각종 테스트에 적합 Reserved : 12개월- 36개월 단위로 예약하여 사용하는 인스턴스로 On demandq비해 가격이 대폭 할인되며, 장기적으로 사용할 경우 효율이 좋지만, 예약된 인스턴스이기에 사용하지 않아도 과금이 부과되어짐 " /><link rel="canonical" href="http://localhost:1313/system/aws/amazonwebservice/aws_computing/" itemprop="url" />
+  <meta name="description" content="AWS 컴퓨팅 서비스 EC2 ( Elastic Compute Cloud ) EC2 공식 홈페이지 가상 컴퓨팅 서비스를 제공해주는 서버로 실제 물리서버와 똑같은 형태의 서비스를 제공 AMI를 통해 필요한 운영체제와 여러 소프트웨어를 쉽게 생성 가능 키 페어를 사용하여 로그린 정보 보호 SSH로 원격 연결이 가능 중지가 가능한 EBS 기반 인스턴스와 임시 스토리지를 제공하여 중지가 불가능한 Instance Store 기반 EC2로 분류 됨 ( 재부팅은 모두 가능 ) 인스턴스의 유형으로는 범용, 컴퓨팅 최적화, 메모리 최적화, 스토리지 최적화 등이 존재 EC2 상태의 종류 Pending : 인스턴스가 구동하기 위해 준비중인 상태, 요금 미청구 Runnung : 인스턴스가 실행하고 사용할 준비가 된 상태, 요금 청구 Stopping : 인스턴스가 중지 모드로 전환되려는 상태, 요금 미청구 Shutting-down : 인스턴스가 종료를 위해 준비중인 상태, 요금 미청구 Terminated : 인스턴스가 종료된 상태, 요금 미청구 EC2 구매옵션 On demand : 필요할 때 바로 생성하는 방식으로 1시간 단위로 과금이 이루어짐 ( 1분 사용시도 1시간 ) Spot : 경매방식의 인스턴스 기준가격보다 높은 가격 제시시 사용가능하며, 타인에 의해 불시로 종료되거나 정지될 수 있어 각종 테스트에 적합 Reserved : 12개월- 36개월 단위로 예약하여 사용하는 인스턴스로 On demandq비해 가격이 대폭 할인되며, 장기적으로 사용할 경우 효율이 좋지만, 예약된 인스턴스이기에 사용하지 않아도 과금이 부과되어짐 " /><link rel="canonical" href="https://mungops.github.io/system/aws/amazonwebservice/aws_computing/" itemprop="url" />
 
 <meta property="og:title" content="AWS Computing" />
 <meta property="og:description" content="AWS 컴퓨팅 서비스
@@ -44,7 +44,7 @@ Reserved : 12개월- 36개월 단위로 예약하여 사용하는 인스턴스�
 
  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/system/aws/amazonwebservice/aws_computing/" /><meta property="article:section" content="system" />
+<meta property="og:url" content="https://mungops.github.io/system/aws/amazonwebservice/aws_computing/" /><meta property="article:section" content="system" />
 
 <meta property="article:modified_time" content="2025-04-21T20:34:23+09:00" />
 
@@ -56,12 +56,29 @@ Reserved : 12개월- 36개월 단위로 예약하여 사용하는 인스턴스�
   <meta name="twitter:title" content="AWS Computing">
   <meta name="twitter:description" content="AWS 컴퓨팅 서비스 EC2 ( Elastic Compute Cloud ) EC2 공식 홈페이지 가상 컴퓨팅 서비스를 제공해주는 서버로 실제 물리서버와 똑같은 형태의 서비스를 제공 AMI를 통해 필요한 운영체제와 여러 소프트웨어를 쉽게 생성 가능 키 페어를 사용하여 로그린 정보 보호 SSH로 원격 연결이 가능 중지가 가능한 EBS 기반 인스턴스와 임시 스토리지를 제공하여 중지가 불가능한 Instance Store 기반 EC2로 분류 됨 ( 재부팅은 모두 가능 ) 인스턴스의 유형으로는 범용, 컴퓨팅 최적화, 메모리 최적화, 스토리지 최적화 등이 존재 EC2 상태의 종류 Pending : 인스턴스가 구동하기 위해 준비중인 상태, 요금 미청구 Runnung : 인스턴스가 실행하고 사용할 준비가 된 상태, 요금 청구 Stopping : 인스턴스가 중지 모드로 전환되려는 상태, 요금 미청구 Shutting-down : 인스턴스가 종료를 위해 준비중인 상태, 요금 미청구 Terminated : 인스턴스가 종료된 상태, 요금 미청구 EC2 구매옵션 On demand : 필요할 때 바로 생성하는 방식으로 1시간 단위로 과금이 이루어짐 ( 1분 사용시도 1시간 ) Spot : 경매방식의 인스턴스 기준가격보다 높은 가격 제시시 사용가능하며, 타인에 의해 불시로 종료되거나 정지될 수 있어 각종 테스트에 적합 Reserved : 12개월- 36개월 단위로 예약하여 사용하는 인스턴스로 On demandq비해 가격이 대폭 할인되며, 장기적으로 사용할 경우 효율이 좋지만, 예약된 인스턴스이기에 사용하지 않아도 과금이 부과되어짐">
 
-    <link href="/css/compiled/main.css" rel="stylesheet" />
+    <link rel="preload" href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" as="style" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
+    <link href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" rel="stylesheet" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
 
 
 
-  <link href="/css/custom.css" rel="stylesheet" />
+  <link href="/css/custom.min.a1a8c4a08d5cbf5d8c1c7fe718da7a344b6919804b75477fc5a3ff67513ccc97.css" rel="stylesheet" integrity="sha256-oajEoI1cv12MHH/nGNp6NEtpGYBLdUd/xaP/Z1E8zJc=" />
 
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZW72SWRF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-H6ZW72SWRF");
+  </script>
+
+
+<meta name="google-site-verification" content="9lrTKGJjmF4wOpQcu3n1rDgULRii7abcjyGOY3EhcYc" />
 
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4274477834047595"
@@ -6737,9 +6754,9 @@ Reserved : 12개월- 36개월 단위로 예약하여 사용하는 인스턴스�
   </a></div><div class="hx-mt-6 hx-text-xs">© 2025 mungops</div></div>
       </div></footer>
     
-    <script defer src="/js/main.js" integrity=""></script>
+    <script defer src="/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js" integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script>
 <script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
-    <script defer src="/en.search.js" integrity=""></script>
+    <script defer src="/en.search.min.467af55671b5ee53c9cdfe80e6e0ee6791edc3374392318652fcf851a49db151.js" integrity="sha256-Rnr1VnG17lPJzf6A5uDuZ5HtwzdDkjGGUvz4UaSdsVE="></script>
 
   </body>
 </html>
