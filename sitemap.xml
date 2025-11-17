@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mungops.github.io/_index.ko/</loc>
+    <loc>http://localhost:1313/_index.ko/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2025-03-17T16:33:32+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/database/</loc>
+    <loc>http://localhost:1313/database/</loc>
     <lastmod>2025-04-07T13:36:47+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/devops/</loc>
+    <loc>http://localhost:1313/devops/</loc>
     <lastmod>2025-04-07T13:36:47+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/portfolio/</loc>
+    <loc>http://localhost:1313/portfolio/</loc>
     <lastmod>2025-04-21T20:34:23+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/programing/</loc>
+    <loc>http://localhost:1313/programing/</loc>
     <lastmod>2025-04-07T13:36:47+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/study/</loc>
+    <loc>http://localhost:1313/study/</loc>
     <lastmod>2025-09-14T23:47:58+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/system/</loc>
+    <loc>http://localhost:1313/system/</loc>
     <lastmod>2025-04-07T13:36:47+09:00</lastmod>
   </url><url>
-    <loc>https://mungops.github.io/travel/</loc>
+    <loc>http://localhost:1313/travel/</loc>
     <lastmod>2025-04-21T16:43:46+09:00</lastmod>
   </url>
 </urlset>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
@@ -12,7 +12,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>OS – mungOps</title>
   <meta name="description" content="🔹 OS 구조 이해1. Linux 커널 vs 사용자 공간 (User Space vs Kernel Space) 📌 아키텍처
-&#43;--------------------------------------------------&#43; | 사용자 공간(User Space) | | - 응용 프로그램 (bash, python, nginx 등) | | - 라이브러리(glibc 등) | &#43;--------------------------------------------------&#43; | 커널 공간(Kernel Space) | | - 시스템 콜 인터페이스(syscall) | | - 프로세스 관리(Scheduler) | | - 메모리 관리(Virtual Memory, Page Cache) | | - 파일 시스템(VFS, ext4, xfs, btrfs) | | - 네트워크 스택(TCP/IP) | | - 디바이스 드라이버 (하드웨어 제어) | &#43;--------------------------------------------------&#43; | 하드웨어(Hardware) | | CPU, Memory, Disk, NIC | &#43;--------------------------------------------------&#43; 사용자 공간 (User Space) &#43;---------------------------&#43; | modprobe / insmod / lsmod | &#43;---------------------------&#43; | v 커널 공간 (Kernel Space) &#43;---------------------------&#43; | 커널 모듈 (Module) | | - 네트워크 드라이버 | | - 파일 시스템 드라이버 | | - 가상 장치 드라이버 | &#43;---------------------------&#43; | v 하드웨어 (Hardware) &#43;---------------------------&#43; | CPU, Disk, NIC, Memory | &#43;---------------------------&#43; # 동작 예시: # 1. modprobe e1000e (Intel NIC 모듈 로드) # 2. 커널이 NIC 초기화 → 시스템에 네트워크 사용 가능 # 3. lsmod로 모듈 상태 확인 # 4. dmesg로 초기화 로그 확인 👉 사용자 공간의 프로그램은 직접 하드웨어에 접근하지 못하고, 시스템 콜(System Call) 을 통해 커널에 요청." /><link rel="canonical" href="https://mungops.github.io/study/sre/system/01/" itemprop="url" />
+&#43;--------------------------------------------------&#43; | 사용자 공간(User Space) | | - 응용 프로그램 (bash, python, nginx 등) | | - 라이브러리(glibc 등) | &#43;--------------------------------------------------&#43; | 커널 공간(Kernel Space) | | - 시스템 콜 인터페이스(syscall) | | - 프로세스 관리(Scheduler) | | - 메모리 관리(Virtual Memory, Page Cache) | | - 파일 시스템(VFS, ext4, xfs, btrfs) | | - 네트워크 스택(TCP/IP) | | - 디바이스 드라이버 (하드웨어 제어) | &#43;--------------------------------------------------&#43; | 하드웨어(Hardware) | | CPU, Memory, Disk, NIC | &#43;--------------------------------------------------&#43; 사용자 공간 (User Space) &#43;---------------------------&#43; | modprobe / insmod / lsmod | &#43;---------------------------&#43; | v 커널 공간 (Kernel Space) &#43;---------------------------&#43; | 커널 모듈 (Module) | | - 네트워크 드라이버 | | - 파일 시스템 드라이버 | | - 가상 장치 드라이버 | &#43;---------------------------&#43; | v 하드웨어 (Hardware) &#43;---------------------------&#43; | CPU, Disk, NIC, Memory | &#43;---------------------------&#43; # 동작 예시: # 1. modprobe e1000e (Intel NIC 모듈 로드) # 2. 커널이 NIC 초기화 → 시스템에 네트워크 사용 가능 # 3. lsmod로 모듈 상태 확인 # 4. dmesg로 초기화 로그 확인 👉 사용자 공간의 프로그램은 직접 하드웨어에 접근하지 못하고, 시스템 콜(System Call) 을 통해 커널에 요청." /><link rel="canonical" href="http://localhost:1313/study/sre/system/01/" itemprop="url" />
 
 <meta property="og:title" content="OS" />
 <meta property="og:description" content="🔹 OS 구조 이해1. Linux 커널 vs 사용자 공간 (User Space vs Kernel Space)
@@ -72,7 +72,7 @@
 
 👉 사용자 공간의 프로그램은 직접 하드웨어에 접근하지 못하고, 시스템 콜(System Call) 을 통해 커널에 요청." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mungops.github.io/study/sre/system/01/" /><meta property="article:section" content="study" />
+<meta property="og:url" content="http://localhost:1313/study/sre/system/01/" /><meta property="article:section" content="study" />
 
 <meta property="article:modified_time" content="2025-09-14T22:42:18+09:00" />
 
@@ -86,26 +86,11 @@
   <meta name="twitter:description" content="🔹 OS 구조 이해1. Linux 커널 vs 사용자 공간 (User Space vs Kernel Space) 📌 아키텍처
 &#43;--------------------------------------------------&#43; | 사용자 공간(User Space) | | - 응용 프로그램 (bash, python, nginx 등) | | - 라이브러리(glibc 등) | &#43;--------------------------------------------------&#43; | 커널 공간(Kernel Space) | | - 시스템 콜 인터페이스(syscall) | | - 프로세스 관리(Scheduler) | | - 메모리 관리(Virtual Memory, Page Cache) | | - 파일 시스템(VFS, ext4, xfs, btrfs) | | - 네트워크 스택(TCP/IP) | | - 디바이스 드라이버 (하드웨어 제어) | &#43;--------------------------------------------------&#43; | 하드웨어(Hardware) | | CPU, Memory, Disk, NIC | &#43;--------------------------------------------------&#43; 사용자 공간 (User Space) &#43;---------------------------&#43; | modprobe / insmod / lsmod | &#43;---------------------------&#43; | v 커널 공간 (Kernel Space) &#43;---------------------------&#43; | 커널 모듈 (Module) | | - 네트워크 드라이버 | | - 파일 시스템 드라이버 | | - 가상 장치 드라이버 | &#43;---------------------------&#43; | v 하드웨어 (Hardware) &#43;---------------------------&#43; | CPU, Disk, NIC, Memory | &#43;---------------------------&#43; # 동작 예시: # 1. modprobe e1000e (Intel NIC 모듈 로드) # 2. 커널이 NIC 초기화 → 시스템에 네트워크 사용 가능 # 3. lsmod로 모듈 상태 확인 # 4. dmesg로 초기화 로그 확인 👉 사용자 공간의 프로그램은 직접 하드웨어에 접근하지 못하고, 시스템 콜(System Call) 을 통해 커널에 요청.">
 
-    <link rel="preload" href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" as="style" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
-    <link href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" rel="stylesheet" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
+    <link href="/css/compiled/main.css" rel="stylesheet" />
 
 
 
-  <link href="/css/custom.min.a1a8c4a08d5cbf5d8c1c7fe718da7a344b6919804b75477fc5a3ff67513ccc97.css" rel="stylesheet" integrity="sha256-oajEoI1cv12MHH/nGNp6NEtpGYBLdUd/xaP/Z1E8zJc=" />
-
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZW72SWRF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-H6ZW72SWRF");
-  </script>
+  <link href="/css/custom.css" rel="stylesheet" />
 
 
 <meta name="google-site-verification" content="9lrTKGJjmF4wOpQcu3n1rDgULRii7abcjyGOY3EhcYc" />
@@ -5703,9 +5688,9 @@ read(fd, buffer, 100);</code></pre></div><div class="hextra-code-copy-btn-contai
   </a></div><div class="hx-mt-6 hx-text-xs">© 2025 mungops</div></div>
       </div></footer>
     
-    <script defer src="/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js" integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script>
+    <script defer src="/js/main.js" integrity=""></script>
 <script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
-    <script defer src="/en.search.min.467af55671b5ee53c9cdfe80e6e0ee6791edc3374392318652fcf851a49db151.js" integrity="sha256-Rnr1VnG17lPJzf6A5uDuZ5HtwzdDkjGGUvz4UaSdsVE="></script>
+    <script defer src="/en.search.js" integrity=""></script>
 
   </body>
 </html>

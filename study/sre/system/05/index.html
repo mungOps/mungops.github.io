@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
@@ -13,7 +13,7 @@
 <title>Partition – mungOps</title>
   <meta name="description" content="1️⃣ 디스크 파티셔닝: fdisk, parted 개념 파티셔닝: 하나의 물리 디스크를 논리적 단위로 나누어 OS와 데이터를 분리.
 MBR vs GPT
-MBR: 최대 2TB, Primary 4개 제한 GPT: 9ZB까지 지원, Primary 제한 없음, EFI 부트 지원 아키텍처 이미지 [Physical Disk /dev/sdb] ┌─────────────┐ │ Partition 1 │ -&gt; /boot ├─────────────┤ │ Partition 2 │ -&gt; / ├─────────────┤ │ Partition 3 │ -&gt; /home └─────────────┘ 명령어 예시 # 파티션 확인 sudo fdisk -l # 디스크 파티셔닝 (fdisk) sudo fdisk /dev/sdb # parted로 GPT 파티션 생성 sudo parted /dev/sdb mklabel gpt sudo parted -a opt /dev/sdb mkpart primary ext4 0% 50% sudo parted -a opt /dev/sdb mkpart primary ext4 50% 100% 실습 시나리오 Ubuntu 22 VM에 2개의 추가 디스크 /dev/sdb, /dev/sdc 연결 fdisk로 각각 2개의 파티션 생성 parted로 GPT 라벨 적용 및 파티션 생성 lsblk로 구조 확인 2️⃣ LVM (Logical Volume Manager) 개념 PV (Physical Volume) → VG (Volume Group) → LV (Logical Volume) 구조 장점: 디스크 추가, 확장/축소 유연 아키텍처 이미지 [Physical Disks: /dev/sdb, /dev/sdc] │ ▼ [Physical Volumes: PV1, PV2] │ ▼ [Volume Group: vg_data] │ ├─────────► [Logical Volume: lv_root] ├─────────► [Logical Volume: lv_home] └─────────► [Logical Volume: lv_var] 명령어 예시 # PV 생성 sudo pvcreate /dev/sdb /dev/sdc # VG 생성 sudo vgcreate vg_data /dev/sdb /dev/sdc # LV 생성 sudo lvcreate -L 20G -n lv_root vg_data sudo lvcreate -L 10G -n lv_home vg_data # 파일시스템 생성 sudo mkfs.ext4 /dev/vg_data/lv_root sudo mkfs.xfs /dev/vg_data/lv_home # 마운트 sudo mkdir /mnt/root /mnt/home sudo mount /dev/vg_data/lv_root /mnt/root sudo mount /dev/vg_data/lv_home /mnt/home 실습 시나리오 위에서 만든 파티션을 PV로 초기화 VG 생성 후 LV 생성 각각 마운트하여 읽기/쓰기 테스트 LV 확장/축소 실습 sudo lvextend -L &#43;5G /dev/vg_data/lv_home sudo resize2fs /dev/vg_data/lv_home 3️⃣ RAID (mdadm) RAID 종류 RAID 설명 장점 단점 0 스트라이핑 속도 증가 데이터 보호 없음 1 미러링 데이터 안전 용량 반감 5 스트라이프 &#43; 패리티 안전 &#43; 속도 최소 3개 디스크 필요 아키텍처 이미지 RAID 1 (미러링) [Disk1] ┐ │→ /dev/md0 → /mnt/raid [Disk2] ┘ 명령어 예시 # RAID 1 생성 sudo mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb /dev/sdc # 상태 확인 cat /proc/mdstat # 파일시스템 생성 및 마운트 sudo mkfs.ext4 /dev/md0 sudo mkdir /mnt/raid sudo mount /dev/md0 /mnt/raid 실습 시나리오 2~3개의 추가 디스크 준비 RAID0, RAID1, RAID5 각각 생성 후 테스트 mdadm --detail /dev/mdX로 상태 확인 4️⃣ 파일시스템 비교 FS 장점 단점 실무 사용 사례 ext4 안정적, 널리 사용 일부 최신 기능 부족 Ubuntu, 일반 서버 xfs 대용량 파일 효율적, 저널링 작은 파일 성능 낮음 로그, 빅데이터 zfs 스냅샷, 압축, RAID-Z 메모리 사용량 많음 스토리지 서버, 백업 # 파일시스템 생성 예시 sudo mkfs.ext4 /dev/sdb1 sudo mkfs.xfs /dev/sdb1 sudo zpool create zp1 /dev/sdb 5️⃣ fstab &amp; mount 옵션 주요 옵션 옵션 설명 noexec 실행 금지 nosuid setuid/setgid 금지 nodev 특수 파일 장치 접근 금지 defaults 기본값 (rw,suid,dev,exec,auto,nouser,async) 예시 # /etc/fstab /dev/vg_data/lv_home /mnt/home ext4 defaults,noexec 0 2 # 마운트 sudo mount -a 실습 시나리오 새 LV 생성 후 /mnt/home 마운트 noexec, nosuid, nodev 옵션 적용 스크립트 실행 테스트 → 실패 확인 옵션 제거 후 재실행 → 성공 확인 ✅ 종합 실습 시나리오 (Ubuntu 22) VM 생성: Ubuntu 22 LTS, 2개의 추가 디스크 /dev/sdb, /dev/sdc fdisk/parted로 파티션 생성 PV → VG → LV 구조로 LVM 구성 RAID1 또는 RAID5 생성 ext4, xfs 파일시스템 생성 및 마운트 /etc/fstab에 mount 옵션 적용 후 테스트 LV 확장 및 파일시스템 확장 실습 " /><link rel="canonical" href="https://mungops.github.io/study/sre/system/05/" itemprop="url" />
+MBR: 최대 2TB, Primary 4개 제한 GPT: 9ZB까지 지원, Primary 제한 없음, EFI 부트 지원 아키텍처 이미지 [Physical Disk /dev/sdb] ┌─────────────┐ │ Partition 1 │ -&gt; /boot ├─────────────┤ │ Partition 2 │ -&gt; / ├─────────────┤ │ Partition 3 │ -&gt; /home └─────────────┘ 명령어 예시 # 파티션 확인 sudo fdisk -l # 디스크 파티셔닝 (fdisk) sudo fdisk /dev/sdb # parted로 GPT 파티션 생성 sudo parted /dev/sdb mklabel gpt sudo parted -a opt /dev/sdb mkpart primary ext4 0% 50% sudo parted -a opt /dev/sdb mkpart primary ext4 50% 100% 실습 시나리오 Ubuntu 22 VM에 2개의 추가 디스크 /dev/sdb, /dev/sdc 연결 fdisk로 각각 2개의 파티션 생성 parted로 GPT 라벨 적용 및 파티션 생성 lsblk로 구조 확인 2️⃣ LVM (Logical Volume Manager) 개념 PV (Physical Volume) → VG (Volume Group) → LV (Logical Volume) 구조 장점: 디스크 추가, 확장/축소 유연 아키텍처 이미지 [Physical Disks: /dev/sdb, /dev/sdc] │ ▼ [Physical Volumes: PV1, PV2] │ ▼ [Volume Group: vg_data] │ ├─────────► [Logical Volume: lv_root] ├─────────► [Logical Volume: lv_home] └─────────► [Logical Volume: lv_var] 명령어 예시 # PV 생성 sudo pvcreate /dev/sdb /dev/sdc # VG 생성 sudo vgcreate vg_data /dev/sdb /dev/sdc # LV 생성 sudo lvcreate -L 20G -n lv_root vg_data sudo lvcreate -L 10G -n lv_home vg_data # 파일시스템 생성 sudo mkfs.ext4 /dev/vg_data/lv_root sudo mkfs.xfs /dev/vg_data/lv_home # 마운트 sudo mkdir /mnt/root /mnt/home sudo mount /dev/vg_data/lv_root /mnt/root sudo mount /dev/vg_data/lv_home /mnt/home 실습 시나리오 위에서 만든 파티션을 PV로 초기화 VG 생성 후 LV 생성 각각 마운트하여 읽기/쓰기 테스트 LV 확장/축소 실습 sudo lvextend -L &#43;5G /dev/vg_data/lv_home sudo resize2fs /dev/vg_data/lv_home 3️⃣ RAID (mdadm) RAID 종류 RAID 설명 장점 단점 0 스트라이핑 속도 증가 데이터 보호 없음 1 미러링 데이터 안전 용량 반감 5 스트라이프 &#43; 패리티 안전 &#43; 속도 최소 3개 디스크 필요 아키텍처 이미지 RAID 1 (미러링) [Disk1] ┐ │→ /dev/md0 → /mnt/raid [Disk2] ┘ 명령어 예시 # RAID 1 생성 sudo mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb /dev/sdc # 상태 확인 cat /proc/mdstat # 파일시스템 생성 및 마운트 sudo mkfs.ext4 /dev/md0 sudo mkdir /mnt/raid sudo mount /dev/md0 /mnt/raid 실습 시나리오 2~3개의 추가 디스크 준비 RAID0, RAID1, RAID5 각각 생성 후 테스트 mdadm --detail /dev/mdX로 상태 확인 4️⃣ 파일시스템 비교 FS 장점 단점 실무 사용 사례 ext4 안정적, 널리 사용 일부 최신 기능 부족 Ubuntu, 일반 서버 xfs 대용량 파일 효율적, 저널링 작은 파일 성능 낮음 로그, 빅데이터 zfs 스냅샷, 압축, RAID-Z 메모리 사용량 많음 스토리지 서버, 백업 # 파일시스템 생성 예시 sudo mkfs.ext4 /dev/sdb1 sudo mkfs.xfs /dev/sdb1 sudo zpool create zp1 /dev/sdb 5️⃣ fstab &amp; mount 옵션 주요 옵션 옵션 설명 noexec 실행 금지 nosuid setuid/setgid 금지 nodev 특수 파일 장치 접근 금지 defaults 기본값 (rw,suid,dev,exec,auto,nouser,async) 예시 # /etc/fstab /dev/vg_data/lv_home /mnt/home ext4 defaults,noexec 0 2 # 마운트 sudo mount -a 실습 시나리오 새 LV 생성 후 /mnt/home 마운트 noexec, nosuid, nodev 옵션 적용 스크립트 실행 테스트 → 실패 확인 옵션 제거 후 재실행 → 성공 확인 ✅ 종합 실습 시나리오 (Ubuntu 22) VM 생성: Ubuntu 22 LTS, 2개의 추가 디스크 /dev/sdb, /dev/sdc fdisk/parted로 파티션 생성 PV → VG → LV 구조로 LVM 구성 RAID1 또는 RAID5 생성 ext4, xfs 파일시스템 생성 및 마운트 /etc/fstab에 mount 옵션 적용 후 테스트 LV 확장 및 파일시스템 확장 실습 " /><link rel="canonical" href="http://localhost:1313/study/sre/system/05/" itemprop="url" />
 
 <meta property="og:title" content="Partition" />
 <meta property="og:description" content="1️⃣ 디스크 파티셔닝: fdisk, parted
@@ -321,7 +321,7 @@ ext4, xfs 파일시스템 생성 및 마운트
 LV 확장 및 파일시스템 확장 실습
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mungops.github.io/study/sre/system/05/" /><meta property="article:section" content="study" />
+<meta property="og:url" content="http://localhost:1313/study/sre/system/05/" /><meta property="article:section" content="study" />
 
 <meta property="article:modified_time" content="2025-09-14T22:42:18+09:00" />
 
@@ -337,26 +337,11 @@ MBR: 최대 2TB, Primary 4개 제한 GPT: 9ZB까지 지원, Primary 제한 없�
 MBR vs GPT
 MBR: 최대 2TB, Primary 4개 제한 GPT: 9ZB까지 지원, Primary 제한 없음, EFI 부트 지원 아키텍처 이미지 [Physical Disk /dev/sdb] ┌─────────────┐ │ Partition 1 │ -&gt; /boot ├─────────────┤ │ Partition 2 │ -&gt; / ├─────────────┤ │ Partition 3 │ -&gt; /home └─────────────┘ 명령어 예시 # 파티션 확인 sudo fdisk -l # 디스크 파티셔닝 (fdisk) sudo fdisk /dev/sdb # parted로 GPT 파티션 생성 sudo parted /dev/sdb mklabel gpt sudo parted -a opt /dev/sdb mkpart primary ext4 0% 50% sudo parted -a opt /dev/sdb mkpart primary ext4 50% 100% 실습 시나리오 Ubuntu 22 VM에 2개의 추가 디스크 /dev/sdb, /dev/sdc 연결 fdisk로 각각 2개의 파티션 생성 parted로 GPT 라벨 적용 및 파티션 생성 lsblk로 구조 확인 2️⃣ LVM (Logical Volume Manager) 개념 PV (Physical Volume) → VG (Volume Group) → LV (Logical Volume) 구조 장점: 디스크 추가, 확장/축소 유연 아키텍처 이미지 [Physical Disks: /dev/sdb, /dev/sdc] │ ▼ [Physical Volumes: PV1, PV2] │ ▼ [Volume Group: vg_data] │ ├─────────► [Logical Volume: lv_root] ├─────────► [Logical Volume: lv_home] └─────────► [Logical Volume: lv_var] 명령어 예시 # PV 생성 sudo pvcreate /dev/sdb /dev/sdc # VG 생성 sudo vgcreate vg_data /dev/sdb /dev/sdc # LV 생성 sudo lvcreate -L 20G -n lv_root vg_data sudo lvcreate -L 10G -n lv_home vg_data # 파일시스템 생성 sudo mkfs.ext4 /dev/vg_data/lv_root sudo mkfs.xfs /dev/vg_data/lv_home # 마운트 sudo mkdir /mnt/root /mnt/home sudo mount /dev/vg_data/lv_root /mnt/root sudo mount /dev/vg_data/lv_home /mnt/home 실습 시나리오 위에서 만든 파티션을 PV로 초기화 VG 생성 후 LV 생성 각각 마운트하여 읽기/쓰기 테스트 LV 확장/축소 실습 sudo lvextend -L &#43;5G /dev/vg_data/lv_home sudo resize2fs /dev/vg_data/lv_home 3️⃣ RAID (mdadm) RAID 종류 RAID 설명 장점 단점 0 스트라이핑 속도 증가 데이터 보호 없음 1 미러링 데이터 안전 용량 반감 5 스트라이프 &#43; 패리티 안전 &#43; 속도 최소 3개 디스크 필요 아키텍처 이미지 RAID 1 (미러링) [Disk1] ┐ │→ /dev/md0 → /mnt/raid [Disk2] ┘ 명령어 예시 # RAID 1 생성 sudo mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb /dev/sdc # 상태 확인 cat /proc/mdstat # 파일시스템 생성 및 마운트 sudo mkfs.ext4 /dev/md0 sudo mkdir /mnt/raid sudo mount /dev/md0 /mnt/raid 실습 시나리오 2~3개의 추가 디스크 준비 RAID0, RAID1, RAID5 각각 생성 후 테스트 mdadm --detail /dev/mdX로 상태 확인 4️⃣ 파일시스템 비교 FS 장점 단점 실무 사용 사례 ext4 안정적, 널리 사용 일부 최신 기능 부족 Ubuntu, 일반 서버 xfs 대용량 파일 효율적, 저널링 작은 파일 성능 낮음 로그, 빅데이터 zfs 스냅샷, 압축, RAID-Z 메모리 사용량 많음 스토리지 서버, 백업 # 파일시스템 생성 예시 sudo mkfs.ext4 /dev/sdb1 sudo mkfs.xfs /dev/sdb1 sudo zpool create zp1 /dev/sdb 5️⃣ fstab &amp; mount 옵션 주요 옵션 옵션 설명 noexec 실행 금지 nosuid setuid/setgid 금지 nodev 특수 파일 장치 접근 금지 defaults 기본값 (rw,suid,dev,exec,auto,nouser,async) 예시 # /etc/fstab /dev/vg_data/lv_home /mnt/home ext4 defaults,noexec 0 2 # 마운트 sudo mount -a 실습 시나리오 새 LV 생성 후 /mnt/home 마운트 noexec, nosuid, nodev 옵션 적용 스크립트 실행 테스트 → 실패 확인 옵션 제거 후 재실행 → 성공 확인 ✅ 종합 실습 시나리오 (Ubuntu 22) VM 생성: Ubuntu 22 LTS, 2개의 추가 디스크 /dev/sdb, /dev/sdc fdisk/parted로 파티션 생성 PV → VG → LV 구조로 LVM 구성 RAID1 또는 RAID5 생성 ext4, xfs 파일시스템 생성 및 마운트 /etc/fstab에 mount 옵션 적용 후 테스트 LV 확장 및 파일시스템 확장 실습">
 
-    <link rel="preload" href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" as="style" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
-    <link href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" rel="stylesheet" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
+    <link href="/css/compiled/main.css" rel="stylesheet" />
 
 
 
-  <link href="/css/custom.min.a1a8c4a08d5cbf5d8c1c7fe718da7a344b6919804b75477fc5a3ff67513ccc97.css" rel="stylesheet" integrity="sha256-oajEoI1cv12MHH/nGNp6NEtpGYBLdUd/xaP/Z1E8zJc=" />
-
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZW72SWRF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-H6ZW72SWRF");
-  </script>
+  <link href="/css/custom.css" rel="stylesheet" />
 
 
 <meta name="google-site-verification" content="9lrTKGJjmF4wOpQcu3n1rDgULRii7abcjyGOY3EhcYc" />
@@ -5902,9 +5887,9 @@ MBR: 최대 2TB, Primary 4개 제한 GPT: 9ZB까지 지원, Primary 제한 없�
   </a></div><div class="hx-mt-6 hx-text-xs">© 2025 mungops</div></div>
       </div></footer>
     
-    <script defer src="/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js" integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script>
+    <script defer src="/js/main.js" integrity=""></script>
 <script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
-    <script defer src="/en.search.min.467af55671b5ee53c9cdfe80e6e0ee6791edc3374392318652fcf851a49db151.js" integrity="sha256-Rnr1VnG17lPJzf6A5uDuZ5HtwzdDkjGGUvz4UaSdsVE="></script>
+    <script defer src="/en.search.js" integrity=""></script>
 
   </body>
 </html>
