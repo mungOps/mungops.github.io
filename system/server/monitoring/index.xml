@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Monitoring on mungOps</title>
-    <link>http://localhost:1313/system/server/monitoring/</link>
+    <link>https://mungops.github.io/system/server/monitoring/</link>
     <description>Recent content in Monitoring on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/system/server/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/system/server/monitoring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Syslog</title>
-      <link>http://localhost:1313/system/server/monitoring/syslog/</link>
+      <link>https://mungops.github.io/system/server/monitoring/syslog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/system/server/monitoring/syslog/</guid>
+      <guid>https://mungops.github.io/system/server/monitoring/syslog/</guid>
       <description>&lt;h2&gt;📌 Syslog Server 구축 및 설정 가이드 🚀&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-syslog-server-구축-및-설정-가이드-&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-syslog-server-%ea%b5%ac%ec%b6%95-%eb%b0%8f-%ec%84%a4%ec%a0%95-%ea%b0%80%ec%9d%b4%eb%93%9c-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ Syslog란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-syslog란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-syslog%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;**Syslog (System Logging Protocol)**은 &lt;strong&gt;서버, 네트워크 장비, 애플리케이션 등의 로그를 중앙 집중식으로 수집&lt;/strong&gt;하는 프로토콜입니다.&lt;br&gt;&#xA;이를 통해 &lt;strong&gt;서버 및 네트워크 상태를 모니터링하고, 장애 발생 시 원인을 분석&lt;/strong&gt;할 수 있습니다.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure Training on mungOps</title>
-    <link>http://localhost:1313/system/azure/azuretraining/</link>
+    <link>https://mungops.github.io/system/azure/azuretraining/</link>
     <description>Recent content in Azure Training on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/system/azure/azuretraining/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/system/azure/azuretraining/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Az-900 : CloudComputing</title>
-      <link>http://localhost:1313/system/azure/azuretraining/azure00/</link>
+      <link>https://mungops.github.io/system/azure/azuretraining/azure00/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/system/azure/azuretraining/azure00/</guid>
+      <guid>https://mungops.github.io/system/azure/azuretraining/azure00/</guid>
       <description>&lt;h2&gt;&lt;strong&gt;Az-900 : CloudComputing&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;az-900--cloudcomputing&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#az-900--cloudcomputing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;strong&gt;클라우드 컴퓨팅&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;클라우드-컴퓨팅&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-%ec%bb%b4%ed%93%a8%ed%8c%85&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;클라우드 컴퓨팅은 스토리지 공간이나 CPU 주기와 같은 리소스를 다른 회사의 컴퓨터에 대여하는 서비스이며 사용한 만큼의 요금만을 지불합니다.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Az-900 : Region</title>
-      <link>http://localhost:1313/system/azure/azuretraining/azure01/</link>
+      <link>https://mungops.github.io/system/azure/azuretraining/azure01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/system/azure/azuretraining/azure01/</guid>
-      <description>&lt;h2&gt;&lt;strong&gt;Azure 글로벌 인프라 아키텍처&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-글로벌-인프라-아키텍처&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-%ea%b8%80%eb%a1%9c%eb%b2%8c-%ec%9d%b8%ed%94%84%eb%9d%bc-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Microsoft Geography&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;microsoft-geography&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#microsoft-geography&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Azure/Azure/Azure102.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Azure는 전 세계를 지정학적 경계 또는 국가 경계로 정의되는 지리적 위치로 분할합니다.&lt;/strong&gt;&lt;/p&gt;</description>
+      <guid>https://mungops.github.io/system/azure/azuretraining/azure01/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure 글로벌 인프라 아키텍처&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-글로벌-인프라-아키텍처&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-%ea%b8%80%eb%a1%9c%eb%b2%8c-%ec%9d%b8%ed%94%84%eb%9d%bc-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Microsoft Geography&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;microsoft-geography&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#microsoft-geography&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://mungops.github.io/images/Azure/Azure/Azure102.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Azure는 전 세계를 지정학적 경계 또는 국가 경계로 정의되는 지리적 위치로 분할합니다.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Az-900 : 관리옵션</title>
-      <link>http://localhost:1313/system/azure/azuretraining/azure02/</link>
+      <link>https://mungops.github.io/system/azure/azuretraining/azure02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/system/azure/azuretraining/azure02/</guid>
+      <guid>https://mungops.github.io/system/azure/azuretraining/azure02/</guid>
       <description>&lt;h2&gt;&lt;strong&gt;Azure 관리옵션&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-관리옵션&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-%ea%b4%80%eb%a6%ac%ec%98%b5%ec%85%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Azure 관리옵션의 다양한 종류&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-관리옵션의-다양한-종류&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-%ea%b4%80%eb%a6%ac%ec%98%b5%ec%85%98%ec%9d%98-%eb%8b%a4%ec%96%91%ed%95%9c-%ec%a2%85%eb%a5%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Azure의 관리는 다양한 도구 및 플랫폼을 사용하여 Azure을 구성하고 관리할 수 있습니다.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Az-900 : 서비스</title>
-      <link>http://localhost:1313/system/azure/azuretraining/azure12/</link>
+      <link>https://mungops.github.io/system/azure/azuretraining/azure12/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/system/azure/azuretraining/azure12/</guid>
+      <guid>https://mungops.github.io/system/azure/azuretraining/azure12/</guid>
       <description>&lt;h2&gt;&lt;strong&gt;Az-900 : 서비스&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;az-900--서비스&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#az-900--%ec%84%9c%eb%b9%84%ec%8a%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;서비스는 &lt;a href=&#34;https://mung0001.github.io/docs/images/Azure/microsoftazure/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Link&lt;/a&gt;를 참조하세요.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;IOT 솔루션 (Internet of Things)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;iot-솔루션-internet-of-things&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#iot-%ec%86%94%eb%a3%a8%ec%85%98-internet-of-things&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Azure IoT Central&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;보다 손 쉬운 IOT 서비스 구축을 위한 SaaS 형태의 관리형 서비스, (디바이스 연결, 모니터 그리고 관리 및 확장 지원)&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
     </item>
     <item>
       <title>Az-900 : 문제풀이</title>
-      <link>http://localhost:1313/system/azure/azuretraining/az-900/</link>
+      <link>https://mungops.github.io/system/azure/azuretraining/az-900/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/system/azure/azuretraining/az-900/</guid>
+      <guid>https://mungops.github.io/system/azure/azuretraining/az-900/</guid>
       <description>&lt;h2&gt;&lt;strong&gt;Az-900 시험대비 문제풀이&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;az-900-시험대비-문제풀이&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#az-900-%ec%8b%9c%ed%97%98%eb%8c%80%eb%b9%84-%eb%ac%b8%ec%a0%9c%ed%92%80%ec%9d%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;다음 각 명령문에 대해 해당 명령문이 참이면 Yes 거짓이면 No를 선택하십시오.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;문제&lt;/th&gt;&#xA;          &lt;th&gt;Yes&lt;/th&gt;&#xA;          &lt;th&gt;No&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;PaaS는 Azure 서비스에서 모든 시스템의 제공하고 호스트는 웹, 애플리케이션을 모두 컨트롤 한다.&lt;/td&gt;&#xA;          &lt;td&gt; &lt;/td&gt;&#xA;          &lt;td&gt; &lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;PaaS의 웹, 애플리케이션에서 자동으로 Scale ability를 수행한다.&lt;/td&gt;&#xA;          &lt;td&gt; &lt;/td&gt;&#xA;          &lt;td&gt; &lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;PaaS는 솔루션은 사용자 지정 응용 프로그램에 기능을 지속적으로 추가하는 전문 개발 서비스를 제공한다.&lt;/td&gt;&#xA;          &lt;td&gt; &lt;/td&gt;&#xA;          &lt;td&gt; &lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
     </item>
     <item>
       <title>Azure 학생 계정생성</title>
-      <link>http://localhost:1313/system/azure/azuretraining/azure03/</link>
+      <link>https://mungops.github.io/system/azure/azuretraining/azure03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/system/azure/azuretraining/azure03/</guid>
+      <guid>https://mungops.github.io/system/azure/azuretraining/azure03/</guid>
       <description>&lt;h1&gt;&lt;strong&gt;Azure 학생 계정생성&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;strong&gt;Azure 학생 계정생성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-학생-계정생성-1&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-%ed%95%99%ec%83%9d-%ea%b3%84%ec%a0%95%ec%83%9d%ec%84%b1-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;이번 장에서는 Azure 서비스의 사용을 위한 계정생성에 대해 알아보도록 하겠습니다.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;기본적으로 Azure의 서비스를 사용할 때에는 계정이 필요하며, 여기서 학생의 신분으로 가입을 진행할 경우 여러 혜택을 받을 수 있습니다.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
