@@ -92,6 +92,13 @@
       <description>&lt;h2&gt;📌 DHCP Server Guide&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-dhcp-server-guide&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-dhcp-server-guide&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ DHCP란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-dhcp란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-dhcp%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;DHCP(Dynamic Host Configuration Protocol)&lt;/strong&gt; 는 네트워크 장치(클라이언트)에 &lt;strong&gt;IP 주소, 서브넷 마스크, 게이트웨이, DNS 서버 등의 네트워크 설정을 자동으로 할당&lt;/strong&gt;하는 프로토콜입니다.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Entering the world of the terminal</title>
+      <link>https://mungops.github.io/study/system/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/study/system/01/</guid>
+      <description>&lt;h1&gt;로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기&lt;/h1&gt;&lt;p&gt;이번 주에는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 &lt;strong&gt;AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지&lt;/strong&gt; 이해하는 데 초점을 맞췄다.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>FTP/TFTP</title>
       <link>https://mungops.github.io/system/server/network/ftp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
