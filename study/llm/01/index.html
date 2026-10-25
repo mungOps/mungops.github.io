@@ -11,22 +11,26 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>1. Entering the world of the terminal – mungOps</title>
-  <meta name="description" content="로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기이번 주에는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지 이해하는 데 초점을 맞췄다." /><link rel="canonical" href="https://mungops.github.io/study/llm/01/" itemprop="url" />
+  <meta name="description" content="로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기 이번 섹션에서는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지 이해하는 데 초점을 맞췄다. " /><link rel="canonical" href="https://mungops.github.io/study/llm/01/" itemprop="url" />
 
 <meta property="og:title" content="1. Entering the world of the terminal" />
-<meta property="og:description" content="로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기이번 주에는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지 이해하는 데 초점을 맞췄다." />
+<meta property="og:description" content="로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기
+이번 섹션에서는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다.
+당장 모델을 활용하는 것보다 먼저 AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지 이해하는 데 초점을 맞췄다.
+
+ " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/study/llm/01/" /><meta property="article:section" content="study" />
 
-<meta property="article:modified_time" content="2026-10-24T17:34:01+09:00" />
+<meta property="article:modified_time" content="2026-10-24T17:34:42+09:00" />
 
   <meta itemprop="name" content="1. Entering the world of the terminal">
-  <meta itemprop="description" content="로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기이번 주에는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지 이해하는 데 초점을 맞췄다.">
-  <meta itemprop="dateModified" content="2026-10-24T17:34:01+09:00">
-  <meta itemprop="wordCount" content="2544">
+  <meta itemprop="description" content="로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기 이번 섹션에서는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지 이해하는 데 초점을 맞췄다.">
+  <meta itemprop="dateModified" content="2026-10-24T17:34:42+09:00">
+  <meta itemprop="wordCount" content="3483">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="1. Entering the world of the terminal">
-  <meta name="twitter:description" content="로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기이번 주에는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지 이해하는 데 초점을 맞췄다.">
+  <meta name="twitter:description" content="로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기 이번 섹션에서는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지 이해하는 데 초점을 맞췄다.">
 
     <link rel="preload" href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" as="style" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
     <link href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" rel="stylesheet" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
@@ -3575,39 +3579,33 @@
             </li>
           <li>
               <a
-                href="#2-%ec%9d%b4%eb%b2%88%ec%97%90-%eb%a7%8c%eb%93%a4-%ec%95%a0%ed%94%8c%eb%a6%ac%ec%bc%80%ec%9d%b4%ec%85%98%ec%9d%98-%ea%b5%ac%ec%84%b1"
+                href="#2-llm%ec%9d%98-%ea%b8%b0%eb%b3%b8-%ea%b0%9c%eb%85%90"
                 class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >2. 이번에 만들 애플리케이션의 구성</a>
+              >2. LLM의 기본 개념</a>
             </li>
           <li>
               <a
-                href="#3-llm%ec%9d%98-%ea%b8%b0%eb%b3%b8-%ea%b0%9c%eb%85%90"
+                href="#3-%eb%a1%9c%ec%bb%ac-ai%eb%a5%bc-%ec%8b%a4%ed%96%89%ed%95%a0-%eb%95%8c-%ec%95%8c%ec%95%84%eb%91%98-%ec%a0%90"
                 class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >3. LLM의 기본 개념</a>
+              >3. 로컬 AI를 실행할 때 알아둘 점</a>
             </li>
           <li>
               <a
-                href="#4-m1-max%ec%97%90%ec%84%9c-%eb%a1%9c%ec%bb%ac-ai%eb%a5%bc-%ec%8b%a4%ed%96%89%ed%95%a0-%eb%95%8c-%ec%95%8c%ec%95%84%eb%91%98-%ec%a0%90"
+                href="#4-homebrew%ec%99%80-ollama"
                 class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >4. M1 Max에서 로컬 AI를 실행할 때 알아둘 점</a>
-            </li>
-          <li>
-              <a
-                href="#5-%ed%84%b0%eb%af%b8%eb%84%90%ea%b3%bc-%ea%b8%b0%eb%b3%b8-%eb%aa%85%eb%a0%b9%ec%96%b4"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >5. 터미널과 기본 명령어</a>
-            </li>
-          <li>
-              <a
-                href="#6-homebrew%ec%99%80-ollama"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              >6. Homebrew와 Ollama</a>
+              >4. Homebrew와 Ollama</a>
             </li>
           <li>
               <a
                 href="#%ec%a0%95%eb%a6%ac"
                 class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
               >정리</a>
+            </li>
+          <li>
+              <a
+                href="#%ec%9a%a9%ec%96%b4%ec%a0%95%eb%a6%ac"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >용어정리</a>
             </li>
           </ul>
   
@@ -5214,27 +5212,23 @@
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#2-%ec%9d%b4%eb%b2%88%ec%97%90-%eb%a7%8c%eb%93%a4-%ec%95%a0%ed%94%8c%eb%a6%ac%ec%bc%80%ec%9d%b4%ec%85%98%ec%9d%98-%ea%b5%ac%ec%84%b1">2. 이번에 만들 애플리케이션의 구성
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#2-llm%ec%9d%98-%ea%b8%b0%eb%b3%b8-%ea%b0%9c%eb%85%90">2. LLM의 기본 개념
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#3-llm%ec%9d%98-%ea%b8%b0%eb%b3%b8-%ea%b0%9c%eb%85%90">3. LLM의 기본 개념
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#3-%eb%a1%9c%ec%bb%ac-ai%eb%a5%bc-%ec%8b%a4%ed%96%89%ed%95%a0-%eb%95%8c-%ec%95%8c%ec%95%84%eb%91%98-%ec%a0%90">3. 로컬 AI를 실행할 때 알아둘 점
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#4-m1-max%ec%97%90%ec%84%9c-%eb%a1%9c%ec%bb%ac-ai%eb%a5%bc-%ec%8b%a4%ed%96%89%ed%95%a0-%eb%95%8c-%ec%95%8c%ec%95%84%eb%91%98-%ec%a0%90">4. M1 Max에서 로컬 AI를 실행할 때 알아둘 점
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#5-%ed%84%b0%eb%af%b8%eb%84%90%ea%b3%bc-%ea%b8%b0%eb%b3%b8-%eb%aa%85%eb%a0%b9%ec%96%b4">5. 터미널과 기본 명령어
-        </a>
-      </li>
-      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#6-homebrew%ec%99%80-ollama">6. Homebrew와 Ollama
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#4-homebrew%ec%99%80-ollama">4. Homebrew와 Ollama
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
         <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%ec%a0%95%eb%a6%ac">정리
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%ec%9a%a9%ec%96%b4%ec%a0%95%eb%a6%ac">용어정리
         </a>
       </li></ul>
       <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/mungops/mung/edit/main/content%20https:/mungops.github.io/main/content/study/llm/01.md" target="_blank" rel="noreferrer">GitHub에서 편집하기 →</a>
@@ -5269,18 +5263,200 @@
 
         <div class="content">
           <h1>1. Entering the world of the terminal</h1>
-          <h1>로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기</h1><p>이번 주에는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다. 당장 모델을 활용하는 것보다 먼저 <strong>AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지</strong> 이해하는 데 초점을 맞췄다.</p>
-<h2>실습 환경<span class="hx-absolute -hx-mt-20" id="실습-환경"></span>
-    <a href="#%ec%8b%a4%ec%8a%b5-%ed%99%98%ea%b2%bd" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>개인적으로 사용 중인 MacBook Pro에서 진행한다.</p>
-<ul>
-<li><strong>기기:</strong> MacBook Pro (MacBookPro18,2)</li>
-<li><strong>칩:</strong> Apple M1 Max</li>
-<li><strong>CPU:</strong> 10코어 — 성능 코어 8개, 효율 코어 2개</li>
-<li><strong>메모리:</strong> 통합 메모리 32GB</li>
+          <h1>로컬 AI 스터디 1주차 — Mac에서 로컬 AI 시작하기</h1><ul>
+<li>이번 섹션에서는 로컬 AI가 무엇인지 살펴보고, 이후 실습에 필요한 Mac 개발 환경과 터미널 사용법을 정리했다.</li>
+<li>당장 모델을 활용하는 것보다 먼저 <strong>AI가 어디에서 실행되는지, 개발 도구를 어떻게 설치하고 실행하는지</strong> 이해하는 데 초점을 맞췄다.</li>
 </ul>
-<p>Apple Silicon은 CPU와 GPU가 메모리를 공유하는 통합 메모리 구조를 사용한다. 로컬 AI 모델을 실행할 때는 모델 크기와 메모리 사용량이 중요하므로, 32GB 메모리 환경에서 모델별 실행 특성을 직접 확인해 볼 생각이다.</p>
+<p> </p>
+<h2>실습 환경<span class="hx-absolute -hx-mt-20" id="실습-환경"></span>
+    <a href="#%ec%8b%a4%ec%8a%b5-%ed%99%98%ea%b2%bd" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>
+<p><strong>기기:</strong> MacBook Pro (MacBookPro18,2)</p>
+</li>
+<li>
+<p><strong>칩:</strong> Apple M1 Max</p>
+</li>
+<li>
+<p><strong>CPU:</strong> 10코어 — 성능 코어 8개, 효율 코어 2개</p>
+</li>
+<li>
+<p><strong>메모리:</strong> 통합 메모리 32GB</p>
+</li>
+<li>
+<p><strong>mac PC Spec</strong> 에 정보 확인 해보기</p>
+</li>
+</ul>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mung 🦄   ~  system_profiler SPHardwareDataType
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2026-10-24 17:21:30.538 system_profiler<span class="o">[</span>18126:83962<span class="o">]</span> hw.cpufamily: 0x1b588bb3
+</span></span><span class="line"><span class="cl">Hardware:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Hardware Overview:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      Model Name: MacBook Pro
+</span></span><span class="line"><span class="cl">      Model Identifier: MacBookPro18,2
+</span></span><span class="line"><span class="cl">      Model Number: MK1A3KH/A
+</span></span><span class="line"><span class="cl">      Chip: Apple M1 Max
+</span></span><span class="line"><span class="cl">      Total Number of Cores: <span class="m">10</span> <span class="o">(</span><span class="m">8</span> Performance and <span class="m">2</span> Efficiency<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      Memory: <span class="m">32</span> GB
+</span></span><span class="line"><span class="cl">      System Firmware Version: 18000.161.10
+</span></span><span class="line"><span class="cl">      OS Loader Version: 18000.161.10
+</span></span><span class="line"><span class="cl">      Activation Lock Status: Disabled</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<ul>
+<li><strong>Apple Silicon은 CPU와 GPU가 메모리를 공유하는 통합 메모리 구조를 사용</strong>한다.</li>
+<li><strong>통합 메모리에서는 CPU와 GPU가 같은 메모리 자원을 활용</strong>할 수 있어 분리형 구조에서 발생하는 일부 데이터 복사를 줄일 수 있다.</li>
+<li>다만 모든 작업이 복사 없이 처리되는 것은 아니며, 실제 성능은 메모리 대역폭, 연산 장치, 소프트웨어 구현 등에 따라 달라진다.</li>
+</ul>
+<pre class="mermaid hx-mt-6">flowchart TB
+    subgraph DISCRETE["일반적인 분리형 메모리"]
+        direction TB
+
+        subgraph D_CPU["CPU 영역"]
+            CPU1["CPU"]
+            RAM[("시스템 RAM")]
+            CPU1 <--> RAM
+        end
+
+        subgraph D_GPU["GPU 영역"]
+            GPU1["외장 GPU"]
+            VRAM[("GPU 전용 VRAM")]
+            GPU1 <--> VRAM
+        end
+
+        RAM <-->|"데이터 전송 · PCIe 등"| VRAM
+    end
+
+    subgraph UNIFIED["Apple Silicon 통합 메모리"]
+        direction TB
+
+        subgraph U_SOC["SoC 연산 장치"]
+            CPU2["CPU"]
+            GPU2["GPU"]
+            NE["Neural Engine"]
+        end
+
+        MEM[("통합 메모리<br/>모델 가중치 · 데이터 · KV 캐시")]
+
+        CPU2 <--> MEM
+        GPU2 <--> MEM
+        NE <--> MEM
+    end
+
+    style DISCRETE fill:#F8FAFC,stroke:#64748B,color:#0F172A,stroke-width:2px
+    style UNIFIED fill:#F0FDF4,stroke:#10B981,color:#064E3B,stroke-width:2px
+    style D_CPU fill:#EFF6FF,stroke:#60A5FA,color:#1E3A8A
+    style D_GPU fill:#F5F3FF,stroke:#A78BFA,color:#5B21B6
+    style U_SOC fill:#FFFFFF,stroke:#86EFAC,color:#166534
+    style CPU1 fill:#DBEAFE,stroke:#3B82F6,color:#1E3A8A,stroke-width:2px
+    style RAM fill:#BFDBFE,stroke:#3B82F6,color:#1E3A8A,stroke-width:2px
+    style GPU1 fill:#EDE9FE,stroke:#8B5CF6,color:#5B21B6,stroke-width:2px
+    style VRAM fill:#DDD6FE,stroke:#8B5CF6,color:#5B21B6,stroke-width:2px
+    style CPU2 fill:#DBEAFE,stroke:#3B82F6,color:#1E3A8A,stroke-width:2px
+    style GPU2 fill:#EDE9FE,stroke:#8B5CF6,color:#5B21B6,stroke-width:2px
+    style NE fill:#FFEDD5,stroke:#F59E0B,color:#9A3412,stroke-width:2px
+    style MEM fill:#D1FAE5,stroke:#10B981,color:#065F46,stroke-width:3px</pre><hr>
+<ul>
+<li><strong>CPU는 복잡한 제어와 다양한 작업을 처리하는 데 강점</strong>이 있고, <strong>GPU는 다수의 연산을 병렬로 수행하는 데 강점</strong>이 있다.</li>
+</ul>
+<pre class="mermaid hx-mt-6">
+flowchart TB
+    INPUT(["작업 입력"])
+
+    subgraph CPU_AREA["CPU · 범용 처리"]
+        direction TB
+        C1["소수의 강력한 코어"]
+        C2["복잡한 제어와 분기"]
+        C3["순차 처리 및 다양한 작업"]
+        C1 --> C2 --> C3
+    end
+
+    subgraph GPU_AREA["GPU · 병렬 처리"]
+        direction TB
+        G1["다수의 연산 코어"]
+        G2["동일하거나 유사한 연산"]
+        G3["대량의 데이터 동시 처리"]
+        G1 --> G2 --> G3
+    end
+
+    INPUT --> C1
+    INPUT --> G1
+
+    C3 --> RESULT["계산 결과"]
+    G3 --> RESULT
+
+    style INPUT fill:#F1F5F9,stroke:#64748B,color:#0F172A,stroke-width:2px
+    style CPU_AREA fill:#EFF6FF,stroke:#3B82F6,color:#1E3A8A,stroke-width:2px
+    style GPU_AREA fill:#F5F3FF,stroke:#8B5CF6,color:#5B21B6,stroke-width:2px
+    style C1 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style C2 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style C3 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style G1 fill:#EDE9FE,stroke:#A78BFA,color:#5B21B6
+    style G2 fill:#EDE9FE,stroke:#A78BFA,color:#5B21B6
+    style G3 fill:#EDE9FE,stroke:#A78BFA,color:#5B21B6
+    style RESULT fill:#D1FAE5,stroke:#10B981,color:#065F46,stroke-width:2px</pre><hr>
+<ul>
+<li>LLM과 딥러닝 모델은 가중치와 입력 데이터를 이용해 <strong>대량의 행렬, 텐서 연산을 수행하며 이러한 연산은 병렬화할 수 있는 부분이 많아 GPU가 유리</strong>하다.</li>
+</ul>
+<pre class="mermaid hx-mt-6">
+flowchart TB
+    START(["AI 모델 실행"])
+
+    subgraph MODEL["모델과 입력 데이터"]
+        direction TB
+        A["모델 가중치"]
+        B["입력 토큰"]
+        C["행렬 및 텐서 연산"]
+        A --> C
+        B --> C
+    end
+
+    subgraph COMPUTE["GPU 병렬 연산"]
+        direction TB
+        D["대량의 곱셈과 덧셈"]
+        E["여러 데이터에 대한 동시 계산"]
+        F["연산 결과 취합"]
+        D --> E --> F
+    end
+
+    G["다음 토큰의 확률 계산"]
+    H["다음 토큰 선택 및 생성"]
+    I{"생성 완료?"}
+    OUT(["최종 응답"])
+
+    START --> A
+    C --> D
+    F --> G --> H --> I
+    I -->|아니요| B
+    I -->|예| OUT
+
+    style START fill:#F1F5F9,stroke:#64748B,color:#0F172A,stroke-width:2px
+    style MODEL fill:#EFF6FF,stroke:#3B82F6,color:#1E3A8A,stroke-width:2px
+    style COMPUTE fill:#F5F3FF,stroke:#8B5CF6,color:#5B21B6,stroke-width:2px
+    style A fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style B fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style C fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style D fill:#EDE9FE,stroke:#A78BFA,color:#5B21B6
+    style E fill:#EDE9FE,stroke:#A78BFA,color:#5B21B6
+    style F fill:#EDE9FE,stroke:#A78BFA,color:#5B21B6
+    style G fill:#D1FAE5,stroke:#10B981,color:#065F46
+    style H fill:#D1FAE5,stroke:#10B981,color:#065F46
+    style I fill:#FEF3C7,stroke:#F59E0B,color:#92400E,stroke-width:2px
+    style OUT fill:#D1FAE5,stroke:#10B981,color:#065F46,stroke-width:2px</pre><p> </p>
 <h2>1. 클라우드 AI와 로컬 AI<span class="hx-absolute -hx-mt-20" id="1-클라우드-ai와-로컬-ai"></span>
-    <a href="#1-%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-ai%ec%99%80-%eb%a1%9c%ec%bb%ac-ai" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>평소 ChatGPT 같은 클라우드 AI를 사용하는 것과 달리, 로컬 AI는 모델을 내 컴퓨터에서 직접 실행한다는 차이가 있다.</p>
+    <a href="#1-%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-ai%ec%99%80-%eb%a1%9c%ec%bb%ac-ai" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>평소 ChatGPT 같은 클라우드 AI를 사용하는 것과 달리, 로컬 AI는 모델을 내 컴퓨터에서 직접 실행한다는 차이가 있다.</li>
+</ul>
 <table>
   <thead>
       <tr>
@@ -5317,87 +5493,52 @@
       </tr>
   </tbody>
 </table>
-<p>로컬 AI가 모든 면에서 클라우드 AI보다 좋은 것은 아니다. 복잡한 작업이나 최신 정보가 필요한 경우에는 클라우드 모델이 더 적합할 수 있고, 개인 데이터 보호나 오프라인 실행, 직접적인 실험이 중요할 때는 로컬 모델이 유용하다. 상황에 따라 두 방식을 함께 사용하는 것도 가능하다.</p>
-<h2>2. 이번에 만들 애플리케이션의 구성<span class="hx-absolute -hx-mt-20" id="2-이번에-만들-애플리케이션의-구성"></span>
-    <a href="#2-%ec%9d%b4%eb%b2%88%ec%97%90-%eb%a7%8c%eb%93%a4-%ec%95%a0%ed%94%8c%eb%a6%ac%ec%bc%80%ec%9d%b4%ec%85%98%ec%9d%98-%ea%b5%ac%ec%84%b1" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>최종적으로는 음성 입력과 텍스트 입력을 모두 지원하는 로컬 AI 채팅 애플리케이션을 만드는 것이 목표다. 전체 구성은 다음과 같다.</p>
 <ul>
-<li><strong>Ollama:</strong> 로컬 LLM을 내려받고 실행</li>
-<li><strong>MLX Whisper:</strong> 음성을 텍스트로 변환</li>
-<li><strong>Python:</strong> 각 구성 요소를 연결하는 코드 작성</li>
-<li><strong>Streamlit:</strong> 브라우저에서 사용할 채팅 화면 구성</li>
-<li><strong>VS Code:</strong> 코드 편집 및 관리</li>
+<li>로컬 AI가 모든 면에서 클라우드 AI보다 좋은 것은 아니다.</li>
+<li>복잡한 작업이나 최신 정보가 필요한 경우에는 클라우드 모델이 더 적합할 수 있고, 개인 데이터 보호나 오프라인 실행, 직접적인 실험이 중요할 때는 로컬 모델이 유용하다.</li>
+<li>상황에 따라 두 방식을 함께 사용하는 것도 가능하다.</li>
 </ul>
-<p>음성을 입력하면 텍스트로 변환한 뒤 LLM에 전달하고, 생성된 응답을 화면에 표시하는 흐름이다. 각 구성 요소가 어떻게 연결되는지 이해하는 것이 이번 프로젝트의 핵심 중 하나다.</p>
-<h2>3. LLM의 기본 개념<span class="hx-absolute -hx-mt-20" id="3-llm의-기본-개념"></span>
-    <a href="#3-llm%ec%9d%98-%ea%b8%b0%eb%b3%b8-%ea%b0%9c%eb%85%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>LLM은 대량의 텍스트 데이터에서 언어의 패턴을 학습하고, 입력된 문맥을 바탕으로 다음 토큰을 차례대로 생성하는 모델이다. 질문에 답하거나 문서를 요약하고 코드를 작성할 수 있지만, 답변이 항상 사실인 것은 아니다. 그럴듯하지만 부정확한 답변을 생성하는 환각(hallucination)이 발생할 수 있어 중요한 정보는 별도로 확인해야 한다.</p>
-<p>모델이 학습되는 과정에서는 데이터에 맞도록 가중치를 조정한다. 신경망은 여러 층에서 입력을 처리하고, 학습 과정에서는 예측 결과와 정답의 차이를 바탕으로 가중치를 수정한다. 실제 LLM의 구조는 훨씬 복잡하지만, <strong>학습된 가중치를 바탕으로 입력을 처리하고 결과를 생성한다</strong>는 기본 흐름을 이해하는 데 도움이 됐다.</p>
+<p> </p>
+<h2>2. LLM의 기본 개념<span class="hx-absolute -hx-mt-20" id="2-llm의-기본-개념"></span>
+    <a href="#2-llm%ec%9d%98-%ea%b8%b0%eb%b3%b8-%ea%b0%9c%eb%85%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>
+<p>LLM은 대량의 텍스트 데이터에서 언어의 패턴을 학습하고, 입력된 문맥을 바탕으로 다음 토큰을 차례대로 생성하는 모델이다.</p>
+</li>
+<li>
+<p>질문에 답하거나 문서를 요약하고 코드를 작성할 수 있지만, 답변이 항상 사실인 것은 아니다.</p>
+</li>
+<li>
+<p>그럴듯하지만 부정확한 답변을 생성하는 환각(hallucination)이 발생할 수 있어 중요한 정보는 별도로 확인해야 한다.</p>
+</li>
+<li>
+<p>모델이 학습되는 과정에서는 데이터에 맞도록 가중치를 조정한다. 신경망은 여러 층에서 입력을 처리하고, 학습 과정에서는 예측 결과와 정답의 차이를 바탕으로 가중치를 수정한다.</p>
+</li>
+<li>
+<p>실제 LLM의 구조는 훨씬 복잡하지만, <strong>학습된 가중치를 바탕으로 입력을 처리하고 결과를 생성한다</strong>는 기본 흐름을 이해하는 데 도움이 됐다.</p>
+</li>
+<li>
 <p>LLM 연산에서 행렬 곱셈이 중요한 이유도 함께 살펴봤다. GPU는 많은 연산을 병렬로 처리하는 데 강점이 있어 AI 연산에 널리 활용된다.</p>
-<h2>4. M1 Max에서 로컬 AI를 실행할 때 알아둘 점<span class="hx-absolute -hx-mt-20" id="4-m1-max에서-로컬-ai를-실행할-때-알아둘-점"></span>
-    <a href="#4-m1-max%ec%97%90%ec%84%9c-%eb%a1%9c%ec%bb%ac-ai%eb%a5%bc-%ec%8b%a4%ed%96%89%ed%95%a0-%eb%95%8c-%ec%95%8c%ec%95%84%eb%91%98-%ec%a0%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>M1 Max는 CPU와 GPU가 통합 메모리를 공유하므로, 별도의 GPU 메모리로 데이터를 복사하는 부담을 줄일 수 있다. 다만 통합 메모리 32GB를 운영체제와 애플리케이션도 함께 사용하므로, 모델이 커질수록 실제로 사용할 수 있는 메모리와 실행 속도를 확인해야 한다.</p>
-<p>또한 Apple Silicon에 Neural Engine이 있다고 해서 모든 AI 프로그램이 이를 자동으로 사용하는 것은 아니다. 실행 도구와 프레임워크에 따라 CPU나 GPU를 활용하는 방식이 달라진다. 이번 스터디에서 사용할 Ollama와 MLX의 실제 연산 경로는 각 도구의 구현에 따라 확인할 필요가 있다.</p>
-<h2>5. 터미널과 기본 명령어<span class="hx-absolute -hx-mt-20" id="5-터미널과-기본-명령어"></span>
-    <a href="#5-%ed%84%b0%eb%af%b8%eb%84%90%ea%b3%bc-%ea%b8%b0%eb%b3%b8-%eb%aa%85%eb%a0%b9%ec%96%b4" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>개발 도구 설치와 실행은 터미널에서 진행하므로, 먼저 파일 시스템을 이동하고 확인하는 명령어를 익혔다.</p>
-<table>
-  <thead>
-      <tr>
-          <th>명령어</th>
-          <th>용도</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>pwd</code></td>
-          <td>현재 작업 디렉터리 확인</td>
-      </tr>
-      <tr>
-          <td><code>ls</code></td>
-          <td>파일 및 디렉터리 목록 확인</td>
-      </tr>
-      <tr>
-          <td><code>ls -la</code></td>
-          <td>숨김 파일을 포함한 상세 목록 확인</td>
-      </tr>
-      <tr>
-          <td><code>cd</code></td>
-          <td>다른 디렉터리로 이동</td>
-      </tr>
-      <tr>
-          <td><code>cd ..</code></td>
-          <td>상위 디렉터리로 이동</td>
-      </tr>
-      <tr>
-          <td><code>cd ~</code></td>
-          <td>홈 디렉터리로 이동</td>
-      </tr>
-      <tr>
-          <td><code>mkdir</code></td>
-          <td>새 디렉터리 생성</td>
-      </tr>
-      <tr>
-          <td><code>clear</code></td>
-          <td>터미널 화면 정리</td>
-      </tr>
-  </tbody>
-</table>
-<p>예를 들어 프로젝트 작업용 디렉터리는 다음처럼 만들 수 있다.</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~
-</span></span><span class="line"><span class="cl">mkdir ai_project
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ai_project
-</span></span><span class="line"><span class="cl">pwd</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<p>GUI에서는 폴더를 클릭해서 이동하지만, CLI에서는 명령어로 같은 작업을 수행한다. 터미널은 처음에는 낯설 수 있지만, 명령어를 조합하면 작업을 반복하거나 자동화하기 쉽다는 장점이 있다.</p>
-<h2>6. Homebrew와 Ollama<span class="hx-absolute -hx-mt-20" id="6-homebrew와-ollama"></span>
-    <a href="#6-homebrew%ec%99%80-ollama" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><strong>Homebrew</strong>는 macOS에서 개발 도구와 패키지를 설치하고 관리하는 패키지 매니저다. 설치 과정에서 필요한 의존성을 함께 처리하고, 패키지 검색과 업데이트도 명령어로 할 수 있다.</p>
+</li>
+</ul>
+<p> </p>
+<h2>3. 로컬 AI를 실행할 때 알아둘 점<span class="hx-absolute -hx-mt-20" id="3-로컬-ai를-실행할-때-알아둘-점"></span>
+    <a href="#3-%eb%a1%9c%ec%bb%ac-ai%eb%a5%bc-%ec%8b%a4%ed%96%89%ed%95%a0-%eb%95%8c-%ec%95%8c%ec%95%84%eb%91%98-%ec%a0%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>
+<p>M1 Max는 CPU와 GPU가 통합 메모리를 공유하므로, 별도의 GPU 메모리로 데이터를 복사하는 부담을 줄일 수 있다.</p>
+</li>
+<li>
+<p>다만 통합 메모리 32GB를 운영체제와 애플리케이션도 함께 사용하므로, 모델이 커질수록 실제로 사용할 수 있는 메모리와 실행 속도를 확인해야 한다.</p>
+</li>
+<li>
+<p>또한 Apple Silicon에 Neural Engine이 있다고 해서 모든 AI 프로그램이 이를 자동으로 사용하는 것은 아니다. 실행 도구와 프레임워크에 따라 CPU나 GPU를 활용하는 방식이 달라진다.</p>
+</li>
+<li>
+<p>이번 스터디에서 사용할 <strong>Ollama와 MLX의 실제 연산 경로는 각 도구의 구현에 따라 확인</strong>할 필요가 있다.</p>
+</li>
+</ul>
+<p> </p>
+<h2>4. Homebrew와 Ollama<span class="hx-absolute -hx-mt-20" id="4-homebrew와-ollama"></span>
+    <a href="#4-homebrew%ec%99%80-ollama" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><strong>Homebrew</strong>는 macOS에서 개발 도구와 패키지를 설치하고 관리하는 패키지 매니저다. 설치 과정에서 필요한 의존성을 함께 처리하고, 패키지 검색과 업데이트도 명령어로 할 수 있다.</p>
 <p>자주 사용하는 명령어는 다음과 같다.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
@@ -5424,7 +5565,10 @@
 
 <div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew update
 </span></span><span class="line"><span class="cl">brew install ollama
-</span></span><span class="line"><span class="cl">ollama --version</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+</span></span><span class="line"><span class="cl">ollama --version
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mung 🐸   ~  ollama --version
+</span></span><span class="line"><span class="cl">ollama version is 0.40.7</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -5434,48 +5578,23 @@
   </button>
 </div>
 </div>
-<p>Ollama를 터미널에서 직접 실행하는 방식에서는 <code>ollama serve</code>가 서버 프로세스로 동작한다. 이 명령어를 실행한 터미널은 서버가 계속 실행되므로 다른 명령어를 입력하려면 별도의 터미널 창을 사용해야 한다. 기본 주소는 <code>http://localhost:11434</code>이며, 브라우저에서 접속해 서비스 실행 여부를 확인할 수 있다.</p>
-<h2>정리<span class="hx-absolute -hx-mt-20" id="정리"></span>
-    <a href="#%ec%a0%95%eb%a6%ac" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>1주차에는 로컬 AI와 클라우드 AI의 차이, LLM의 기본적인 동작 원리, Apple Silicon의 통합 메모리 구조를 살펴봤다. 그리고 이후 실습의 기반이 될 터미널 명령어, Homebrew, Ollama의 역할을 정리했다.</p>
-<p>다음 단계에서는 실제 모델을 내려받아 로컬에서 실행하고, 프롬프트를 입력해 응답을 받아보면서 모델에 따라 실행 속도와 응답 특성이 어떻게 다른지 확인할 예정이다.</p>
 <ul>
 <li>
-<p><strong>1주차 스터디</strong>에서 학습한 내용 혹은 <strong>ollma 모델 실행</strong>을 <strong>간략히 정리</strong>하여 <strong>공개된 링크에 글 작성</strong> 후 해당 <strong>링크</strong>를 <strong>스터디 슬랙 채널</strong>에 공유 🙇🏻‍♂️🙇🏻‍♀️</p>
-<ul>
-<li><strong>작성 도구</strong> : 블로그, Github, 개인 홈페이지, 개인 Youtube, ‘페이스북/링크드인 공개 게시 글’ 등</li>
-<li><strong>정리 내용(예시)</strong>
-<ul>
-<li>해당 주차 스터디에서 학습한 내용을 요약 정리 작성</li>
-<li>해당 주차 스터디에서 다룬 주제 기술 1개를 별도 조사 학습해서 정리</li>
-<li>mac 에서 Local AI Model 실행 기술 내용 정리</li>
-</ul>
-</li>
-</ul>
+<p>Ollama를 터미널에서 직접 실행하는 방식에서는 <code>ollama serve</code>가 서버 프로세스로 동작한다. 이 명령어를 실행한 터미널은 서버가 계속 실행되므로 다른 명령어를 입력하려면 별도의 터미널 창을 사용해야 한다. 기본 주소는 <code>http://localhost:11434</code>이며, 브라우저에서 접속해 서비스 실행 여부를 확인할 수 있다.
+
+    <img src="../image.png" alt="alt text" loading="lazy" /></p>
 </li>
 <li>
-<p><strong>mac PC Spec</strong> 에 정보 확인 해보기</p>
+<p>아래 ollama 중 gpt-oss:20b 모델을 다운받아, Visual Studio Code에 연동해보았는 데, 처리과정은 다음과 같았다.</p>
 </li>
 </ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
-<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mung 🦄   ~  system_profiler SPHardwareDataType
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">2026-10-24 17:21:30.538 system_profiler<span class="o">[</span>18126:83962<span class="o">]</span> hw.cpufamily: 0x1b588bb3
-</span></span><span class="line"><span class="cl">Hardware:
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    Hardware Overview:
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      Model Name: MacBook Pro
-</span></span><span class="line"><span class="cl">      Model Identifier: MacBookPro18,2
-</span></span><span class="line"><span class="cl">      Model Number: MK1A3KH/A
-</span></span><span class="line"><span class="cl">      Chip: Apple M1 Max
-</span></span><span class="line"><span class="cl">      Total Number of Cores: <span class="m">10</span> <span class="o">(</span><span class="m">8</span> Performance and <span class="m">2</span> Efficiency<span class="o">)</span>
-</span></span><span class="line"><span class="cl">      Memory: <span class="m">32</span> GB
-</span></span><span class="line"><span class="cl">      System Firmware Version: 18000.161.10
-</span></span><span class="line"><span class="cl">      OS Loader Version: 18000.161.10
-</span></span><span class="line"><span class="cl">      Hardware UUID: 0E6943AC-1925-5D04-A995-838A2C1EDA55
-</span></span><span class="line"><span class="cl">      Provisioning UDID: 00006001-000C209436D0C01E
-</span></span><span class="line"><span class="cl">      Activation Lock Status: Disabled</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mung 🐸   ~  ollama list
+</span></span><span class="line"><span class="cl">NAME                  ID              SIZE     MODIFIED
+</span></span><span class="line"><span class="cl">qwen3:30b             ad815644918f    <span class="m">18</span> GB    <span class="m">3</span> months ago
+</span></span><span class="line"><span class="cl">gpt-oss-20b:latest    17052f91a42e    <span class="m">13</span> GB    <span class="m">7</span> months ago
+</span></span><span class="line"><span class="cl">gpt-oss:20b           17052f91a42e    <span class="m">13</span> GB    <span class="m">8</span> months ago</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -5485,10 +5604,119 @@
   </button>
 </div>
 </div>
+<p>
+    <img src="../image-1.png" alt="alt text" loading="lazy" /></p>
+<pre class="mermaid hx-mt-6">
+flowchart LR
+    U["사용자"]
+    C["Claude Code<br/>에이전트"]
+    O["Ollama API"]
+    M["gpt-oss:20b<br/>로컬 추론"]
+    T["Read / Bash 도구"]
+    P[("로컬 프로젝트 파일")]
+
+    U --> C
+    C <--> O
+    O <--> M
+    C --> T
+    T <--> P
+    T --> C
+
+    style U fill:#F1F5F9,stroke:#64748B,color:#0F172A
+    style C fill:#EDE9FE,stroke:#8B5CF6,color:#5B21B6,stroke-width:2px
+    style O fill:#DBEAFE,stroke:#3B82F6,color:#1E3A8A
+    style M fill:#D1FAE5,stroke:#10B981,color:#065F46,stroke-width:2px
+    style T fill:#FEF3C7,stroke:#F59E0B,color:#92400E
+    style P fill:#F1F5F9,stroke:#64748B,color:#0F172A</pre><p> </p>
+<h2>정리<span class="hx-absolute -hx-mt-20" id="정리"></span>
+    <a href="#%ec%a0%95%eb%a6%ac" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>1주차에는 로컬 AI와 클라우드 AI의 차이, LLM의 기본적인 동작 원리, Apple Silicon의 통합 메모리 구조를 살펴보았으며 이후 실습의 기반이 될 터미널 명령어, Homebrew, Ollama의 역할을 정리했다.</li>
+</ul>
+<p> </p>
+<h2>용어정리<span class="hx-absolute -hx-mt-20" id="용어정리"></span>
+    <a href="#%ec%9a%a9%ec%96%b4%ec%a0%95%eb%a6%ac" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><hr>
+<table>
+  <thead>
+      <tr>
+          <th>용어</th>
+          <th>뜻</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>AI (Artificial Intelligence)</strong></td>
+          <td>학습·추론·문제 해결 등을 컴퓨터로 구현하는 기술을 통칭합니다.</td>
+      </tr>
+      <tr>
+          <td><strong>로컬 AI (Local AI)</strong></td>
+          <td>클라우드 서버가 아니라 개인 컴퓨터 등 로컬 장치에서 AI 모델을 실행하는 방식입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>클라우드 AI (Cloud AI)</strong></td>
+          <td>외부 업체의 서버에서 AI 모델을 실행하고 네트워크를 통해 이용하는 방식입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>LLM (Large Language Model)</strong></td>
+          <td>대량의 텍스트 데이터를 학습해 문장을 처리하고 생성하는 대규모 언어 모델입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>모델 (Model)</strong></td>
+          <td>입력을 처리해 결과를 생성하는 AI의 핵심 구성 요소입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>가중치 (Weights)</strong></td>
+          <td>학습 과정에서 조정된 숫자 값으로, 모델이 입력을 처리하는 데 사용됩니다.</td>
+      </tr>
+      <tr>
+          <td><strong>토큰 (Token)</strong></td>
+          <td>모델이 텍스트를 처리하는 단위입니다. 단어 하나와 항상 일치하지는 않습니다.</td>
+      </tr>
+      <tr>
+          <td><strong>토큰 생성 (Token Generation)</strong></td>
+          <td>모델이 다음 토큰을 하나씩 예측해 문장을 만들어 가는 과정입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>환각 (Hallucination)</strong></td>
+          <td>AI가 사실과 다르거나 근거가 부족한 내용을 그럴듯하게 생성하는 현상입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>신경망 (Neural Network)</strong></td>
+          <td>데이터의 패턴을 학습하도록 설계된 계산 구조로, 딥러닝의 기반입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>행렬 곱셈 (Matrix Multiplication)</strong></td>
+          <td>AI 모델에서 대량의 숫자 연산을 수행할 때 자주 사용되는 연산입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>GPU</strong></td>
+          <td>대량의 연산을 병렬로 처리하는 데 강점이 있는 프로세서입니다.</td>
+      </tr>
+      <tr>
+          <td><strong>통합 메모리 (Unified Memory)</strong></td>
+          <td>Apple Silicon에서 CPU와 GPU 등이 공유하는 메모리 구조입니다. 운영체제와 다른 앱이 사용하는 메모리도 고려해야 합니다.</td>
+      </tr>
+      <tr>
+          <td><strong>Neural Engine</strong></td>
+          <td>Apple Silicon의 머신러닝 연산용 전용 하드웨어입니다. 모든 AI 도구가 자동으로 이를 사용하는 것은 아닙니다.</td>
+      </tr>
+      <tr>
+          <td><strong>VRAM (Video RAM)</strong></td>
+          <td>외장 GPU가 그래픽과 연산 데이터를 저장하는 데 사용하는 GPU 메모리입니다. 일반적으로 GPU 전용 메모리를 가리킵니다.</td>
+      </tr>
+      <tr>
+          <td><strong>GDDR</strong></td>
+          <td>외장 GPU에서 널리 사용하는 고대역폭 메모리 규격입니다. GDDR6·GDDR6X·GDDR7 등이 있습니다.</td>
+      </tr>
+      <tr>
+          <td><strong>HBM (High Bandwidth Memory)</strong></td>
+          <td>메모리 대역폭을 크게 높이도록 설계된 고대역폭 메모리입니다. 데이터센터용 AI 가속기 등에 사용됩니다.</td>
+      </tr>
+  </tbody>
+</table>
 
         </div>
         
-    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2026-10-24T17:34:01.000Z">October 24, 2026</time></div>
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2026-10-24T17:34:42.000Z">October 24, 2026</time></div>
         
         
       </main>
@@ -5508,6 +5736,36 @@
     <script defer src="/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js" integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script>
 <script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
     <script defer src="/en.search.min.467af55671b5ee53c9cdfe80e6e0ee6791edc3374392318652fcf851a49db151.js" integrity="sha256-Rnr1VnG17lPJzf6A5uDuZ5HtwzdDkjGGUvz4UaSdsVE="></script>
+<script defer src="/lib/mermaid/mermaid.min.0d2b6f2361e7e0ce466a6ed458e03daa5584b42ef6926c3beb62eb64670ca261.js" integrity="sha256-DStvI2Hn4M5Gam7UWOA9qlWEtC72kmw762LrZGcMomE="></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    
+    document.querySelectorAll(".mermaid").forEach(el => {
+      el.dataset.original = el.innerHTML;
+    });
+
+    const theme = document.documentElement.classList.contains("dark") ? "dark" : "default";
+    mermaid.initialize({ startOnLoad: true, theme: theme });
+
+    let timeout;
+    new MutationObserver(() => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        const theme = document.documentElement.classList.contains("dark") ? "dark" : "default";
+        document.querySelectorAll(".mermaid").forEach(el => {
+          
+          el.innerHTML = el.dataset.original;
+          el.removeAttribute("data-processed");
+        });
+        mermaid.initialize({ startOnLoad: true, theme: theme });
+        mermaid.init();
+      }, 150);
+    }).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
+  });
+</script>
 
   </body>
 </html>
