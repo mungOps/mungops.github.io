@@ -715,6 +715,13 @@
       <description>&lt;h2&gt;Disk&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;disk&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#disk&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;Disk란 보조기억장치&lt;/code&gt;로 RAM(주기억장치)이 전원이 없어지면 데이터가 삭제되는 반면, &lt;code&gt;Disk는 전원이 없어진 이후에도 데이터가 유지되는 비휘발성 메모리&lt;/code&gt;이다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
     </item>
     <item>
+      <title>3. Voice-enabled AI chat application</title>
+      <link>https://mungops.github.io/study/llm/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/study/llm/03/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h1&gt;로컬 AI 스터디 3주차 — 핵심 기술: 첫 AI 챗봇 만들기&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;Streamlit으로 웹 UI 구축&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;streamlit으로-웹-ui-구축&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#streamlit%ec%9c%bc%eb%a1%9c-%ec%9b%b9-ui-%ea%b5%ac%ec%b6%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Python만으로 웹 애플리케이션을 만들 수 있는 Streamlit의 기본 개념과 사용법을 학습&lt;/li&gt;&#xA;&lt;li&gt;Streamlit 이해: Python 스크립트를 인터랙티브한 웹 애플리케이션으로 변환하는 원리&lt;/li&gt;&#xA;&lt;li&gt;기본 앱 개발: Hello World 예제로 첫 웹 애플리케이션 구현&lt;/li&gt;&#xA;&lt;li&gt;UI 컴포넌트: 텍스트, 사용자 입력, 버튼, 사이드바 및 레이아웃 활용&lt;/li&gt;&#xA;&lt;li&gt;실행 및 개발: Streamlit 앱 실행 방법과 개발 워크플로 이해&lt;/li&gt;&#xA;&lt;li&gt;핵심 목표: HTML, CSS, JavaScript 없이 Python만으로 Ollama 기반 AI 챗봇과 사용자가 상호작용할 수 있는 웹 인터페이스를 구축&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
       <title>3장 S3와 Glacier</title>
       <link>https://mungops.github.io/system/aws/awssaa/saa-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
