@@ -2,72 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Helm on mungOps</title>
-    <link>https://mungops.github.io/blog/devops/helm/</link>
+    <link>https://mungops.github.io/devops/helm/</link>
     <description>Recent content in Helm on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/blog/devops/helm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/devops/helm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Helm 개요</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm00/</link>
+      <link>https://mungops.github.io/devops/helm/helm00/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm00/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm00/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Helm 개요&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-helm-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-helm-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h3&gt;1. &lt;strong&gt;Helm이란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-helm이란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-helm%ec%9d%b4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Helm은 Kubernetes 애플리케이션을 관리하기 위한 패키지 매니저입니다. Helm을 사용하면 복잡한 Kubernetes 리소스를 쉽게 정의하고, 배포 및 관리할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helm 설치 및 기본 사용법</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm01/</link>
+      <link>https://mungops.github.io/devops/helm/helm01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm01/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm01/</guid>
       <description>&lt;h2&gt;3️⃣ &lt;strong&gt;Helm 설치 및 기본 사용법&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-helm-설치-및-기본-사용법&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#3-helm-%ec%84%a4%ec%b9%98-%eb%b0%8f-%ea%b8%b0%eb%b3%b8-%ec%82%ac%ec%9a%a9%eb%b2%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h3&gt;1 &lt;strong&gt;Helm 설치 (Linux, macOS, Windows)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-helm-설치-linux-macos-windows&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-helm-%ec%84%a4%ec%b9%98-linux-macos-windows&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Helm을 설치하는 방법은 운영 체제에 따라 다릅니다.&lt;/p&gt;&#xA;&lt;h4&gt;✅ Linux 및 macOS&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-linux-및-macos&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-linux-%eb%b0%8f-macos&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Helm은 Homebrew 또는 스크립트로 설치할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helm Chart 구조 상세 분석</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm02/</link>
+      <link>https://mungops.github.io/devops/helm/helm02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm02/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm02/</guid>
       <description>&lt;h2&gt;4️⃣ &lt;strong&gt;Helm Chart 구조 상세 분석&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-helm-chart-구조-상세-분석&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#4-helm-chart-%ea%b5%ac%ec%a1%b0-%ec%83%81%ec%84%b8-%eb%b6%84%ec%84%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Helm Chart는 여러 파일과 디렉토리로 구성됩니다. 이 구조를 이해하면 Helm을 활용한 쿠버네티스 애플리케이션 배포를 효과적으로 할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helm Templating 심화</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm03/</link>
+      <link>https://mungops.github.io/devops/helm/helm03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm03/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm03/</guid>
       <description>&lt;h2&gt;5️⃣ &lt;strong&gt;Helm Templating 심화&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-helm-templating-심화&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#5-helm-templating-%ec%8b%ac%ed%99%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Helm은 &lt;strong&gt;Go 템플릿 엔진&lt;/strong&gt;을 사용하여 Kubernetes 매니페스트를 동적으로 생성합니다. 이를 활용하면 &lt;strong&gt;환경별 설정 관리&lt;/strong&gt;, &lt;strong&gt;유연한 배포 구조&lt;/strong&gt;, &lt;strong&gt;중복 제거&lt;/strong&gt; 등을 할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helm Values와 오버라이딩 전략</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm04/</link>
+      <link>https://mungops.github.io/devops/helm/helm04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm04/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm04/</guid>
       <description>&lt;h2&gt;6️⃣ &lt;strong&gt;Helm Values와 오버라이딩 전략&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6-helm-values와-오버라이딩-전략&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#6-helm-values%ec%99%80-%ec%98%a4%eb%b2%84%eb%9d%bc%ec%9d%b4%eb%94%a9-%ec%a0%84%eb%9e%b5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Helm의 &lt;strong&gt;Values&lt;/strong&gt; 파일은 배포 환경에서 유연한 설정을 가능하게 해줍니다. 이 섹션에서는 Helm에서 &lt;strong&gt;Values 파일을 어떻게 활용하고 오버라이딩 할 수 있는지&lt;/strong&gt;에 대해 알아보겠습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helm Repository 관리</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm05/</link>
+      <link>https://mungops.github.io/devops/helm/helm05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm05/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm05/</guid>
       <description>&lt;h2&gt;7️⃣ &lt;strong&gt;Helm Repository 관리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;7-helm-repository-관리&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#7-helm-repository-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Helm에서는 &lt;strong&gt;차트를 관리하고 배포하기 위해 레포지토리를 사용&lt;/strong&gt;합니다. 이 섹션에서는 Helm 레포지토리를 관리하는 방법과 다양한 레포지토리 구축 방법을 설명합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helm Chart 배포 전략</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm06/</link>
+      <link>https://mungops.github.io/devops/helm/helm06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm06/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm06/</guid>
       <description>&lt;h2&gt;8️⃣ &lt;strong&gt;Helm Chart 배포 전략&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;8-helm-chart-배포-전략&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#8-helm-chart-%eb%b0%b0%ed%8f%ac-%ec%a0%84%eb%9e%b5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Helm은 &lt;strong&gt;Kubernetes 애플리케이션 배포의 자동화&lt;/strong&gt;와 관리의 편리함을 제공합니다. 이번 섹션에서는 Helm을 활용한 다양한 배포 전략을 소개합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helm과 Kubernetes 연동 심화</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm07/</link>
+      <link>https://mungops.github.io/devops/helm/helm07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm07/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm07/</guid>
       <description>&lt;h2&gt;9️⃣ &lt;strong&gt;Helm과 Kubernetes 연동 심화&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;9-helm과-kubernetes-연동-심화&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#9-helm%ea%b3%bc-kubernetes-%ec%97%b0%eb%8f%99-%ec%8b%ac%ed%99%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Helm은 Kubernetes 애플리케이션을 관리하는 강력한 도구로, Kubernetes의 다양한 리소스를 효율적으로 설정하고 배포할 수 있게 도와줍니다. 이번 섹션에서는 Helm과 Kubernetes 리소스를 심화적으로 연동하는 방법을 다룹니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Helm 고급 기능 및 베스트 프랙티스</title>
-      <link>https://mungops.github.io/blog/devops/helm/helm08/</link>
+      <link>https://mungops.github.io/devops/helm/helm08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/helm/helm08/</guid>
+      <guid>https://mungops.github.io/devops/helm/helm08/</guid>
       <description>&lt;h2&gt;🔟 &lt;strong&gt;Helm 고급 기능 및 베스트 프랙티스&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-helm-고급-기능-및-베스트-프랙티스&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-helm-%ea%b3%a0%ea%b8%89-%ea%b8%b0%eb%8a%a5-%eb%b0%8f-%eb%b2%a0%ec%8a%a4%ed%8a%b8-%ed%94%84%eb%9e%99%ed%8b%b0%ec%8a%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;Helm은 Kubernetes에서 애플리케이션을 관리하는 중요한 도구로, 고급 기능과 베스트 프랙티스를 활용하면 더 효율적이고 안전한 배포가 가능합니다. 이 섹션에서는 &lt;strong&gt;Helm Chart 버전 관리&lt;/strong&gt;, &lt;strong&gt;Service Mesh 연동&lt;/strong&gt;, &lt;strong&gt;보안 모범 사례&lt;/strong&gt; 및 &lt;strong&gt;Operator 패턴&lt;/strong&gt;과 같은 고급 기능을 다룹니다.&lt;/p&gt;</description>
     </item>
   </channel>

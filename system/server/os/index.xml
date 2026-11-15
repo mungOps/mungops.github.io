@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Operating system on mungOps</title>
-    <link>https://mungops.github.io/blog/system/server/os/</link>
+    <link>https://mungops.github.io/system/server/os/</link>
     <description>Recent content in Operating system on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/blog/system/server/os/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/system/server/os/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS</title>
-      <link>https://mungops.github.io/blog/system/server/os/centos/</link>
+      <link>https://mungops.github.io/system/server/os/centos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/system/server/os/centos/</guid>
+      <guid>https://mungops.github.io/system/server/os/centos/</guid>
       <description>&lt;h2&gt;1. CentOS란? 🖥️🐧&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-centos란-&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-centos%eb%9e%80-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;CentOS(CentOS Stream 포함)는 &lt;strong&gt;Red Hat Enterprise Linux(RHEL) 기반의 무료 오픈소스 운영체제&lt;/strong&gt;로, RHEL과 거의 동일한 기능을 제공하지만, 상용 지원 없이 커뮤니티가 유지 및 관리합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ubuntu</title>
-      <link>https://mungops.github.io/blog/system/server/os/ubuntu/</link>
+      <link>https://mungops.github.io/system/server/os/ubuntu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/system/server/os/ubuntu/</guid>
+      <guid>https://mungops.github.io/system/server/os/ubuntu/</guid>
       <description>&lt;h1&gt;🐧 &lt;strong&gt;Ubuntu Linux 운영체제 가이드&lt;/strong&gt; 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ Ubuntu란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ubuntu란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ubuntu%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt; 는 Debian 기반의 오픈소스 &lt;strong&gt;Linux 배포판&lt;/strong&gt; 으로, &lt;strong&gt;사용자 친화적인 인터페이스와 강력한 커뮤니티 지원&lt;/strong&gt;을 제공하는 운영체제(OS)입니다.&lt;br&gt;&#xA;Canonical사가 개발 및 유지보수하며, &lt;strong&gt;데스크톱, 서버, 클라우드, IoT&lt;/strong&gt; 환경에서 널리 사용됩니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Windows</title>
-      <link>https://mungops.github.io/blog/system/server/os/windows/</link>
+      <link>https://mungops.github.io/system/server/os/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/system/server/os/windows/</guid>
+      <guid>https://mungops.github.io/system/server/os/windows/</guid>
       <description>&lt;h2&gt;1. Windows란? 🖥️🪟&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-windows란-&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-windows%eb%9e%80-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Windows는 **마이크로소프트(Microsoft)**에서 개발한 운영체제로, 개인용 PC부터 서버, 클라우드 환경까지 폭넓게 사용됩니다.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,79 +2,79 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>velero on mungOps</title>
-    <link>https://mungops.github.io/blog/devops/velero/</link>
+    <link>https://mungops.github.io/devops/velero/</link>
     <description>Recent content in velero on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/blog/devops/velero/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/devops/velero/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Velero 개요</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero01/</link>
+      <link>https://mungops.github.io/devops/velero/velero01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero01/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero01/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Velero란? (Kubernetes 백업 &amp;amp; 복구 솔루션)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero란-kubernetes-백업--복구-솔루션&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero%eb%9e%80-kubernetes-%eb%b0%b1%ec%97%85--%eb%b3%b5%ea%b5%ac-%ec%86%94%eb%a3%a8%ec%85%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Velero는 Kubernetes 클러스터의 백업 및 복구를 위한 오픈소스 솔루션입니다. Velero를 사용하면 다음과 같은 작업을 수행할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero 아키텍처 및 구성 요소</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero02/</link>
+      <link>https://mungops.github.io/devops/velero/velero02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero02/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero02/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Velero Server (컨트롤 플레인 역할)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero-server-컨트롤-플레인-역할&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero-server-%ec%bb%a8%ed%8a%b8%eb%a1%a4-%ed%94%8c%eb%a0%88%ec%9d%b8-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Velero의 핵심은 &lt;strong&gt;Velero Server&lt;/strong&gt;로, Kubernetes 클러스터 내에서 컨트롤 플레인 역할을 수행합니다.&lt;/p&gt;&#xA;&lt;h3&gt;1. &lt;strong&gt;Velero Server의 주요 기능&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero-server의-주요-기능&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero-server%ec%9d%98-%ec%a3%bc%ec%9a%94-%ea%b8%b0%eb%8a%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;백업 및 복구 작업 관리&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Kubernetes API와 상호작용&lt;/strong&gt;하여 클러스터 상태를 저장&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;스토리지 제공자(Provider)와 연동&lt;/strong&gt;하여 백업 데이터를 저장&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;스케줄링을 통한 자동 백업 지원&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3&gt;2. &lt;strong&gt;Velero Server의 아키텍처&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-velero-server의-아키텍처&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#2-velero-server%ec%9d%98-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;아래 다이어그램은 Velero Server의 아키텍처를 보여줍니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero 설치 및 환경 구성</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero03/</link>
+      <link>https://mungops.github.io/devops/velero/velero03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero03/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero03/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Velero 설치 방법&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero-설치-방법&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero-%ec%84%a4%ec%b9%98-%eb%b0%a9%eb%b2%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Velero를 Kubernetes 클러스터에 설치하는 방법은 여러 가지가 있습니다.&lt;br&gt;&#xA;대표적으로 &lt;strong&gt;Helm Chart&lt;/strong&gt;, &lt;strong&gt;CLI&lt;/strong&gt;, 그리고 &lt;strong&gt;Operator&lt;/strong&gt; 방식이 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero 백업(Backup) 전략</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero04/</link>
+      <link>https://mungops.github.io/devops/velero/velero04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero04/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero04/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Velero Backup 개념 및 동작 방식&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero-backup-개념-및-동작-방식&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero-backup-%ea%b0%9c%eb%85%90-%eb%b0%8f-%eb%8f%99%ec%9e%91-%eb%b0%a9%ec%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Velero는 Kubernetes 클러스터의 상태를 저장하고, 필요할 때 복구할 수 있도록 백업 기능을 제공합니다.&lt;br&gt;&#xA;Velero의 백업은 &lt;strong&gt;Kubernetes 리소스&lt;/strong&gt;와 &lt;strong&gt;Persistent Volume(PV)&lt;/strong&gt; 데이터를 저장하는 방식으로 이루어집니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero 복구(Restore) 전략</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero05/</link>
+      <link>https://mungops.github.io/devops/velero/velero05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero05/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero05/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Velero Restore 개념 및 동작 방식&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero-restore-개념-및-동작-방식&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero-restore-%ea%b0%9c%eb%85%90-%eb%b0%8f-%eb%8f%99%ec%9e%91-%eb%b0%a9%ec%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Velero의 복구(Restore)는 백업된 Kubernetes 리소스 및 Persistent Volume(PV) 데이터를 기존 클러스터 또는 새로운 클러스터로 되돌리는 과정입니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero 마이그레이션(Migration) 전략</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero06/</link>
+      <link>https://mungops.github.io/devops/velero/velero06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero06/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero06/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Velero를 활용한 클러스터 간 마이그레이션&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero를-활용한-클러스터-간-마이그레이션&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero%eb%a5%bc-%ed%99%9c%ec%9a%a9%ed%95%9c-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%ea%b0%84-%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Velero를 사용하면 기존 Kubernetes 클러스터에서 새로운 클러스터로 손쉽게 데이터를 이전할 수 있습니다. 클러스터 간 마이그레이션을 위해 Velero는 다음과 같은 단계를 따릅니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero와 Restic 활용</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero07/</link>
+      <link>https://mungops.github.io/devops/velero/velero07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero07/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero07/</guid>
       <description>&lt;h2&gt;7️⃣ &lt;strong&gt;Velero와 Restic 활용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;7-velero와-restic-활용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#7-velero%ec%99%80-restic-%ed%99%9c%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Restic 개요 및 사용 이유&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-restic-개요-및-사용-이유&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-restic-%ea%b0%9c%ec%9a%94-%eb%b0%8f-%ec%82%ac%ec%9a%a9-%ec%9d%b4%ec%9c%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Restic은 파일 단위 백업을 지원하는 오픈소스 백업 솔루션으로, Velero와 함께 사용하여 Kubernetes의 &lt;strong&gt;Persistent Volume(PV)&lt;/strong&gt; 백업을 더욱 유연하게 수행할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero와 클라우드 스토리지 통합</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero08/</link>
+      <link>https://mungops.github.io/devops/velero/velero08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero08/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero08/</guid>
       <description>&lt;h2&gt;8️⃣ Velero와 클라우드 스토리지 통합&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;8-velero와-클라우드-스토리지-통합&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#8-velero%ec%99%80-%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ed%86%b5%ed%95%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Kubernetes 환경에서 Velero를 활용하여 데이터를 안전하게 백업하려면 &lt;strong&gt;클라우드 스토리지&lt;/strong&gt;와의 연동이 필수적입니다.&lt;br&gt;&#xA;Velero는 AWS S3, Google Cloud Storage, Azure Blob Storage 및 다양한 온프레미스 스토리지와 통합하여 백업 및 복구를 수행할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero 보안 및 모니터링</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero09/</link>
+      <link>https://mungops.github.io/devops/velero/velero09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero09/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero09/</guid>
       <description>&lt;h2&gt;9️⃣ Velero 보안 및 모니터링&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;9-velero-보안-및-모니터링&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#9-velero-%eb%b3%b4%ec%95%88-%eb%b0%8f-%eb%aa%a8%eb%8b%88%ed%84%b0%eb%a7%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Velero 백업 데이터 암호화 및 접근 제어&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero-백업-데이터-암호화-및-접근-제어&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero-%eb%b0%b1%ec%97%85-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ec%95%94%ed%98%b8%ed%99%94-%eb%b0%8f-%ec%a0%91%ea%b7%bc-%ec%a0%9c%ec%96%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Velero를 사용하여 Kubernetes 클러스터의 데이터를 백업할 때, 보안은 중요한 요소입니다.&lt;br&gt;&#xA;스토리지에 저장되는 데이터는 암호화해야 하며, 접근 권한을 제한하여 보안성을 강화해야 합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Velero 고급 활용 및 운영</title>
-      <link>https://mungops.github.io/blog/devops/velero/velero10/</link>
+      <link>https://mungops.github.io/devops/velero/velero10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/blog/devops/velero/velero10/</guid>
+      <guid>https://mungops.github.io/devops/velero/velero10/</guid>
       <description>&lt;h2&gt;🔟 Velero 고급 활용 및 운영&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-velero-고급-활용-및-운영&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-velero-%ea%b3%a0%ea%b8%89-%ed%99%9c%ec%9a%a9-%eb%b0%8f-%ec%9a%b4%ec%98%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Velero Custom Plugin 개발&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-velero-custom-plugin-개발&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-velero-custom-plugin-%ea%b0%9c%eb%b0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Velero는 플러그인 아키텍처를 지원하며, &lt;strong&gt;커스텀 플러그인&lt;/strong&gt;을 개발하여 백업 및 복구 프로세스를 확장할 수 있습니다.&lt;/p&gt;</description>
     </item>
   </channel>
