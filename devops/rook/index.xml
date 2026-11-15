@@ -2,107 +2,107 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rook-Ceph on mungOps</title>
-    <link>https://mungops.github.io/devops/rook/</link>
+    <link>https://mungops.github.io/blog/devops/rook/</link>
     <description>Recent content in Rook-Ceph on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/devops/rook/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/blog/devops/rook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rook-Ceph 개요 및 핵심 개념</title>
-      <link>https://mungops.github.io/devops/rook/rook01/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook01/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook01/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Rook란 무엇인가? (Cloud-native storage orchestrator)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rook란-무엇인가-cloud-native-storage-orchestrator&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-rook%eb%9e%80-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80-cloud-native-storage-orchestrator&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rook은 &lt;strong&gt;클라우드 네이티브 환경에서 스토리지를 자동으로 관리&lt;/strong&gt;하기 위한 **스토리지 오케스트레이터(Storage Orchestrator)**입니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rook-Ceph 아키텍처 이해</title>
-      <link>https://mungops.github.io/devops/rook/rook02/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook02/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook02/</guid>
       <description>&lt;h2&gt;2️⃣ &lt;strong&gt;Rook-Ceph 전체 아키텍처 구성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-rook-ceph-전체-아키텍처-구성&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#2-rook-ceph-%ec%a0%84%ec%b2%b4-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98-%ea%b5%ac%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rook-Ceph는 Kubernetes 클러스터 내에서 **스토리지 오케스트레이션(Rook)**과 **분산 스토리지 시스템(Ceph)**이 결합된 형태로 구성됩니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rook-Ceph 설치 및 배포</title>
-      <link>https://mungops.github.io/devops/rook/rook03/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook03/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook03/</guid>
       <description>&lt;h2&gt;3️⃣ &lt;strong&gt;Rook-Ceph 설치 및 배포 (실습)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-rook-ceph-설치-및-배포-실습&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#3-rook-ceph-%ec%84%a4%ec%b9%98-%eb%b0%8f-%eb%b0%b0%ed%8f%ac-%ec%8b%a4%ec%8a%b5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rook-Ceph는 클라우드 환경뿐 아니라 &lt;strong&gt;베어메탈&lt;/strong&gt;, &lt;strong&gt;Minikube&lt;/strong&gt;, &lt;strong&gt;Kind&lt;/strong&gt; 등 다양한 Kubernetes 환경에서 설치 가능합니다.&lt;br&gt;&#xA;이번 실습에서는 &lt;strong&gt;Kind (Kubernetes in Docker)&lt;/strong&gt; 기반의 간단한 테스트 클러스터 또는 &lt;strong&gt;베어메탈&lt;/strong&gt; 환경을 기준으로 설명합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 스토리지 타입 상세</title>
-      <link>https://mungops.github.io/devops/rook/rook04/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook04/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook04/</guid>
       <description>&lt;h2&gt;4️⃣ &lt;strong&gt;Ceph 스토리지 타입 상세&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-ceph-스토리지-타입-상세&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#4-ceph-%ec%8a%a4%ed%86%a0%eb%a6%ac%ec%a7%80-%ed%83%80%ec%9e%85-%ec%83%81%ec%84%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph는 단일 스토리지 클러스터에서 &lt;strong&gt;Block, File, Object Storage&lt;/strong&gt;를 모두 지원하는 유연하고 확장성 있는 스토리지 솔루션입니다.&lt;br&gt;&#xA;이 장에서는 Ceph의 각 스토리지 타입(RBD, CephFS, RGW)에 대해 아키텍처와 실습 방법을 함께 설명합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 내부 데이터 흐름 이해</title>
-      <link>https://mungops.github.io/devops/rook/rook05/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook05/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook05/</guid>
       <description>&lt;h2&gt;5️⃣ &lt;strong&gt;Ceph 내부 데이터 흐름 이해&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-ceph-내부-데이터-흐름-이해&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#5-ceph-%eb%82%b4%eb%b6%80-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ed%9d%90%eb%a6%84-%ec%9d%b4%ed%95%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph는 &amp;ldquo;확장성&amp;quot;과 &amp;ldquo;자율적 데이터 분산&amp;quot;을 핵심으로 하는 분산 스토리지 시스템입니다.&lt;br&gt;&#xA;이번 장에서는 Ceph의 내부 데이터가 어떻게 저장되고 복제되는지, 데이터를 어떻게 배치하고 읽고 쓰는지에 대한 전체 흐름을 이해하는 것이 목표입니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kubernetes와의 통합</title>
-      <link>https://mungops.github.io/devops/rook/rook06/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook06/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook06/</guid>
       <description>&lt;h2&gt;6️⃣ &lt;strong&gt;Kubernetes와의 통합&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6-kubernetes와의-통합&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#6-kubernetes%ec%99%80%ec%9d%98-%ed%86%b5%ed%95%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Kubernetes와 Rook-Ceph의 통합은 매우 유연하며, &lt;strong&gt;Block(StorageClass + RBD)&lt;/strong&gt;, &lt;strong&gt;File(CephFS)&lt;/strong&gt;, &lt;strong&gt;Object(RGW + S3)&lt;/strong&gt; 형태로 구현할 수 있습니다. 이 장에서는 Ceph CSI 드라이버 구조부터 시작해 실제 PVC와 RBD 간의 매핑 구조, 그리고 Snapshot/Clone/Ingress 연동까지 다룹니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>고가용성(HA) 및 장애 복구</title>
-      <link>https://mungops.github.io/devops/rook/rook07/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook07/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook07/</guid>
       <description>&lt;h2&gt;7️⃣ &lt;strong&gt;고가용성(HA) 및 장애 복구&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;7-고가용성ha-및-장애-복구&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#7-%ea%b3%a0%ea%b0%80%ec%9a%a9%ec%84%b1ha-%eb%b0%8f-%ec%9e%a5%ec%95%a0-%eb%b3%b5%ea%b5%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph는 설계 자체가 고가용성과 자가 복구(Self-Healing)를 중심으로 되어 있습니다.&lt;br&gt;&#xA;이 장에서는 Ceph의 핵심 컴포넌트인 **Monitor(MON)**와 &lt;strong&gt;OSD&lt;/strong&gt;의 이중화 구조부터, 장애 복구 시나리오, 상태 확인 명령어, Dashboard를 통한 모니터링까지 다룹니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>운영 및 관리</title>
-      <link>https://mungops.github.io/devops/rook/rook08/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook08/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook08/</guid>
       <description>&lt;h2&gt;8️⃣ &lt;strong&gt;운영 및 관리 Best Practices&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;8-운영-및-관리-best-practices&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#8-%ec%9a%b4%ec%98%81-%eb%b0%8f-%ea%b4%80%eb%a6%ac-best-practices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph 클러스터의 운영과 관리는 단순히 설치 이후가 아닌, &lt;strong&gt;확장성&lt;/strong&gt;, &lt;strong&gt;모니터링&lt;/strong&gt;, &lt;strong&gt;성능 최적화&lt;/strong&gt;, &lt;strong&gt;장애 분석&lt;/strong&gt;까지 고려해야 합니다.&lt;br&gt;&#xA;이 섹션에서는 실전 운영에 필요한 베스트 프랙티스를 소개합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>백업과 마이그레이션</title>
-      <link>https://mungops.github.io/devops/rook/rook09/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook09/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook09/</guid>
       <description>&lt;h2&gt;9️⃣ &lt;strong&gt;백업과 마이그레이션&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;9-백업과-마이그레이션&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#9-%eb%b0%b1%ec%97%85%ea%b3%bc-%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Rook-Ceph은 단순한 스토리지 오케스트레이션을 넘어, 강력한 데이터 보호 및 마이그레이션 기능&lt;/strong&gt;을 제공합니다. 이 섹션에서는 RBD 및 CephFS의 백업/복구 실습과 클러스터 마이그레이션, 외부 연동 전략을 소개합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>실무에서 Rook-Ceph 활용 사례</title>
-      <link>https://mungops.github.io/devops/rook/rook10/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook10/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook10/</guid>
       <description>&lt;h2&gt;🔟 &lt;strong&gt;실무에서 Rook-Ceph 활용 사례&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-실무에서-rook-ceph-활용-사례&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-%ec%8b%a4%eb%ac%b4%ec%97%90%ec%84%9c-rook-ceph-%ed%99%9c%ec%9a%a9-%ec%82%ac%eb%a1%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;실제 운영 환경에서는 Rook-Ceph이 단순한 스토리지 솔루션을 넘어 &lt;strong&gt;CI/CD, 백업, 모니터링, 대용량 데이터 저장소&lt;/strong&gt; 등 다양한 형태로 활용됩니다. 이번 포스팅에서는 대표적인 4가지 실전 사례를 소개합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>보안 및 권한 관리</title>
-      <link>https://mungops.github.io/devops/rook/rook11/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook11/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook11/</guid>
       <description>&lt;h2&gt;1️⃣1️⃣ &lt;strong&gt;보안 및 권한 관리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;11-보안-및-권한-관리&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#11-%eb%b3%b4%ec%95%88-%eb%b0%8f-%ea%b6%8c%ed%95%9c-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rook-Ceph은 스토리지만 제공하는 것이 아니라, &lt;strong&gt;정교한 인증/인가 체계&lt;/strong&gt;를 함께 제공합니다. 특히 CephX 인증 기반의 키 관리, RGW 사용자의 S3 ACL, CephFS의 POSIX 권한 등을 통해 &lt;strong&gt;세분화된 접근 제어&lt;/strong&gt;가 가능합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rook Custom Resource 이해</title>
-      <link>https://mungops.github.io/devops/rook/rook12/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook12/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook12/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook12/</guid>
       <description>&lt;h2&gt;1️⃣2️⃣ &lt;strong&gt;고급 운영: Rook Custom Resource 이해&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;12-고급-운영-rook-custom-resource-이해&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#12-%ea%b3%a0%ea%b8%89-%ec%9a%b4%ec%98%81-rook-custom-resource-%ec%9d%b4%ed%95%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rook-Ceph는 Kubernetes 네이티브 방식으로 Ceph 스토리지를 관리하기 위해 다양한 **Custom Resource Definition(CRD)**를 제공합니다.&lt;br&gt;&#xA;이 CRD를 잘 활용하면 &lt;strong&gt;풀 관리, 파일시스템 구성, 오브젝트 스토어 생성 및 사용자 관리까지 모두 YAML로 선언적 운영&lt;/strong&gt;이 가능합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rook-Ceph Troubleshooting</title>
-      <link>https://mungops.github.io/devops/rook/rook13/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook13/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook13/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook13/</guid>
       <description>&lt;h2&gt;1️⃣3️⃣ &lt;strong&gt;Rook-Ceph Troubleshooting 가이드&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;13-rook-ceph-troubleshooting-가이드&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#13-rook-ceph-troubleshooting-%ea%b0%80%ec%9d%b4%eb%93%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph는 강력한 분산 스토리지이지만, 그만큼 문제도 다양하게 발생할 수 있습니다.&lt;br&gt;&#xA;본 섹션에서는 실무에서 자주 마주치는 &lt;strong&gt;장애 원인 진단 → 해결 → 예방&lt;/strong&gt; 흐름을 명령어, 로그, 구조도와 함께 소개합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>성능 튜닝</title>
-      <link>https://mungops.github.io/devops/rook/rook14/</link>
+      <link>https://mungops.github.io/blog/devops/rook/rook14/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/rook/rook14/</guid>
+      <guid>https://mungops.github.io/blog/devops/rook/rook14/</guid>
       <description>&lt;h2&gt;1️⃣4️⃣ &lt;strong&gt;최신 동향 및 성능 튜닝&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;14-최신-동향-및-성능-튜닝&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#14-%ec%b5%9c%ec%8b%a0-%eb%8f%99%ed%96%a5-%eb%b0%8f-%ec%84%b1%eb%8a%a5-%ed%8a%9c%eb%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;분산 스토리지 시스템에서 성능과 안정성은 생존의 문제입니다.&lt;br&gt;&#xA;이번 장에서는 &lt;strong&gt;Ceph의 최신 릴리즈 동향&lt;/strong&gt;, &lt;strong&gt;스토리지 성능 튜닝 전략&lt;/strong&gt;, 그리고 &lt;strong&gt;Rook-Ceph의 최신 Helm 차트 적용 방법&lt;/strong&gt;까지 폭넓게 다뤄보겠습니다.&lt;/p&gt;</description>
     </item>
   </channel>

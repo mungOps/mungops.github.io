@@ -2,79 +2,79 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on mungOps</title>
-    <link>https://mungops.github.io/devops/kubernetes/kubernetes/</link>
+    <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/</link>
     <description>Recent content in Kubernetes on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/devops/kubernetes/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/blog/devops/kubernetes/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s00/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s00/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s00/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s00/</guid>
       <description>&lt;h3&gt;📌 &lt;strong&gt;쿠버네티스(Kubernetes) 개요&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-쿠버네티스kubernetes-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4kubernetes-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ &lt;strong&gt;쿠버네티스란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-쿠버네티스란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;쿠버네티스(Kubernetes, K8s)는 &lt;strong&gt;컨테이너 오케스트레이션(Container Orchestration) 플랫폼&lt;/strong&gt;으로, 다수의 컨테이너를 자동으로 배포하고 관리하는 시스템이다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Architecture</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s01/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s01/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s01/</guid>
       <description>&lt;h1&gt;&lt;strong&gt;쿠버네티스 아키텍처 (Kubernetes Architecture)&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;p&gt;쿠버네티스(Kubernetes)는 컨테이너화된 애플리케이션을 &lt;strong&gt;자동으로 배포, 확장 및 운영&lt;/strong&gt;할 수 있도록 설계된 오픈소스 컨테이너 오케스트레이션 플랫폼이다.&lt;br&gt;&#xA;이를 가능하게 하는 구조는 크게 &lt;strong&gt;컨트롤 플레인(Control Plane)과 워커 노드(Worker Node)&lt;/strong&gt; 로 나뉜다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Installation</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s02/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s02/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s02/</guid>
       <description>&lt;h1&gt;&lt;strong&gt;쿠버네티스 설치 및 환경 구성 (Kubernetes Installation)&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;p&gt;쿠버네티스를 구축하는 방법은 여러 가지가 있다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Minikube&lt;/strong&gt;: 로컬 개발 환경에서 쿠버네티스를 실행하는 가장 쉬운 방법&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;kubeadm&lt;/strong&gt;: 온프레미스 또는 가상화 환경에서 쿠버네티스 클러스터를 직접 구축&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;클라우드 서비스 (EKS, GKE, AKS)&lt;/strong&gt;: AWS, GCP, Azure에서 제공하는 매니지드 쿠버네티스 서비스&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;각 방법을 자세히 살펴보자.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Core Objects</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s03/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s03/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s03/</guid>
       <description>&lt;h1&gt;&lt;strong&gt;쿠버네티스 오브젝트 (Kubernetes Core Objects)&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;p&gt;쿠버네티스에서 오브젝트(Object)란 &lt;strong&gt;쿠버네티스 클러스터에서 관리하는 리소스&lt;/strong&gt;를 의미한다.&lt;br&gt;&#xA;모든 오브젝트는 &lt;strong&gt;YAML 또는 JSON 형식&lt;/strong&gt;으로 정의되며, API를 통해 생성 및 관리할 수 있다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Workload&amp; Deploy</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s04/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s04/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s04/</guid>
       <description>&lt;h1&gt;&lt;strong&gt;Workload &amp;amp; Deploy (워크로드 및 배포)&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;쿠버네티스에서 **워크로드(Workload)**란 클러스터에서 실행되는 &lt;strong&gt;애플리케이션, 서비스, 작업(Job) 등&lt;/strong&gt;을 의미한다.&lt;br&gt;&#xA;쿠버네티스는 다양한 배포(Deploy) 전략을 지원하며, 이를 통해 안정적인 서비스 운영이 가능하다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Networking</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s05/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s05/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s05/</guid>
       <description>&lt;h1&gt;&lt;strong&gt;Kubernetes Networking (네트워킹)&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;&lt;strong&gt;1️⃣ 쿠버네티스 네트워킹 개요&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-쿠버네티스-네트워킹-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4-%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%82%b9-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h3&gt;&lt;strong&gt;🔹 쿠버네티스 네트워킹의 특징&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-쿠버네티스-네트워킹의-특징&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4-%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%82%b9%ec%9d%98-%ed%8a%b9%ec%a7%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;쿠버네티스 네트워크 모델은 기존 VM 네트워크와 다르게 설계되었어.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Security</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s06/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s06/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s06/</guid>
       <description>&lt;h1&gt;Kubernetes Security (쿠버네티스 보안)&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ 쿠버네티스 보안 개요&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-쿠버네티스-보안-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%bf%a0%eb%b2%84%eb%84%a4%ed%8b%b0%ec%8a%a4-%eb%b3%b4%ec%95%88-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;쿠버네티스 환경에서는 &lt;strong&gt;Pod 격리, 네트워크 보안, 접근 제어&lt;/strong&gt; 등이 중요해.&lt;br&gt;&#xA;잘못된 설정이 보안 취약점을 만들 수 있으므로, 보안 모범 사례를 따라야 해.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Loging&amp; Monitoring</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s07/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s07/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s07/</guid>
       <description>&lt;h2&gt;1️⃣ 로깅 &amp;amp; 모니터링 개요&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-로깅--모니터링-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%eb%a1%9c%ea%b9%85--%eb%aa%a8%eb%8b%88%ed%84%b0%eb%a7%81-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;쿠버네티스에서는 &lt;strong&gt;클러스터 상태, 애플리케이션 로그, 메트릭 수집&lt;/strong&gt;이 중요.&lt;br&gt;&#xA;&lt;strong&gt;문제 발생 시 원인 분석과 대응&lt;/strong&gt;을 위해 적절한 로깅 &amp;amp; 모니터링 시스템이 필요.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Autoscaling</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s08/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s08/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s08/</guid>
       <description>&lt;h1&gt;Kubernetes Autoscaling&lt;/h1&gt;&lt;h2&gt;1️⃣ 오토스케일링(AutoScaling) 개요&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-오토스케일링autoscaling-개요&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ec%98%a4%ed%86%a0%ec%8a%a4%ec%bc%80%ec%9d%bc%eb%a7%81autoscaling-%ea%b0%9c%ec%9a%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;p&gt;쿠버네티스에서는 &lt;strong&gt;부하에 따라 리소스를 자동으로 확장(AutoScaling)&lt;/strong&gt; 가능.&lt;br&gt;&#xA;✅ &lt;strong&gt;트래픽 증가 시 자동 확장&lt;/strong&gt; → 성능 유지&lt;br&gt;&#xA;✅ &lt;strong&gt;트래픽 감소 시 자동 축소&lt;/strong&gt; → 비용 절감&lt;/p&gt;</description>
     </item>
     <item>
       <title>hands-on</title>
-      <link>https://mungops.github.io/devops/kubernetes/kubernetes/k8s09/</link>
+      <link>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/kubernetes/kubernetes/k8s09/</guid>
+      <guid>https://mungops.github.io/blog/devops/kubernetes/kubernetes/k8s09/</guid>
       <description>&lt;h1&gt;🔥 &lt;strong&gt;쿠버네티스 Hands-On 실습 가이드&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;p&gt;✅ &lt;strong&gt;Pod, Deployment, Service, Ingress, ConfigMap, Secret, Storage, Autoscaling, Security, Monitoring&lt;/strong&gt; 등&lt;br&gt;&#xA;✅ &lt;strong&gt;실제 운영 환경과 유사하게&lt;/strong&gt; 쿠버네티스 리소스를 조합하여 배포.&#xA;✅ &lt;strong&gt;각 단계별로 설명 + 예제 코드 + 명령어 + 실행 결과&lt;/strong&gt;까지 포함.&lt;/p&gt;</description>
     </item>
   </channel>

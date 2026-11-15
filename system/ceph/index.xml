@@ -2,93 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ceph on mungOps</title>
-    <link>https://mungops.github.io/system/ceph/</link>
+    <link>https://mungops.github.io/blog/system/ceph/</link>
     <description>Recent content in Ceph on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/system/ceph/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/blog/system/ceph/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ceph 개요 및 기본 개념</title>
-      <link>https://mungops.github.io/system/ceph/ceph00/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph00/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph00/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph00/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Ceph란 무엇인가? (역사, 배경, 발전 과정)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph란-무엇인가-역사-배경-발전-과정&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph%eb%9e%80-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80-%ec%97%ad%ec%82%ac-%eb%b0%b0%ea%b2%bd-%eb%b0%9c%ec%a0%84-%ea%b3%bc%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph는 분산형 소프트웨어 정의 스토리지(SDS, Software Defined Storage)로서, 높은 확장성과 고가용성을 제공하는 오픈소스 스토리지 솔루션입니다.&lt;br&gt;&#xA;2003년 Sage Weil이 박사 논문 프로젝트로 시작하였으며, 이후 2012년 Inktank라는 회사가 Ceph를 상업적으로 지원하기 시작했습니다.&lt;br&gt;&#xA;2014년 Red Hat이 Inktank를 인수하면서 Ceph는 엔터프라이즈 환경에서도 주요 스토리지 솔루션으로 자리 잡게 되었습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 기본 아키텍처</title>
-      <link>https://mungops.github.io/system/ceph/ceph01/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph01/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph01/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Ceph Cluster의 주요 컴포넌트&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-cluster의-주요-컴포넌트&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph-cluster%ec%9d%98-%ec%a3%bc%ec%9a%94-%ec%bb%b4%ed%8f%ac%eb%84%8c%ed%8a%b8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph 클러스터는 다양한 컴포넌트로 구성되며, 각 컴포넌트는 역할을 나누어 분산 스토리지를 효율적으로 운영합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 설치 및 환경 구성</title>
-      <link>https://mungops.github.io/system/ceph/ceph02/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph02/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph02/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Ceph 클러스터 배포 방식 비교&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-클러스터-배포-방식-비교&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%eb%b0%b0%ed%8f%ac-%eb%b0%a9%ec%8b%9d-%eb%b9%84%ea%b5%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ceph을 구축하는 방법은 여러 가지가 있으며, 환경에 따라 적절한 배포 방식을 선택해야 합니다.&lt;/p&gt;&#xA;&lt;h3&gt;1. &lt;strong&gt;Manual 설치&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-manual-설치&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-manual-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;개별 노드에 직접 패키지를 설치하고 설정 파일을 수동으로 구성&lt;/li&gt;&#xA;&lt;li&gt;설치 과정에 대한 완전한 제어 가능&lt;/li&gt;&#xA;&lt;li&gt;복잡하고 유지보수 부담이 큼&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3&gt;2. &lt;strong&gt;Ceph-Ansible&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-ceph-ansible&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#2-ceph-ansible&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;Ansible을 사용하여 자동화된 설치 및 설정 적용&lt;/li&gt;&#xA;&lt;li&gt;대규모 환경에서 반복적인 설치 작업을 단순화&lt;/li&gt;&#xA;&lt;li&gt;설정이 잘못되면 디버깅이 어려울 수 있음&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3&gt;3. &lt;strong&gt;Cephadm&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-cephadm&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#3-cephadm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;최신 Ceph 배포 방식으로, 컨테이너 기반 관리 지원&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;ceph orch&lt;/code&gt; 명령을 통해 클러스터를 쉽게 관리 가능&lt;/li&gt;&#xA;&lt;li&gt;지속적인 유지보수 및 확장에 유리&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;💡 &lt;strong&gt;추천:&lt;/strong&gt; 신규 설치 환경에서는 &lt;strong&gt;Cephadm&lt;/strong&gt;을 사용하는 것이 가장 쉽고 관리가 편리합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph RADOS</title>
-      <link>https://mungops.github.io/system/ceph/ceph03/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph03/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph03/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;RADOS Reliable Autonomic Distributed Object Store) 개념 및 핵심 기능&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rados-reliable-autonomic-distributed-object-store-개념-및-핵심-기능&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-rados-reliable-autonomic-distributed-object-store-%ea%b0%9c%eb%85%90-%eb%b0%8f-%ed%95%b5%ec%8b%ac-%ea%b8%b0%eb%8a%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;RADOS(Reliable Autonomic Distributed Object Store)는 Ceph의 핵심 스토리지 엔진으로, Ceph 클러스터 내에서 데이터를 안정적으로 분산 및 관리하는 역할을 합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 블록 스토리지 (RBD) 실무</title>
-      <link>https://mungops.github.io/system/ceph/ceph04/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph04/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph04/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Ceph RBD 개념 및 사용 사례&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-rbd-개념-및-사용-사례&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph-rbd-%ea%b0%9c%eb%85%90-%eb%b0%8f-%ec%82%ac%ec%9a%a9-%ec%82%ac%eb%a1%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Ceph RBD란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-rbd란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph-rbd%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;RBD(RADOS Block Device)는 Ceph의 블록 스토리지 솔루션으로, 클라우드 및 가상화 환경에서 활용됩니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 파일 시스템 (CephFS) 실무</title>
-      <link>https://mungops.github.io/system/ceph/ceph05/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph05/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph05/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;CephFS 개념 및 동작 방식&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-cephfs-개념-및-동작-방식&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-cephfs-%ea%b0%9c%eb%85%90-%eb%b0%8f-%eb%8f%99%ec%9e%91-%eb%b0%a9%ec%8b%9d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;CephFS란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-cephfs란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-cephfs%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;CephFS(Ceph File System)는 Ceph의 분산 파일 시스템으로, Ceph 클러스터 내에서 파일 시스템을 제공합니다. CephFS는 여러 서버 간에 데이터를 분산 저장하면서도, 일반적인 파일 시스템처럼 동작할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 오브젝트 스토리지 (RGW) 실무</title>
-      <link>https://mungops.github.io/system/ceph/ceph06/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph06/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph06/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Ceph RADOS Gateway 개념 및 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-rados-gateway-개념-및-역할&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph-rados-gateway-%ea%b0%9c%eb%85%90-%eb%b0%8f-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;RADOS Gateway란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rados-gateway란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-rados-gateway%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph RADOS Gateway(RGW)는 Ceph 클러스터에 오브젝트 스토리지 서비스(S3, Swift API)를 제공하는 서비스입니다. RGW는 AWS S3와 OpenStack Swift와 호환되며, 분산 파일 시스템의 오브젝트 저장소를 지원합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 모니터링 및 성능 최적화</title>
-      <link>https://mungops.github.io/system/ceph/ceph07/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph07/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph07/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Ceph Dashboard 활용&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-dashboard-활용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph-dashboard-%ed%99%9c%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Ceph Dashboard란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-dashboard란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph-dashboard%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph Dashboard는 Ceph 클러스터의 상태를 실시간으로 모니터링하고, 관리할 수 있는 웹 기반의 인터페이스입니다. 이를 통해 클러스터의 성능 지표를 시각적으로 확인하고, 시스템을 관리할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 장애 대응 및 트러블슈팅</title>
-      <link>https://mungops.github.io/system/ceph/ceph08/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph08/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph08/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;OSD 장애 복구 (ceph osd repair, ceph osd lost)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-osd-장애-복구-ceph-osd-repair-ceph-osd-lost&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-osd-%ec%9e%a5%ec%95%a0-%eb%b3%b5%ea%b5%ac-ceph-osd-repair-ceph-osd-lost&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;OSD 장애 복구란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-osd-장애-복구란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-osd-%ec%9e%a5%ec%95%a0-%eb%b3%b5%ea%b5%ac%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph에서 OSD(Object Storage Device)는 중요한 데이터를 저장하는 역할을 하며, 장애가 발생하면 해당 OSD의 데이터 복구가 필요합니다. &lt;code&gt;ceph osd repair&lt;/code&gt; 명령어를 사용하여 OSD 복구 작업을 수행할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph과 Kubernetes (Rook-Ceph) 통합</title>
-      <link>https://mungops.github.io/system/ceph/ceph09/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph09/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph09/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Rook-Ceph 개요 및 아키텍처&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rook-ceph-개요-및-아키텍처&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-rook-ceph-%ea%b0%9c%ec%9a%94-%eb%b0%8f-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Rook-Ceph이란?&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-rook-ceph이란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-rook-ceph%ec%9d%b4%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rook-Ceph는 Kubernetes 환경에서 Ceph 스토리지 클러스터를 쉽게 관리할 수 있도록 지원하는 오픈소스 프로젝트입니다. Rook는 Ceph의 클러스터를 자동으로 배포하고, 관리할 수 있는 기능을 제공합니다. 이를 통해 Kubernetes에서 Ceph를 손쉽게 설치하고, 운영할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph 확장 및 고급 설정</title>
-      <link>https://mungops.github.io/system/ceph/ceph10/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph10/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph10/</guid>
       <description>&lt;h2&gt;1️⃣1️ &lt;strong&gt;Ceph 클러스터 노드 추가 및 확장 (ceph osd add)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;11-ceph-클러스터-노드-추가-및-확장-ceph-osd-add&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#11-ceph-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%eb%85%b8%eb%93%9c-%ec%b6%94%ea%b0%80-%eb%b0%8f-%ed%99%95%ec%9e%a5-ceph-osd-add&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;Ceph 클러스터 노드 추가의 필요성&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-ceph-클러스터-노드-추가의-필요성&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-ceph-%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0-%eb%85%b8%eb%93%9c-%ec%b6%94%ea%b0%80%ec%9d%98-%ed%95%84%ec%9a%94%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ceph 클러스터는 수평적으로 확장이 가능하며, 필요한 성능이나 용량을 충족하기 위해 새로운 노드를 추가할 수 있습니다. 노드를 추가하면 클러스터의 스토리지 용량을 확장하고, 더 많은 OSD(객체 저장 장치)를 추가하여 I/O 성능을 개선할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ceph을 활용한 실제 구축 사례 및 Best Practice</title>
-      <link>https://mungops.github.io/system/ceph/ceph11/</link>
+      <link>https://mungops.github.io/blog/system/ceph/ceph11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/ceph/ceph11/</guid>
+      <guid>https://mungops.github.io/blog/system/ceph/ceph11/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;기업 환경에서의 Ceph 구축 사례&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-기업-환경에서의-ceph-구축-사례&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ea%b8%b0%ec%97%85-%ed%99%98%ea%b2%bd%ec%97%90%ec%84%9c%ec%9d%98-ceph-%ea%b5%ac%ec%b6%95-%ec%82%ac%eb%a1%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;기업 환경에서 Ceph을 사용하는 이유&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-기업-환경에서-ceph을-사용하는-이유&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ea%b8%b0%ec%97%85-%ed%99%98%ea%b2%bd%ec%97%90%ec%84%9c-ceph%ec%9d%84-%ec%82%ac%ec%9a%a9%ed%95%98%eb%8a%94-%ec%9d%b4%ec%9c%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;기업 환경에서는 데이터 저장소에 대한 요구가 매우 높습니다. Ceph는 고가용성, 확장성, 비용 효율성을 제공하는 스토리지 시스템으로서, 특히 대규모 데이터를 처리하는 기업에서 많이 사용됩니다. 예를 들어, 금융, 제조업, 클라우드 서비스 제공업체 등에서는 Ceph을 사용하여 데이터를 안정적으로 저장하고 관리합니다.&lt;/p&gt;</description>
     </item>
   </channel>

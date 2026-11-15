@@ -2,107 +2,107 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins on mungOps</title>
-    <link>https://mungops.github.io/devops/jenkins/</link>
+    <link>https://mungops.github.io/blog/devops/jenkins/</link>
     <description>Recent content in Jenkins on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/devops/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/blog/devops/jenkins/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jenkins 개요 및 기본 개념</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins01/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins01/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins01/</guid>
       <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Jenkins 개요 및 기본 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins-개요-및-기본-개념&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins-%ea%b0%9c%ec%9a%94-%eb%b0%8f-%ea%b8%b0%eb%b3%b8-%ea%b0%9c%eb%85%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Jenkins란 무엇인가? (역사, 배경, 발전 과정)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins란-무엇인가-역사-배경-발전-과정&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins%eb%9e%80-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80-%ec%97%ad%ec%82%ac-%eb%b0%b0%ea%b2%bd-%eb%b0%9c%ec%a0%84-%ea%b3%bc%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins는 2004년에 처음 출시된 오픈소스 자동화 서버로, 소프트웨어 개발의 CI/CD(지속적 통합/지속적 배포) 과정을 자동화하는 데 사용됩니다. Jenkins는 원래 &amp;ldquo;Hudson&amp;quot;이라는 이름으로 시작되었으며, 오라클과의 갈등으로 인해 2011년에 &amp;ldquo;Jenkins&amp;quot;로 이름이 변경되었습니다. 현재는 수많은 플러그인과 함께 다양한 개발 언어 및 플랫폼에서 사용할 수 있는 강력한 툴로 발전하였습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 설치 및 환경 구축</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins02/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins02/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins02/</guid>
       <description>&lt;h2&gt;2️⃣ &lt;strong&gt;Jenkins 설치 및 환경 구축&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-jenkins-설치-및-환경-구축&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#2-jenkins-%ec%84%a4%ec%b9%98-%eb%b0%8f-%ed%99%98%ea%b2%bd-%ea%b5%ac%ec%b6%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Jenkins 설치 방법 비교 (Docker, Bare Metal, Kubernetes)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins-설치-방법-비교-docker-bare-metal-kubernetes&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins-%ec%84%a4%ec%b9%98-%eb%b0%a9%eb%b2%95-%eb%b9%84%ea%b5%90-docker-bare-metal-kubernetes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins는 다양한 환경에서 설치할 수 있습니다. 각 방법에 따라 설치 절차와 장단점이 다릅니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 아키텍처 및 핵심 개념</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins03/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins03/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins03/</guid>
       <description>&lt;h2&gt;3️⃣ &lt;strong&gt;Jenkins 아키텍처 및 핵심 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-jenkins-아키텍처-및-핵심-개념&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#3-jenkins-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98-%eb%b0%8f-%ed%95%b5%ec%8b%ac-%ea%b0%9c%eb%85%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Jenkins Master-Slave 아키텍처&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins-master-slave-아키텍처&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins-master-slave-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins는 기본적으로 &lt;strong&gt;Master-Slave&lt;/strong&gt; 구조로 설계되어 있으며, 이를 통해 분산 빌드를 지원합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 기본 사용법</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins04/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins04/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins04/</guid>
       <description>&lt;h2&gt;4️⃣ &lt;strong&gt;Jenkins 기본 사용법&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-jenkins-기본-사용법&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#4-jenkins-%ea%b8%b0%eb%b3%b8-%ec%82%ac%ec%9a%a9%eb%b2%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Jenkins 첫 실행 및 초기 설정 마법사&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins-첫-실행-및-초기-설정-마법사&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins-%ec%b2%ab-%ec%8b%a4%ed%96%89-%eb%b0%8f-%ec%b4%88%ea%b8%b0-%ec%84%a4%ec%a0%95-%eb%a7%88%eb%b2%95%ec%82%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins를 처음 실행하면, 초기 설정 마법사가 나타나게 됩니다. 이 과정에서는 기본적인 설정을 완료하고, Jenkins가 정상적으로 실행되도록 준비할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins Pipeline (선언형 vs 스크립트형)</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins05/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins05/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins05/</guid>
       <description>&lt;h2&gt;5️⃣ &lt;strong&gt;Jenkins Pipeline (선언형 vs 스크립트형)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;5-jenkins-pipeline-선언형-vs-스크립트형&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#5-jenkins-pipeline-%ec%84%a0%ec%96%b8%ed%98%95-vs-%ec%8a%a4%ed%81%ac%eb%a6%bd%ed%8a%b8%ed%98%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Jenkins Pipeline 개념 및 필요성&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins-pipeline-개념-및-필요성&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins-pipeline-%ea%b0%9c%eb%85%90-%eb%b0%8f-%ed%95%84%ec%9a%94%ec%84%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins Pipeline은 Jenkins에서 CI/CD 프로세스를 자동화하기 위한 강력한 방법입니다. 파이프라인은 소스 코드의 빌드, 테스트, 배포 과정 등 여러 단계를 정의하고 자동으로 실행할 수 있게 해줍니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins와 Git, GitHub, GitLab 연동</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins06/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins06/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins06/</guid>
       <description>&lt;h2&gt;6️⃣ &lt;strong&gt;Jenkins와 Git, GitHub, GitLab 연동&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;6-jenkins와-git-github-gitlab-연동&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#6-jenkins%ec%99%80-git-github-gitlab-%ec%97%b0%eb%8f%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Jenkins와 Git 저장소 연동&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins와-git-저장소-연동&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins%ec%99%80-git-%ec%a0%80%ec%9e%a5%ec%86%8c-%ec%97%b0%eb%8f%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins는 Git을 지원하여, Git 저장소의 소스 코드를 자동으로 가져와 빌드 및 배포를 실행할 수 있습니다. Jenkins와 Git 연동을 통해 코드 변경 사항을 추적하고, 실시간으로 빌드와 테스트가 가능합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins와 Docker/Kubernetes 연동</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins07/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins07/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins07/</guid>
       <description>&lt;h2&gt;7️⃣ &lt;strong&gt;Jenkins와 Docker/Kubernetes 연동&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;7-jenkins와-dockerkubernetes-연동&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#7-jenkins%ec%99%80-dockerkubernetes-%ec%97%b0%eb%8f%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Docker 기반 Jenkins 실행 및 관리&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-docker-기반-jenkins-실행-및-관리&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-docker-%ea%b8%b0%eb%b0%98-jenkins-%ec%8b%a4%ed%96%89-%eb%b0%8f-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins는 Docker와 쉽게 통합되어 Docker 컨테이너 내에서 Jenkins를 실행할 수 있습니다. 이를 통해 Jenkins 인프라를 간편하게 관리하고 확장할 수 있습니다. Docker를 활용하면 Jenkins 서버와 에이전트를 컨테이너로 배포하여 빠르게 환경을 구축할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins Job 및 Build 단계 상세 설정</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins08/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins08/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins08/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins08/</guid>
       <description>&lt;h2&gt;8️⃣ &lt;strong&gt;Jenkins Job 및 Build 단계 상세 설정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;8-jenkins-job-및-build-단계-상세-설정&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#8-jenkins-job-%eb%b0%8f-build-%eb%8b%a8%ea%b3%84-%ec%83%81%ec%84%b8-%ec%84%a4%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Build Step (Shell Script, Gradle, Maven, Makefile 등)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-build-step-shell-script-gradle-maven-makefile-등&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-build-step-shell-script-gradle-maven-makefile-%eb%93%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins에서 &lt;strong&gt;Build Step&lt;/strong&gt;은 빌드 프로세스 중에 실행될 구체적인 명령을 정의하는 단계입니다. Jenkins는 다양한 빌드 툴 및 방법을 지원하여, 다양한 환경에서 빌드를 자동화할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins와 CI/CD 구축 실습</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins09/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins09/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins09/</guid>
       <description>&lt;h2&gt;9️⃣ &lt;strong&gt;Jenkins와 CI/CD 구축 실습&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;9-jenkins와-cicd-구축-실습&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#9-jenkins%ec%99%80-cicd-%ea%b5%ac%ec%b6%95-%ec%8b%a4%ec%8a%b5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1️⃣ &lt;strong&gt;CI/CD 개념 복습 및 실무 적용 사례&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-cicd-개념-복습-및-실무-적용-사례&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-cicd-%ea%b0%9c%eb%85%90-%eb%b3%b5%ec%8a%b5-%eb%b0%8f-%ec%8b%a4%eb%ac%b4-%ec%a0%81%ec%9a%a9-%ec%82%ac%eb%a1%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;CI/CD&lt;/strong&gt;(Continuous Integration / Continuous Deployment)는 개발과 배포의 자동화를 통해 소프트웨어 개발 프로세스를 개선하는 방법론입니다. CI/CD는 &lt;strong&gt;개발자들이 자주 코드를 통합하고&lt;/strong&gt;, &lt;strong&gt;자동화된 테스트와 배포를 통해 더 빠르고 안정적인 소프트웨어 배포를 가능하게&lt;/strong&gt; 합니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 플러그인 활용 및 고급 설정</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins10/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins10/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins10/</guid>
       <description>&lt;h2&gt;🔟 &lt;strong&gt;Jenkins 플러그인 활용 및 고급 설정&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-jenkins-플러그인-활용-및-고급-설정&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-jenkins-%ed%94%8c%eb%9f%ac%ea%b7%b8%ec%9d%b8-%ed%99%9c%ec%9a%a9-%eb%b0%8f-%ea%b3%a0%ea%b8%89-%ec%84%a4%ec%a0%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1️⃣ &lt;strong&gt;Jenkins 주요 플러그인 소개 및 설치&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins-주요-플러그인-소개-및-설치&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins-%ec%a3%bc%ec%9a%94-%ed%94%8c%eb%9f%ac%ea%b7%b8%ec%9d%b8-%ec%86%8c%ea%b0%9c-%eb%b0%8f-%ec%84%a4%ec%b9%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins는 플러그인을 통해 기능을 확장할 수 있습니다. 플러그인은 Jenkins의 핵심 기능을 보강하고 다양한 외부 도구와 연동을 가능하게 합니다. 여기서는 Jenkins에서 자주 사용되는 플러그인들과 그 설치 방법을 다룹니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 모니터링 및 성능 최적화</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins11/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins11/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins11/</guid>
       <description>&lt;h2&gt;1️⃣1️⃣ &lt;strong&gt;Jenkins 모니터링 및 성능 최적화&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;11-jenkins-모니터링-및-성능-최적화&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#11-jenkins-%eb%aa%a8%eb%8b%88%ed%84%b0%eb%a7%81-%eb%b0%8f-%ec%84%b1%eb%8a%a5-%ec%b5%9c%ec%a0%81%ed%99%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1️⃣ &lt;strong&gt;Jenkins System Monitoring (JVM Heap, Garbage Collection)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins-system-monitoring-jvm-heap-garbage-collection&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins-system-monitoring-jvm-heap-garbage-collection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins는 Java 기반으로 실행되기 때문에 JVM의 성능이 중요합니다. JVM Heap 크기, Garbage Collection 등을 모니터링하고 최적화함으로써 Jenkins의 성능을 향상시킬 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 보안 및 권한 관리</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins12/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins12/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins12/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins12/</guid>
       <description>&lt;h2&gt;1️⃣2️⃣ &lt;strong&gt;Jenkins 보안 및 권한 관리&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;12-jenkins-보안-및-권한-관리&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#12-jenkins-%eb%b3%b4%ec%95%88-%eb%b0%8f-%ea%b6%8c%ed%95%9c-%ea%b4%80%eb%a6%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1️⃣ &lt;strong&gt;Jenkins의 보안 설정 (Manage Jenkins → Configure Global Security)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins의-보안-설정-manage-jenkins--configure-global-security&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins%ec%9d%98-%eb%b3%b4%ec%95%88-%ec%84%a4%ec%a0%95-manage-jenkins--configure-global-security&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins는 강력한 보안 설정을 제공하여 서버와 데이터의 안전을 보장합니다. 기본적으로 &lt;strong&gt;Configure Global Security&lt;/strong&gt; 옵션을 통해 다양한 보안 기능을 설정할 수 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 장애 대응 및 트러블슈팅</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins13/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins13/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins13/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins13/</guid>
       <description>&lt;h2&gt;1️⃣3️⃣ &lt;strong&gt;Jenkins 장애 대응 및 트러블슈팅&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;13-jenkins-장애-대응-및-트러블슈팅&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#13-jenkins-%ec%9e%a5%ec%95%a0-%eb%8c%80%ec%9d%91-%eb%b0%8f-%ed%8a%b8%eb%9f%ac%eb%b8%94%ec%8a%88%ed%8c%85&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1️⃣ &lt;strong&gt;Jenkins Service 다운 문제 해결&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-jenkins-service-다운-문제-해결&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-jenkins-service-%eb%8b%a4%ec%9a%b4-%eb%ac%b8%ec%a0%9c-%ed%95%b4%ea%b2%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Jenkins 서비스가 다운되면 먼저 시스템의 상태를 점검하고 원인을 찾아야 합니다. 서비스가 다운된 원인은 여러 가지가 있을 수 있으며, 가장 일반적인 원인으로는 메모리 부족, 디스크 공간 부족, 또는 잘못된 설정 등이 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jenkins 최신 트렌드 및 Best Practices</title>
-      <link>https://mungops.github.io/devops/jenkins/jenkins14/</link>
+      <link>https://mungops.github.io/blog/devops/jenkins/jenkins14/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/devops/jenkins/jenkins14/</guid>
+      <guid>https://mungops.github.io/blog/devops/jenkins/jenkins14/</guid>
       <description>&lt;h2&gt;1️⃣4️⃣ &lt;strong&gt;Jenkins 최신 트렌드 및 Best Practices&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;14-jenkins-최신-트렌드-및-best-practices&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#14-jenkins-%ec%b5%9c%ec%8b%a0-%ed%8a%b8%eb%a0%8c%eb%93%9c-%eb%b0%8f-best-practices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1️⃣ &lt;strong&gt;GitOps와 Jenkins의 역할&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-gitops와-jenkins의-역할&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-gitops%ec%99%80-jenkins%ec%9d%98-%ec%97%ad%ed%95%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;GitOps는 Git을 소스 코드와 인프라의 단일 진실의 원천으로 사용하는 DevOps 관행입니다. Jenkins는 GitOps 파이프라인을 구현하는 데 중요한 역할을 하며, Jenkins를 사용하여 GitHub와 GitLab의 레포지토리에서 CI/CD 작업을 자동화할 수 있습니다.&lt;/p&gt;</description>
     </item>
   </channel>

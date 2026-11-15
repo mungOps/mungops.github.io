@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Application on mungOps</title>
-    <link>https://mungops.github.io/system/server/app/</link>
+    <link>https://mungops.github.io/blog/system/server/app/</link>
     <description>Recent content in Application on mungOps</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://mungops.github.io/system/server/app/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mungops.github.io/blog/system/server/app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTTP, HTTPS</title>
-      <link>https://mungops.github.io/system/server/app/http/</link>
+      <link>https://mungops.github.io/blog/system/server/app/http/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/server/app/http/</guid>
+      <guid>https://mungops.github.io/blog/system/server/app/http/</guid>
       <description>&lt;h2&gt;📌 HTTP Server Guide&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;-http-server-guide&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#-http-server-guide&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ HTTP란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-http란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-http%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;HTTP(HyperText Transfer Protocol)&lt;/strong&gt; 는 웹 브라우저와 웹 서버 간 데이터를 주고받는 프로토콜입니다.&lt;br&gt;&#xA;인터넷에서 웹 페이지를 요청하고 표시하는 데 사용됩니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SMTP/IMAP/POP3</title>
-      <link>https://mungops.github.io/system/server/app/email/</link>
+      <link>https://mungops.github.io/blog/system/server/app/email/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mungops.github.io/system/server/app/email/</guid>
+      <guid>https://mungops.github.io/blog/system/server/app/email/</guid>
       <description>&lt;h1&gt;📧 &lt;strong&gt;Email 서버 구축 (SMTP/IMAP/POP3) 가이드&lt;/strong&gt; 🚀&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;1️⃣ Email 서버란?&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-email-서버란&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-email-%ec%84%9c%eb%b2%84%eb%9e%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;이메일 서버는 &lt;strong&gt;메일을 송수신 및 저장하는 역할&lt;/strong&gt;을 합니다.&lt;br&gt;&#xA;대표적인 이메일 프로토콜은 다음과 같습니다.&lt;/p&gt;</description>
     </item>
   </channel>
