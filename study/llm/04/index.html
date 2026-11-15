@@ -11,25 +11,31 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점 – mungOps</title>
-  <meta name="description" content=" 이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 3주차 — 핵심 기술: 첫 AI 챗봇 만들기" /><link rel="canonical" href="https://mungops.github.io/study/llm/04/" itemprop="url" />
+  <meta name="description" content=" 이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기 LLM 모델 계열(Model Families) Open-weight LLM Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다." /><link rel="canonical" href="https://mungops.github.io/study/llm/04/" itemprop="url" />
 
 <meta property="og:title" content="4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점" />
 <meta property="og:description" content="
 이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다.
 
  
-로컬 AI 스터디 3주차 — 핵심 기술: 첫 AI 챗봇 만들기" />
+로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기
+LLM 모델 계열(Model Families)
+    Open-weight LLM
+    
+
+Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/study/llm/04/" /><meta property="article:section" content="study" />
 
-
+<meta property="article:modified_time" content="2026-11-15T18:37:57+09:00" />
 
   <meta itemprop="name" content="4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점">
-  <meta itemprop="description" content="이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 3주차 — 핵심 기술: 첫 AI 챗봇 만들기">
-  <meta itemprop="wordCount" content="57">
+  <meta itemprop="description" content="이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기 LLM 모델 계열(Model Families) Open-weight LLM Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다.">
+  <meta itemprop="dateModified" content="2026-11-15T18:37:57+09:00">
+  <meta itemprop="wordCount" content="4529">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점">
-  <meta name="twitter:description" content="이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 3주차 — 핵심 기술: 첫 AI 챗봇 만들기">
+  <meta name="twitter:description" content="이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기 LLM 모델 계열(Model Families) Open-weight LLM Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다.">
 
     <link rel="preload" href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" as="style" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
     <link href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" rel="stylesheet" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
@@ -3588,7 +3594,79 @@
   >4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점
     </a>
   
-    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'></ul>
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#llm-%eb%aa%a8%eb%8d%b8-%ea%b3%84%ec%97%b4model-families"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >LLM 모델 계열(Model Families)</a>
+            </li>
+          <li>
+              <a
+                href="#%eb%aa%a8%eb%8d%b8-%ed%81%ac%ea%b8%b0%ec%99%80-%ec%84%b1%eb%8a%a5"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >모델 크기와 성능</a>
+            </li>
+          <li>
+              <a
+                href="#moe-mixture-of-experts"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >MoE (Mixture of Experts)</a>
+            </li>
+          <li>
+              <a
+                href="#4-%eb%aa%a8%eb%8d%b8%eb%b3%84-%eb%8b%a4%ea%b5%ad%ec%96%b4-%eb%8a%a5%eb%a0%a5"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >4. 모델별 다국어 능력</a>
+            </li>
+          <li>
+              <a
+                href="#system-prompt"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >System Prompt</a>
+            </li>
+          <li>
+              <a
+                href="#4-ollama-modelfile"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >4. Ollama Modelfile</a>
+            </li>
+          <li>
+              <a
+                href="#%ec%b1%97%eb%b4%87%ec%97%90%ec%84%9c-%ed%99%9c%ec%9a%a9"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >챗봇에서 활용</a>
+            </li>
+          <li>
+              <a
+                href="#local-llm%ec%9d%b4%eb%9e%80"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Local LLM이란?</a>
+            </li>
+          <li>
+              <a
+                href="#hybrid-ai"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Hybrid AI</a>
+            </li>
+          <li>
+              <a
+                href="#%ed%95%b5%ec%8b%ac-%eb%82%b4%ec%9a%a9-%ec%a0%95%eb%a6%ac%ec%a0%95%eb%a6%ac"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >핵심 내용 정리정리</a>
+            </li>
+          <li>
+              <a
+                href="#%ed%95%b5%ec%8b%ac-%ea%b0%9c%eb%85%90-%ec%a0%95%eb%a6%ac"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >핵심 개념 정리</a>
+            </li>
+          <li>
+              <a
+                href="#%eb%8f%84%ec%a0%84-%ea%b3%bc%ec%a0%9c"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >도전 과제</a>
+            </li>
+          </ul>
   
               
             </li></ul>
@@ -5207,7 +5285,107 @@
 </div></div></aside>
     
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
-    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">페이지 목차</p><ul></ul>
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">페이지 목차</p><ul>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#llm-%eb%aa%a8%eb%8d%b8-%ea%b3%84%ec%97%b4model-families">LLM 모델 계열(Model Families)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#open-weight-llm">Open-weight LLM
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%eb%aa%a8%eb%8d%b8-%ed%81%ac%ea%b8%b0%ec%99%80-%ec%84%b1%eb%8a%a5">모델 크기와 성능
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#quantization">Quantization
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%eb%a1%9c%ec%bb%ac-%ed%99%98%ea%b2%bd%ec%97%90%ec%84%9c-%eb%aa%a8%eb%8d%b8-%ec%84%a0%ed%83%9d">로컬 환경에서 모델 선택
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#moe-mixture-of-experts">MoE (Mixture of Experts)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#4-%eb%aa%a8%eb%8d%b8%eb%b3%84-%eb%8b%a4%ea%b5%ad%ec%96%b4-%eb%8a%a5%eb%a0%a5">4. 모델별 다국어 능력
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#system-prompt">System Prompt
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%eb%a9%94%ec%8b%9c%ec%a7%80-role">메시지 Role
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#system-prompt-%ec%98%88%ec%8b%9c">System Prompt 예시
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#2-system-prompt-%ed%94%84%eb%a6%ac%ec%85%8b">2. System Prompt 프리셋
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#llm-%ec%83%9d%ec%84%b1-%ed%8c%8c%eb%9d%bc%eb%af%b8%ed%84%b0">LLM 생성 파라미터
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#temperature">Temperature
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#top-k%ec%99%80-top-p">Top-K와 Top-P
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#repeat-penalty">Repeat Penalty
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#4-ollama-modelfile">4. Ollama Modelfile
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%ec%b1%97%eb%b4%87%ec%97%90%ec%84%9c-%ed%99%9c%ec%9a%a9">챗봇에서 활용
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#local-llm%ec%9d%b4%eb%9e%80">Local LLM이란?
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%eb%b3%b4%ec%95%88-%eb%b0%8f-%ea%b0%9c%ec%9d%b8%ec%a0%95%eb%b3%b4-%eb%b3%b4%ed%98%b8">보안 및 개인정보 보호
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%eb%b9%84%ec%9a%a9-%eb%b0%8f-tco">비용 및 TCO
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#local-ai-%ed%99%9c%ec%9a%a9-%eb%b6%84%ec%95%bc">Local AI 활용 분야
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#hybrid-ai">Hybrid AI
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%ed%95%b5%ec%8b%ac-%eb%82%b4%ec%9a%a9-%ec%a0%95%eb%a6%ac%ec%a0%95%eb%a6%ac">핵심 내용 정리정리
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%ed%95%b5%ec%8b%ac-%ea%b0%9c%eb%85%90-%ec%a0%95%eb%a6%ac">핵심 개념 정리
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#%eb%8f%84%ec%a0%84-%ea%b3%bc%ec%a0%9c">도전 과제
+        </a>
+      </li></ul>
       <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/mungops/mung/edit/main/content%20https:/mungops.github.io/main/content/study/llm/04.md" target="_blank" rel="noreferrer">GitHub에서 편집하기 →</a>
         <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
           <span>맨위로 스크롤</span>
@@ -5244,10 +5422,923 @@
 <li>이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다.</li>
 </ul>
 <p> </p>
-<h1>로컬 AI 스터디 3주차 — 핵심 기술: 첫 AI 챗봇 만들기</h1><hr>
+<h1>로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기</h1><hr>
+<h2>LLM 모델 계열(Model Families)<span class="hx-absolute -hx-mt-20" id="llm-모델-계열model-families"></span>
+    <a href="#llm-%eb%aa%a8%eb%8d%b8-%ea%b3%84%ec%97%b4model-families" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Open-weight LLM<span class="hx-absolute -hx-mt-20" id="open-weight-llm"></span>
+    <a href="#open-weight-llm" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>
+<p>Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다.</p>
+</li>
+<li>
+<p>일반적인 <strong>클라우드 AI와 달리 모델 가중치를 직접 확보하여 로컬 환경에서 추론(Inference)을 수행</strong>할 수 있다.</p>
+</li>
+<li>
+<p>Open-weight와 Open-source의 차이</p>
+<ul>
+<li>Open-weight: 모델의 학습된 가중치를 공개하여 내려받아 실행할 수 있는 형태</li>
+<li>Open-source: 가중치뿐 아니라 소스 코드, 학습 방법 등 공개 범위와 라이선스까지 고려하는 개념</li>
+<li>오픈 웨이트라고 해서 반드시 모든 학습 데이터와 학습 과정이 공개된 것은 아니다.</li>
+</ul>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Model</th>
+          <th>개발사</th>
+          <th>주요 특징</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Llama</td>
+          <td>Meta</td>
+          <td>범용 작업, 코딩, 추론</td>
+      </tr>
+      <tr>
+          <td>Gemma</td>
+          <td>Google</td>
+          <td>작은 크기 대비 높은 성능, 효율성</td>
+      </tr>
+      <tr>
+          <td>Qwen</td>
+          <td>Alibaba</td>
+          <td>다국어, 한국어·일본어, 코딩</td>
+      </tr>
+      <tr>
+          <td>Mistral</td>
+          <td>Mistral AI</td>
+          <td>유럽 언어, 추론</td>
+      </tr>
+      <tr>
+          <td>DeepSeek</td>
+          <td>DeepSeek AI</td>
+          <td>수학, 논리적 추론, MoE</td>
+      </tr>
+  </tbody>
+</table>
+<p> </p>
+<p> </p>
+<h2>모델 크기와 성능<span class="hx-absolute -hx-mt-20" id="모델-크기와-성능"></span>
+    <a href="#%eb%aa%a8%eb%8d%b8-%ed%81%ac%ea%b8%b0%ec%99%80-%ec%84%b1%eb%8a%a5" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>모델 이름에 표시되는 B는 Billion(10억)을 의미한다.</li>
+<li>일반적으로 모델 크기가 커지면 복잡한 작업을 처리할 능력이 높아질 수 있지만, 메모리 사용량과 추론 시간도 증가한다.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>구분</th>
+          <th>설명</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Parameter</td>
+          <td>학습을 통해 모델이 학습한 수치 값</td>
+      </tr>
+      <tr>
+          <td>B (Billion)</td>
+          <td>파라미터의 수를 나타내는 단위</td>
+      </tr>
+      <tr>
+          <td>Inference</td>
+          <td>학습된 모델을 이용해 답변을 생성하는 과정</td>
+      </tr>
+      <tr>
+          <td>Token</td>
+          <td>모델이 텍스트를 처리하는 기본 단위</td>
+      </tr>
+      <tr>
+          <td>TPS</td>
+          <td>초당 생성하는 토큰 수</td>
+      </tr>
+      <tr>
+          <td>Quantization</td>
+          <td>모델의 가중치 정밀도를 낮춰 메모리 사용량을 줄이는 기법</td>
+      </tr>
+  </tbody>
+</table>
+<p> </p>
+<h3>Quantization<span class="hx-absolute -hx-mt-20" id="quantization"></span>
+    <a href="#quantization" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>모델 가중치의 정밀도를 낮춰 모델 크기와 메모리 사용량을 줄이는 기술이다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>방식</th>
+          <th>특징</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>FP16</td>
+          <td>높은 정밀도, 큰 메모리 사용량</td>
+      </tr>
+      <tr>
+          <td>INT8</td>
+          <td>메모리 사용량과 성능의 균형</td>
+      </tr>
+      <tr>
+          <td>Q4</td>
+          <td>메모리 사용량이 작아 로컬 환경에서 활용하기 좋음</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>양자화 수준이 낮아질수록 메모리 요구량은 줄어들지만, 모델에 따라 품질 저하가 발생할 수 있다.</li>
+</ul>
+<p> </p>
+<h3>로컬 환경에서 모델 선택<span class="hx-absolute -hx-mt-20" id="로컬-환경에서-모델-선택"></span>
+    <a href="#%eb%a1%9c%ec%bb%ac-%ed%99%98%ea%b2%bd%ec%97%90%ec%84%9c-%eb%aa%a8%eb%8d%b8-%ec%84%a0%ed%83%9d" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>모델 크기</th>
+          <th>특징</th>
+          <th>적합한 환경</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>2B~3B</td>
+          <td>가볍고 빠름</td>
+          <td>8GB RAM 이하</td>
+      </tr>
+      <tr>
+          <td>7B~9B</td>
+          <td>성능과 메모리의 균형</td>
+          <td>16GB RAM</td>
+      </tr>
+      <tr>
+          <td>14B 이상</td>
+          <td>복잡한 작업에 유리할 수 있음</td>
+          <td>충분한 RAM/VRAM</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>실제 메모리 요구량은 양자화 방식, Context Window, KV Cache, 실행 환경에 따라 달라진다.</li>
+<li><strong>무조건 큰 모델을 선택하기보다 사용 가능한 메모리와 작업 목적에 맞춰 선택</strong>해야 한다.</li>
+</ul>
+<p> </p>
+<h2>MoE (Mixture of Experts)<span class="hx-absolute -hx-mt-20" id="moe-mixture-of-experts"></span>
+    <a href="#moe-mixture-of-experts" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>MoE는 여러 전문가(Expert) 네트워크 중 일부만 활성화하여 토큰을 처리하는 모델 구조다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>구분</th>
+          <th>설명</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Dense Model</td>
+          <td>대부분의 모델 파라미터를 계산에 사용</td>
+      </tr>
+      <tr>
+          <td>MoE Model</td>
+          <td>여러 Expert 중 일부만 선택하여 계산</td>
+      </tr>
+      <tr>
+          <td>Total Parameters</td>
+          <td>모델이 보유한 전체 파라미터</td>
+      </tr>
+      <tr>
+          <td>Active Parameters</td>
+          <td>토큰 처리 시 실제 활성화되는 파라미터</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>예를 들어 <code>30B-A3B</code> 모델은 전체 파라미터가 300억 개이고, 토큰을 처리할 때 약 30억 개가 활성화되는 구조를 의미한다.</li>
+<li>MoE는 전체 모델 크기와 실제 연산량을 구분해서 이해해야 한다.</li>
+</ul>
+<p> </p>
+<h2>4. 모델별 다국어 능력<span class="hx-absolute -hx-mt-20" id="4-모델별-다국어-능력"></span>
+    <a href="#4-%eb%aa%a8%eb%8d%b8%eb%b3%84-%eb%8b%a4%ea%b5%ad%ec%96%b4-%eb%8a%a5%eb%a0%a5" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>모델의 다국어 성능은 학습 데이터와 모델 크기에 영향을 받는다.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>모델</th>
+          <th>상대적인 강점</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Qwen</td>
+          <td>한국어, 중국어, 일본어 등 아시아 언어</td>
+      </tr>
+      <tr>
+          <td>Llama</td>
+          <td>범용적인 다국어 작업</td>
+      </tr>
+      <tr>
+          <td>Gemma</td>
+          <td>범용 작업과 효율성</td>
+      </tr>
+      <tr>
+          <td>Mistral</td>
+          <td>프랑스어, 독일어 등 유럽 언어</td>
+      </tr>
+      <tr>
+          <td>DeepSeek</td>
+          <td>수학, 코딩, 추론</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>실제 한국어 성능은 모델 버전과 크기에 따라 달라지므로 동일한 프롬프트로 직접 비교하는 것이 좋다.</li>
+</ul>
+<p> </p>
+<p> </p>
+<h2>System Prompt<span class="hx-absolute -hx-mt-20" id="system-prompt"></span>
+    <a href="#system-prompt" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><hr>
+<ul>
+<li>
+<p><strong>System Prompt는 AI의 역할, 행동 방식, 답변 형식 등을 지정하는 지시문</strong>이다.</p>
+</li>
+<li>
+<p>모델의 가중치를 변경하는 것이 아니라, 모델이 응답을 생성할 때 참고하는 지침을 제공한다.</p>
+</li>
+</ul>
+<h3>메시지 Role<span class="hx-absolute -hx-mt-20" id="메시지-role"></span>
+    <a href="#%eb%a9%94%ec%8b%9c%ec%a7%80-role" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>Role</th>
+          <th>설명</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>system</td>
+          <td>AI의 역할과 행동 규칙 정의</td>
+      </tr>
+      <tr>
+          <td>user</td>
+          <td>사용자가 입력하는 질문</td>
+      </tr>
+      <tr>
+          <td>assistant</td>
+          <td>AI가 생성하는 응답</td>
+      </tr>
+      <tr>
+          <td>tool</td>
+          <td>외부 도구의 실행 결과</td>
+      </tr>
+  </tbody>
+</table>
+<p> </p>
+<h3>System Prompt 예시<span class="hx-absolute -hx-mt-20" id="system-prompt-예시"></span>
+    <a href="#system-prompt-%ec%98%88%ec%8b%9c" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>You are an experienced infrastructure engineer.
+
+- Explain technical concepts clearly.
+- Provide practical examples.
+- Use structured bullet points.
+- If you are uncertain, do not guess.
+- Always answer in Korean.</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>위와 같이 역할과 답변 규칙을 지정하면 동일한 모델이라도 응답 스타일을 다르게 만들 수 있다.</p>
+<h3>2. System Prompt 프리셋<span class="hx-absolute -hx-mt-20" id="2-system-prompt-프리셋"></span>
+    <a href="#2-system-prompt-%ed%94%84%eb%a6%ac%ec%85%8b" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>프리셋</th>
+          <th>목적</th>
+          <th>특징</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Business Consultant</td>
+          <td>비즈니스 분석</td>
+          <td>전문적이고 구조적인 답변</td>
+      </tr>
+      <tr>
+          <td>Study Buddy</td>
+          <td>학습 지원</td>
+          <td>쉬운 설명과 예시</td>
+      </tr>
+      <tr>
+          <td>Pirate Tutor</td>
+          <td>개성 있는 답변</td>
+          <td>특정 말투와 표현 사용</td>
+      </tr>
+      <tr>
+          <td>Coding Mentor</td>
+          <td>코딩 학습</td>
+          <td>질문을 통해 스스로 해결하도록 유도</td>
+      </tr>
+      <tr>
+          <td>Concise Expert</td>
+          <td>빠른 정보 확인</td>
+          <td>짧고 정확한 답변</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>System Prompt는 모델의 성격과 응답 방식을 조정하는 데 활용한다.</li>
+</ul>
+<h3>LLM 생성 파라미터<span class="hx-absolute -hx-mt-20" id="llm-생성-파라미터"></span>
+    <a href="#llm-%ec%83%9d%ec%84%b1-%ed%8c%8c%eb%9d%bc%eb%af%b8%ed%84%b0" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>System Prompt가 AI의 역할을 정한다면, 생성 파라미터는 답변을 만들어 내는 방식을 조정한다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>파라미터</th>
+          <th>설명</th>
+          <th>특징</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Temperature</td>
+          <td>다음 토큰 선택의 무작위성 조절</td>
+          <td>낮으면 일관적, 높으면 다양함</td>
+      </tr>
+      <tr>
+          <td>Top-K</td>
+          <td>확률이 높은 상위 K개 토큰만 후보로 사용</td>
+          <td>후보 범위 제한</td>
+      </tr>
+      <tr>
+          <td>Top-P</td>
+          <td>누적 확률이 P에 도달할 때까지 후보 선택</td>
+          <td>확률 기반 후보 범위 조절</td>
+      </tr>
+      <tr>
+          <td>Repeat Penalty</td>
+          <td>반복 토큰에 페널티 적용</td>
+          <td>반복 표현 감소</td>
+      </tr>
+      <tr>
+          <td>Num Predict</td>
+          <td>생성할 최대 토큰 수 설정</td>
+          <td>응답 길이 제한</td>
+      </tr>
+      <tr>
+          <td>Num Ctx</td>
+          <td>모델이 처리할 Context Window 크기</td>
+          <td>입력 및 대화 문맥 범위</td>
+      </tr>
+  </tbody>
+</table>
+<p> </p>
+<h3>Temperature<span class="hx-absolute -hx-mt-20" id="temperature"></span>
+    <a href="#temperature" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Temperature는 모델의 다음 토큰 선택 분포를 조정한다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>설정</th>
+          <th>특징</th>
+          <th>활용</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>낮음</td>
+          <td>비교적 일관적이고 예측 가능한 답변</td>
+          <td>기술 문서, 사실 확인</td>
+      </tr>
+      <tr>
+          <td>중간</td>
+          <td>일관성과 다양성의 균형</td>
+          <td>일반적인 대화</td>
+      </tr>
+      <tr>
+          <td>높음</td>
+          <td>다양한 표현과 창의적인 답변</td>
+          <td>아이디어 생성</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Temperature가 낮다고 해서 답변의 정확성이 보장되는 것은 아니다.</li>
+</ul>
+<p> </p>
+<h3>Top-K와 Top-P<span class="hx-absolute -hx-mt-20" id="top-k와-top-p"></span>
+    <a href="#top-k%ec%99%80-top-p" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>두 파라미터는 답변 생성 시 선택 가능한 토큰의 범위를 조절한다.</li>
+<li>Top-K: 확률이 높은 상위 K개의 토큰만 후보로 선택한다.</li>
+<li>Top-P: 누적 확률이 설정한 P 값에 도달할 때까지 후보를 선택한다.</li>
+</ul>
+<h3>Repeat Penalty<span class="hx-absolute -hx-mt-20" id="repeat-penalty"></span>
+    <a href="#repeat-penalty" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>같은 단어나 표현이 반복되는 것을 줄이기 위한 설정이다.</li>
+<li>값 이 커지면 반복을 억제하는 효과가 강해질 수 있지만, 지나치면 자연스러운 표현에도 영향을 줄 수 있다.</li>
+</ul>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>repeat_penalty = 1.1</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p> </p>
+<p> </p>
+<h2>4. Ollama Modelfile<span class="hx-absolute -hx-mt-20" id="4-ollama-modelfile"></span>
+    <a href="#4-ollama-modelfile" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><hr>
+<ul>
+<li>Modelfile은 Ollama에서 모델의 기본 설정과 동작 방식을 정의하는 파일이다.</li>
+</ul>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>FROM qwen3.5:4b
+
+SYSTEM &#34;&#34;&#34;
+You are an experienced infrastructure engineer.
+Always answer in Korean.
+Explain concepts with practical examples.
+&#34;&#34;&#34;
+
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER top_k 40
+PARAMETER repeat_penalty 1.1
+PARAMETER num_ctx 8192</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code># 사용자 정의 모델 생성
+ollama create qwen3:30b-ko -f Modelfile
+
+# 실행
+ollama run qwen3:30b-ko</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<table>
+  <thead>
+      <tr>
+          <th>구성 요소</th>
+          <th>역할</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>FROM</td>
+          <td>기반 모델 지정</td>
+      </tr>
+      <tr>
+          <td>SYSTEM</td>
+          <td>시스템 프롬프트 지정</td>
+      </tr>
+      <tr>
+          <td>PARAMETER</td>
+          <td>생성 파라미터 설정</td>
+      </tr>
+      <tr>
+          <td>TEMPLATE</td>
+          <td>메시지 입력 형식 정의</td>
+      </tr>
+  </tbody>
+</table>
+<p> </p>
+<p> </p>
+<h2>챗봇에서 활용<span class="hx-absolute -hx-mt-20" id="챗봇에서-활용"></span>
+    <a href="#%ec%b1%97%eb%b4%87%ec%97%90%ec%84%9c-%ed%99%9c%ec%9a%a9" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><hr>
+<ul>
+<li>
+<p>Streamlit과 Ollama를 연결하면 웹 인터페이스에서 모델과 생성 설정을 선택할 수 있다.</p>
+</li>
+<li>
+<p><strong>System Prompt는 답변의 방향을, 생성 파라미터는 답변 생성 방식을 조정</strong>한다.</p>
+</li>
+</ul>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>flowchart TD
+    A[사용자 입력] --&gt; B[Streamlit]
+    B --&gt; C[System Prompt]
+    C --&gt; D[Ollama API]
+    D --&gt; E[LLM 모델]
+    E --&gt; F[생성 파라미터 적용]
+    F --&gt; G[응답 반환]
+    G --&gt; B</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p> </p>
+<p> </p>
+<h2>Local LLM이란?<span class="hx-absolute -hx-mt-20" id="local-llm이란"></span>
+    <a href="#local-llm%ec%9d%b4%eb%9e%80" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><hr>
+<ul>
+<li>Local LLM은 외부 클라우드 AI 서비스를 호출하지 않고, 사용자 소유의 컴퓨터나 서버에서 직접 실행하는 LLM이다.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>구분</th>
+          <th>Local LLM</th>
+          <th>Cloud LLM</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>실행 위치</td>
+          <td>로컬 PC 또는 자체 서버</td>
+          <td>외부 클라우드</td>
+      </tr>
+      <tr>
+          <td>데이터 처리</td>
+          <td>자체 환경에서 처리 가능</td>
+          <td>서비스 제공자 환경에서 처리</td>
+      </tr>
+      <tr>
+          <td>네트워크</td>
+          <td>모델 다운로드 이후 오프라인 실행 가능</td>
+          <td>일반적으로 인터넷 필요</td>
+      </tr>
+      <tr>
+          <td>비용</td>
+          <td>초기 하드웨어 및 운영 비용</td>
+          <td>사용량 기반 비용 등</td>
+      </tr>
+      <tr>
+          <td>성능</td>
+          <td>하드웨어 성능에 영향</td>
+          <td>서비스 제공자의 인프라에 영향</td>
+      </tr>
+      <tr>
+          <td>관리</td>
+          <td>직접 설치 및 유지보수</td>
+          <td>제공자 관리 범위에 의존</td>
+      </tr>
+  </tbody>
+</table>
+<p> </p>
+<h3>보안 및 개인정보 보호<span class="hx-absolute -hx-mt-20" id="보안-및-개인정보-보호"></span>
+    <a href="#%eb%b3%b4%ec%95%88-%eb%b0%8f-%ea%b0%9c%ec%9d%b8%ec%a0%95%eb%b3%b4-%eb%b3%b4%ed%98%b8" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>Local LLM은 외부 서비스로 데이터를 전송하지 않는 구조를 만들 수 있다는 장점이 있다.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>항목</th>
+          <th>설명</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Privacy</td>
+          <td>데이터가 외부 서비스로 전송되는 위험 감소</td>
+      </tr>
+      <tr>
+          <td>Data Control</td>
+          <td>데이터 저장 및 접근 정책을 직접 관리</td>
+      </tr>
+      <tr>
+          <td>Offline Operation</td>
+          <td>인터넷이 차단된 환경에서도 실행 가능</td>
+      </tr>
+      <tr>
+          <td>Security</td>
+          <td>모델과 실행 환경에 대한 보안 관리 필요</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>
+<p>모델 파일의 출처와 무결성 확인</p>
+</li>
+<li>
+<p>API 접근 제어 및 인증 설정</p>
+</li>
+<li>
+<p>로그와 대화 기록 관리</p>
+</li>
+<li>
+<p>모델 파일 및 시스템 업데이트 관리</p>
+</li>
+<li>
+<p>민감 정보의 입력 및 출력 통제</p>
+</li>
+</ul>
+<p> </p>
+<h3>비용 및 TCO<span class="hx-absolute -hx-mt-20" id="비용-및-tco"></span>
+    <a href="#%eb%b9%84%ec%9a%a9-%eb%b0%8f-tco" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>TCO(Total Cost of Ownership)는 시스템을 도입하고 운영하는 데 발생하는 전체 비용이다.</li>
+<li>Local LLM은 초기 투자 비용이 발생하지만, 사용량이 많고 장기간 운영할 경우 비용 측면에서 유리할 수 있다.</li>
+<li>반대로 사용량이 적다면 Cloud LLM이 더 경제적일 수 있다.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>구분</th>
+          <th>주요 비용</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>초기 비용</td>
+          <td>GPU, RAM, 서버, 스토리지</td>
+      </tr>
+      <tr>
+          <td>운영 비용</td>
+          <td>전력, 냉각, 유지보수</td>
+      </tr>
+      <tr>
+          <td>인력 비용</td>
+          <td>설치, 관리, 모니터링</td>
+      </tr>
+      <tr>
+          <td>Cloud 비용</td>
+          <td>API 호출량, 토큰 사용량, 서비스 구독료</td>
+      </tr>
+  </tbody>
+</table>
+<p> </p>
+<h3>Local AI 활용 분야<span class="hx-absolute -hx-mt-20" id="local-ai-활용-분야"></span>
+    <a href="#local-ai-%ed%99%9c%ec%9a%a9-%eb%b6%84%ec%95%bc" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>분야</th>
+          <th>활용 예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>개발</td>
+          <td>코드 생성, 코드 리뷰, 문서 작성</td>
+      </tr>
+      <tr>
+          <td>인프라 운영</td>
+          <td>로그 분석, 장애 원인 분석, 명령어 지원</td>
+      </tr>
+      <tr>
+          <td>보안</td>
+          <td>내부 보안 문서 분석, 취약점 정보 정리</td>
+      </tr>
+      <tr>
+          <td>기업 업무</td>
+          <td>사내 문서 검색, 지식 관리</td>
+      </tr>
+      <tr>
+          <td>교육</td>
+          <td>개인 학습 도우미, 프로그래밍 튜터</td>
+      </tr>
+  </tbody>
+</table>
+<p> </p>
+<h2>Hybrid AI<span class="hx-absolute -hx-mt-20" id="hybrid-ai"></span>
+    <a href="#hybrid-ai" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>Hybrid AI는 Local LLM과 Cloud LLM을 함께 사용하는 방식이다.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>구분</th>
+          <th>처리 방식</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>민감 정보</td>
+          <td>Local LLM</td>
+      </tr>
+      <tr>
+          <td>단순 반복 작업</td>
+          <td>Local LLM</td>
+      </tr>
+      <tr>
+          <td>복잡한 추론</td>
+          <td>Cloud LLM 활용 가능</td>
+      </tr>
+      <tr>
+          <td>대규모 처리</td>
+          <td>비용과 성능을 고려해 선택</td>
+      </tr>
+  </tbody>
+</table>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>flowchart TD
+    A[사용자 요청] --&gt; B{요청 유형 판단}
+    B --&gt;|민감 정보| C[Local LLM]
+    B --&gt;|일반 작업| D{작업 난이도}
+    D --&gt;|단순 작업| C
+    D --&gt;|복잡한 작업| E[Cloud LLM]
+    C --&gt; F[응답 반환]
+    E --&gt; F</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p> </p>
+<p> </p>
+<h2>핵심 내용 정리정리<span class="hx-absolute -hx-mt-20" id="핵심-내용-정리정리"></span>
+    <a href="#%ed%95%b5%ec%8b%ac-%eb%82%b4%ec%9a%a9-%ec%a0%95%eb%a6%ac%ec%a0%95%eb%a6%ac" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><table>
+  <thead>
+      <tr>
+          <th>구분</th>
+          <th>키워드</th>
+          <th>핵심 내용</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>모델</td>
+          <td>Llama, Gemma, Qwen, Mistral, DeepSeek</td>
+          <td>대표적인 오픈 웨이트 모델 계열</td>
+      </tr>
+      <tr>
+          <td>모델 구조</td>
+          <td>Dense, MoE</td>
+          <td>전체 파라미터와 활성 파라미터 구분</td>
+      </tr>
+      <tr>
+          <td>모델 크기</td>
+          <td>Parameter, B</td>
+          <td>모델의 파라미터 수</td>
+      </tr>
+      <tr>
+          <td>최적화</td>
+          <td>Quantization</td>
+          <td>가중치 정밀도를 낮춰 메모리 절약</td>
+      </tr>
+      <tr>
+          <td>성능</td>
+          <td>TPS, Benchmark</td>
+          <td>생성 속도 및 작업별 성능 평가</td>
+      </tr>
+      <tr>
+          <td>다국어</td>
+          <td>Multilingual</td>
+          <td>학습 데이터에 따른 언어별 성능 차이</td>
+      </tr>
+      <tr>
+          <td>실행</td>
+          <td>Ollama</td>
+          <td>로컬 LLM 다운로드 및 실행</td>
+      </tr>
+      <tr>
+          <td>역할 설정</td>
+          <td>System Prompt</td>
+          <td>AI의 역할과 응답 방식 지정</td>
+      </tr>
+      <tr>
+          <td>메시지</td>
+          <td>system, user, assistant</td>
+          <td>대화 메시지의 역할 구분</td>
+      </tr>
+      <tr>
+          <td>생성 제어</td>
+          <td>Temperature</td>
+          <td>응답 생성의 다양성 조절</td>
+      </tr>
+      <tr>
+          <td>생성 제어</td>
+          <td>Top-K, Top-P</td>
+          <td>다음 토큰의 후보 범위 조절</td>
+      </tr>
+      <tr>
+          <td>반복 제어</td>
+          <td>Repeat Penalty</td>
+          <td>반복 표현 억제</td>
+      </tr>
+      <tr>
+          <td>문맥</td>
+          <td>Context Window</td>
+          <td>모델이 처리할 수 있는 문맥 범위</td>
+      </tr>
+      <tr>
+          <td>설정</td>
+          <td>Modelfile</td>
+          <td>Ollama 모델의 설정 및 사용자 정의</td>
+      </tr>
+      <tr>
+          <td>로컬 AI</td>
+          <td>Local LLM</td>
+          <td>자체 하드웨어에서 모델 실행</td>
+      </tr>
+      <tr>
+          <td>보안</td>
+          <td>Privacy, Security</td>
+          <td>데이터 보호 및 접근 통제</td>
+      </tr>
+      <tr>
+          <td>비용</td>
+          <td>TCO</td>
+          <td>도입부터 운영까지의 전체 비용</td>
+      </tr>
+      <tr>
+          <td>아키텍처</td>
+          <td>Hybrid AI</td>
+          <td>Local LLM과 Cloud LLM의 조합</td>
+      </tr>
+  </tbody>
+</table>
+<h2>핵심 개념 정리<span class="hx-absolute -hx-mt-20" id="핵심-개념-정리"></span>
+    <a href="#%ed%95%b5%ec%8b%ac-%ea%b0%9c%eb%85%90-%ec%a0%95%eb%a6%ac" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>
+<p><strong>모델마다 강점이 다르며, 모델 크기와 메모리 요구량을 고려해 사용 목적에 맞는 모델을 선택</strong>한다.</p>
+</li>
+<li>
+<p><strong>System Prompt로 AI의 역할을 설정</strong>하고, <strong>Temperature와 Top-K 등의 파라미터로 답변 생성 방식을 조정</strong>한다.</p>
+</li>
+<li>
+<p>Local LLM은 데이터 통제와 오프라인 운영에 유리하지만, 하드웨어와 보안 운영을 직접 관리해야 한다.</p>
+</li>
+<li>
+<p>결국 로컬 AI를 구축할 때는 <strong>모델 선택 → 실행 환경 구성 → 프롬프트 및 파라미터 설정 → 서비스 개발 → 보안 및 운영</strong> 순서로 접근하면 된다.</p>
+</li>
+</ul>
+<p> </p>
+<p> </p>
+<h2><strong>도전 과제</strong><span class="hx-absolute -hx-mt-20" id="도전-과제"></span>
+    <a href="#%eb%8f%84%ec%a0%84-%ea%b3%bc%ec%a0%9c" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>
+<p><strong>챕터 별 연습문제 풀기</strong></p>
+<ul>
+<li>비행기 모드 테스트 -&gt; 인터넷 없어도 동작이 가능</li>
+<li>데이터 흐름 감사 -&gt; 개인정보관련 데이터는 없음, 10건 전부 로컬로 전환 가능했으나, 신기술이나 트러블 슈팅 ( 깃 이슈 조사 )등은 클라우드가 보다 좋았음</li>
+<li>비용 계산 -&gt; 현재 환경에서는 Local AI가 비용 효율적이다. 이미 Mac M1 Max 32GB를 보유하고 있고 20B~30B 모델까지 실행할 수 있으므로, 7B 모델을 실행하기 위한 추가 하드웨어 비용이 발생하지 않는다.</li>
+<li>개인정보 처리방침
+<ul>
+<li>ChatGPT는 사용자의 대화 데이터를 서비스 제공과 보안 등의 목적으로 처리하며, 일반 대화는 사용자가 삭제할 때까지 보관될 수 있고 삭제 후에는 원칙적으로 30일 이내 삭제된다. 개인용 계정의 대화 내용은 설정에 따라 모델 개선에 활용될 수 있지만, 사용자는 데이터 제어 설정을 통해 이를 거부할 수 있다. 또한 제한된 권한을 가진 직원과 서비스 제공업체가 보안 사고 조사, 고객 지원, 법적 의무 이행 등의 목적으로 대화에 접근할 수 있다. 데이터는 미국 및 여러 국가의 시스템에 저장될 수 있으므로, 민감한 업무 정보는 입력하지 않는 것이 바람직하다. 기업 인수나 파산 등의 상황에서는 개인정보가 승계 법인으로 이전될 가능성도 있으므로 데이터 처리 및 보관 정책을 확인할 필요가 있다.</li>
+</ul>
+</li>
+<li>사용 사례 분석 -&gt; 보안 모니터링은 운영 중인 서버, 네트워크 및 애플리케이션에서 발생하는 로그와 보안 이벤트를 지속적으로 수집하고 분석하여 이상 징후와 보안 위협을 탐지하는 업무이며, 대부분 24h로 운영되고 있는 데, AI를 활용하면 대량의 로그를 빠르게 분석하고, 평소와 다른 접근 패턴이나 비정상적인 시스템 동작을 식별하여 보안 담당자의 분석 및 대응 업무를 보조할 수 있다</li>
+</ul>
+</li>
+<li>
+<p><code>도전과제</code> 자신의 mac Spec 의 최대 한계 모델을 구동해보기, 특히 RAM 용량을 넘기는 모델 기동 시도(실패) 결과 직접 확인해보기</p>
+</li>
+</ul>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code> mung 🦄   ~/Desktop/blog   main ±  ollama run qwen3:30b
+&gt;&gt;&gt; 쿠버네티스의 전체 아키텍처와 Pod 간 통신 과정을 자세하게 설명해 줘.
+Thinking...
+Okay, I need to explain Kubernetes&#39; entire architecture and the process of communication between Pods in detail. Let me start by recalling what I know about Kubernetes.
+
+First, Kubernetes is a container orchestration platform. It manages containers across a cluster of machines. The main components are the control plane and the worker nodes. The control plane includes components like API Server, etcd,
+Controller Manager, Scheduler, and maybe others like Cloud Controller Manager. Worker nodes have the kubelet, kube-proxy, and container runtime like containerd or Docker.
+
+Wait, the user wants the entire architecture. So I should outline all the main components. Let me list them out:
+
+Control Plane:
+- API Server: The front-end for the Kubernetes API, handles all REST requests.
+- etcd: A distributed key-value store that holds the cluster&#39;s configuration data.
+- Controller Manager: Runs controllers that regulate the cluster&#39;s state, like node controllers, replication controllers.
+- Scheduler: Assigns pods to nodes based on resource requirements and constraints.
+- Cloud Controller Manager: Handles cloud-specific operations, like load balancers.</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<ul>
+<li><code>도전과제</code> 각자 Streamlit 챗봇을 원하는 형태로 커스터마이징 해보기</li>
+</ul>
+<p> </p>
 
         </div>
-        <div class="hx-mt-16"></div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2026-11-15T18:37:57.000Z">November 15, 2026</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/study/llm/03/"
         title="3. Voice-enabled AI chat application"

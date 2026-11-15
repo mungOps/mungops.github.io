@@ -33,7 +33,7 @@
       <link>https://mungops.github.io/study/llm/04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mungops.github.io/study/llm/04/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h1&gt;로컬 AI 스터디 3주차 — 핵심 기술: 첫 AI 챗봇 만들기&lt;/h1&gt;&lt;hr&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h1&gt;로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기&lt;/h1&gt;&lt;hr&gt;&#xA;&lt;h2&gt;LLM 모델 계열(Model Families)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;llm-모델-계열model-families&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#llm-%eb%aa%a8%eb%8d%b8-%ea%b3%84%ec%97%b4model-families&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Open-weight LLM&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;open-weight-llm&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#open-weight-llm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
