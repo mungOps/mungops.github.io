@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure docs on mungOps</title>
+    <link>https://mungops.github.io/system/azure/microsoftazure/</link>
+    <description>Recent content in Azure docs on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/system/azure/microsoftazure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Computing</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure00/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure00/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure Computing&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-computing&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-computing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Azure Computing은 클라우드 기반의 애플리케이션을 실행하기 이한 주문형 컴퓨팅 서비스로 가상 머신 및 컨테이너를 통해 멀티 코어 프로세서, 슈퍼 컴퓨팅 리소스를 제공합니다.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Networking</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure01/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure Networking&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-networking&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-networking&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Azure Networking은 컴퓨팅 리소스를 연결하고 애플리케이션에 대한 액세스를 제공하는 것으로 Microsoft Azure 데이터 센터의 서비스 및 기능을 외부 환경에 연결하는 다양한 옵션이 포함되어 있습니다.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Mobile</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure02/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure Mobile&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-mobile&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-mobile&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Azure Mobile은 개발자가 iOS, Android 및 Windows 앱용 모바일 백 엔드 서비스를 쉽고 빠르게 만들 수 있게 해줍니다.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Azure Mobile의 기능은 다음과 같습니다.&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;오프라인 데이터 동기화&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure DataBase</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure10/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure DataBase&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-database&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-database&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Azure DataBase는 기존 스토리지 문제를 해결하기 위해 클라우드에 데이터를 저장하는 것을 고려합니다.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;하지만 보안, 백업 및 재해 복구에 대한 우려가 존재합니다.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Storage</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure03/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure Storage&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-storage&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-storage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Azure Storage는 기본적인 스토리지 서비스를 제공하며 다음과 같은 특성을 가지고 있습니다..&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;중복 및 복제 기능을 갖추고 있어 내구성과 가용성이 뛰어납니다.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Web</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure04/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure Web&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-web&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-web&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Azure Web 에는 웹앱 및 HTTP 기반 웹 서비스의 빌드 및 호스트에 대한 최고 수준의 지원이 포함되어 있습니다.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Azure App Service&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-app-service&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-app-service&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;강력한 클라우드 웹 기반 앱을 신속하게 만들기&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure IoT</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure05/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure IoT&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-iot&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-iot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Azure에서 IoT를 위한 엔드투엔드 솔루션을 지원하고 구동할 수 있는 여러 서비스가 있습니다.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;IoT Central&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;iot-central&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#iot-central&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;대규모 IoT 자산의 연결, 모니터링 및 관리를 도와주는, 완전히 관리되는 글로벌 IoT SaaS(Software-as-a-Service) 솔루션&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure BigData</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure06/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure BigData&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-bigdata&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-bigdata&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Microsoft Azure는 빅 데이터 및 분석 솔루션을 제공하기 위해 광범위한 기술 및 서비스를 지원합니다.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;h3&gt;&lt;strong&gt;Azure Synapse Analytics&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-synapse-analytics&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-synapse-analytics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;MPP(대규모 병렬 처리)를 활용하여 페타바이트 단위의 데이터에서 복잡한 쿼리를 빠르게 실행하는 클라우드 기반 EDW(Enterprise Data Warehouse)를 사용하여 대규모로 분석 실행&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure AI</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure07/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure AI&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-ai&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-ai&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;클라우드 컴퓨팅과 관련된 AI는 광범위한 서비스에 기반을 두고 있으며, 그 중 Machine Learning이 핵심입니다. Machine Learning은 컴퓨터에서 기존 데이터를 사용하여 미래 동작, 결과 및 추세를 예측하는 데이터 과학 기술입니다. Machine Learning을 사용하면 컴퓨터에서 명시적으로 프로그래밍하지 않고 학습합니다.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure DevOps</title>
+      <link>https://mungops.github.io/system/azure/microsoftazure/azure08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/system/azure/microsoftazure/azure08/</guid>
+      <description>&lt;h2&gt;&lt;strong&gt;Azure DevOps&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;azure-devops&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#azure-devops&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Azure DevOps Services를 사용하여 애플리케이션에 연속 통합, 제공 및 배포를 제공하는 빌드 및 릴리스 파이프라인을 만들 수 있습니다. 리포지토리 및 애플리케이션 테스트를 통합하고, 애플리케이션 모니터링을 수행하고, 빌드 아티팩트로 작업할 수 있습니다.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1&gt;&lt;/h1&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

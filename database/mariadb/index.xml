@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mariadb on mungOps</title>
+    <link>https://mungops.github.io/database/mariadb/</link>
+    <description>Recent content in mariadb on mungOps</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mungops.github.io/database/mariadb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MariaDB 개요 및 기본 개념</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb01/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;MariaDB란? (MySQL과의 차이점 및 역사)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mariadb란-mysql과의-차이점-및-역사&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-mariadb%eb%9e%80-mysql%ea%b3%bc%ec%9d%98-%ec%b0%a8%ec%9d%b4%ec%a0%90-%eb%b0%8f-%ec%97%ad%ec%82%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;MariaDB는 MySQL의 후속 버전으로, MySQL의 창립자인 Michael &amp;ldquo;Monty&amp;rdquo; Widenius가 MySQL이 Oracle에 인수된 이후 개발을 시작한 오픈 소스 관계형 데이터베이스 관리 시스템(RDBMS)입니다. MariaDB는 MySQL의 모든 기능을 포함하고 있으며, 이를 확장하고 최적화한 버전으로 많은 개발자와 기업에서 사용하고 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 설치 및 환경 설정</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb02/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;MariaDB 설치 방법 (Linux, Windows, macOS, Docker, Kubernetes)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mariadb-설치-방법-linux-windows-macos-docker-kubernetes&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-mariadb-%ec%84%a4%ec%b9%98-%eb%b0%a9%eb%b2%95-linux-windows-macos-docker-kubernetes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;MariaDB는 다양한 운영 체제 및 환경에서 설치할 수 있습니다. 각각의 설치 방법을 아래에 설명하겠습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 기본 사용법</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb03/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;MariaDB 접속 및 인증 (mysql -u root -p)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mariadb-접속-및-인증-mysql--u-root--p&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-mariadb-%ec%a0%91%ec%86%8d-%eb%b0%8f-%ec%9d%b8%ec%a6%9d-mysql--u-root--p&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;MariaDB에 접속하기 위해서는 &lt;code&gt;mysql&lt;/code&gt; 클라이언트 명령어를 사용합니다. 기본적으로 MariaDB는 &lt;code&gt;root&lt;/code&gt; 사용자로 관리되며, 이 사용자는 데이터베이스 서버에 대한 모든 권한을 가집니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 고급 SQL 및 쿼리 최적화</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb04/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Index 개념 및 성능 최적화 (CREATE INDEX, EXPLAIN)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-index-개념-및-성능-최적화-create-index-explain&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-index-%ea%b0%9c%eb%85%90-%eb%b0%8f-%ec%84%b1%eb%8a%a5-%ec%b5%9c%ec%a0%81%ed%99%94-create-index-explain&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;&lt;strong&gt;Index 개념&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;index-개념&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#index-%ea%b0%9c%eb%85%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Index는 MariaDB에서 데이터를 빠르게 검색할 수 있도록 도와주는 중요한 요소입니다. 데이터베이스에서 검색 속도를 향상시키기 위해 테이블의 열에 대해 인덱스를 생성할 수 있습니다. 인덱스는 마치 책의 목차와 같아서, 특정 데이터를 찾을 때 전체 데이터를 검색하지 않고 빠르게 위치를 찾아주는 역할을 합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 보안 및 사용자 관리</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb05/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;MariaDB 사용자 및 권한 관리 (GRANT, REVOKE)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mariadb-사용자-및-권한-관리-grant-revoke&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-mariadb-%ec%82%ac%ec%9a%a9%ec%9e%90-%eb%b0%8f-%ea%b6%8c%ed%95%9c-%ea%b4%80%eb%a6%ac-grant-revoke&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;MariaDB에서 사용자 관리 및 권한 설정은 매우 중요합니다. 적절한 권한 설정을 통해 시스템의 보안을 강화할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 성능 최적화 및 모니터링</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb06/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;slow_query_log 활성화 및 분석&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-slow_&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-slow_&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;MariaDB에서 &lt;code&gt;slow_query_log&lt;/code&gt;는 실행 시간이 오래 걸린 쿼리를 기록하는 기능입니다. 이를 통해 성능이 저조한 쿼리를 찾아 최적화할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 백업 및 복구 전략</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb07/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;mysqldump를 이용한 백업 및 복원 (&amp;ndash;single-transaction)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mysqldump를-이용한-백업-및-복원-&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-mysqldump%eb%a5%bc-%ec%9d%b4%ec%9a%a9%ed%95%9c-%eb%b0%b1%ec%97%85-%eb%b0%8f-%eb%b3%b5%ec%9b%90-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;mysqldump&lt;/code&gt;는 MariaDB의 데이터베이스 백업을 위해 가장 많이 사용되는 명령어입니다. 이를 통해 전체 데이터베이스 또는 특정 테이블을 백업할 수 있습니다. &lt;code&gt;--single-transaction&lt;/code&gt; 옵션을 사용하면 백업 도중 데이터베이스의 일관성을 유지할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 복제(Replication) 및 고가용성(HA) 구성</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb08/</guid>
+      <description>&lt;h1&gt;&lt;strong&gt;MariaDB 복제(Replication) 및 고가용성(HA) 구성&lt;/strong&gt;&lt;/h1&gt;&lt;h2&gt;1️⃣ &lt;strong&gt;Master-Slave Replication 설정 (CHANGE MASTER TO, START SLAVE)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-master-slave-replication-설정-change-master-to-start-slave&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-master-slave-replication-%ec%84%a4%ec%a0%95-change-master-to-start-slave&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &lt;strong&gt;개념 소개&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-개념-소개&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-%ea%b0%9c%eb%85%90-%ec%86%8c%ea%b0%9c&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Master-Slave 복제는 데이터베이스의 데이터를 여러 서버에 복제하여 읽기 성능을 향상시키고, 장애 발생 시 데이터의 가용성을 높이는 기술입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB와 Kubernetes 및 클라우드 연동</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb09/</guid>
+      <description>&lt;h2&gt;9️⃣ &lt;strong&gt;MariaDB를 Kubernetes에서 실행하기 (StatefulSet, Persistent Volume)&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;9-mariadb를-kubernetes에서-실행하기-statefulset-persistent-volume&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#9-mariadb%eb%a5%bc-kubernetes%ec%97%90%ec%84%9c-%ec%8b%a4%ed%96%89%ed%95%98%ea%b8%b0-statefulset-persistent-volume&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;9.1 &lt;strong&gt;StatefulSet을 사용한 MariaDB 배포&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;91-statefulset을-사용한-mariadb-배포&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#91-statefulset%ec%9d%84-%ec%82%ac%ec%9a%a9%ed%95%9c-mariadb-%eb%b0%b0%ed%8f%ac&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Kubernetes에서 StatefulSet은 상태를 유지하는 애플리케이션을 배포할 때 유용합니다. MariaDB와 같은 데이터베이스 서비스는 데이터 지속성을 위해 StatefulSet을 사용해야 합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB와 애플리케이션 연동</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb10/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;Python (SQLAlchemy, PyMySQL)과 연동&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-python-sqlalchemy-pymysql과-연동&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-python-sqlalchemy-pymysql%ea%b3%bc-%ec%97%b0%eb%8f%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Python에서 MariaDB 사용&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;python에서-mariadb-사용&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#python%ec%97%90%ec%84%9c-mariadb-%ec%82%ac%ec%9a%a9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Python은 &lt;code&gt;PyMySQL&lt;/code&gt;과 &lt;code&gt;SQLAlchemy&lt;/code&gt;와 같은 라이브러리를 사용하여 MariaDB와 쉽게 연동할 수 있습니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 트러블슈팅 및 장애 대응</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb11/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;ERROR 1045 (28000): Access denied for user 해결&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-error-1045-28000-access-denied-for-user-해결&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-error-1045-28000-access-denied-for-user-%ed%95%b4%ea%b2%b0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1.1 &lt;strong&gt;문제 설명&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;11-문제-설명&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#11-%eb%ac%b8%ec%a0%9c-%ec%84%a4%eb%aa%85&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ERROR 1045 (28000): Access denied for user&lt;/code&gt; 오류는 주로 MariaDB에 접속할 때 권한 문제로 발생합니다. 이 오류는 사용자가 데이터베이스에 접근하려고 할 때 권한이 부여되지 않았거나 비밀번호가 잘못되었을 경우 발생합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MariaDB 최신 트렌드 및 Best Practices</title>
+      <link>https://mungops.github.io/database/mariadb/mariadb12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mungops.github.io/database/mariadb/mariadb12/</guid>
+      <description>&lt;h2&gt;1️⃣ &lt;strong&gt;MariaDB vs MySQL vs PostgreSQL 비교&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-mariadb-vs-mysql-vs-postgresql-비교&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#1-mariadb-vs-mysql-vs-postgresql-%eb%b9%84%ea%b5%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1.1 &lt;strong&gt;MariaDB vs MySQL&lt;/strong&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;11-mariadb-vs-mysql&#34;&gt;&lt;/span&gt;&#xA;    &lt;a href=&#34;#11-mariadb-vs-mysql&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;MariaDB와 MySQL은 많은 부분에서 유사하지만, MariaDB는 MySQL의 포크로 시작하여 추가적인 기능과 성능 개선을 제공합니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
