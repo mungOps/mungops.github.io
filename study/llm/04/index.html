@@ -10,10 +10,10 @@
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
-<title>4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점 – mungOps</title>
+<title>4. Comparing and selecting LLM models – mungOps</title>
   <meta name="description" content=" 이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기 LLM 모델 계열(Model Families) Open-weight LLM Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다." /><link rel="canonical" href="https://mungops.github.io/study/llm/04/" itemprop="url" />
 
-<meta property="og:title" content="4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점" />
+<meta property="og:title" content="4. Comparing and selecting LLM models" />
 <meta property="og:description" content="
 이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다.
 
@@ -27,14 +27,14 @@ Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mungops.github.io/study/llm/04/" /><meta property="article:section" content="study" />
 
-<meta property="article:modified_time" content="2026-11-15T18:37:57+09:00" />
+<meta property="article:modified_time" content="2026-11-15T18:41:00+09:00" />
 
-  <meta itemprop="name" content="4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점">
+  <meta itemprop="name" content="4. Comparing and selecting LLM models">
   <meta itemprop="description" content="이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기 LLM 모델 계열(Model Families) Open-weight LLM Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다.">
-  <meta itemprop="dateModified" content="2026-11-15T18:37:57+09:00">
+  <meta itemprop="dateModified" content="2026-11-15T18:41:00+09:00">
   <meta itemprop="wordCount" content="4529">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점">
+  <meta name="twitter:title" content="4. Comparing and selecting LLM models">
   <meta name="twitter:description" content="이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기 LLM 모델 계열(Model Families) Open-weight LLM Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다.">
 
     <link rel="preload" href="/css/compiled/main.min.857b2938d50cbce1f2f314bfd9880cc4da78d616e1e0a9de52f1117cd8662dae.css" as="style" integrity="sha256-hXspONUMvOHy8xS/2YgMxNp41hbh4KneUvERfNhmLa4=" />
@@ -3591,7 +3591,7 @@ Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자�
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/study/llm/04/"
     
-  >4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점
+  >4. Comparing and selecting LLM models
     </a>
   
     <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
@@ -5186,7 +5186,7 @@ Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자�
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/study/llm/04/"
     
-  >4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점
+  >4. Comparing and selecting LLM models
     </a>
               
             </li></ul>
@@ -5413,11 +5413,11 @@ Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자�
         </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
           <a href="/study/llm/">Local AI Model Study</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점</div>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">4. Comparing and selecting LLM models</div>
   </div>
 
         <div class="content">
-          <h1>4. LLM 모델 비교 및 선택, 시스템 메지니 및 매개변수 조정, 오프라인 LLM 장점</h1>
+          <h1>4. Comparing and selecting LLM models</h1>
           <ul>
 <li>이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다.</li>
 </ul>
@@ -6338,7 +6338,7 @@ Control Plane:
 
         </div>
         
-    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2026-11-15T18:37:57.000Z">November 15, 2026</time></div>
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">마지막 수정일자 <time datetime="2026-11-15T18:41:00.000Z">November 15, 2026</time></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/study/llm/03/"
         title="3. Voice-enabled AI chat application"
