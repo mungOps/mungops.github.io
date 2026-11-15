@@ -32,7 +32,7 @@ Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자�
   <meta itemprop="name" content="4. Comparing and selecting LLM models">
   <meta itemprop="description" content="이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기 LLM 모델 계열(Model Families) Open-weight LLM Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다.">
   <meta itemprop="dateModified" content="2026-11-15T18:45:39+09:00">
-  <meta itemprop="wordCount" content="4529">
+  <meta itemprop="wordCount" content="4976">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="4. Comparing and selecting LLM models">
   <meta name="twitter:description" content="이 글은 CloudNet@ 팀 gasida님의 스터디 local ai on mac 내용 및 실습으로 작성된 글입니다. 로컬 AI 스터디 4주차 — 핵심 기술: 첫 AI 챗봇 만들기 LLM 모델 계열(Model Families) Open-weight LLM Open-weight란 학습된 모델의 가중치(Weights)를 공개하여 사용자가 모델을 내려받고 직접 실행하거나 수정할 수 있도록 제공하는 형태다.">
@@ -6321,7 +6321,20 @@ Control Plane:
 - etcd: A distributed key-value store that holds the cluster&#39;s configuration data.
 - Controller Manager: Runs controllers that regulate the cluster&#39;s state, like node controllers, replication controllers.
 - Scheduler: Assigns pods to nodes based on resource requirements and constraints.
-- Cloud Controller Manager: Handles cloud-specific operations, like load balancers.</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+- Cloud Controller Manager: Handles cloud-specific operations, like load balancers.
+
+
+ mung 🍻   ~  ollama run llama3.3:70b
+pulling manifest
+pulling 4824460d29f2: 100% ▕███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ ▏  42 GB/ 42 GB  5.5 MB/s      0s
+pulling c7091aa45e9b: 100% ▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏  562 B
+verifying sha256 digest
+writing manifest
+success
+&gt;&gt;&gt; 쿠버네티스의 전체 아키텍처와 Pod 간 통신 과정을 자세하게 설명해 줘.
+쿠버네티스 전체^C&gt;&gt;&gt;
+Use Ctrl &#43; d or /bye to exit.
+&gt;&gt;&gt;</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -6331,6 +6344,12 @@ Control Plane:
   </button>
 </div>
 </div>
+<ul>
+<li>동작은 하지만, 매우 느린 속도로 사실상 사용이 안됨.</li>
+<li>노트북 메모리가 32G이지만 아래 이미지처럼 40G 사용 출력 ?</li>
+</ul>
+<p>
+    <img src="../image-5.png" alt="alt text" loading="lazy" /></p>
 <ul>
 <li><code>도전과제</code> 각자 Streamlit 챗봇을 원하는 형태로 커스터마이징 해보기</li>
 </ul>
